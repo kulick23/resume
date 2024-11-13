@@ -1,22 +1,26 @@
-import React from 'react'
-import './about.css'
+import React from "react";
+import { observer } from "mobx-react-lite";
+import skillsStore from "../../Stores/skillsStore";
+import './skills.css';
 
-const About: React.FC = () => {
-
-    return(
-        <div className='about'>
-        <h1>Hello world!</h1>
-    <p className='about__text'>
-         My name is Danila)<br />
-        As a multifaceted Web Developer, I bring a unique blend of skills and experiences that span across UI/UX design, front-end development with JS/React, and database management using SQL.<br />
-        My proficiency extends to Git, C/C++, OOP, Linux, and more, ensuring versatile solutions for diverse web development challenges.<br />
-        My educational journey through IT STEP Minsk, Internation Sakharov Environmental University, and EPAM School of Digital Engineering has equipped me with a strong foundation in Software Development, Digital Technologies, and Software Testing.<br />
-        My professional experience includes roles in customer service, sales, and management, which have honed my skills in communication, teamwork, and fast learning.<br />
-        Fluent in Russian, Belarusian, and proficient in English and Polish, I am ready to contribute to and thrive in multicultural teams.<br />
-        Let's connect and explore how we can create impactful digital solutions together.
-    </p>
+const Skills: React.FC = observer(() => {
+    return (
+        <div className="skills">
+            <h2>My Skills</h2>
+            <div className="skills__categories">
+                {Object.entries(skillsStore.skills).map(([category, skills]) => (
+                    <div key={category} className="skills__categories--category">
+                        <h3 className="skills__categories--title">{category}</h3>
+                        <ul className="skills__categories--list">
+                            {skills.map((skill) => (
+                                <li key={skill} className="skills__categories--item">{skill}</li>
+                            ))}
+                        </ul>
+                    </div>
+                ))}
+            </div>
         </div>
-    )
-}
+    );
+});
 
-export default About;
+export default Skills;

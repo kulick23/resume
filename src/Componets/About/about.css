@@ -1,0 +1,11 @@
+.about{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    overflow-y: auto;
+    color: #323b4c;
+}
+.about__text {
+    text-align: left;
+    padding-left: 10px;
+}
