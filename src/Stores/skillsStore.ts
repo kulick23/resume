@@ -3,7 +3,7 @@ import { makeAutoObservable } from "mobx";
 class SkillsStore {
     skills = {
         "Frontend": ["HTML", "CSS", "JavaScript", "React", "Angular"],
-        "Backend": ["SQL", "MySQL", "C/C++", "Python"],
+        "Backend": ["MSSQL", "MySQL", "C/C++", "Python"],
         "Tools": ["Git", "Microsoft Office", "Photoshop", "UML", "Linux"],
         "Soft Skills": [
             "Scrum", "Teamwork", "Communication", "Problem Solving", "Work with customers"

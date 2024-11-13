@@ -5,6 +5,7 @@ import Header from './Componets/Header/header'
 import About from "./Componets/About/about";
 import Skills from "./Componets/Skills/skills";
 import Project from "./Componets/Projects/projects"
+import Experience from "./Componets/Experience/experience";
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
             <Route path='/' element={ <About/>}/>
             <Route path='/skills' element={ <Skills/>}/>
             <Route path='/projects' element={ <Project/>}/>
+            <Route path='/experience' element={ <Experience/>}/>
         </Routes>
 
     </div>

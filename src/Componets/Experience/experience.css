@@ -1,0 +1,55 @@
+.experience {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.experience__title {
+    text-align: center;
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.experience__container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.experience__card {
+    padding: 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+.experience__company {
+    font-size: 1.2em;
+    color: #0070f3;
+    margin: 0 0 5px;
+}
+
+.experience__position {
+    font-weight: bold;
+    color: #333;
+    margin: 5px 0;
+}
+
+.experience__duration {
+    color: #888;
+    font-size: 0.9em;
+    margin-bottom: 10px;
+}
+
+.experience__description {
+    color: #666;
+    line-height: 1.5;
+}
+
+@media (min-width: 768px) {
+    .experience__container {
+        grid-template-columns: 1fr 1fr;
+    }
+}

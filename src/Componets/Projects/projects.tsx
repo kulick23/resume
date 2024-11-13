@@ -40,7 +40,7 @@ const Projects: React.FC = observer(() => {
                         View on Git
                     </a>
                     <p className="project__card--languages">
-                        Languages: {project.languages.join(", ")}
+                        Stack: {project.languages.join(", ")}
                     </p>
                 </div>
             ))}
