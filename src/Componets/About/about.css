@@ -1,11 +1,51 @@
-.about{
-    display: flex;
-    flex-direction: column;
-    width: 80%;
-    overflow-y: auto;
-    color: #323b4c;
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
 }
+
+.about {
+    height: 100vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    position: relative;
+    z-index: 1; 
+}
+
+.about__left, .about__right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.about h1 {
+    font-size: 3rem;
+    text-transform: uppercase;
+}
+
 .about__text {
-    text-align: left;
-    padding-left: 10px;
+    font-size: 0.9rem;
+    text-align: right;
+}
+
+.clouds {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+    z-index: -2; 
+}
+
+.lars {
+    position: absolute;
+    top: 10%;
+    left: 35%;
+    transform: translateX(-50%);
+    height: 80vh; 
+    z-index: -1; 
 }

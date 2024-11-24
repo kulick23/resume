@@ -1,7 +1,8 @@
 .experience {
-    padding: 20px;
-    max-width: 800px;
+    padding-top: 20px;
+    max-width: 100%;
     margin: 0 auto;
+    overflow-x: hidden;
 }
 
 .experience__title {
@@ -18,7 +19,7 @@
 }
 
 .experience__card {
-    padding: 15px;
+   
     border: 1px solid #e0e0e0;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -52,4 +53,11 @@
     .experience__container {
         grid-template-columns: 1fr 1fr;
     }
+}
+
+.experience-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
 }

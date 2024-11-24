@@ -1,48 +1,149 @@
-.header, .header__card, .header__pages{
+
+
+.header {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: radial-gradient(ellipse at bottom, black 0%, #090A0F 100%);
     display: flex;
     flex-direction: column;
-}
-.header{
-    max-height: 100%;
-    width: 20vw;
-    background-color: #323b4c;
-    color: white;
-}
-.header__card {
     align-items: center;
     justify-content: center;
-    gap: 5px;
+    height: 100vh;
+    width: 100vw;
+    text-align: center;
+    color: white; 
+    overflow: hidden;
+
 }
-.header__favicons{
+.header__card {
+    position: relative;
+    z-index: 2;
     display: flex;
-    flex-direction: row;
-    gap: 10px;
+    flex-direction: column;
+    align-items: flex-start;
 }
-.header__favicons--img{
-    height: 20px;
+.header__web {
+    display: flex;
+    align-items: center;
+    gap: 20px;  
 }
-.header__logo{
-    margin-top: 10px;
-    border-radius: 100%;
-    height: 100px;
-    width: 100px;
-}
-.header h1{
-    margin: 0;
-}
-.header__links,
-.header__links--active {
-    text-decoration: none;
-    color: inherit;
-    font-weight: normal;
-    background: none;
-    border: none;
-    padding: 10px;
+.header__favicons--img {
+    height: 8vh;
 }
 
-.header__links--active{
-    background-color: #2d3544;
+.header__card p,
+.header__card h1 {
+    margin: 0;
+    padding: 5px 0;
+    text-align: center;
 }
-.header__pages{
-    margin-top: 10px;
+.header__card h1 {
+font-size: 15vh;    
 }
+
+.header__favicons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+#stars, #stars2, #stars3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+}
+
+#stars {
+    width: 1px;
+    height: 1px;
+    background: transparent;
+    box-shadow: 
+        700px 700px #FFF,
+        1400px 1400px #FFF,
+        2100px 2100px #FFF,
+        250px 800px #FFF,
+        1200px 500px #FFF,
+        1800px 1300px #FFF,
+        300px 1500px #FFF,
+        1600px 900px #FFF;
+    animation: animStar 50s linear infinite;
+}
+
+#stars:after {
+    content: " ";
+    position: absolute;
+    top: 2000px;
+    width: 1px;
+    height: 1px;
+    background: transparent;
+    box-shadow: 700px 700px #FFF, 1400px 1400px #FFF, 2100px 2100px #FFF;
+}
+
+#stars2 {
+    width: 2px;
+    height: 2px;
+    background: transparent;
+    box-shadow: 
+        200px 200px #FFF,
+        400px 400px #FFF,
+        600px 600px #FFF,
+        800px 1200px #FFF,
+        1000px 1600px #FFF,
+        1400px 800px #FFF,
+        1800px 1400px #FFF,
+        2200px 600px #FFF;
+    animation: animStar 100s linear infinite;
+}
+#stars2:after {
+    content: " ";
+    position: absolute;
+    top: 2000px;
+    width: 2px;
+    height: 2px;
+    background: transparent;
+    box-shadow: 200px 200px #FFF, 400px 400px #FFF, 600px 600px #FFF;
+}
+
+#stars3 {
+    width: 3px;
+    height: 3px;
+    background: transparent;
+    box-shadow: 
+        100px 100px #FFF,
+        200px 200px #FFF,
+        300px 300px #FFF,
+        400px 800px #FFF,
+        500px 1600px #FFF,
+        600px 1200px #FFF,
+        700px 1800px #FFF,
+        800px 400px #FFF;
+    animation: animStar 150s linear infinite;
+}
+
+#stars3:after {
+    content: " ";
+    position: absolute;
+    top: 2000px;
+    width: 3px;
+    height: 3px;
+    background: transparent;
+    box-shadow: 100px 100px #FFF, 200px 200px #FFF, 300px 300px #FFF;
+}
+
+@keyframes animStar {
+    from {
+        transform: translateY(0px);
+    }
+    to {
+        transform: translateY(-2000px);
+    }
+}
+
+
+
+
+

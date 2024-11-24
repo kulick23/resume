@@ -1,22 +1,21 @@
+// experience.tsx
 import React from "react";
 import { observer } from "mobx-react-lite";
-import workExperienceStore from "../../Stores/experienceStore";
-import "./experience.css";
+import projectsStore from "../../Stores/projectsStore";
+import Laptop from "./laptop/laptop"; // Adjust the import path as needed
+import "./experience.css"; // Optional: your CSS file
 
 const Experience: React.FC = observer(() => {
+    const { projects } = projectsStore;
+
     return (
-        <div className="experience">
-            <h2 className="experience__title">Work Experience</h2>
-            <div className="experience__container">
-                {workExperienceStore.experiences.map((experience) => (
-                    <div className="experience__card" key={experience.id}>
-                        <h3 className="experience__company">{experience.company}</h3>
-                        <p className="experience__position">{experience.position}</p>
-                        <p className="experience__duration">{experience.duration}</p>
-                        <p className="experience__description">{experience.description}</p>
-                    </div>
-                ))}
-            </div>
+      <div className="experience">
+        <h1>My Projects</h1>
+        <div className="experience-container">
+            {projects.map((project) => (
+                <Laptop key={project.title} project={project} />
+            ))}
+        </div>
         </div>
     );
 });
