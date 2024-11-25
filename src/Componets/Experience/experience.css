@@ -2,9 +2,8 @@
     padding-top: 20px;
     max-width: 100%;
     margin: 0 auto;
-    overflow-x: hidden;
+    min-height: 100vh; /* Добавлено */
 }
-
 .experience__title {
     text-align: center;
     font-size: 2em;

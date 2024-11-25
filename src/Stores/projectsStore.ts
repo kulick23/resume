@@ -19,7 +19,7 @@ interface Project {
     title: string;
     link: string;
     repoLink: string;
-    languages: string[];
+    stack: string[];
     projectImg: string;
     mobileImg?: string;
 }
@@ -30,21 +30,21 @@ class ProjectsStore {
             title: "Food market",
             repoLink: "https://github.com/kulick23/food",
             link: "https://kulick23.github.io/food/",
-            languages: ["React", "TS", "Redux", "Firebase"],
+            stack: ["React", "TS", "Redux", "Firebase"],
             projectImg: foodImg,
         },
         {
             title: "ESDE",
             repoLink: "https://github.com/kulick23/esde",
             link: "https://kulick23.github.io/esde/",
-            languages: ["React", "JS"],
+            stack: ["React", "JS"],
             projectImg: esdeImg,
         },
         {
             title: "Telegram mini-app",
             repoLink: "https://github.com/kulick23/menu-tg",
             link: "t.me/gethoroscope_bot/menu",
-            languages: ["React", "TS"],
+            stack: ["React", "TS"],
             projectImg: cyberImg,
             mobileImg: cyberMobImg,
         },
@@ -52,14 +52,14 @@ class ProjectsStore {
             title: "Nike",
             repoLink: "https://github.com/kulick23/slider_nike",
             link: "https://kulick23.github.io/slider_nike/",
-            languages: ["JS", "HTML", "CSS", "Vite"],
+            stack: ["JS", "HTML", "CSS", "Vite"],
             projectImg: nikeImg,
         },
         {
             title: "Beats",
             repoLink: "https://github.com/kulick23/beats",
             link: "https://kulick23.github.io/beats/",
-            languages: ["JS", "HTML", "CSS", "Vite"],
+            stack: ["JS", "HTML", "CSS", "Vite"],
             projectImg: beatsImg,
             mobileImg: beatsMobImg,
         },
@@ -67,14 +67,14 @@ class ProjectsStore {
             title: "Simo",
             repoLink: "https://github.com/kulick23/simo",
             link: "https://kulick23.github.io/simo/",
-            languages: ["JS", "HTML", "CSS", "Vite"],
+            stack: ["JS", "HTML", "CSS", "Vite"],
             projectImg: musicImg,
         },
         {
             title: "Pet",
             repoLink: "https://github.com/kulick23/pet",
             link: "https://kulick23.github.io/pet/",
-            languages: ["HTML", "CSS"],
+            stack: ["HTML", "CSS"],
             projectImg: petImg,
             mobileImg: petMobImg,
         },
@@ -82,21 +82,21 @@ class ProjectsStore {
             title: "Bar",
             repoLink: "https://github.com/kulick23/project_bar",
             link: "https://kulick23.github.io/project_bar/",
-            languages: ["React", "JS", "MobX", "Firebase"],
+            stack: ["React", "JS", "MobX", "Firebase"],
             projectImg: barImg,
         },
         {
             title: "Compo",
             repoLink: "https://github.com/kulick23/compo",
             link: "https://kulick23.github.io/compo/",
-            languages: ["React", "JS", "CSS"],
+            stack: ["React", "JS", "CSS"],
             projectImg: compoImg,
         },
         {
             title: "Energo",
             repoLink: "https://github.com/kulick23/EnergyConstruction",
             link: "https://kulick23.github.io/EnergyConstruction/",
-            languages: ["HTML", "CSS", "OWL carousel"],
+            stack: ["HTML", "CSS", "OWL carousel"],
             projectImg: energoImg,
             mobileImg: energoMobImg,
         },
@@ -104,7 +104,7 @@ class ProjectsStore {
             title: "Qwery",
             repoLink: "https://github.com/kulick23/qwery",
             link: "https://kulick23.github.io/qwery/",
-            languages: ["HTML", "CSS"],
+            stack: ["HTML", "CSS"],
             projectImg: qweryImg,
         },
     ];

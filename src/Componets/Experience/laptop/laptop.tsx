@@ -6,7 +6,10 @@ import phonImg from "../../../Images/iphon.png";
 interface Project {
     title: string;
     projectImg: string;
-    mobileImg?: string; // Добавляем mobileImg
+    mobileImg?: string;
+    stack: string[];
+    link: string;
+    repoLink: string;
 }
 
 interface LaptopProps {
@@ -14,6 +17,14 @@ interface LaptopProps {
 }
 
 const Laptop: React.FC<LaptopProps> = ({ project }) => {
+    const handleProjectClick = () => {
+        window.open(project.link, "_blank");
+    };
+
+    const handleRepoClick = () => {
+        window.open(project.repoLink, "_blank");
+    };
+
     return (
         <div className="laptop-container">
             <img src={laptopImg} alt="Laptop" className="laptop-image" />
@@ -36,6 +47,13 @@ const Laptop: React.FC<LaptopProps> = ({ project }) => {
                     </div>
                 </div>
             )}
+            <div className="stack-info">
+                [{project.stack.join(", ")}]
+            </div>
+            <div className="laptop__buttons">
+                <button className="laptop__button1" onClick={handleProjectClick}></button>
+                <button className="laptop__button2" onClick={handleRepoClick}></button>
+            </div>
         </div>
     );
 };

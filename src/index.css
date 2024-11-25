@@ -6,10 +6,65 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+button {
+  height: 8vh;
+  width: 8vw;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
+  background-color: #323b4c;
+}
+
+button:hover {
+  box-shadow: .5px .5px 8vw #252525;
+}
+
+button::after {
+  height: 8vh;
+  width: 8vw;
+  background-color: #ffb3c1;
+  color: #323b4c;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  transform: translateY(8vh);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s ease-in-out;
+}
+
+button::before {
+  height: 8vh;
+  width: 8vw;
+  background-color: #323b4c;
+  color: #ffb3c1;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  transform: translateY(0px) scale(1.2);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s ease-in-out;
+}
+
+button:hover::after {
+  transform: translateY(0) scale(1.2);
+}
+
+button:hover::before {
+  transform: translateY(-8vh) scale(0) rotate(120deg);
 }
