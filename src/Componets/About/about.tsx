@@ -1,7 +1,7 @@
 import React from 'react'
 import './about.css'
-import clouds from '../../Images/clouds.png'
-import lars from '../../Images/lars.png'
+import clouds from '../../Assets/clouds.png'
+import lars from '../../Assets/lars.png'
 
 const About: React.FC = () => {
     return (

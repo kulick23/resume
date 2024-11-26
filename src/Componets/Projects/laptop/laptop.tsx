@@ -1,7 +1,7 @@
 import React from "react";
 import "./laptop.css";
-import laptopImg from "../../../Images/macbook.png";
-import phonImg from "../../../Images/iphon.png";
+import laptopImg from "../../../Assets/macbook.png";
+import phonImg from "../../../Assets/iphon.png";
 
 interface Project {
     title: string;
@@ -26,28 +26,28 @@ const Laptop: React.FC<LaptopProps> = ({ project }) => {
     };
 
     return (
-        <div className="laptop-container">
-            <img src={laptopImg} alt="Laptop" className="laptop-image" />
-            <div className="screen">
+        <div className="laptop">
+            <img src={laptopImg} alt="Laptop" className="laptop--image" />
+            <div className="laptop__screen">
                 <img
                     src={project.projectImg}
                     alt={project.title}
-                    className="site-preview"
+                    className="laptop--preview"
                 />
             </div>
             {project.mobileImg && (
-                <div className="phone-container">
-                    <img src={phonImg} alt="Phone" className="phone-image" />
-                    <div className="phone-screen">
+                <div className="laptop__phone">
+                    <img src={phonImg} alt="Phone" className="laptop__phone--image" />
+                    <div className="laptop__phone--screen">
                         <img
                             src={project.mobileImg}
                             alt={`${project.title} mobile`}
-                            className="site-preview"
+                            className="laptop--preview"
                         />
                     </div>
                 </div>
             )}
-            <div className="stack-info">
+            <div className="laptop__stack">
                 [{project.stack.join(", ")}]
             </div>
             <div className="laptop__buttons">

@@ -1,11 +1,9 @@
-
-
 .about {
-    min-height: 100vh; /* Изменено с height на min-height */
+    min-height: 100vh; 
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
+    color: var(--stars);
     text-align: center;
     position: relative;
     z-index: 1; 
@@ -22,6 +20,7 @@
 .about h1 {
     font-size: 3rem;
     text-transform: uppercase;
+    color: var(--stars);
 }
 
 .about__text {

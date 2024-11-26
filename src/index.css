@@ -1,5 +1,17 @@
+:root {
+  --background-space: black;
+  --background-space-opacity: rgba(0, 0, 0, 0.1);
+  --background-second-space: #090A0F;
+  --stars: #FFF;
+  --background-dark: #323b4c;
+  --background-colory: #ffb3c1;
+  --text-graphite-light: #888;
+  --text-graphite-light-opacity: rgba(136, 136, 136, 0.3);
+  --text-graphite-dark: #333; 
+}
+
 body {
-  background: linear-gradient(180deg, #323b4c, #ffb3c1);
+  background: linear-gradient(180deg, var(--background-dark), var(--background-colory));
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -13,27 +25,31 @@ code {
     monospace;
 }
 
+h1, h2{
+  color: var(--text-graphite-dark);
+}
+
 button {
   height: 8vh;
   width: 8vw;
-  border: none;
+  border: 1px solid var(--text-graphite-light);
   border-radius: 8px;
   cursor: pointer;
   position: relative;
   overflow: hidden;
   transition: all 0.5s ease-in-out;
-  background-color: #323b4c;
+  background-color: var(--background-dark);
 }
 
 button:hover {
-  box-shadow: .5px .5px 8vw #252525;
+  box-shadow: .5px .5px 8vw var(--text-graphite-light);
 }
 
 button::after {
   height: 8vh;
   width: 8vw;
-  background-color: #ffb3c1;
-  color: #323b4c;
+  background-color: var(--background-colory);
+  color: var(--background-dark);
   position: absolute;
   top: 0%;
   left: 0%;
@@ -48,8 +64,8 @@ button::after {
 button::before {
   height: 8vh;
   width: 8vw;
-  background-color: #323b4c;
-  color: #ffb3c1;
+  background-color: var(--background-dark);
+  color: var(--background-colory);
   position: absolute;
   top: 0%;
   left: 0%;

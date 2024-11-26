@@ -1,17 +1,15 @@
-
-
 .header {
     margin: 0;
     padding: 0;
-    background: radial-gradient(ellipse at bottom, black 0%, #090A0F 100%);
+    background: radial-gradient(ellipse at bottom, var(--background-space) 0%, var(--background-second-space) 100%);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 100vh; /* Изменено с height на min-height */
+    min-height: 100vh; 
     width: 100vw;
     text-align: center;
-    color: white; 
+    color: var(--stars); 
     overflow: hidden;
 }
 .header__card {
@@ -30,14 +28,15 @@
     height: 8vh;
 }
 
-.header__card p,
-.header__card h1 {
+.header__text{
     margin: 0;
     padding: 5px 0;
     text-align: center;
 }
+
 .header__card h1 {
-font-size: 15vh;    
+    font-size: 15vh;   
+    color: var(--stars); 
 }
 
 .header__favicons {
@@ -60,25 +59,25 @@ font-size: 15vh;
     height: 1px;
     background: transparent;
     box-shadow: 
-        700px 700px #FFF,
-        1400px 1400px #FFF,
-        2100px 2100px #FFF,
-        250px 800px #FFF,
-        1200px 500px #FFF,
-        1800px 1300px #FFF,
-        300px 1500px #FFF,
-        1600px 900px #FFF;
+        700px 700px var(--stars),
+        1400px 1400px var(--stars),
+        2100px 2100px var(--stars),
+        250px 800px var(--stars),
+        1200px 500px var(--stars),
+        1800px 1300px var(--stars),
+        300px 1500px var(--stars),
+        1600px 900px var(--stars);
     animation: animStar 50s linear infinite;
 }
 
 #stars:after {
     content: " ";
     position: absolute;
-    top: 2000px;
+    top: 120vh;
     width: 1px;
     height: 1px;
     background: transparent;
-    box-shadow: 700px 700px #FFF, 1400px 1400px #FFF, 2100px 2100px #FFF;
+    box-shadow: 700px 700px var(--stars), 1400px 1400px var(--stars), 2100px 2100px var(--stars);
 }
 
 #stars2 {
@@ -86,24 +85,24 @@ font-size: 15vh;
     height: 2px;
     background: transparent;
     box-shadow: 
-        200px 200px #FFF,
-        400px 400px #FFF,
-        600px 600px #FFF,
-        800px 1200px #FFF,
-        1000px 1600px #FFF,
-        1400px 800px #FFF,
-        1800px 1400px #FFF,
-        2200px 600px #FFF;
+        200px 200px var(--stars),
+        400px 400px var(--stars),
+        600px 600px var(--stars),
+        800px 1200px var(--stars),
+        1000px 1600px var(--stars),
+        1400px 800px var(--stars),
+        1800px 1400px var(--stars),
+        2200px 600px var(--stars);
     animation: animStar 100s linear infinite;
 }
 #stars2:after {
     content: " ";
     position: absolute;
-    top: 2000px;
+    top: 120vh;
     width: 2px;
     height: 2px;
     background: transparent;
-    box-shadow: 200px 200px #FFF, 400px 400px #FFF, 600px 600px #FFF;
+    box-shadow: 200px 200px var(--stars), 400px 400px var(--stars), 600px 600px var(--stars);
 }
 
 #stars3 {
@@ -111,25 +110,25 @@ font-size: 15vh;
     height: 3px;
     background: transparent;
     box-shadow: 
-        100px 100px #FFF,
-        200px 200px #FFF,
-        300px 300px #FFF,
-        400px 800px #FFF,
-        500px 1600px #FFF,
-        600px 1200px #FFF,
-        700px 1800px #FFF,
-        800px 400px #FFF;
+        100px 100px var(--stars),
+        200px 200px var(--stars),
+        300px 300px var(--stars),
+        400px 800px var(--stars),
+        500px 1600px var(--stars),
+        600px 1200px var(--stars),
+        700px 1800px var(--stars),
+        800px 400px var(--stars);
     animation: animStar 150s linear infinite;
 }
 
 #stars3:after {
     content: " ";
     position: absolute;
-    top: 2000px;
+    top: 120vh;
     width: 3px;
     height: 3px;
     background: transparent;
-    box-shadow: 100px 100px #FFF, 200px 200px #FFF, 300px 300px #FFF;
+    box-shadow: 100px 100px var(--stars), 200px 200px var(--stars), 300px 300px var(--stars);
 }
 
 @keyframes animStar {

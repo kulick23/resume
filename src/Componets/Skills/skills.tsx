@@ -6,14 +6,14 @@ import './skills.css';
 const Skills: React.FC = observer(() => {
     return (
         <div className="skills">
-            <h2>My Skills</h2>
+            <h1>My Skills</h1>
             <div className="skills__categories">
                 {Object.entries(skillsStore.skills).map(([category, skills]) => (
-                    <div key={category} className="skills__categories--category">
-                        <h3 className="skills__categories--title">{category}</h3>
-                        <ul className="skills__categories--list">
+                    <div key={category} className="skills__category">
+                        <h3 className="skills__category--title">{category}</h3>
+                        <ul className="skills__category--list">
                             {skills.map((skill) => (
-                                <li key={skill} className="skills__categories--item">{skill}</li>
+                                <li key={skill} className="skills__category--item">{skill}</li>
                             ))}
                         </ul>
                     </div>

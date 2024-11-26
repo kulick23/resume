@@ -1,19 +1,19 @@
 import { makeAutoObservable } from "mobx";
-import barImg from '../Images/Screenshot/bar.png';
-import beatsImg from '../Images/Screenshot/beats.png';
-import beatsMobImg from '../Images/Screenshot/beatsmob.png';
-import compoImg from '../Images/Screenshot/compo.png';
-import cyberImg from '../Images/Screenshot/cyber.png';
-import cyberMobImg from '../Images/Screenshot/cybermob.jpg';
-import energoImg from '../Images/Screenshot/energo.png';
-import energoMobImg from '../Images/Screenshot/energomob.png';
-import esdeImg from '../Images/Screenshot/esde.png';
-import foodImg from '../Images/Screenshot/food.png';
-import musicImg from '../Images/Screenshot/music.png';
-import nikeImg from '../Images/Screenshot/nike.png';
-import petImg from '../Images/Screenshot/pet.png';
-import petMobImg from '../Images/Screenshot/petmob.png';
-import qweryImg from '../Images/Screenshot/qwery.png';
+import barImg from '../Assets/Screenshot/bar.png';
+import beatsImg from '../Assets/Screenshot/beats.png';
+import beatsMobImg from '../Assets/Screenshot/beatsmob.png';
+import compoImg from '../Assets/Screenshot/compo.png';
+import cyberImg from '../Assets/Screenshot/cyber.png';
+import cyberMobImg from '../Assets/Screenshot/cybermob.jpg';
+import energoImg from '../Assets/Screenshot/energo.png';
+import energoMobImg from '../Assets/Screenshot/energomob.png';
+import esdeImg from '../Assets/Screenshot/esde.png';
+import foodImg from '../Assets/Screenshot/food.png';
+import musicImg from '../Assets/Screenshot/music.png';
+import nikeImg from '../Assets/Screenshot/nike.png';
+import petImg from '../Assets/Screenshot/pet.png';
+import petMobImg from '../Assets/Screenshot/petmob.png';
+import qweryImg from '../Assets/Screenshot/qwery.png';
 
 interface Project {
     title: string;
@@ -34,13 +34,6 @@ class ProjectsStore {
             projectImg: foodImg,
         },
         {
-            title: "ESDE",
-            repoLink: "https://github.com/kulick23/esde",
-            link: "https://kulick23.github.io/esde/",
-            stack: ["React", "JS"],
-            projectImg: esdeImg,
-        },
-        {
             title: "Telegram mini-app",
             repoLink: "https://github.com/kulick23/menu-tg",
             link: "t.me/gethoroscope_bot/menu",
@@ -48,6 +41,15 @@ class ProjectsStore {
             projectImg: cyberImg,
             mobileImg: cyberMobImg,
         },
+        {
+            title: "Bar",
+            repoLink: "https://github.com/kulick23/project_bar",
+            link: "https://kulick23.github.io/project_bar/",
+            stack: ["React", "JS", "MobX", "Firebase"],
+            projectImg: barImg,
+        },
+       
+     
         {
             title: "Nike",
             repoLink: "https://github.com/kulick23/slider_nike",
@@ -79,19 +81,14 @@ class ProjectsStore {
             mobileImg: petMobImg,
         },
         {
-            title: "Bar",
-            repoLink: "https://github.com/kulick23/project_bar",
-            link: "https://kulick23.github.io/project_bar/",
-            stack: ["React", "JS", "MobX", "Firebase"],
-            projectImg: barImg,
+            title: "ESDE",
+            repoLink: "https://github.com/kulick23/esde",
+            link: "https://kulick23.github.io/esde/",
+            stack: ["React", "JS"],
+            projectImg: esdeImg,
         },
-        {
-            title: "Compo",
-            repoLink: "https://github.com/kulick23/compo",
-            link: "https://kulick23.github.io/compo/",
-            stack: ["React", "JS", "CSS"],
-            projectImg: compoImg,
-        },
+       
+    
         {
             title: "Energo",
             repoLink: "https://github.com/kulick23/EnergyConstruction",
@@ -99,6 +96,13 @@ class ProjectsStore {
             stack: ["HTML", "CSS", "OWL carousel"],
             projectImg: energoImg,
             mobileImg: energoMobImg,
+        },
+        {
+            title: "Compo",
+            repoLink: "https://github.com/kulick23/compo",
+            link: "https://kulick23.github.io/compo/",
+            stack: ["React", "JS", "CSS"],
+            projectImg: compoImg,
         },
         {
             title: "Qwery",

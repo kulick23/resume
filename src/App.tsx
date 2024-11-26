@@ -2,9 +2,10 @@ import React from 'react';
 import './App.css';
 import About from "./Componets/About/about";
 import Skills from "./Componets/Skills/skills";
-// import Project from "./Componets/Projects/projects";
+import Project from "./Componets/Projects/project";
 import Experience from "./Componets/Experience/experience";
 import Header from './Componets/Header/header';
+import Footer from './Componets/Footer/footer';
 
 function App() {
   return (
@@ -12,7 +13,9 @@ function App() {
       <Header />
       <About />
       <Skills />
+      <Project />
       <Experience />
+      <Footer />
     </div>
   );
 }

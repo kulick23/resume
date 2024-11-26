@@ -1,50 +1,45 @@
 .experience {
-    padding-top: 20px;
-    max-width: 100%;
+    min-height: 100vh;
     margin: 0 auto;
-    min-height: 100vh; /* Добавлено */
-}
-.experience__title {
-    text-align: center;
-    font-size: 2em;
-    color: #333;
-    margin-bottom: 20px;
 }
 
+
 .experience__container {
+    margin-top: 8vh;
     display: grid;
     grid-template-columns: 1fr;
     gap: 20px;
 }
 
 .experience__card {
-   
-    border: 1px solid #e0e0e0;
+    padding: 15px;
+    border: 1px solid var(--text-graphite-light);
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
+    box-shadow: 0 4px 8px var(--background-space-opacity);
+    background-color: var(--background-dark);
+    width: 30vw;
 }
 
 .experience__company {
     font-size: 1.2em;
-    color: #0070f3;
+    color: var(--background-colory);
     margin: 0 0 5px;
 }
 
 .experience__position {
     font-weight: bold;
-    color: #333;
+    color: var(--stars);
     margin: 5px 0;
 }
 
 .experience__duration {
-    color: #888;
+    color: var(--text-graphite-light);
     font-size: 0.9em;
     margin-bottom: 10px;
 }
 
 .experience__description {
-    color: #666;
+    color: var(--stars);
     line-height: 1.5;
 }
 
@@ -52,11 +47,4 @@
     .experience__container {
         grid-template-columns: 1fr 1fr;
     }
-}
-
-.experience-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
 }

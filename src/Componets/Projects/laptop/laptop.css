@@ -1,14 +1,14 @@
-.laptop-container {
+.laptop {
     position: relative;
 }
 
-.laptop-image {
+.laptop--image {
     width: 30vw;
     height: 70vh;
     z-index: 1;
 }
 
-.screen {
+.laptop__screen {
     position: absolute;
     top: 14vh;
     left: 4.7vw;
@@ -20,7 +20,7 @@
     align-items: center;
 }
 
-.site-preview {
+.laptop--preview {
     width: 100%;
     height: 100%;
     object-fit: fill; 
@@ -28,7 +28,7 @@
     z-index: -1;
 }
 
-.phone-container {
+.laptop__phone {
     position: absolute;
     top: 18vh;
     left: 18vw;
@@ -37,12 +37,12 @@
     z-index: 2;
 }
 
-.phone-image {
+.laptop__phone--image {
     height: 35vh;
     width: 15.5vw;
 }
 
-.phone-screen {
+.laptop__phone--screen {
     position: absolute;
     top: 4.7vh;
     left: 5vw;
@@ -55,11 +55,11 @@
     z-index: -1;
 }
 
-.stack-info {
+.laptop__stack {
     position: relative;
     top: -19vh;
     font-size: 14px;
-    color: #333;
+    color: var(--text-graphite-dark);
 }
 
 .laptop__buttons {

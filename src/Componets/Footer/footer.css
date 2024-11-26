@@ -1,0 +1,15 @@
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; 
+}
+
+.footer-content {
+    text-align: center;
+}
+
+.footer-image {
+    max-width: 20vh; 
+    margin-bottom: 10px;
+}
