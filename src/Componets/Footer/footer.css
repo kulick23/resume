@@ -5,11 +5,26 @@
     min-height: 100vh; 
 }
 
+.footer__content {
+    text-align: center;
+}@keyframes wobble {
+    0%, 100% {
+        transform: rotate(-3deg);
+    }
+    50% {
+        transform: rotate(3deg);
+    }
+}
+
+
 .footer-content {
     text-align: center;
 }
 
-.footer-image {
+.footer__image {
     max-width: 20vh; 
     margin-bottom: 10px;
+    animation: wobble 1s infinite;
+    cursor: pointer;
 }
+

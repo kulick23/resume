@@ -14,10 +14,10 @@ const Project: React.FC = observer(() => {
 
     return (
       <div className="project">
-        <h1 className="project__title">My Projects</h1>
+        <h1 className="project__title" data-aos="fade-up">My Projects</h1>
         <div className="project__container">
             {rows.map((row, rowIndex) => (
-                <div key={rowIndex} className="project__row">
+                <div key={rowIndex} className="project__row" data-aos="fade-up">
                     {row.map((project) => (
                         <Laptop key={project.title} project={project} />
                     ))}

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 import About from "./Componets/About/about";
 import Skills from "./Componets/Skills/skills";
@@ -7,12 +7,21 @@ import Experience from "./Componets/Experience/experience";
 import Header from './Componets/Header/header';
 import Footer from './Componets/Footer/footer';
 import { Element, scroller } from 'react-scroll';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 function App() {
   const sections = ['header', 'about', 'skills', 'projects', 'experience', 'footer'];
   const [currentSectionIndex, setCurrentSectionIndex] = useState(0);
   const [isScrolling, setIsScrolling] = useState(false);
   const [currentProjectRow, setCurrentProjectRow] = useState(0);
+
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
+  }, []);
 
   const scrollToSection = (index: number) => {
     const section = sections[index];
@@ -74,22 +83,22 @@ function App() {
   return (
     <div className="App">
       <Element name="header">
-        <Header />
+        <Header data-aos="fade-down" />
       </Element>
       <Element name="about">
-        <About />
+        <About data-aos="fade-right" />
       </Element>
       <Element name="skills">
-        <Skills />
+        <Skills data-aos="fade-left" />
       </Element>
       <Element name="projects">
-        <Project />
+        <Project data-aos="fade-up" />
       </Element>
       <Element name="experience">
-        <Experience />
+        <Experience data-aos="zoom-in" />
       </Element>
       <Element name="footer">
-        <Footer />
+        <Footer data-aos="zoom-out" />
       </Element>
     </div>
   );
