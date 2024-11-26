@@ -1,3 +1,23 @@
+@font-face {
+  font-family: 'CodeFont'; 
+  src: url('../src/Assets/Fonts/Code7X5Regular-ypBe.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'MainFont'; 
+  src: url('../src/Assets/Fonts/Arev.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'TitleFont'; 
+  src: url('../src/Assets/Fonts/HURDEI.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+}
+
+
 :root {
   --background-space: black;
   --background-space-opacity: rgba(0, 0, 0, 0.1);
@@ -8,6 +28,9 @@
   --text-graphite-light: #888;
   --text-graphite-light-opacity: rgba(136, 136, 136, 0.3);
   --text-graphite-dark: #333; 
+  --font-code: 'CodeFont', Arial, sans-serif;
+  --font-web: 'TitleFont', Arial, sans-serif;
+  --font-web: 'MainFont', Arial, sans-serif;
 }
 
 body {
@@ -27,11 +50,17 @@ code {
 
 h1, h2{
   color: var(--text-graphite-dark);
+  font-family: var(--MainFont);
+}
+p{
+  font-family: var(--MainFont);
+
 }
 
 button {
   height: 8vh;
   width: 8vw;
+  font-family: var(--MainFont);
   border: 1px solid var(--text-graphite-light);
   border-radius: 8px;
   cursor: pointer;

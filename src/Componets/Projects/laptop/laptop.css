@@ -58,7 +58,8 @@
 .laptop__stack {
     position: relative;
     top: -19vh;
-    font-size: 14px;
+    font-family: var(--font-code);
+    font-size: 0.6em;
     color: var(--text-graphite-dark);
 }
 

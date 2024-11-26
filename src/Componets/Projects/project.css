@@ -3,21 +3,22 @@
     margin: 0 auto;
     min-height: 100vh; 
 }
-.project__title{
+.project__title {
     position: relative;
     top: 5vh;
 }
 
 .project__container {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     gap: 20px;
     justify-content: center;
 }
 
-@media (min-width: 768px) {
-    .experience__container {
-        grid-template-columns: 1fr 1fr;
-    }
+.project__row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    scroll-margin-top: 15vh; 
 }
-

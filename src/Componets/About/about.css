@@ -21,6 +21,8 @@
     font-size: 3rem;
     text-transform: uppercase;
     color: var(--stars);
+    font-family: var(--font-code);
+    -webkit-text-stroke: 2px var(--text-graphite-dark);
 }
 
 .about__text {

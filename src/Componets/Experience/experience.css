@@ -8,16 +8,18 @@
     margin-top: 8vh;
     display: grid;
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 10px;
+    place-items: center; 
+    place-content: center; 
 }
 
 .experience__card {
-    padding: 15px;
+    padding: 10px;
     border: 1px solid var(--text-graphite-light);
     border-radius: 8px;
     box-shadow: 0 4px 8px var(--background-space-opacity);
     background-color: var(--background-dark);
-    width: 30vw;
+    width: 45vw;
 }
 
 .experience__company {
@@ -27,14 +29,16 @@
 }
 
 .experience__position {
-    font-weight: bold;
-    color: var(--stars);
+    font-family: var(--font-web);
     margin: 5px 0;
+    font-size: 1.3em;
+    color: var(--stars);
 }
 
 .experience__duration {
     color: var(--text-graphite-light);
-    font-size: 0.9em;
+    font-size: 0.8em;
+    font-family: var(--font-code);
     margin-bottom: 10px;
 }
 
