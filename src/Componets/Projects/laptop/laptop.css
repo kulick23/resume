@@ -82,3 +82,46 @@
 .laptop__button2::before{
   content: "View </>";
 }
+
+
+@media (max-width: 768px) {
+  .laptop--image {
+    width: 80vw;
+    height: 50vh;
+}
+.laptop__screen {
+  top: 10vh;
+  left: 23vw;
+  width: 55vw;
+  height: 22vh;
+}
+.laptop__phone {
+  top: 12vh;
+  left: 60vw;
+
+}
+.laptop__phone--image {
+  height: 25vh;
+  width: 35vw;
+}
+.laptop__phone--screen {
+  top: 3.5vh;
+  left: 11vw;
+  width: 13vw;
+  height: 18vh;
+}
+.laptop__stack {
+  top: -13.7vh;
+}
+
+.laptop__button1::after,
+.laptop__button1::before,
+.laptop__button2::after,
+.laptop__button2::before {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 5vh;
+  width: 20vw;
+}
+}

@@ -1,3 +1,4 @@
+/* Основные стили */
 .header {
     margin: 0;
     padding: 0;
@@ -143,6 +144,12 @@
 }
 
 
-
-
-
+@media (max-width: 768px) {
+    .header__card h1 {
+        font-size: 6vh;
+    }
+    .header__favicons--img {
+        height: 5vh;
+    }
+   
+}

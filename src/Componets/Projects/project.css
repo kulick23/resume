@@ -22,3 +22,11 @@
     justify-content: center;
     scroll-margin-top: 15vh; 
 }
+
+@media (max-width: 768px) {
+    .project__row {
+        display: grid;
+        grid-template-columns: 1fr;
+    
+    }
+}

@@ -31,7 +31,7 @@ const Footer: React.FC = () => {
                     onClick={scrollToTop} 
                 />
                 <h1 data-aos="fade-up">Thank you for watching</h1>
-                <h2 data-aos="fade-up">Looking forward to working together</h2>
+                <h2 data-aos="fade-up">Let's connect and explore how we can create impactful digital solutions together</h2>
             </div>
         </footer>
     );

@@ -113,3 +113,19 @@ button:hover::after {
 button:hover::before {
   transform: translateY(-8vh) scale(0) rotate(120deg);
 }
+@media (max-width: 768px) {
+  button {
+    height: 5vh;
+    width: 20vw;
+    font-family: var(--MainFont);
+    border: 1px solid var(--text-graphite-light);
+    border-radius: 8px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+    background-color: var(--background-dark);
+  }
+  
+ 
+}

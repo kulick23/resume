@@ -32,7 +32,7 @@
 
 .clouds {
     position: absolute;
-    bottom: 0;
+    bottom: 1px;
     width: 100%;
     height: auto;
     z-index: -2; 
@@ -45,4 +45,35 @@
     transform: translateX(-50%);
     height: 80vh; 
     z-index: -1; 
+}
+@media (max-width: 768px) {
+    .about {
+     flex-direction: column;
+     min-height: 100vh; 
+     justify-content: flex-start;
+    }
+    .about__left, .about__right {
+        display: block;
+        flex: none;
+        justify-content: center;
+        align-items: center;
+        padding: 0px;
+        margin-top: 0px;
+
+    }
+    .lars {
+        position: absolute;
+        top: 50%;
+        left: 35%;
+        transform: translateX(-50%);
+        height: 50vh; 
+        z-index: -1; 
+    }
+    
+    .about__text {
+        font-size: 0.9rem;
+        text-align: center;
+ 
+    }
+    
 }

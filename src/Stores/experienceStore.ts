@@ -5,7 +5,7 @@ class WorkExperienceStore {
         {
             id: 1,
             company: "CyberX",
-            position: "Administrator/Programming",
+            position: "Administrator / Programming",
             duration: "August 2024 - November 2024",
             description: "Work with customers, creating game servers, frontend",
         },
