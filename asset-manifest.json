@@ -1,18 +1,39 @@
 {
   "files": {
-    "main.css": "/resume/static/css/main.773d4efc.css",
-    "main.js": "/resume/static/js/main.81862f7e.js",
-    "static/media/re.jpg": "/resume/static/media/re.90118cce30ffaab97088.jpg",
+    "main.css": "/resume/static/css/main.c1f82bef.css",
+    "main.js": "/resume/static/js/main.34c1a0e4.js",
+    "static/media/clouds.png": "/resume/static/media/clouds.4691383c6f3852cbd6d8.png",
+    "static/media/qwery.png": "/resume/static/media/qwery.31d5da3b8a8bb69a1a6e.png",
+    "static/media/energo.png": "/resume/static/media/energo.3d32bf6b5bba4eb03d48.png",
+    "static/media/macbook.png": "/resume/static/media/macbook.45c96485db9c83426a3b.png",
+    "static/media/nike.png": "/resume/static/media/nike.019ab9f4a47a9c8087c4.png",
+    "static/media/cyber.png": "/resume/static/media/cyber.f9ff333536992102058e.png",
+    "static/media/beats.png": "/resume/static/media/beats.952b186bd370668057a5.png",
+    "static/media/esde.png": "/resume/static/media/esde.983a8eeb990bfe2cb8d7.png",
+    "static/media/lars.png": "/resume/static/media/lars.0d62678ce7eb2afa198f.png",
+    "static/media/food.png": "/resume/static/media/food.34391df4c219da7d4df9.png",
+    "static/media/Arev.ttf": "/resume/static/media/Arev.9d78e96f4660012eb57d.ttf",
+    "static/media/music.png": "/resume/static/media/music.b1de7fa6fcd733a3ba90.png",
+    "static/media/bar.png": "/resume/static/media/bar.86716088c2aa3e93c73f.png",
+    "static/media/pet.png": "/resume/static/media/pet.93ac30496e61726fab24.png",
+    "static/media/nabo.png": "/resume/static/media/nabo.1d3eec1a3967a1976b06.png",
+    "static/media/compo.png": "/resume/static/media/compo.1f177fa93f5fa80a24ee.png",
+    "static/media/beatsmob.png": "/resume/static/media/beatsmob.d8f5b90f4662a2fc2535.png",
+    "static/media/energomob.png": "/resume/static/media/energomob.1ef750966afb88ef3403.png",
+    "static/media/cybermob.jpg": "/resume/static/media/cybermob.2da43a12c1ab554e8d13.jpg",
+    "static/media/HURDEI.ttf": "/resume/static/media/HURDEI.06ad8e79da1056c688cb.ttf",
+    "static/media/petmob.png": "/resume/static/media/petmob.a9ecd8a22b43218b7e33.png",
+    "static/media/Code7X5Regular-ypBe.ttf": "/resume/static/media/Code7X5Regular-ypBe.cd31d7dcd21af86b921a.ttf",
+    "static/media/iphon.png": "/resume/static/media/iphon.7608662d556aedfc4e6e.png",
     "static/media/github.svg": "/resume/static/media/github.3678c639f9cf13eca5630d2f3017c8aa.svg",
-    "static/media/gitlab.svg": "/resume/static/media/gitlab.d76777bf149a85253be5e08215257bdc.svg",
     "static/media/telegram.svg": "/resume/static/media/telegram.0cc10fc8a571b48a0631dbbdb041d3f1.svg",
-    "index.html": "/resume/index.html",
     "static/media/linkedin.svg": "/resume/static/media/linkedin.144ac453287cb54a6f35b940302da4ff.svg",
-    "main.773d4efc.css.map": "/resume/static/css/main.773d4efc.css.map",
-    "main.81862f7e.js.map": "/resume/static/js/main.81862f7e.js.map"
+    "index.html": "/resume/index.html",
+    "main.c1f82bef.css.map": "/resume/static/css/main.c1f82bef.css.map",
+    "main.34c1a0e4.js.map": "/resume/static/js/main.34c1a0e4.js.map"
   },
   "entrypoints": [
-    "static/css/main.773d4efc.css",
-    "static/js/main.81862f7e.js"
+    "static/css/main.c1f82bef.css",
+    "static/js/main.34c1a0e4.js"
   ]
 }
