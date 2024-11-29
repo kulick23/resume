@@ -33,7 +33,7 @@ function App() {
   };
 
   const handleWheel = (event: WheelEvent) => {
-    if (window.innerWidth <= 768) return; // Disable scroll on mobile devices
+    if (window.innerWidth <= 768) return; 
 
     if (isScrolling) return;
 

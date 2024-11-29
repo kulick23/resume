@@ -1,0 +1,46 @@
+{
+    "header": {
+      "greeting": "CZEŚĆ, nazywam się Danila Kulinkovich",
+      "web": "WEB",
+      "developer": "DEWELOPER",
+      "email": "danek200326@gmail.com"
+    },
+    "about": {
+      "description": "Jako wszechstronny Web Developer, łączę unikalne umiejętności i doświadczenia obejmujące projektowanie UI/UX, rozwój front-end z JS/React oraz zarządzanie bazami danych za pomocą SQL.\nMoje umiejętności obejmują Git, C/C++, OOP, Linux i wiele innych, co zapewnia wszechstronne rozwiązania dla różnych wyzwań w rozwoju stron internetowych."
+    },
+    "projects": {
+      "title": "Moje Projekty"
+    },
+    "experience": {
+      "title": "Doświadczenie IT",
+      "experiences": {
+       "1": {
+        "description": "Praca z klientami, tworzenie serwerów gier, frontend",
+        "position": "Administrator / Programowanie"
+      },
+      "2": {
+        "description": "Praca z klientami, umiejętności miękkie, umiejętności programowania, projekt na React",
+        "position": "Laboratorium Studenckie"
+      },
+      "3": {
+        "description": "Projekt na React",
+        "position": "Hackaton"
+      },
+      "4": {
+        "description": "Projekt na JS",
+        "position": "Hackaton"
+      }
+      }
+    },
+    "skills": {
+      "title": "Moje Umiejętności",
+      "techskills": "Umiejętności Techniczne",
+      "softskills": "Umiejętności Miękkie",
+      "tools": "Narzędzia",
+      "languages": "Języki"
+    },
+    "footer": {
+      "thankYou": "Dziękuję za oglądanie",
+      "connect": "Połączmy się i sprawdźmy, jak możemy razem tworzyć skuteczne rozwiązania cyfrowe"
+    }
+  }

@@ -4,8 +4,11 @@ import NaboImg from '../../Assets/nabo.png';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { scroller } from 'react-scroll';
+import { useTranslation } from 'react-i18next';
 
 const Footer: React.FC = () => {
+    const { t } = useTranslation();
+
     useEffect(() => {
         AOS.init({
             duration: 1000,
@@ -30,8 +33,8 @@ const Footer: React.FC = () => {
                     data-aos="fade-up" 
                     onClick={scrollToTop} 
                 />
-                <h1 data-aos="fade-up">Thank you for watching</h1>
-                <h2 data-aos="fade-up">Let's connect and explore how we can create impactful digital solutions together</h2>
+                <h1 data-aos="fade-up">{t('footer.thankYou')}</h1>
+                <h2 data-aos="fade-up">{t('footer.connect')}</h2>
             </div>
         </footer>
     );

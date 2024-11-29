@@ -1,9 +1,12 @@
-import React from 'react'
-import './about.css'
-import clouds from '../../Assets/clouds.png'
-import lars from '../../Assets/lars.png'
+import React from 'react';
+import './about.css';
+import clouds from '../../Assets/clouds.png';
+import lars from '../../Assets/lars.png';
+import { useTranslation } from 'react-i18next';
 
 const About: React.FC = () => {
+    const { t } = useTranslation();
+
     return (
         <div className='about'>
             <div className='about__left'>
@@ -11,8 +14,12 @@ const About: React.FC = () => {
             </div>
             <div className='about__right'>
                 <p className='about__text'>
-                    As a multifaceted Web Developer, I bring a unique blend of skills and experiences that span across UI/UX design, front-end development with JS/React, and database management using SQL.<br />
-                    My proficiency extends to Git, C/C++, OOP, Linux, and more, ensuring versatile solutions for diverse web development challenges.<br />
+                    {t('about.description').split('\n').map((line: string, index: number) => (
+                        <span key={index}>
+                            {line}
+                            <br />
+                        </span>
+                    ))}
                 </p>
             </div>
             <img src={clouds} alt="Clouds" className='clouds' />
@@ -21,4 +28,4 @@ const About: React.FC = () => {
     )
 }
 
-export default About
+export default About;

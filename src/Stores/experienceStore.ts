@@ -5,32 +5,31 @@ class WorkExperienceStore {
         {
             id: 1,
             company: "CyberX",
-            position: "Administrator / Programming",
+            position: "experience.experiences.1.position",
             duration: "August 2024 - November 2024",
-            description: "Work with customers, creating game servers, frontend",
+            description: "experience.experiences.1.description",
         },
         {
             id: 2,
             company: "Epam ESDE",
-            position: "Student Lab",
+            position: "experience.experiences.2.position",
             duration: "December 2023 - March 2024",
-            description: "Work with customers, Soft skills, Programing skills, React project",
+            description: "experience.experiences.2.description",
         },
         {
             id: 3,
             company: "Epam ESDE",
-            position: "Hackathon",
+            position: "experience.experiences.3.position",
             duration: "April 2023",
-            description: "React project",
+            description: "experience.experiences.3.description",
         },
         {
             id: 4,
             company: "Epam ESDE",
-            position: "Hackathon",
+            position: "experience.experiences.4.position",
             duration: "February 2023",
-            description: "JS project",
+            description: "experience.experiences.4.description",
         },
-      
     ];
 
     constructor() {
