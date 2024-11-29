@@ -6,7 +6,8 @@ import Project from "./Componets/Projects/project";
 import Experience from "./Componets/Experience/experience";
 import Header from './Componets/Header/header';
 import Footer from './Componets/Footer/footer';
-import { Element, scroller } from 'react-scroll';
+import SidebarNav from './Componets/Sidebar/Sidebar'; 
+import { Element, scroller, Events } from 'react-scroll';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -21,7 +22,27 @@ function App() {
       duration: 1000,
       once: true,
     });
-  }, []);
+
+    Events.scrollEvent.register('end', function(to, element) {
+      const index = sections.indexOf(to);
+      if (index !== -1) {
+        setCurrentSectionIndex(index);
+        setCurrentProjectRow(0); 
+      }
+    });
+
+    return () => {
+      Events.scrollEvent.remove('end');
+    };
+  }, [sections]);
+
+  const handleSetActive = (section: string) => {
+    const index = sections.indexOf(section);
+    if (index !== -1) {
+      setCurrentSectionIndex(index);
+      setCurrentProjectRow(0); 
+    }
+  };
 
   const scrollToSection = (index: number) => {
     const section = sections[index];
@@ -84,6 +105,7 @@ function App() {
 
   return (
     <div className="App">
+      <SidebarNav onSetActive={handleSetActive} /> 
       <Element name="header">
         <Header data-aos="fade-down" />
       </Element>

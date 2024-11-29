@@ -1,0 +1,29 @@
+
+.sidebar {
+    position: fixed;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 1000;
+}
+
+.sidebar__nav {
+    color: var(--stars);
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s;
+    text-align: left;
+}
+
+.sidebar__nav:hover {
+    text-decoration: underline;
+}
+
+.sidebar__nav.active {
+    font-weight: bold;
+    text-decoration: underline;
+}
