@@ -12,8 +12,8 @@
     position: absolute;
     top: 14vh;
     left: 4.7vw;
-    width: 20.4vw;
-    height: 30vh;
+    width: 20.7vw;
+    height: 30.5vh;
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -46,7 +46,7 @@
     position: absolute;
     top: 4.7vh;
     left: 5vw;
-    width: 5.5vw;
+    width: 5.6vw;
     height: 25.4vh;
     overflow: hidden;
     display: flex;
@@ -91,8 +91,8 @@
 }
 .laptop__screen {
   top: 10vh;
-  left: 23vw;
-  width: 55vw;
+  left: 22.9vw;
+  width: 54.9vw;
   height: 22vh;
 }
 .laptop__phone {
@@ -105,10 +105,11 @@
   width: 35vw;
 }
 .laptop__phone--screen {
-  top: 3.5vh;
+  top: 3.2vh;
   left: 11vw;
   width: 13vw;
-  height: 18vh;
+  height: 18.5vh;
+  border-radius: 10%;
 }
 .laptop__stack {
   top: -13.7vh;
