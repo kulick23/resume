@@ -27,6 +27,7 @@ const Laptop: React.FC<LaptopProps> = ({ project }) => {
 
     return (
         <div className="laptop">
+            <div onClick={handleProjectClick} className="laptop__box">
             <img src={laptopImg} alt="Laptop" className="laptop--image" />
             <div className="laptop__screen">
                 <img
@@ -47,13 +48,12 @@ const Laptop: React.FC<LaptopProps> = ({ project }) => {
                     </div>
                 </div>
             )}
+            
             <div className="laptop__stack">
                 [{project.stack.join(", ")}]
             </div>
-            <div className="laptop__buttons">
-                <button className="laptop__button1" onClick={handleProjectClick}></button>
-                <button className="laptop__button2" onClick={handleRepoClick}></button>
             </div>
+                <button className="laptop__button" onClick={handleRepoClick}></button>
         </div>
     );
 };

@@ -1,7 +1,14 @@
 .laptop {
     position: relative;
 }
+.laptop__box {
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
 
+.laptop__box:hover {
+  transform: scale(1.05); 
+}
 .laptop--image {
     width: 30vw;
     height: 70vh;
@@ -65,23 +72,15 @@
     color: var(--text-graphite-dark);
 }
 
-.laptop__buttons {
+.laptop__button {
    position: relative;
    top: -13vh;
-   display: flex;
-   gap: 10px;
    justify-content: center;
   }
-.laptop__button1::after{
-  content: "Project";
-}
-.laptop__button1::before{
-  content: "Go to";
-}
-.laptop__button2::after{
+.laptop__button::after{
   content: "Code";
 }
-.laptop__button2::before{
+.laptop__button::before{
   content: "View </>";
 }
 
