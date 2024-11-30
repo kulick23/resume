@@ -3,6 +3,7 @@ import './header.css';
 import LinkedIn from '../../Assets/Icons/linkedin.svg';
 import Github from '../../Assets/Icons/github.svg';
 import Telegram from '../../Assets/Icons/telegram.svg';
+import CV from '../../Assets/CV/Resume.pdf'; 
 import { useTranslation } from 'react-i18next';
 
 const Header: React.FC = () => {
@@ -48,7 +49,10 @@ const Header: React.FC = () => {
                     </div>
                 </div>
                 <h1 className='header__text'>{t('header.developer')}</h1>
-                <p className='header__text'>{t('header.email')}</p>
+                <div className='header__contact'>
+                    <a href="mailto:danek200326@gmail.com">danek200326@gmail.com</a>
+                    <a href={CV} download>CV</a> 
+                </div>
             </div>
         </header>
     )

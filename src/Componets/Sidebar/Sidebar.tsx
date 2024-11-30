@@ -18,7 +18,6 @@ const Sidebar: React.FC<SidebarNavProps> = ({ onSetActive }) => {
                     to={section}
                     spy={true}
                     smooth={true}
-                    offset={-70} 
                     duration={500}
                     className="sidebar__nav"
                     onSetActive={() => onSetActive(section)}

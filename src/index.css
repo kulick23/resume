@@ -113,6 +113,17 @@ button:hover::after {
 button:hover::before {
   transform: translateY(-8vh) scale(0) rotate(120deg);
 }
+a {
+  color: var(--stars);
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: var(--background-colory);
+}
 @media (max-width: 768px) {
   button {
     height: 5vh;
