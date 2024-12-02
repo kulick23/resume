@@ -38,7 +38,7 @@
 .header__card h1 {
     font-size: 15vh;   
     color: var(--stars); 
-    font-family: var(--font-web);
+    font-family: var(--font-second);
 }
 
 .header__favicons {

@@ -17,7 +17,12 @@
   font-style: normal;
 }
 
-
+@font-face {
+  font-family: 'SecondFont'; 
+  src: url('../src/Assets/Fonts/Cornerita.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+}
 :root {
   --background-space: black;
   --background-space-opacity: rgba(0, 0, 0, 0.1);
@@ -30,7 +35,8 @@
   --text-graphite-dark: #333; 
   --font-code: 'CodeFont', Arial, sans-serif;
   --font-web: 'TitleFont', Arial, sans-serif;
-  --font-web: 'MainFont', Arial, sans-serif;
+  --font-second: 'SecondFont', Arial, sans-serif;
+  --font-main: 'MainFont', Arial, sans-serif;
 }
 
 body {
@@ -50,17 +56,17 @@ code {
 
 h1, h2{
   color: var(--text-graphite-dark);
-  font-family: var(--MainFont);
+  font-family: var(--font-main);
 }
 p{
-  font-family: var(--MainFont);
+  font-family: var(--font-main);
 
 }
 
 button {
   height: 8vh;
   width: 8vw;
-  font-family: var(--MainFont);
+  font-family: var(--font-second);
   border: 1px solid var(--text-graphite-light);
   border-radius: 8px;
   cursor: pointer;

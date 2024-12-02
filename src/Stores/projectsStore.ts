@@ -36,7 +36,7 @@ class ProjectsStore {
         {
             title: "Telegram mini-app",
             repoLink: "https://github.com/kulick23/menu-tg",
-            link: "t.me/gethoroscope_bot/menu",
+            link: "https://t.me/gethoroscope_bot/menu",
             stack: ["React", "TS"],
             projectImg: cyberImg,
             mobileImg: cyberMobImg,

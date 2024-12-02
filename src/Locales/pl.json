@@ -42,5 +42,14 @@
     "footer": {
       "thankYou": "Dziękuję za oglądanie",
       "connect": "Połączmy się i sprawdźmy, jak możemy razem tworzyć skuteczne rozwiązania cyfrowe"
-    }
+    },
+    "sidebar": {
+      "header": "Nagłówek",
+      "about": "O mnie",
+      "skills": "Umiejętności",
+      "projects": "Projekty",
+      "experience": "Doświadczenie",
+      "footer": "Stopka"
+  }
+  
   }

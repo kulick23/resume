@@ -42,5 +42,13 @@
     "footer": {
       "thankYou": "Thank you for watching",
       "connect": "Let's connect and explore how we can create impactful digital solutions together"
+    },
+    "sidebar": {
+        "header": "Header",
+        "about": "About",
+        "skills": "Skills",
+        "projects": "Projects",
+        "experience": "Experience",
+        "footer": "Footer"
     }
   }

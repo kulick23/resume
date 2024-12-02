@@ -62,7 +62,7 @@
 }
 
 .experience__position {
-    font-family: var(--font-web);
+    font-family: var(--font-second);
     margin: 5px 0;
     font-size: 1.3em;
     color: var(--stars);
