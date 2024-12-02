@@ -13,10 +13,17 @@ const Experience: React.FC = observer(() => {
             <div className="experience__container">
                 {workExperienceStore.experiences.map((experience) => (
                     <div className="experience__card" key={experience.id} data-aos="fade-up">
-                        <h3 className="experience__company">{experience.company}</h3>
-                        <p className="experience__position">{t(experience.position)}</p>
-                        <p className="experience__duration">{experience.duration}</p>
-                        <p className="experience__description">{t(experience.description)}</p>
+                        <div className="experience__number-container">
+                            <div className="experience__number">
+                                {experience.id}
+                            </div>
+                        </div>
+                        <div className="experience__content">
+                            <h3 className="experience__company">{experience.company}</h3>
+                            <p className="experience__position">{t(experience.position)}</p>
+                            <p className="experience__duration">{experience.duration}</p>
+                            <p className="experience__description">{t(experience.description)}</p>
+                        </div>
                     </div>
                 ))}
             </div>
