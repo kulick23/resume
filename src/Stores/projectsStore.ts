@@ -48,8 +48,6 @@ class ProjectsStore {
             stack: ["React", "JS", "MobX", "Firebase"],
             projectImg: barImg,
         },
-       
-     
         {
             title: "Nike",
             repoLink: "https://github.com/kulick23/slider_nike",
@@ -87,8 +85,6 @@ class ProjectsStore {
             stack: ["React", "JS"],
             projectImg: esdeImg,
         },
-       
-    
         {
             title: "Energo",
             repoLink: "https://github.com/kulick23/EnergyConstruction",
@@ -120,4 +116,6 @@ class ProjectsStore {
     }
 }
 
-export default new ProjectsStore();
+const projectsStore = new ProjectsStore();
+
+export default projectsStore;

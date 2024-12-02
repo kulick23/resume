@@ -4,7 +4,11 @@ class SkillsStore {
     skills = {
         "techSkills": ["HTML", "CSS", "JS/TS", "React", "SQL", "C/C++", "Python"],
         "softSkills": [
-            "Scrum", "Teamwork", "Communication", "Problem Solving", "Work with customers"
+            "Teamwork",
+            "Communication",
+            "Problem Solving",
+            "Work with customers",
+            "Development methodologies"
         ],
         "Tools": ["Git", "Microsoft Office", "Photoshop", "Figma", "UML", "Linux"],
         "Languages": ["English", "Russian", "Polish", "Belarusian"]
@@ -15,4 +19,6 @@ class SkillsStore {
     }
 }
 
-export default new SkillsStore();
+const skillsStore = new SkillsStore();
+
+export default skillsStore;
