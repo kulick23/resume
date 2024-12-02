@@ -1,7 +1,7 @@
 import React from "react";
 import "./laptop.css";
-import laptopImg from "../../../Assets/macbook.png";
-import phonImg from "../../../Assets/iphon.png";
+import laptopImg from "../../../Assets/PngImg/macbook.png";
+import phonImg from "../../../Assets/PngImg/iphon.png";
 
 interface Project {
     title: string;

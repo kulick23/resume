@@ -3,7 +3,7 @@ import './header.css';
 import LinkedIn from '../../Assets/Icons/linkedin.svg';
 import Github from '../../Assets/Icons/github.svg';
 import Telegram from '../../Assets/Icons/telegram.svg';
-import CV from '../../Assets/CV/Resume.pdf'; 
+import CV from '../../Assets/CV/cv.pdf'; 
 import { useTranslation } from 'react-i18next';
 
 const Header: React.FC = () => {

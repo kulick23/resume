@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import './footer.css';
-import NaboImg from '../../Assets/nabo.png';
+import NaboImg from '../../Assets/PngImg/nabo.png';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { scroller } from 'react-scroll';

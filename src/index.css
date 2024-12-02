@@ -121,22 +121,12 @@ a {
 }
 
 a:hover {
-  text-decoration: underline;
   color: var(--background-colory);
 }
 @media (max-width: 768px) {
-  button {
+  button, button::after, button::before {
     height: 5vh;
     width: 20vw;
-    font-family: var(--MainFont);
-    border: 1px solid var(--text-graphite-light);
-    border-radius: 8px;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-    transition: all 0.5s ease-in-out;
-    background-color: var(--background-dark);
   }
   
- 
 }

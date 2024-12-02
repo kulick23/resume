@@ -77,11 +77,18 @@
    top: -13vh;
    justify-content: center;
   }
-.laptop__button::after{
-  content: "Code";
+  .laptop__button::after {
+    content: "";
+    background-image: url('../../../Assets/Icons/github-black.svg');
+    background-size: 25%;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    display: block;
 }
 .laptop__button::before{
-  content: "View </>";
+  content: "Code </>";
 }
 
 

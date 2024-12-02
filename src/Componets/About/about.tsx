@@ -1,7 +1,7 @@
 import React from 'react';
 import './about.css';
-import clouds from '../../Assets/clouds.png';
-import lars from '../../Assets/lars.png';
+import clouds from '../../Assets/PngImg/clouds.png';
+import lars from '../../Assets/PngImg/lars.png';
 import { useTranslation } from 'react-i18next';
 
 const About: React.FC = () => {
