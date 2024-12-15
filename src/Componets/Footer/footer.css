@@ -7,6 +7,7 @@
 
 .footer__content {
     text-align: center;
+    position: relative;
 }
 
 @keyframes wobble {
@@ -18,6 +19,11 @@
     }
 }
 
+.footer__image-container {
+    position: relative;
+    display: inline-block;
+}
+
 .footer__image {
     max-width: 20vh; 
     margin-bottom: 10px;
@@ -25,3 +31,37 @@
     cursor: pointer;
 }
 
+.footer__tooltip {
+    visibility: hidden;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 8px;
+    position: absolute;
+    top: 100%; 
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 0.8em;
+    white-space: nowrap;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.footer__tooltip::after {
+    content: "";
+    position: absolute;
+    top: -5px; 
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent #555 transparent;
+}
+
+.footer__image-container:hover .footer__tooltip {
+    visibility: visible;
+    opacity: 1;
+}

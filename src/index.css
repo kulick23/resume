@@ -64,8 +64,8 @@ p{
 }
 
 button {
-  height: 8vh;
-  width: 8vw;
+  height: 50px;
+  width: 100px;
   font-family: var(--font-second);
   border: 1px solid var(--text-graphite-light);
   border-radius: 8px;
@@ -77,18 +77,18 @@ button {
 }
 
 button:hover {
-  box-shadow: .5px .5px 8vw var(--text-graphite-light);
+  box-shadow: .5px .5px 50px var(--text-graphite-light);
 }
 
 button::after {
-  height: 8vh;
-  width: 8vw;
+  height: 50px;
+  width: 100px;
   background-color: var(--background-colory);
   color: var(--background-dark);
   position: absolute;
   top: 0%;
   left: 0%;
-  transform: translateY(8vh);
+  transform: translateY(50px);
   font-weight: 500;
   display: flex;
   align-items: center;
@@ -97,8 +97,8 @@ button::after {
 }
 
 button::before {
-  height: 8vh;
-  width: 8vw;
+   height: 50px;
+  width: 100px;
   background-color: var(--background-dark);
   color: var(--background-colory);
   position: absolute;
@@ -117,7 +117,7 @@ button:hover::after {
 }
 
 button:hover::before {
-  transform: translateY(-8vh) scale(0) rotate(120deg);
+  transform: translateY(-50px) scale(0) rotate(120deg);
 }
 a {
   color: var(--stars);
@@ -128,11 +128,4 @@ a {
 
 a:hover {
   color: var(--background-colory);
-}
-@media (max-width: 768px) {
-  button, button::after, button::before {
-    height: 5vh;
-    width: 20vw;
-  }
-  
 }

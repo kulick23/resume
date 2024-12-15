@@ -10,17 +10,17 @@
   transform: scale(1.05); 
 }
 .laptop--image {
-    width: 30vw;
-    height: 70vh;
+    width: 100%;
+    aspect-ratio: 13 / 9;
     z-index: 1;
 }
 
 .laptop__screen {
     position: absolute;
-    top: 14vh;
-    left: 4.7vw;
-    width: 20.6vw;
-    height: 30.5vh;
+    top: 1vh;
+    left: 10%;
+    width: 79.5%;
+    aspect-ratio: 13 / 9;
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -38,35 +38,36 @@
 
 .laptop__phone {
     position: absolute;
-    top: 18vh;
-    left: 17.9vw;
-    width: 10vw;
+    top: 10%;
+    left: 39%;
+    width: 100%;
     height: auto;
     z-index: 2;
+
 }
 
 .laptop__phone--image {
-    height: 35vh;
-    width: 15.5vw;
+  width: 55%;
+  aspect-ratio: 8 / 9;
 }
 
 .laptop__phone--screen {
     position: absolute;
-    top: 4.7vh;
-    left: 5vw;
-    width: 5.6vw;
-    height: 25.5vh;
+    top: 13%;
+    left: 40%;
+    width: 20%;
+    aspect-ratio: 3 / 6.9;
     overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: -1;
-    border-radius: 10%;
+    border-radius: 11%;
 }
 
 .laptop__stack {
     position: relative;
-    top: -19vh;
+    top: -1vh;
     font-family: var(--font-code);
     font-size: 0.6em;
     color: var(--text-graphite-dark);
@@ -74,7 +75,7 @@
 
 .laptop__button {
    position: relative;
-   top: -13vh;
+   top: 2vh;
    justify-content: center;
   }
   .laptop__button::after {
@@ -91,46 +92,3 @@
   content: "Code </>";
 }
 
-
-@media (max-width: 768px) {
-  .laptop--image {
-    width: 80vw;
-    height: 50vh;
-}
-.laptop__screen {
-  top: 10vh;
-  left: 22.9vw;
-  width: 54.9vw;
-  height: 22vh;
-}
-.laptop__phone {
-  top: 12vh;
-  left: 60vw;
-
-}
-.laptop__phone--image {
-  height: 25vh;
-  width: 35vw;
-}
-.laptop__phone--screen {
-  top: 3.2vh;
-  left: 11vw;
-  width: 13vw;
-  height: 18.5vh;
-  border-radius: 10%;
-}
-.laptop__stack {
-  top: -13.7vh;
-}
-
-.laptop__button1::after,
-.laptop__button1::before,
-.laptop__button2::after,
-.laptop__button2::before {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 5vh;
-  width: 20vw;
-}
-}

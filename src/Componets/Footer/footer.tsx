@@ -26,13 +26,16 @@ const Footer: React.FC = () => {
     return (
         <footer className='footer'>
             <div className='footer__content'>
-                <img 
-                    src={NaboImg} 
-                    alt="Nabo" 
-                    className='footer__image' 
-                    data-aos="fade-up" 
-                    onClick={scrollToTop} 
-                />
+                <div className="footer__image-container">
+                    <img 
+                        src={NaboImg} 
+                        alt="Nabo" 
+                        className='footer__image' 
+                        data-aos="fade-up" 
+                        onClick={scrollToTop} 
+                    />
+                    <span className="footer__tooltip">{t('footer.clue')}</span>
+                </div>
                 <h1 data-aos="fade-up">{t('footer.thankYou')}</h1>
                 <h2 data-aos="fade-up">{t('footer.connect')}</h2>
             </div>

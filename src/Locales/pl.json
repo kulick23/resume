@@ -19,7 +19,7 @@
         "position": "Administrator / Programowanie"
       },
       "2": {
-        "description": "Praca z klientami, umiejętności miękkie, umiejętności programowania, projekt na React",
+        "description": "Praca z klientami, umiejętności miękkie i programowania, projekt na React",
         "position": "Laboratorium Studenckie"
       },
       "3": {
@@ -40,6 +40,7 @@
       "languages": "Języki"
     },
     "footer": {
+      "clue": "na górę",
       "thankYou": "Dziękuję za oglądanie",
       "connect": "Połączmy się i sprawdźmy, jak możemy razem tworzyć skuteczne rozwiązania cyfrowe"
     },

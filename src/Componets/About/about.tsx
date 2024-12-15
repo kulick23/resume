@@ -9,9 +9,7 @@ const About: React.FC = () => {
 
     return (
         <div className='about'>
-            <div className='about__left'>
-                <h1>Hello world!</h1>
-            </div>
+         
             <div className='about__right'>
                 <p className='about__text'>
                     {t('about.description').split('\n').map((line: string, index: number) => (

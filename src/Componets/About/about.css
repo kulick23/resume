@@ -9,24 +9,18 @@
     z-index: 1; 
 }
 
-.about__left, .about__right {
+ .about__right {
     flex: 1;
     display: flex;
     justify-content: center;
-    align-items: center;
     padding: 20px;
+    margin: -15% 5% 0 40%;
 }
 
-.about h1 {
-    font-size: 3rem;
-    text-transform: uppercase;
-    color: var(--stars);
-    font-family: var(--font-code);
-    -webkit-text-stroke: 2px var(--text-graphite-dark);
-}
+
 
 .about__text {
-    font-size: 0.9rem;
+    font-size: 1rem;
     text-align: right;
 }
 
@@ -41,7 +35,7 @@
 .lars {
     position: absolute;
     top: 10%;
-    left: 35%;
+    left: 25%;
     transform: translateX(-50%);
     height: 80vh; 
     z-index: -1; 
@@ -52,13 +46,14 @@
      min-height: 100vh; 
      justify-content: flex-start;
     }
-    .about__left, .about__right {
+     .about__right {
         display: block;
         flex: none;
         justify-content: center;
         align-items: center;
         padding: 0px;
-        margin-top: 0px;
+        margin: 20% 0 0 0;
+      
 
     }
     .lars {

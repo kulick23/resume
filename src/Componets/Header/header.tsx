@@ -51,7 +51,7 @@ const Header: React.FC = () => {
                 <h1 className='header__text'>{t('header.developer')}</h1>
                 <div className='header__contact'>
                     <a href="mailto:danek200326@gmail.com">danek200326@gmail.com</a>
-                    <a href={CV} download>CV</a> 
+                    <a href={CV} download>CV ⤓</a> 
                 </div>
             </div>
         </header>
