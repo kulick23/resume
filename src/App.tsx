@@ -6,10 +6,11 @@ import Project from "./Componets/Projects/project";
 import Experience from "./Componets/Experience/experience";
 import Header from './Componets/Header/header';
 import Footer from './Componets/Footer/footer';
-import SidebarNav from './Componets/Sidebar/Sidebar';   
+import SidebarNav from './Componets/Sidebar/Sidebar';
 import { Element } from 'react-scroll';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import useScrollHandler from './useScrollHandler';
 
 function App() {
   const sections: string[] = useMemo(
@@ -26,6 +27,9 @@ function App() {
     });
   }, []);
 
+  // Hook to handle scroller logic
+  useScrollHandler(sections, currentSectionIndex, setCurrentSectionIndex);
+
   const handleSetActive = (section: string) => {
     const index = sections.indexOf(section);
     if (index !== -1) {
@@ -35,7 +39,7 @@ function App() {
 
   return (
     <div className="App">
-      <SidebarNav onSetActive={handleSetActive} /> 
+      <SidebarNav onSetActive={handleSetActive} />
       <Element name="header">
         <Header data-aos="fade-down" />
       </Element>
