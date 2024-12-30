@@ -11,10 +11,10 @@
 }
 
 .sidebar__nav {
-    color: var(--background-dark);
+    color: var(--stars);
     cursor: pointer;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 3.5vh;
     transition: color 0.3s;
     text-align: left;
 }
@@ -24,6 +24,9 @@
 .sidebar__nav.active {
     font-weight: bold;
 }
+.sidebar__nav:hover {
+    color: var(--stars);
+  }
 @media (max-width: 768px) {
     .sidebar {
         display: none;

@@ -9,7 +9,7 @@ const Project: React.FC = observer(() => {
   const { projects } = projectsStore;
   const { t } = useTranslation();
 
-  const displayedProjects = projects.slice(1);
+  const displayedProjects = projects.slice(0);
 
   return (
     <div className="project" data-aos="fade-up">
@@ -19,7 +19,9 @@ const Project: React.FC = observer(() => {
       <div className="project__container">
         {displayedProjects.map((project) => (
           <div key={project.title} className="project__row">
-            <Laptop project={project} />
+            <div className="project__laptop">
+    <Laptop project={project} />
+  </div>
           </div>
         ))}
       </div>

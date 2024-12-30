@@ -37,6 +37,13 @@
   --font-web: 'TitleFont', Arial, sans-serif;
   --font-second: 'SecondFont', Arial, sans-serif;
   --font-main: 'MainFont', Arial, sans-serif;
+  --button-width-big: 100px;
+  --button-height-big: 50px;
+  --button-width-medium: 70px;
+  --button-height-medium: 35px;
+  --button-width-small: 100px;
+  --button-height-small: 50px;
+
 }
 
 body {
@@ -64,8 +71,8 @@ p{
 }
 
 button {
-  height: 50px;
-  width: 100px;
+  height: var(--button-height-big);
+  width: var(--button-width-big);
   font-family: var(--font-second);
   border: 1px solid var(--text-graphite-light);
   border-radius: 8px;
@@ -74,21 +81,22 @@ button {
   overflow: hidden;
   transition: all 0.5s ease-in-out;
   background-color: var(--background-dark);
+  font-size: 15px;
 }
 
 button:hover {
-  box-shadow: .5px .5px 50px var(--text-graphite-light);
+  box-shadow: .5px .5px var(--button-height-big) var(--text-graphite-light);
 }
 
 button::after {
-  height: 50px;
-  width: 100px;
+  height: var(--button-height-big);
+  width: var(--button-width-big);
   background-color: var(--background-colory);
   color: var(--background-dark);
   position: absolute;
   top: 0%;
   left: 0%;
-  transform: translateY(50px);
+  transform: translateY(var(--button-height-big));
   font-weight: 500;
   display: flex;
   align-items: center;
@@ -97,8 +105,8 @@ button::after {
 }
 
 button::before {
-   height: 50px;
-  width: 100px;
+   height: var(--button-height-big);
+  width: var(--button-width-big);
   background-color: var(--background-dark);
   color: var(--background-colory);
   position: absolute;
@@ -117,7 +125,7 @@ button:hover::after {
 }
 
 button:hover::before {
-  transform: translateY(-50px) scale(0) rotate(120deg);
+  transform: translateY(calc(-1 * var(--button-height-big))) scale(0) rotate(120deg);
 }
 a {
   color: var(--stars);
@@ -128,4 +136,55 @@ a {
 
 a:hover {
   color: var(--background-colory);
+}
+@media (max-width: 1024px) {
+  button {
+    height: var(--button-height-medium);
+    width: var(--button-width-medium);
+    font-size: 10px;
+  }
+  
+  button:hover {
+    box-shadow: .5px .5px var(--button-height-medium) var(--text-graphite-light);
+  }
+  
+  button::after {
+    height: var(--button-height-medium);
+    width: var(--button-width-medium);
+    transform: translateY(var(--button-height-medium));
+  }
+  
+  button::before {
+     height: var(--button-height-medium);
+    width: var(--button-width-medium);
+  }
+  
+  button:hover::before {
+    transform: translateY(calc(-1 * var(--button-height-medium))) scale(0) rotate(120deg);
+}
+}
+@media (max-width: 768px) {
+  button {
+    height: var(--button-height-medium);
+    width: var(--button-width-medium);
+  }
+  
+  button:hover {
+    box-shadow: .5px .5px var(--button-height-medium) var(--text-graphite-light);
+  }
+  
+  button::after {
+    height: var(--button-height-medium);
+    width: var(--button-width-medium);
+    transform: translateY(var(--button-height-medium));
+  }
+  
+  button::before {
+     height: var(--button-height-medium);
+    width: var(--button-width-medium);
+  }
+  
+  button:hover::before {
+    transform: translateY(calc(-1 * var(--button-height-medium))) scale(0) rotate(120deg);
+}
 }

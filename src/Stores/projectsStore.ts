@@ -48,12 +48,14 @@ class ProjectsStore {
             stack: ["React", "JS", "MobX", "Firebase"],
             projectImg: barImg,
         },
+    
         {
-            title: "Nike",
-            repoLink: "https://github.com/kulick23/slider_nike",
-            link: "https://kulick23.github.io/slider_nike/",
-            stack: ["JS", "HTML", "CSS", "Vite"],
-            projectImg: nikeImg,
+            title: "Pet",
+            repoLink: "https://github.com/kulick23/pet",
+            link: "https://kulick23.github.io/pet/",
+            stack: ["HTML", "CSS"],
+            projectImg: petImg,
+            mobileImg: petMobImg,
         },
         {
             title: "Beats",
@@ -64,28 +66,6 @@ class ProjectsStore {
             mobileImg: beatsMobImg,
         },
         {
-            title: "Simo",
-            repoLink: "https://github.com/kulick23/simo",
-            link: "https://kulick23.github.io/simo/",
-            stack: ["JS", "HTML", "CSS", "Vite"],
-            projectImg: musicImg,
-        },
-        {
-            title: "Pet",
-            repoLink: "https://github.com/kulick23/pet",
-            link: "https://kulick23.github.io/pet/",
-            stack: ["HTML", "CSS"],
-            projectImg: petImg,
-            mobileImg: petMobImg,
-        },
-        {
-            title: "ESDE",
-            repoLink: "https://github.com/kulick23/esde",
-            link: "https://kulick23.github.io/esde/",
-            stack: ["React", "JS"],
-            projectImg: esdeImg,
-        },
-        {
             title: "Energo",
             repoLink: "https://github.com/kulick23/EnergyConstruction",
             link: "https://kulick23.github.io/EnergyConstruction/",
@@ -93,6 +73,29 @@ class ProjectsStore {
             projectImg: energoImg,
             mobileImg: energoMobImg,
         },
+        {
+            title: "Nike",
+            repoLink: "https://github.com/kulick23/slider_nike",
+            link: "https://kulick23.github.io/slider_nike/",
+            stack: ["JS", "HTML", "CSS", "Vite"],
+            projectImg: nikeImg,
+        },
+        {
+            title: "Simo",
+            repoLink: "https://github.com/kulick23/simo",
+            link: "https://kulick23.github.io/simo/",
+            stack: ["JS", "HTML", "CSS", "Vite"],
+            projectImg: musicImg,
+        },
+     
+        {
+            title: "ESDE",
+            repoLink: "https://github.com/kulick23/esde",
+            link: "https://kulick23.github.io/esde/",
+            stack: ["React", "JS"],
+            projectImg: esdeImg,
+        },
+       
         {
             title: "Compo",
             repoLink: "https://github.com/kulick23/compo",
