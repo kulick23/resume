@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.css": "/resume/static/css/main.ee16b181.css",
-    "main.js": "/resume/static/js/main.94db29fc.js",
+    "main.css": "/resume/static/css/main.dee13d18.css",
+    "main.js": "/resume/static/js/main.d26a2f04.js",
     "static/media/clouds.png": "/resume/static/media/clouds.4691383c6f3852cbd6d8.png",
     "static/media/qwery.png": "/resume/static/media/qwery.31d5da3b8a8bb69a1a6e.png",
     "static/media/energo.png": "/resume/static/media/energo.3d32bf6b5bba4eb03d48.png",
-    "static/media/macbook.png": "/resume/static/media/macbook.45c96485db9c83426a3b.png",
     "static/media/nike.png": "/resume/static/media/nike.019ab9f4a47a9c8087c4.png",
+    "static/media/macbook2.png": "/resume/static/media/macbook2.f3ca11ad704c01e918e9.png",
     "static/media/cyber.png": "/resume/static/media/cyber.f9ff333536992102058e.png",
     "static/media/beats.png": "/resume/static/media/beats.952b186bd370668057a5.png",
     "static/media/esde.png": "/resume/static/media/esde.983a8eeb990bfe2cb8d7.png",
@@ -32,11 +32,11 @@
     "static/media/telegram.svg": "/resume/static/media/telegram.0cc10fc8a571b48a0631dbbdb041d3f1.svg",
     "static/media/linkedin.svg": "/resume/static/media/linkedin.144ac453287cb54a6f35b940302da4ff.svg",
     "index.html": "/resume/index.html",
-    "main.ee16b181.css.map": "/resume/static/css/main.ee16b181.css.map",
-    "main.94db29fc.js.map": "/resume/static/js/main.94db29fc.js.map"
+    "main.dee13d18.css.map": "/resume/static/css/main.dee13d18.css.map",
+    "main.d26a2f04.js.map": "/resume/static/js/main.d26a2f04.js.map"
   },
   "entrypoints": [
-    "static/css/main.ee16b181.css",
-    "static/js/main.94db29fc.js"
+    "static/css/main.dee13d18.css",
+    "static/js/main.d26a2f04.js"
   ]
 }
