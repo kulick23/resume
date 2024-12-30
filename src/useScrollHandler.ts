@@ -40,15 +40,14 @@ const useScrollHandler = (
             scrollToSection(currentSectionIndex + 1);
           }
         } else {
-          if (currentProjectRow > 2) {
+          if (currentProjectRow > 1) {
             setIsScrolling(true);
             const prevRow = currentProjectRow - 1;
             setCurrentProjectRow(prevRow);
             scroller.scrollTo(`project-row-${prevRow}`, { smooth: true, duration: 600 });
           } else {
             setIsScrolling(true);
-            scrollToSection(currentSectionIndex);
-            setCurrentProjectRow(1);
+            scrollToSection(currentSectionIndex - 1);
           }
         }
       } else {

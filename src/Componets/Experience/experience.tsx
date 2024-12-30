@@ -10,10 +10,10 @@ const Experience: React.FC = observer(() => {
     const total = sortedExperiences.length;
 
     return (
-        <div className="experience">
-            <h1 data-aos="fade-up">{t('experience.title')}</h1>
+        <div data-aos="fade-up" className="experience">
+            <h1 >{t('experience.title')}</h1>
             <div className="experince__block">
-            <div className="experience__timeline" />
+            <div  className="experience__timeline" />
             {sortedExperiences.map((experience, index) => (
                 <div
                     key={experience.id}

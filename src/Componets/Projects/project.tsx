@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { observer } from "mobx-react-lite";
 import projectsStore from "../../Stores/projectsStore";
 import Laptop from "./laptop/laptop";
@@ -9,6 +9,7 @@ import "./project.css";
 const Project: React.FC = observer(() => {
   const { projects } = projectsStore;
   const { t } = useTranslation();
+  const [chunkSize, setChunkSize] = useState(window.innerWidth >= 1024 ? 3 : 2);
 
   const chunkProjects = (array: any[], size: number) => {
     const results = [];
@@ -18,10 +19,18 @@ const Project: React.FC = observer(() => {
     return results;
   };
 
-  const chunkSize = window.innerWidth >= 1024 ? 3 : 2;
-  const chunkedProjects = chunkProjects(projects, chunkSize);
+  useEffect(() => {
+    const handleResize = () => {
+      setChunkSize(window.innerWidth >= 1024 ? 3 : 2);
+    };
 
-  console.log("chunkedProjects:", chunkedProjects);
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  const chunkedProjects = chunkProjects(projects, chunkSize);
 
   return (
     <div className="project" data-aos="fade-up">
@@ -31,6 +40,7 @@ const Project: React.FC = observer(() => {
           key={rowIndex}
           name={`project-row-${rowIndex + 1}`}
           className="project__row"
+          data-aos="fade-up"
         >
           {row.map((project: any) => (
             <div key={project.title} className="project__item">

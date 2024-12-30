@@ -8,8 +8,7 @@ const About: React.FC = () => {
     const { t } = useTranslation();
 
     return (
-        <div className='about'>
-         
+        <div className='about' data-aos="fade-up">
             <div className='about__right'>
                 <p className='about__text'>
                     {t('about.description').split('\n').map((line: string, index: number) => (
