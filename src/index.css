@@ -45,6 +45,9 @@
   --button-height-small: 50px;
 
 }
+html {
+  -webkit-text-size-adjust: 100%;
+}
 
 body {
   background: linear-gradient(180deg, var(--background-dark), var(--background-colory));
