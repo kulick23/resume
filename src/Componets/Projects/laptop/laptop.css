@@ -17,9 +17,9 @@
 
 .laptop__screen {
     position: absolute;
-    top: 1vh;
-    left: 10%;
-    width: 79.5%;
+    top: 0.9vh;
+    left: 9%;
+    width: 81.5%;
     aspect-ratio: 13 / 9;
     overflow: hidden;
     display: flex;
