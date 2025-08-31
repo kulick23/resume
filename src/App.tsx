@@ -1,5 +1,5 @@
 import { useState, useMemo, useEffect } from 'react';
-import './App.css';
+import './App.scss';
 import About from "./Componets/About/About";
 import Skills from "./Componets/Skills/Skills";
 import Project from "./Componets/Projects/Project";

@@ -1,3 +1,5 @@
+
+
 @font-face {
   font-family: 'CodeFont'; 
   src: url('../src/Assets/Fonts/Code7X5Regular-ypBe.ttf') format('truetype');
@@ -48,7 +50,14 @@
 html {
   -webkit-text-size-adjust: 100%;
 }
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow-x: hidden;
 
+}
 body {
   background: linear-gradient(180deg, var(--background-dark), var(--background-colory));
   margin: 0;
