@@ -1,7 +1,7 @@
 import React from "react";
 import { observer } from "mobx-react-lite";
 import workExperienceStore from "../../Stores/experienceStore";
-import "./experience.css";
+import "./Experience.scss";
 import { useTranslation } from 'react-i18next';
 
 const Experience: React.FC = observer(() => {

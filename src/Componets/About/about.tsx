@@ -1,5 +1,5 @@
 import React from 'react';
-import './about.css';
+import './About.scss';
 import clouds from '../../Assets/PngImg/clouds.png';
 import lars from '../../Assets/PngImg/lars.png';
 import { useTranslation } from 'react-i18next';

@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import './footer.css';
+import './Footer.scss';
 import NaboImg from '../../Assets/PngImg/nabo.png';
 import AOS from 'aos';
 import 'aos/dist/aos.css';

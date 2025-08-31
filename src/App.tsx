@@ -1,11 +1,11 @@
-import React, { useState, useMemo, useEffect } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import './App.css';
-import About from "./Componets/About/about";
-import Skills from "./Componets/Skills/skills";
-import Project from "./Componets/Projects/project";
-import Experience from "./Componets/Experience/experience";
-import Header from './Componets/Header/header';
-import Footer from './Componets/Footer/footer';
+import About from "./Componets/About/About";
+import Skills from "./Componets/Skills/Skills";
+import Project from "./Componets/Projects/Project";
+import Experience from "./Componets/Experience/Experience";
+import Header from './Componets/Header/Header';
+import Footer from './Componets/Footer/Footer';
 import SidebarNav from './Componets/Sidebar/Sidebar';
 import { Element } from 'react-scroll';
 import AOS from 'aos';

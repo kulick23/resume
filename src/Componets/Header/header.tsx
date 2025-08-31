@@ -1,5 +1,5 @@
 import React from "react";
-import './header.css';
+import './Header.scss';
 import LinkedIn from '../../Assets/Icons/linkedin.svg';
 import Github from '../../Assets/Icons/github.svg';
 import Telegram from '../../Assets/Icons/telegram.svg';

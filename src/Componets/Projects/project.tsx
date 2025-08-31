@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { observer } from "mobx-react-lite";
 import projectsStore from "../../Stores/projectsStore";
-import Laptop from "./laptop/laptop";
+import Laptop from "../Laptop/Laptop";
 import { useTranslation } from "react-i18next";
 import { Element } from "react-scroll";
-import "./project.css";
+import "./Project.scss";
 
 const Project: React.FC = observer(() => {
   const { projects } = projectsStore;

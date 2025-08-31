@@ -1,0 +1,96 @@
+.laptop {
+  position: relative;
+
+  &__box {
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &--image {
+    width: 100%;
+    aspect-ratio: 13 / 9;
+    z-index: 1;
+  }
+
+  &__screen {
+    position: absolute;
+    top: 0.6vh;
+    left: 9%;
+    width: 81.5%;
+    aspect-ratio: 13 / 9;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    object-fit: cover;
+  }
+
+  &--preview {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    border-radius: 4px;
+    z-index: -1;
+  }
+
+  &__phone {
+    position: absolute;
+    top: 10%;
+    left: 39%;
+    width: 100%;
+    height: auto;
+    z-index: 2;
+
+    &--image {
+      width: 55%;
+      aspect-ratio: 8 / 9;
+    }
+
+    &--screen {
+      position: absolute;
+      top: 13%;
+      left: 40%;
+      width: 20%;
+      aspect-ratio: 3 / 6.9;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: -1;
+      border-radius: 11%;
+    }
+  }
+
+  &__stack {
+    position: relative;
+    top: -1vh;
+    font-family: var(--font-code);
+    font-size: 0.6em;
+    color: var(--text-graphite-dark);
+  }
+
+  &__button {
+    position: relative;
+    top: 2vh;
+    justify-content: center;
+
+    &::after {
+      content: "";
+      background-image: url('../../Assets/Icons/github-black.svg');
+      background-size: 25%;
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    &::before {
+      content: "Code </>";
+    }
+  }
+}

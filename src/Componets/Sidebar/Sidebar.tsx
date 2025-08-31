@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-scroll';
-import './Sidebar.css';
+import './Sidebar.scss';
 import { useTranslation } from 'react-i18next';
 
 type SidebarNavProps = {

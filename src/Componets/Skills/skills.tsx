@@ -1,7 +1,7 @@
 import React from "react";
 import { observer } from "mobx-react-lite";
 import skillsStore from "../../Stores/skillsStore";
-import './skills.css';
+import './Skills.scss';
 import { useTranslation } from 'react-i18next';
 
 const Skills: React.FC = observer(() => {
