@@ -1,26 +1,18 @@
-import React, { useEffect } from "react";
+import React from "react";
 import './Footer.scss';
 import NaboImg from '../../Assets/PngImg/nabo.png';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-import { scroller } from 'react-scroll';
 import { useTranslation } from 'react-i18next';
+import { useScrollToSection } from '../../Hooks/useScrollToSection';
+import { useAOS } from '../../Hooks/useAOS';
 
 const Footer: React.FC = () => {
     const { t } = useTranslation();
+    const scrollToSection = useScrollToSection();
 
-    useEffect(() => {
-        AOS.init({
-            duration: 1000,
-            once: true,
-        });
-    }, []);
+    useAOS();
 
     const scrollToTop = () => {
-        scroller.scrollTo('header', {
-            smooth: true,
-            duration: 500,
-        });
+      scrollToSection('header');
     };
 
     return (

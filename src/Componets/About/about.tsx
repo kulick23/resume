@@ -1,8 +1,7 @@
 import React from 'react';
 import './About.scss';
-import clouds from '../../Assets/PngImg/clouds.png';
-import lars from '../../Assets/PngImg/lars.png';
 import { useTranslation } from 'react-i18next';
+import { ABOUT_IMAGES } from '../../Constants/about';
 
 const About: React.FC = () => {
     const { t } = useTranslation();
@@ -19,8 +18,9 @@ const About: React.FC = () => {
                     ))}
                 </p>
             </div>
-            <img src={clouds} alt="Clouds" className='clouds' />
-            <img src={lars} alt="Lars" className='lars' />
+            {ABOUT_IMAGES.map(img => (
+                <img key={img.alt} src={img.src} alt={img.alt} className={img.className} />
+            ))}
         </div>
     )
 }

@@ -1,12 +1,12 @@
 import React from "react";
 import { observer } from "mobx-react-lite";
-import workExperienceStore from "../../Stores/experienceStore";
 import "./Experience.scss";
 import { useTranslation } from 'react-i18next';
+import { useSortedExperiences } from "../../Hooks/useSortedExperiences";
 
 const Experience: React.FC = observer(() => {
     const { t } = useTranslation();
-    const sortedExperiences = [...workExperienceStore.experiences].sort((a, b) => a.id - b.id);
+    const sortedExperiences = useSortedExperiences();
     const total = sortedExperiences.length;
 
     return (

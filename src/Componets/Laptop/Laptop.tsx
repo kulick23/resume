@@ -1,59 +1,45 @@
 import React from "react";
 import "./Laptop.scss";
-import laptopImg from "../../Assets/PngImg/macbook2.png";
-import phonImg from "../../Assets/PngImg/iphon.png";
-
-interface Project {
-    title: string;
-    projectImg: string;
-    mobileImg?: string;
-    stack: string[];
-    link: string;
-    repoLink: string;
-}
-
-interface LaptopProps {
-    project: Project;
-}
+import { LAPTOP_IMG, PHONE_IMG } from "../../Constants/laptop";
+import { LaptopProps } from "../../types/project";
 
 const Laptop: React.FC<LaptopProps> = ({ project }) => {
-    const handleProjectClick = () => {
-        window.open(project.link, "_blank");
-    };
-
-    const handleRepoClick = () => {
-        window.open(project.repoLink, "_blank");
-    };
+    const handleOpen = (url: string) => window.open(url, "_blank");
 
     return (
         <div className="laptop">
-            <div onClick={handleProjectClick} className="laptop__box">
-            <img src={laptopImg} alt="Laptop" className="laptop--image" />
-            <div className="laptop__screen">
-                <img
-                    src={project.projectImg}
-                    alt={project.title}
-                    className="laptop--preview"
-                />
-            </div>
-            {project.mobileImg && (
-                <div className="laptop__phone">
-                    <img src={phonImg} alt="Phone" className="laptop__phone--image" />
-                    <div className="laptop__phone--screen">
-                        <img
-                            src={project.mobileImg}
-                            alt={`${project.title} mobile`}
-                            className="laptop--preview"
-                        />
-                    </div>
+            <div onClick={() => handleOpen(project.link)} className="laptop__box">
+                <img src={LAPTOP_IMG} alt="Laptop" className="laptop--image" />
+                <div className="laptop__screen">
+                    <img
+                        src={project.projectImg}
+                        alt={project.title}
+                        className="laptop--preview"
+                    />
                 </div>
-            )}
-            
-            <div className="laptop__stack">
-                [{project.stack.join(", ")}]
+                {project.mobileImg && (
+                    <div className="laptop__phone">
+                        <img src={PHONE_IMG} alt="Phone" className="laptop__phone--image" />
+                        <div className="laptop__phone--screen">
+                            <img
+                                src={project.mobileImg}
+                                alt={`${project.title} mobile`}
+                                className="laptop--preview"
+                            />
+                        </div>
+                    </div>
+                )}
+                <div className="laptop__stack">
+                    [{project.stack.join(", ")}]
+                </div>
             </div>
-            </div>
-                <button className="laptop__button" onClick={handleRepoClick}></button>
+            <button
+                className="laptop__button"
+                onClick={() => handleOpen(project.repoLink)}
+                title="Code"
+            >
+                Code &lt;/&gt;
+            </button>
         </div>
     );
 };

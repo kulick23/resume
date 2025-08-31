@@ -5,32 +5,23 @@ import Laptop from "../Laptop/Laptop";
 import { useTranslation } from "react-i18next";
 import { Element } from "react-scroll";
 import "./Project.scss";
+import { useChunkProjects } from "../../Hooks/useChunkProjects";
+import { Project as ProjectType } from "../../types/project";
+
+const getChunkSize = () => (window.innerWidth >= 1024 ? 3 : 2);
 
 const Project: React.FC = observer(() => {
   const { projects } = projectsStore;
   const { t } = useTranslation();
-  const [chunkSize, setChunkSize] = useState(window.innerWidth >= 1024 ? 3 : 2);
-
-  const chunkProjects = (array: any[], size: number) => {
-    const results = [];
-    for (let i = 0; i < array.length; i += size) {
-      results.push(array.slice(i, i + size));
-    }
-    return results;
-  };
+  const [chunkSize, setChunkSize] = useState(getChunkSize());
 
   useEffect(() => {
-    const handleResize = () => {
-      setChunkSize(window.innerWidth >= 1024 ? 3 : 2);
-    };
-
+    const handleResize = () => setChunkSize(getChunkSize());
     window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const chunkedProjects = chunkProjects(projects, chunkSize);
+  const chunkedProjects = useChunkProjects<ProjectType>(projects, chunkSize);
 
   return (
     <div className="project" data-aos="fade-up">
@@ -42,7 +33,7 @@ const Project: React.FC = observer(() => {
           className="project__row"
           data-aos="fade-up"
         >
-          {row.map((project: any) => (
+          {row.map((project) => (
             <div key={project.title} className="project__item">
               <Laptop project={project} />
             </div>

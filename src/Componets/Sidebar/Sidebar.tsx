@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-scroll';
 import './Sidebar.scss';
 import { useTranslation } from 'react-i18next';
+import { SECTIONS } from '../../Constants/sections';
 
 type SidebarNavProps = {
     onSetActive: (section: string) => void;
@@ -9,11 +10,10 @@ type SidebarNavProps = {
 
 const Sidebar: React.FC<SidebarNavProps> = ({ onSetActive }) => {
     const { t } = useTranslation();
-    const sections = ['header', 'about', 'skills', 'projects', 'experience', 'footer'];
 
     return (
         <div className="sidebar">
-            {sections.map((section) => (
+            {SECTIONS.map((section) => (
                 <Link
                     key={section}
                     activeClass="active"
