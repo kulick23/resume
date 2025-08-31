@@ -1,0 +1,56 @@
+{
+    "header": {
+      "greeting": "HI, my name is Danila Kulinkovich",
+      "web": "WEB",
+      "developer": "DEVELOPER",
+      "email": "danek200326@gmail.com"
+    },
+    "about": {
+      "description": "As a multifaceted Web Developer, I bring a unique blend of skills and experiences that span across UI/UX design, front-end development with JS/React, and database management using SQL.\nMy proficiency extends to Git, C/C++, OOP, Linux, and more, ensuring versatile solutions for diverse web development challenges."
+    },
+    "projects": {
+      "title": "My Projects"
+    },
+    "experience": {
+      "title": "IT Experience",
+      "experiences": {
+        "1": {
+          "position": "Administrator / Programming",
+          "description": "Work with customers, creating game servers, frontend"
+        },
+        "2": {
+          "position": "Student Lab",
+          "description": "Work with customers, Soft skills, Programming skills, React project"
+        },
+        "3": {
+          "position": "Hackathon",
+          "description": "React project"
+        },
+        "4": {
+          "position": "Hackathon",
+          "description": "JS project"
+        }
+      }
+    },
+    "skills": {
+      "title": "My Skills",
+      "techskills": "Tech Skills",
+      "softskills": "Soft Skills",
+      "tools": "Tools",
+      "languages": "Languages"
+    },
+    "footer": {
+      "clue": "up",
+      "thankYou": "Thank you for watching",
+      "connect": "Let's connect and explore how we can create impactful digital solutions together"
+    },
+    "sidebar": {
+        "header": "Header",
+        "about": "About",
+        "skills": "Skills",
+        "projects": "Projects",
+        "experience": "Experience",
+        "footer": "Footer"
+    }
+  }
+  
