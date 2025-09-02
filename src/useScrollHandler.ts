@@ -4,7 +4,7 @@ import { scroller, Events } from 'react-scroll';
 const useScrollHandler = (
   sections: string[],
   currentSectionIndex: number,
-  setCurrentSectionIndex: (index: number) => void
+  setCurrentSectionIndex: (index: number) => void,
 ) => {
   const [isScrolling, setIsScrolling] = useState(false);
   const [currentProjectRow, setCurrentProjectRow] = useState(1);
@@ -18,7 +18,7 @@ const useScrollHandler = (
       });
       setCurrentSectionIndex(index);
     },
-    [sections, setCurrentSectionIndex]
+    [sections, setCurrentSectionIndex],
   );
 
   const handleWheel = useCallback(
@@ -64,7 +64,7 @@ const useScrollHandler = (
         setIsScrolling(false);
       }, 700);
     },
-    [currentSectionIndex, isScrolling, currentProjectRow, sections, scrollToSection]
+    [currentSectionIndex, isScrolling, currentProjectRow, sections, scrollToSection],
   );
 
   useEffect(() => {

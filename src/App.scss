@@ -1,26 +1,24 @@
-
-
 @font-face {
-  font-family: 'CodeFont'; 
+  font-family: 'CodeFont';
   src: url('../src/Assets/Fonts/Code7X5Regular-ypBe.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
-  font-family: 'MainFont'; 
+  font-family: 'MainFont';
   src: url('../src/Assets/Fonts/Arev.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
-  font-family: 'TitleFont'; 
+  font-family: 'TitleFont';
   src: url('../src/Assets/Fonts/HURDEI.ttf') format('truetype');
   font-weight: 100;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'SecondFont'; 
+  font-family: 'SecondFont';
   src: url('../src/Assets/Fonts/Cornerita.ttf') format('truetype');
   font-weight: 100;
   font-style: normal;
@@ -28,13 +26,13 @@
 :root {
   --background-space: black;
   --background-space-opacity: rgba(0, 0, 0, 0.1);
-  --background-second-space: #090A0F;
-  --stars: #FFF;
+  --background-second-space: #090a0f;
+  --stars: #fff;
   --background-dark: #323b4c;
   --background-colory: #ffb3c1;
   --text-graphite-light: #888;
   --text-graphite-light-opacity: rgba(136, 136, 136, 0.3);
-  --text-graphite-dark: #333; 
+  --text-graphite-dark: #333;
   --font-code: 'CodeFont', Arial, sans-serif;
   --font-web: 'TitleFont', Arial, sans-serif;
   --font-second: 'SecondFont', Arial, sans-serif;
@@ -45,7 +43,6 @@
   --button-height-medium: 35px;
   --button-width-small: 100px;
   --button-height-small: 50px;
-
 }
 html {
   -webkit-text-size-adjust: 100%;
@@ -56,30 +53,28 @@ html {
   flex-direction: column;
   min-height: 100vh;
   overflow-x: hidden;
-
 }
 body {
   background: linear-gradient(180deg, var(--background-dark), var(--background-colory));
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
+    'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
-h1, h2{
+h1,
+h2 {
   color: var(--text-graphite-dark);
   font-family: var(--font-main);
 }
-p{
+p {
   font-family: var(--font-main);
-
 }
 
 button {
@@ -97,7 +92,7 @@ button {
 }
 
 button:hover {
-  box-shadow: .5px .5px var(--button-height-big) var(--text-graphite-light);
+  box-shadow: 0.5px 0.5px var(--button-height-big) var(--text-graphite-light);
 }
 
 button::after {
@@ -117,7 +112,7 @@ button::after {
 }
 
 button::before {
-   height: var(--button-height-big);
+  height: var(--button-height-big);
   width: var(--button-width-big);
   background-color: var(--background-dark);
   color: var(--background-colory);
@@ -155,48 +150,48 @@ a:hover {
     width: var(--button-width-medium);
     font-size: 10px;
   }
-  
+
   button:hover {
-    box-shadow: .5px .5px var(--button-height-medium) var(--text-graphite-light);
+    box-shadow: 0.5px 0.5px var(--button-height-medium) var(--text-graphite-light);
   }
-  
+
   button::after {
     height: var(--button-height-medium);
     width: var(--button-width-medium);
     transform: translateY(var(--button-height-medium));
   }
-  
+
   button::before {
-     height: var(--button-height-medium);
+    height: var(--button-height-medium);
     width: var(--button-width-medium);
   }
-  
+
   button:hover::before {
     transform: translateY(calc(-1 * var(--button-height-medium))) scale(0) rotate(120deg);
-}
+  }
 }
 @media (max-width: 768px) {
   button {
     height: var(--button-height-medium);
     width: var(--button-width-medium);
   }
-  
+
   button:hover {
-    box-shadow: .5px .5px var(--button-height-medium) var(--text-graphite-light);
+    box-shadow: 0.5px 0.5px var(--button-height-medium) var(--text-graphite-light);
   }
-  
+
   button::after {
     height: var(--button-height-medium);
     width: var(--button-width-medium);
     transform: translateY(var(--button-height-medium));
   }
-  
+
   button::before {
-     height: var(--button-height-medium);
+    height: var(--button-height-medium);
     width: var(--button-width-medium);
   }
-  
+
   button:hover::before {
     transform: translateY(calc(-1 * var(--button-height-medium))) scale(0) rotate(120deg);
-}
+  }
 }

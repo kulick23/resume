@@ -3,36 +3,35 @@ import Github from '../Assets/Icons/github.svg';
 import Telegram from '../Assets/Icons/telegram.svg';
 import CV from '../Assets/CV/cv.pdf';
 
-
 export const SOCIALS = [
   {
-    href: "https://github.com/kulick23",
+    href: 'https://github.com/kulick23',
     img: Github,
-    alt: "Github"
+    alt: 'Github',
   },
   {
-    href: "https://t.me/chik_chiv",
+    href: 'https://t.me/chik_chiv',
     img: Telegram,
-    alt: "Telegram"
+    alt: 'Telegram',
   },
   {
-    href: "https://www.linkedin.com/in/danila-kulinkovich/",
+    href: 'https://www.linkedin.com/in/danila-kulinkovich/',
     img: LinkedIn,
-    alt: "LinkedIn"
-  }
+    alt: 'LinkedIn',
+  },
 ];
 
-export const STAR_IDS = ["stars", "stars2", "stars3"];
+export const STAR_IDS = ['stars', 'stars2', 'stars3'];
 
 export const CONTACTS = [
   {
-    href: "mailto:danek200326@gmail.com",
-    label: "danek200326@gmail.com",
+    href: 'mailto:danek200326@gmail.com',
+    label: 'danek200326@gmail.com',
     props: {},
   },
   {
     href: CV,
-    label: "CV ⤓",
+    label: 'CV ⤓',
     props: { download: true },
   },
 ];

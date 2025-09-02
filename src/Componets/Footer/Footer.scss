@@ -45,7 +45,7 @@
     z-index: 10;
 
     &::after {
-      content: "";
+      content: '';
       position: absolute;
       top: -5px;
       left: 50%;
@@ -57,7 +57,8 @@
   }
 
   @keyframes wobble {
-    0%, 100% {
+    0%,
+    100% {
       transform: rotate(-3deg);
     }
     50% {

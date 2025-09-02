@@ -1,6 +1,6 @@
 import { useState, useMemo } from 'react';
 import './App.scss';
-import {About, Skills, Project, Experience, Header, Footer,Sidebar} from "./Componets";
+import { About, Skills, Project, Experience, Header, Footer, Sidebar } from './Componets';
 import { Element } from 'react-scroll';
 import { useAOS } from './Hooks';
 import useScrollHandler from './useScrollHandler';

@@ -3,7 +3,9 @@
 
   &__box {
     position: relative;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
 
     &:hover {
       transform: scale(1.05);
@@ -79,7 +81,7 @@
     justify-content: center;
 
     &::after {
-      content: "";
+      content: '';
       background-image: url('../../Assets/Icons/github-black.svg');
       background-size: 25%;
       background-position: center;
@@ -90,9 +92,7 @@
     }
 
     &::before {
-      content: "Code </>";
+      content: 'Code </>';
     }
   }
 }
-
-
