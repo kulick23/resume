@@ -2,13 +2,13 @@ import React from 'react';
 import { Link } from 'react-scroll';
 import './Sidebar.scss';
 import { useTranslation } from 'react-i18next';
-import { SECTIONS } from '../../Constants/sections';
+import { SECTIONS } from '../../Constants';
 
 type SidebarNavProps = {
     onSetActive: (section: string) => void;
 };
 
-const Sidebar: React.FC<SidebarNavProps> = ({ onSetActive }) => {
+export const Sidebar: React.FC<SidebarNavProps> = ({ onSetActive }) => {
     const { t } = useTranslation();
 
     return (

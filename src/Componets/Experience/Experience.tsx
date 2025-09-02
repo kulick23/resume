@@ -2,9 +2,9 @@ import React from "react";
 import { observer } from "mobx-react-lite";
 import "./Experience.scss";
 import { useTranslation } from 'react-i18next';
-import { useSortedExperiences } from "../../Hooks/useSortedExperiences";
+import { useSortedExperiences } from "../../Hooks";
 
-const Experience: React.FC = observer(() => {
+export const Experience: React.FC = observer(() => {
     const { t } = useTranslation();
     const sortedExperiences = useSortedExperiences();
     const total = sortedExperiences.length;

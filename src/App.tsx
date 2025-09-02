@@ -1,33 +1,17 @@
-import { useState, useMemo, useEffect } from 'react';
+import { useState, useMemo } from 'react';
 import './App.scss';
-import About from "./Componets/About/About";
-import Skills from "./Componets/Skills/Skills";
-import Project from "./Componets/Projects/Project";
-import Experience from "./Componets/Experience/Experience";
-import Header from './Componets/Header/Header';
-import Footer from './Componets/Footer/Footer';
-import SidebarNav from './Componets/Sidebar/Sidebar';
+import {About, Skills, Project, Experience, Header, Footer,Sidebar} from "./Componets";
 import { Element } from 'react-scroll';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import { useAOS } from './Hooks';
 import useScrollHandler from './useScrollHandler';
+import { SECTIONS } from './Constants';
 
 function App() {
-  const sections: string[] = useMemo(
-    () => ['header', 'about', 'skills', 'projects', 'experience', 'footer'],
-    []
-  );
+  useAOS();
 
+  const sections = useMemo(() => SECTIONS, []);
   const [currentSectionIndex, setCurrentSectionIndex] = useState(0);
 
-  useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      once: true,
-    });
-  }, []);
-
-  // Hook to handle scroller logic
   useScrollHandler(sections, currentSectionIndex, setCurrentSectionIndex);
 
   const handleSetActive = (section: string) => {
@@ -39,7 +23,7 @@ function App() {
 
   return (
     <div className="App">
-      <SidebarNav onSetActive={handleSetActive} />
+      <Sidebar onSetActive={handleSetActive} />
       <Element name="header">
         <Header data-aos="fade-down" />
       </Element>

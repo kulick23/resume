@@ -1,9 +1,9 @@
 import React from "react";
 import "./Laptop.scss";
-import { LAPTOP_IMG, PHONE_IMG } from "../../Constants/laptop";
-import { LaptopProps } from "../../types/project";
+import { LAPTOP_IMG, PHONE_IMG } from "../../Constants";
+import { LaptopProps } from "../../types";
 
-const Laptop: React.FC<LaptopProps> = ({ project }) => {
+export const Laptop: React.FC<LaptopProps> = ({ project }) => {
     const handleOpen = (url: string) => window.open(url, "_blank");
 
     return (

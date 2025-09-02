@@ -3,11 +3,6 @@ import Github from '../Assets/Icons/github.svg';
 import Telegram from '../Assets/Icons/telegram.svg';
 import CV from '../Assets/CV/cv.pdf';
 
-export const LANGUAGES = [
-  { code: 'en', label: 'EN' },
-  { code: 'ru', label: 'RU' },
-  { code: 'pl', label: 'PL' },
-];
 
 export const SOCIALS = [
   {

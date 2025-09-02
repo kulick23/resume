@@ -1,10 +1,10 @@
 import React from "react";
 import './Header.scss';
 import { useTranslation } from 'react-i18next';
-import { LANGUAGES, SOCIALS, STAR_IDS, CONTACTS } from '../../Constants/header';
-import { useLanguage } from '../../Hooks/useLanguage';
+import { LANGUAGES, SOCIALS, STAR_IDS, CONTACTS } from '../../Constants';
+import { useLanguage } from '../../Hooks';
 
-const Header: React.FC = () => {
+export const Header: React.FC = () => {
     const { t } = useTranslation();
     const changeLanguage = useLanguage();
 

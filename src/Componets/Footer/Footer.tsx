@@ -2,10 +2,9 @@ import React from "react";
 import './Footer.scss';
 import NaboImg from '../../Assets/PngImg/nabo.png';
 import { useTranslation } from 'react-i18next';
-import { useScrollToSection } from '../../Hooks/useScrollToSection';
-import { useAOS } from '../../Hooks/useAOS';
+import { useScrollToSection, useAOS } from '../../Hooks';
 
-const Footer: React.FC = () => {
+export const Footer: React.FC = () => {
     const { t } = useTranslation();
     const scrollToSection = useScrollToSection();
 

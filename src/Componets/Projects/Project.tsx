@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { observer } from "mobx-react-lite";
-import projectsStore from "../../Stores/projectsStore";
-import Laptop from "../Laptop/Laptop";
+import {projectsStore} from "../../Stores";
+import Laptop from "../Laptop";
 import { useTranslation } from "react-i18next";
 import { Element } from "react-scroll";
 import "./Project.scss";
-import { useChunkProjects } from "../../Hooks/useChunkProjects";
-import { Project as ProjectType } from "../../types/project";
+import { useChunkProjects } from "../../Hooks";
+import { Project as ProjectType } from "../../types";
 
 const getChunkSize = () => (window.innerWidth >= 1024 ? 3 : 2);
 
-const Project: React.FC = observer(() => {
+export const Project: React.FC = observer(() => {
   const { projects } = projectsStore;
   const { t } = useTranslation();
   const [chunkSize, setChunkSize] = useState(getChunkSize());

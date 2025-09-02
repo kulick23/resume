@@ -1,9 +1,9 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import './LanguageSwitcher.scss';
-import { LANGUAGES } from '../../Constants/languages';
+import { LANGUAGES } from '../../Constants';
 
-const LanguageSwitcher: React.FC = () => {
+export const LanguageSwitcher: React.FC = () => {
   const { i18n } = useTranslation();
 
   const changeLanguage = (lng: string) => {

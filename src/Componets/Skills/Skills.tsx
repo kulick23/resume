@@ -1,10 +1,10 @@
 import React from "react";
 import { observer } from "mobx-react-lite";
-import skillsStore from "../../Stores/skillsStore";
+import {skillsStore} from "../../Stores";
 import './Skills.scss';
 import { useTranslation } from 'react-i18next';
 
-const Skills: React.FC = observer(() => {
+export const Skills: React.FC = observer(() => {
     const { t } = useTranslation();
 
     return (

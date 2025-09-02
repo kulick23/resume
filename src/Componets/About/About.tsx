@@ -1,9 +1,9 @@
 import React from 'react';
 import './About.scss';
 import { useTranslation } from 'react-i18next';
-import { ABOUT_IMAGES } from '../../Constants/about';
+import { ABOUT_IMAGES } from '../../Constants';
 
-const About: React.FC = () => {
+export const About: React.FC = () => {
     const { t } = useTranslation();
 
     return (
