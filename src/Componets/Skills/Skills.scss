@@ -9,14 +9,33 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
+    overflow: hidden;
   }
 
   &__category {
+    position: relative;
     background-color: var(--text-graphite-light-opacity);
     border-radius: 8px;
     box-shadow: 0 4px 8px var(--background-space-opacity);
     padding-bottom: 15px;
     width: 20%;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+        overflow: hidden;
+
+     &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -50px;
+        height: 50px;
+        border-radius: 100%;
+        box-shadow:
+          0 0 10px rgba(255, 255, 255, 0.1),
+          0 0 40px var(--category-color, #FF7111),
+          0 0 60px var(--category-color, #FF7111),
+          0 0 80px var(--category-color, #FF7111);
+      }
 
     &--title {
       font-size: 3vh;

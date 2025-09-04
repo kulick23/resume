@@ -25,9 +25,7 @@ function App() {
       <Element name="header">
         <Header data-aos="fade-down" />
       </Element>
-      <Element name="about">
-        <About data-aos="fade-right" />
-      </Element>
+
       <Element name="skills">
         <Skills data-aos="fade-left" />
       </Element>
@@ -39,6 +37,9 @@ function App() {
       </Element>
       <Element name="footer">
         <Footer data-aos="zoom-out" />
+      </Element>
+            <Element name="about">
+        <About data-aos="fade-right" />
       </Element>
     </div>
   );

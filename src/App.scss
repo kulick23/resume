@@ -33,7 +33,7 @@
   --accent-primary: #0f3460;
   --accent-secondary: #e94560;
   --text-graphite-light: #a0a0a0;
-  --text-graphite-light-opacity: rgba(160, 160, 160, 0.3);
+  --text-graphite-light-opacity: rgba(255, 255, 255, 0.01);
   --text-graphite-dark: #2d2d2d;
   --font-code: 'CodeFont', 'Fira Code', monospace;
   --font-web: 'TitleFont', 'Inter', sans-serif;
@@ -65,7 +65,7 @@ html {
 }
 
 body {
-  background: linear-gradient(135deg, var(--background-dark) 0%, var(--background-colory) 50%, var(--accent-primary) 100%);
+  background: linear-gradient(135deg, var(--background-second-space) 0%, var(--background-space) 50%, rgba(18, 18, 24, 1) 100%);
   margin: 0;
   font-family: var(--font-main);
   -webkit-font-smoothing: antialiased;

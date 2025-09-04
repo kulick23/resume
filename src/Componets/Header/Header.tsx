@@ -72,16 +72,6 @@ export const Header: React.FC = () => {
       </div>
 
       <header className="header">
-        <div className="header__languageSwitcher">
-          {LANGUAGES.map((lang, idx) => (
-            <React.Fragment key={lang.code}>
-              <span onClick={() => changeLanguage(lang.code)} className="header__language">
-                {lang.label}
-              </span>
-              {idx < LANGUAGES.length - 1 && " | "}
-            </React.Fragment>
-          ))}
-        </div>
 
         {STAR_IDS.map((id) => (
           <div key={id} id={id}></div>
