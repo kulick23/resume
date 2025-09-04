@@ -79,20 +79,62 @@
     position: relative;
     top: 2vh;
     justify-content: center;
+    height: var(--button-height-big);
+    width: var(--button-width-big);
+    font-family: var(--font-second);
+    border: 2px solid var(--accent-secondary);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background: linear-gradient(135deg, var(--background-dark), var(--accent-primary));
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--stars);
+    box-shadow: var(--shadow-light);
 
     &::after {
       content: '';
-      background-image: url('../../Assets/Icons/github-black.svg');
+      background-image: url('../../Assets/Icons/github.svg');
       background-size: 25%;
       background-position: center;
       background-repeat: no-repeat;
       width: 100%;
       height: 100%;
       display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translateY(var(--button-height-big));
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     &::before {
       content: 'Code </>';
+      height: var(--button-height-big);
+      width: var(--button-width-big);
+      background: transparent;
+      color: var(--stars);
+      position: absolute;
+      top: 0;
+      left: 0;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    &:hover {
+      border-color: #fff;
+    }
+
+    &:hover::after {
+      transform: translateY(0);
+    }
+
+    &:hover::before {
+      transform: translateY(calc(-1 * var(--button-height-big)));
     }
   }
 }

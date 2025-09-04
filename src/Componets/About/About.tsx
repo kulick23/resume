@@ -1,30 +1,27 @@
-import React from 'react';
-import './About.scss';
-import { useTranslation } from 'react-i18next';
-import { ABOUT_IMAGES } from '../../Constants';
+import type React from "react"
+import "./About.scss"
+import { useTranslation } from "react-i18next"
+import { ABOUT_IMAGES } from "../../Constants"
+import { ContactForm } from "../ContactForm"
 
 export const About: React.FC = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation()
+
+  const handleContactSubmit = (data: any) => {
+    console.log("Contact form submitted:", data)
+    // Here you can add actual form submission logic
+  }
 
   return (
     <div className="about" data-aos="fade-up">
       <div className="about__right">
-        <p className="about__text">
-          {t('about.description')
-            .split('\n')
-            .map((line: string, index: number) => (
-              <span key={index}>
-                {line}
-                <br />
-              </span>
-            ))}
-        </p>
+        <ContactForm onSubmit={handleContactSubmit} />
       </div>
       {ABOUT_IMAGES.map((img) => (
-        <img key={img.alt} src={img.src} alt={img.alt} className={img.className} />
+        <img key={img.alt} src={img.src || "/placeholder.svg"} alt={img.alt} className={img.className} />
       ))}
     </div>
-  );
-};
+  )
+}
 
-export default About;
+export default About

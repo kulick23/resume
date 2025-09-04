@@ -3,16 +3,14 @@ import './App.scss';
 import { About, Skills, Project, Experience, Header, Footer, Sidebar } from './Componets';
 import { Element } from 'react-scroll';
 import { useAOS } from './Hooks';
-import useScrollHandler from './useScrollHandler';
 import { SECTIONS } from './Constants';
+import ExperienceEducation from './Componets/ExperienceEducation/ExperienceEducation';
 
 function App() {
   useAOS();
 
   const sections = useMemo(() => SECTIONS, []);
   const [currentSectionIndex, setCurrentSectionIndex] = useState(0);
-
-  useScrollHandler(sections, currentSectionIndex, setCurrentSectionIndex);
 
   const handleSetActive = (section: string) => {
     const index = sections.indexOf(section);
@@ -37,7 +35,7 @@ function App() {
         <Project data-aos="fade-up" />
       </Element>
       <Element name="experience">
-        <Experience data-aos="zoom-in" />
+        <ExperienceEducation data-aos="zoom-in" />
       </Element>
       <Element name="footer">
         <Footer data-aos="zoom-out" />

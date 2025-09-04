@@ -27,9 +27,7 @@ export const Laptop: React.FC<LaptopProps> = ({ project }) => {
         )}
         <div className="laptop__stack">[{project.stack.join(', ')}]</div>
       </div>
-      <button className="laptop__button" onClick={() => handleOpen(project.repoLink)} title="Code">
-        Code &lt;/&gt;
-      </button>
+      <button className="laptop__button" onClick={() => handleOpen(project.repoLink)} />
     </div>
   );
 };

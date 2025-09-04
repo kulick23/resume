@@ -13,7 +13,7 @@
     display: flex;
     justify-content: center;
     padding: 20px;
-    margin: -15% 5% 0 40%;
+    margin: 0 0 0 50%;
   }
 
   &__text {
@@ -32,7 +32,7 @@
   .lars {
     position: absolute;
     top: 10%;
-    left: 25%;
+    left: 20%;
     transform: translateX(-50%);
     height: 80vh;
     z-index: -1;
