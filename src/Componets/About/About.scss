@@ -26,12 +26,18 @@ justify-content: space-between;
     }
   }
 
-  img {
+  &__image-3d {
     width: 80%;
     height: auto;
     border-radius: var(--border-radius);
     display: flex;
     justify-self: center;
+    transition: transform 0.2s cubic-bezier(.25,.46,.45,.94);
+    will-change: transform;
+    transform: perspective(600px) rotateX(var(--rotateX, 0deg)) rotateY(var(--rotateY, 0deg));
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    cursor: pointer;
+    user-select: none;
   }
 }
 
