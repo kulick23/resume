@@ -3,13 +3,38 @@ import { Contact, About, Skills, Project, Header, Footer } from './Componets';
 import { Element } from 'react-scroll';
 import { useAOS } from './Hooks';
 import ExperienceEducation from './Componets/ExperienceEducation/ExperienceEducation';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import NaboImg from './Assets/PngImg/nabo.png';  // Импорт картинки
 
 function App() {
   useAOS();
   const [showPopup, setShowPopup] = useState(false);
-  const [isFlying, setIsFlying] = useState(false);  // Новое состояние для анимации
+  const [isFlying, setIsFlying] = useState(false);
+  const starsRef = useRef<HTMLDivElement>(null);
+
+  // Создаем дополнительные звезды на всю высоту страницы
+  useEffect(() => {
+    const createExtraStars = () => {
+      if (starsRef.current) {
+        // Получаем высоту документа
+        const docHeight = Math.max(
+          document.body.scrollHeight,
+          document.body.offsetHeight,
+          document.documentElement.clientHeight,
+          document.documentElement.scrollHeight,
+          document.documentElement.offsetHeight
+        );
+        
+        // Задаем высоту звездного фона достаточной для всей страницы
+        starsRef.current.style.height = `${docHeight * 2}px`;
+      }
+    };
+
+    createExtraStars();
+    // Обновляем при изменении размера окна
+    window.addEventListener('resize', createExtraStars);
+    return () => window.removeEventListener('resize', createExtraStars);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -61,6 +86,13 @@ function App() {
 
   return (
     <div className="App">
+      {/* Фон со звездами для всего сайта */}
+      <div className="stars-container" ref={starsRef}>
+        <div id="stars"></div>
+        <div id="stars2"></div>
+        <div id="stars3"></div>
+      </div>
+      
       <Element name="header" id="header">
         <Header data-aos="fade-down" />
       </Element>

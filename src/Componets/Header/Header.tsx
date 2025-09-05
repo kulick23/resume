@@ -128,12 +128,7 @@ export const Header: React.FC = () => {
           </div>
         </div>
       </div>
-
-      <header className="header">
-        {STAR_IDS.map((id) => (
-          <div key={id} id={id}></div>
-        ))}
-
+      <div className="header">
         <div className="header__card">
           <p className="header__text">{t("header.greeting")}</p>
           <div className="header__web">
@@ -155,7 +150,7 @@ export const Header: React.FC = () => {
             ))}
           </div>
         </div>
-      </header>
+      </div>
     </>
   )
 }
