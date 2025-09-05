@@ -14,9 +14,9 @@
   },
   "about": {
     "title": "About Me",
-    "subtitle": "My Journey in Development",
-    "text1": "I am a frontend developer with experience in creating modern web applications.",
-    "text2": "I love solving complex problems and working in a team."
+    "subtitle": "Frontend Developer with experience in building user-friendly and high-performance web applications. My core stack includes React, TypeScript, Vite, RTK Query, and SCSS, but I am also confident working with Node.js, databases, cloud services, and preprocessors.",
+    "text1": "I combine strong frontend expertise with a solid understanding of backend development, enabling me to contribute effectively across the full development cycle. I know how to transform designs into clean, responsive interfaces and work efficiently with a wide range of libraries and tools.",
+    "text2": "Focused on code quality, performance optimization, and user experience. Always eager to learn new technologies and take on exciting projects."
   },
 "contact": {
   "title": "Contact",

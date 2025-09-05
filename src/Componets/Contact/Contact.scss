@@ -13,6 +13,11 @@
 
   &__icon {
     height: 30px;
+    transition: transform 0.3s ease, filter 0.3s ease; // Добавлен filter в transition
+
+    &:hover {
+      filter: invert(0.2);
+    }
   }
 
   &__form {

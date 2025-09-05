@@ -55,8 +55,19 @@
     justify-content: center;
     gap: 10px;
 
+    a {
+      transition: transform 0.3s ease;
+
+      &:hover {
+        .header__favicons--img {
+          filter: invert(0.2); 
+        }
+      }
+    }
+
     &--img {
       height: 8vh;
+      transition: filter 0.3s ease; // Плавное изменение цвета
     }
   }
 
