@@ -3,6 +3,7 @@ import "./Header.scss"
 import { useTranslation } from "react-i18next"
 import { LANGUAGES, SOCIALS, STAR_IDS, CONTACTS } from "../../Constants"
 import { useLanguage } from "../../Hooks"
+import { Link } from "react-scroll"
 
 export const Header: React.FC = () => {
   const { t } = useTranslation()
@@ -39,21 +40,51 @@ export const Header: React.FC = () => {
           </div>
 
           <div className="header__nav-links">
-            <a href="#header" className="header__nav-link">
+            <Link
+              to="header"
+              spy={true}
+              smooth={true}
+              duration={500}
+              className="header__nav-link"
+            >
               {t("nav.home")}
-            </a>
-            <a href="#about" className="header__nav-link">
+            </Link>
+            <Link
+              to="about"
+              spy={true}
+              smooth={true}
+              duration={500}
+              className="header__nav-link"
+            >
               {t("nav.about")}
-            </a>
-            <a href="#skills" className="header__nav-link">
+            </Link>
+            <Link
+              to="skills"
+              spy={true}
+              smooth={true}
+              duration={500}
+              className="header__nav-link"
+            >
               {t("nav.skills")}
-            </a>
-            <a href="#projects" className="header__nav-link">
+            </Link>
+            <Link
+              to="projects"
+              spy={true}
+              smooth={true}
+              duration={500}
+              className="header__nav-link"
+            >
               {t("nav.projects")}
-            </a>
-            <a href="#experience" className="header__nav-link">
+            </Link>
+            <Link
+              to="experience"
+              spy={true}
+              smooth={true}
+              duration={500}
+              className="header__nav-link"
+            >
               {t("nav.experience")}
-            </a>
+            </Link>
           </div>
 
           <div className="header__nav-widgets">

@@ -113,12 +113,14 @@
     align-items: center;
     justify-content: center;
     box-shadow: var(--shadow-light);
+    overflow: hidden; // добавлено!
   }
 
   &__icon {
-    width: 1.5rem;
-    height: 1.5rem;
-    filter: brightness(0) invert(1);
+    width: 2rem;      // фиксированная ширина
+    height: 2rem;     // фиксированная высота
+    object-fit: contain; // или object-fit: cover;
+    display: block;
   }
 
   &__item-info {
@@ -156,6 +158,7 @@
     margin: 0;
     font-size: clamp(0.9rem, 1.8vw, 1rem);
     text-align: left;
+    margin-top: 10px;
   }
 
   @media (max-width: 480px) {
