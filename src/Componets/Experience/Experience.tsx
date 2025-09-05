@@ -2,6 +2,7 @@ import React from 'react';
 import './Experience.scss';
 import ExperienceStore from '../../Stores/experienceStore';
 import { useTranslation } from 'react-i18next';
+import ExperienceItem from '../ExperienceItem';
 
 export const Experience: React.FC = () => {
   const { t } = useTranslation();
@@ -19,27 +20,7 @@ export const Experience: React.FC = () => {
           </div>
           <div className="experience__timeline">
             {ExperienceStore.education.map((item, idx) => (
-              <div className="experience__item" key={idx}>
-                <div className="experience__item-header">
-                  <div className="experience__icon-wrapper">
-                    {item.icon && (
-                      <img
-                        src={item.icon}
-                        alt={item.iconAlt || ''}
-                        className="experience__icon"
-                      />
-                    )}
-                  </div>
-                  <div className="experience__item-info">
-                    <h4 className="experience__item-title">{t(item.position)}</h4>
-                    <p className="experience__item-subtitle">{item.company}</p>
-                  </div>
-                </div>
-                <div className="experience__item-info">
-                  <span className="experience__item-period">{item.duration}</span>
-                  <p className="experience__item-description">{t(item.description)}</p>
-                </div>{' '}
-              </div>
+              <ExperienceItem key={idx} item={item} />
             ))}
           </div>
         </div>
@@ -50,27 +31,7 @@ export const Experience: React.FC = () => {
           </div>
           <div className="experience__timeline">
             {ExperienceStore.experiences.map((item, idx) => (
-              <div className="experience__item" key={item.id ?? idx}>
-                <div className="experience__item-header">
-                  <div className="experience__icon-wrapper">
-                    {item.icon && (
-                      <img
-                        src={item.icon}
-                        alt={item.iconAlt || ''}
-                        className="experience__icon"
-                      />
-                    )}
-                  </div>
-                  <div className="experience__item-info">
-                    <h4 className="experience__item-title">{t(item.position)}</h4>
-                    <p className="experience__item-subtitle">{item.company}</p>
-                  </div>
-                </div>
-                <div className="experience__item-info">
-                  <span className="experience__item-period">{item.duration}</span>
-                  <p className="experience__item-description">{t(item.description)}</p>
-                </div>
-              </div>
+              <ExperienceItem key={item.id ?? idx} item={item} />
             ))}
           </div>
         </div>

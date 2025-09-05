@@ -6,3 +6,6 @@ export * from './header';
 export * from './languages';
 export * from './laptop';
 export * from './sections';
+export * from './aboutConstants';
+export * from './contactConstants';
+export * from './projectConstants';

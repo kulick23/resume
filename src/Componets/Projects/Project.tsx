@@ -3,6 +3,7 @@ import { observer } from 'mobx-react-lite';
 import { projectsStore } from '../../Stores';
 import Laptop from '../Laptop';
 import { useTranslation } from 'react-i18next';
+import { FILTERS } from '../../Constants';
 import './Project.scss';
 
 export const Project: React.FC = observer(() => {
@@ -18,24 +19,15 @@ export const Project: React.FC = observer(() => {
       <h1 className="project__title">{t('projects.title')}</h1>
 
       <div className="project__filters">
-        <button
-          className={`project__filter-btn ${selectedCategory === 'all' ? 'project__filter-btn--active' : ''}`}
-          onClick={() => handleFilterChange('all')}
-        >
-          Все проекты
-        </button>
-        <button
-          className={`project__filter-btn ${selectedCategory === 'commercial' ? 'project__filter-btn--active' : ''}`}
-          onClick={() => handleFilterChange('commercial')}
-        >
-          Коммерческие
-        </button>
-        <button
-          className={`project__filter-btn ${selectedCategory === 'pet' ? 'project__filter-btn--active' : ''}`}
-          onClick={() => handleFilterChange('pet')}
-        >
-          Pet проекты
-        </button>
+        {FILTERS.map((filter) => (
+          <button
+            key={filter.key}
+            className={`project__filter-btn ${selectedCategory === filter.key ? 'project__filter-btn--active' : ''}`}
+            onClick={() => handleFilterChange(filter.key)}
+          >
+            {t(filter.labelKey)}
+          </button>
+        ))}
       </div>
 
       {/* Один блок для всех проектов */}

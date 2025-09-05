@@ -33,7 +33,10 @@
     "send": "Send message"
   },
   "projects": {
-    "title": "My Projects"
+    "title": "My Projects",
+    "all": "All",
+    "commercial": "Commercial",
+    "pet": "Pet Projects"
   },
   "experience": {
     "title": "Experience",

@@ -33,7 +33,10 @@
     "send": "Wyślij wiadomość"
   },
   "projects": {
-    "title": "Moje Projekty"
+    "title": "Moje Projekty",
+    "all": "Wszystkie",
+    "commercial": "Komercyjne",
+    "pet": "Projekty osobiste"
   },
   "experience": {
     "title": "Doświadczenie",

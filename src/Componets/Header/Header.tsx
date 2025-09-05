@@ -1,59 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './Header.scss';
 import { useTranslation } from 'react-i18next';
-import { LANGUAGES, SOCIALS, CONTACTS } from '../../Constants';
-import { useLanguage } from '../../Hooks';
+import { LANGUAGES, SOCIALS, CONTACTS, NAV_LINKS_KEYS } from '../../Constants';
+import { useLanguage, useHeader } from '../../Hooks';
 import { Link } from 'react-scroll';
 
 export const Header: React.FC = () => {
-  const { t, i18n } = useTranslation(); // Добавлено i18n
+  const { t, i18n } = useTranslation();
   const changeLanguage = useLanguage();
-  const currentLang = i18n.language; // Текущий язык
-  const [scrolled, setScrolled] = useState(false);
-  const [scrollDir, setScrollDir] = useState<'up' | 'down'>('up');
-  const [pastThreshold, setPastThreshold] = useState(false);
-  const [activeSection, setActiveSection] = useState<string>('header');
+  const currentLang = i18n.language;
+  const { scrolled, isHidden, activeSection } = useHeader();
 
-  useEffect(() => {
-    let lastY = window.scrollY;
-    const onScroll = () => {
-      const y = window.scrollY;
-      setScrolled(y > 0);
-      if (y > 150) {
-        setPastThreshold(true);
-        setScrollDir(y > lastY ? 'down' : 'up');
-      } else {
-        setPastThreshold(false);
-      }
-      lastY = y;
-    };
-    window.addEventListener('scroll', onScroll);
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
-
-  useEffect(() => {
-    const sectionIds = ['header', 'about', 'skills', 'projects', 'experience', 'contact'];
-    const handleIntersect = (entries: IntersectionObserverEntry[]) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setActiveSection(entry.target.id);
-        }
-      });
-    };
-
-    const observer = new IntersectionObserver(handleIntersect, {
-      threshold: 0.5,
-    });
-
-    sectionIds.forEach((id) => {
-      const el = document.getElementById(id);
-      if (el) observer.observe(el);
-    });
-
-    return () => observer.disconnect();
-  }, []);
-
-  const isHidden = pastThreshold && scrollDir === 'down';
+  const navLinks = NAV_LINKS_KEYS.map((link) => ({ ...link, label: t(link.key) }));
 
   return (
     <>
@@ -64,61 +22,18 @@ export const Header: React.FC = () => {
           </div>
 
           <div className="header__nav-links">
-            <Link
-              to="header"
-              spy={true}
-              smooth={true}
-              duration={500}
-              className={`header__nav-link${activeSection === 'header' ? ' header__nav-link--active' : ''}`}
-            >
-              {t('nav.home')}
-            </Link>
-            <Link
-              to="about"
-              spy={true}
-              smooth={true}
-              duration={500}
-              className={`header__nav-link${activeSection === 'about' ? ' header__nav-link--active' : ''}`}
-            >
-              {t('nav.about')}
-            </Link>
-            <Link
-              to="skills"
-              spy={true}
-              smooth={true}
-              duration={500}
-              className={`header__nav-link${activeSection === 'skills' ? ' header__nav-link--active' : ''}`}
-            >
-              {t('nav.skills')}
-            </Link>
-
-            <Link
-              to="projects"
-              spy={true}
-              smooth={true}
-              duration={500}
-              className={`header__nav-link${activeSection === 'projects' ? ' header__nav-link--active' : ''}`}
-            >
-              {t('nav.projects')}
-            </Link>
-            <Link
-              to="experience"
-              spy={true}
-              smooth={true}
-              duration={500}
-              className={`header__nav-link${activeSection === 'experience' ? ' header__nav-link--active' : ''}`}
-            >
-              {t('nav.experience')}
-            </Link>
-            <Link
-              to="contact"
-              spy={true}
-              smooth={true}
-              duration={500}
-              className={`header__nav-link${activeSection === 'contact' ? ' header__nav-link--active' : ''}`}
-            >
-              {t('nav.contact')}
-            </Link>
+            {navLinks.map((link) => (
+              <Link
+                key={link.to}
+                to={link.to}
+                spy={true}
+                smooth={true}
+                duration={500}
+                className={`header__nav-link${activeSection === link.to ? ' header__nav-link--active' : ''}`}
+              >
+                {link.label}
+              </Link>
+            ))}
           </div>
 
           <div className="header__nav-widgets">

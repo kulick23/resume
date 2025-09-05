@@ -10,3 +10,4 @@ export * from './Projects/index';
 export * from './Skills/index';
 export * from './About/index';
 export * from './Experience/index';
+export * from './ExperienceItem/index';

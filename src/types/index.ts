@@ -4,3 +4,4 @@
 
 export * from './aos';
 export * from './project';
+export * from './experience';
