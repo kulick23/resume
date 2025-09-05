@@ -1,8 +1,7 @@
 import './App.scss';
-import { Contact, About, Skills, Project, Header } from './Componets';
+import { Contact, About, Skills, Project, Header, Experience } from './Componets';
 import { Element } from 'react-scroll';
 import { useAOS } from './Hooks';
-import ExperienceEducation from './Componets/ExperienceEducation/ExperienceEducation';
 import { useState, useEffect, useRef } from 'react';
 import NaboImg from './Assets/PngImg/nabo.png'; // Импорт картинки
 
@@ -106,7 +105,7 @@ function App() {
         <Project data-aos="fade-up" />
       </Element>
       <Element name="experience" id="experience">
-        <ExperienceEducation data-aos="zoom-in" />
+        <Experience data-aos="zoom-in" />
       </Element>
       <Element name="contact" id="contact">
         <Contact data-aos="fade-right" />

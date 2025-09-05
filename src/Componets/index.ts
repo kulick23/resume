@@ -3,10 +3,10 @@
  */
 
 export * from './Contact/index';
-export * from './Experience/index';
 export * from './Header/index';
 export * from './LanguageSwitcher/index';
 export * from './Laptop/index';
 export * from './Projects/index';
 export * from './Skills/index';
 export * from './About/index';
+export * from './Experience/index';

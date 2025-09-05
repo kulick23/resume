@@ -1,144 +1,187 @@
 .experience {
-  width: 100%;
-  position: relative;
+  padding-top: 4rem;
+  margin: 0 auto;
+
+  &__header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  &__title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: var(--stars);
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+
+  &__subtitle {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    color: var(--text-graphite-light);
+    margin-bottom: 2rem;
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+  }
+
+  &__column {
+    position: relative;
+  }
+
+  &__column-header {
+    margin-bottom: 2rem;
+
+    h3 {
+      font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+      color: var(--stars);
+      font-weight: 600;
+      position: relative;
+      padding-left: 2rem;
+    }
+  }
 
   &__timeline {
-    position: absolute;
-    top: 55%;
-    left: 11%;
-    right: 11%;
-    height: 1%;
-    background: var(--stars);
-    transform: translateY(-50%);
-    z-index: 1;
+    position: relative;
+    padding-left: 2rem;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(180deg, var(--accent-secondary), var(--accent-primary));
+      border-radius: 1px;
+    }
   }
 
   &__item {
-    position: absolute;
-    width: 20%;
-    height: 33%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: relative;
+    margin-bottom: 3rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: var(--border-radius);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
 
-    &--top {
-      top: 51%;
-      transform: translate(-10%, -100%);
-      text-align: center;
-
-      &::before {
-        top: 107.5%;
-      }
-    }
-
-    &--bottom {
-      top: 59%;
-      transform: translate(-15%, 0);
-      text-align: center;
-
-      &::before {
-        top: -17%;
-      }
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-medium);
+      background: rgba(255, 255, 255, 0.08);
     }
 
     &::before {
       content: '';
       position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 8%;
-      height: 8%;
-      background: var(--background-colory);
-      border: 2px solid var(--stars);
+      left: -2.5rem;
+      top: 2rem;
+      width: 0.75rem;
+      height: 0.75rem;
+      background: var(--accent-secondary);
       border-radius: 50%;
-      z-index: 2;
+      border: 3px solid var(--background-dark);
+      box-shadow: 0 0 0 3px var(--accent-secondary);
     }
   }
 
-  &__content {
-    background: var(--background-dark);
-    padding: 15px;
-    border-radius: 8px;
-    position: relative;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    width: auto;
-    max-width: 100%;
-    box-sizing: border-box;
-    white-space: normal;
+  &__item-header {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1rem;
   }
 
-  &__company {
-    font-size: 3vh;
-    color: var(--background-colory);
-    margin: 0 0 5px;
+  &__icon-wrapper {
+    flex-shrink: 0;
+    width: 3rem;
+    height: 3rem;
+    background: linear-gradient(135deg, var(--accent-secondary), var(--accent-primary));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-light);
+    overflow: hidden; // добавлено!
   }
 
-  &__position {
-    font-family: var(--font-second);
-    margin: 5px 0;
-    font-size: 3.5vh;
+  &__icon {
+    width: 2rem; // фиксированная ширина
+    height: 2rem; // фиксированная высота
+    object-fit: contain; // или object-fit: cover;
+    display: block;
+  }
+
+  &__item-info {
+    flex: 1;
+    text-align: left;
+  }
+
+  &__item-title {
+    font-size: clamp(1.1rem, 2vw, 1.3rem);
     color: var(--stars);
+    margin: 0 0 0.5rem 0;
+    font-weight: 600;
   }
 
-  &__duration {
+  &__item-subtitle {
+    font-size: clamp(0.9rem, 1.8vw, 1rem);
+    color: var(--accent-secondary);
+    margin: 0 0 0.5rem 0;
+    font-weight: 500;
+  }
+
+  &__item-period {
+    font-size: clamp(0.8rem, 1.6vw, 0.9rem);
     color: var(--text-graphite-light);
-    font-size: 1.5vh;
-    font-family: var(--font-code);
-    margin-bottom: 10px;
+    font-weight: 400;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    display: inline-block;
   }
 
-  &__description {
-    color: var(--stars);
-    line-height: 1.5;
-    font-size: 1.6vh;
-    word-wrap: break-word;
+  &__item-description {
+    color: var(--text-graphite-light);
+    line-height: 1.6;
+    margin: 0;
+    font-size: clamp(0.9rem, 1.8vw, 1rem);
+    text-align: left;
+    margin-top: 10px;
   }
 
-  // Мобильная адаптация
-  @media screen and (max-width: 768px) {
-    .experince__block {
-      padding-top: 5vh;
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 20px;
-      place-items: center;
-      place-content: center;
-      position: relative;
-    }
+  @media (max-width: 480px) {
+    padding: 2rem 1rem;
 
-    &__timeline {
-      width: 4px;
-      height: 90%;
-      left: 50%;
-      top: 10%;
-      transform: translateX(-50%);
-      z-index: -1;
+    &__content {
+      gap: 2rem;
     }
 
     &__item {
-      position: static;
-      width: 100%;
-      height: auto;
-      transform: none;
-      text-align: left;
-
-      &::before {
-        display: none;
-      }
+      padding: 1rem;
     }
 
-    &__content {
-      width: 70%;
-      height: auto;
+    &__item-header {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 0.5rem;
     }
 
-    &__company,
-    &__position,
-    &__duration,
-    &__description {
+    &__item-info {
+      text-align: center;
+    }
+
+    &__item-description {
       text-align: center;
     }
   }

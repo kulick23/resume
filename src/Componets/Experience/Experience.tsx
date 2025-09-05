@@ -1,36 +1,82 @@
 import React from 'react';
-import { observer } from 'mobx-react-lite';
 import './Experience.scss';
+import ExperienceStore from '../../Stores/experienceStore';
 import { useTranslation } from 'react-i18next';
-import { useSortedExperiences } from '../../Hooks';
 
-export const Experience: React.FC = observer(() => {
+export const Experience: React.FC = () => {
   const { t } = useTranslation();
-  const sortedExperiences = useSortedExperiences();
-  const total = sortedExperiences.length;
 
   return (
-    <div data-aos="fade-up" className="experience">
-      <h1>{t('experience.title')}</h1>
-      <div className="experince__block">
-        <div className="experience__timeline" />
-        {sortedExperiences.map((experience, index) => (
-          <div
-            key={experience.id}
-            className={`experience__item ${index % 2 === 0 ? 'experience__item--top' : 'experience__item--bottom'}`}
-            style={{ left: `${(index + 1) * (80 / (total + 1))}%` }}
-          >
-            <div className="experience__content">
-              <h3 className="experience__company">{experience.company}</h3>
-              <p className="experience__position">{t(experience.position)}</p>
-              <p className="experience__duration">{experience.duration}</p>
-              <p className="experience__description">{t(experience.description)}</p>
-            </div>
-          </div>
-        ))}
+    <section className="experience">
+      <div className="experience__header">
+        <h2 className="experience__title">{t('experience.title')}</h2>
       </div>
-    </div>
+
+      <div className="experience__content">
+        <div className="experience__column">
+          <div className="experience__column-header">
+            <h3>{t('experience.educationTitle')}</h3>
+          </div>
+          <div className="experience__timeline">
+            {ExperienceStore.education.map((item, idx) => (
+              <div className="experience__item" key={idx}>
+                <div className="experience__item-header">
+                  <div className="experience__icon-wrapper">
+                    {item.icon && (
+                      <img
+                        src={item.icon}
+                        alt={item.iconAlt || ''}
+                        className="experience__icon"
+                      />
+                    )}
+                  </div>
+                  <div className="experience__item-info">
+                    <h4 className="experience__item-title">{t(item.position)}</h4>
+                    <p className="experience__item-subtitle">{item.company}</p>
+                  </div>
+                </div>
+                <div className="experience__item-info">
+                  <span className="experience__item-period">{item.duration}</span>
+                  <p className="experience__item-description">{t(item.description)}</p>
+                </div>{' '}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="experience__column">
+          <div className="experience__column-header">
+            <h3>{t('experience.workTitle')}</h3>
+          </div>
+          <div className="experience__timeline">
+            {ExperienceStore.experiences.map((item, idx) => (
+              <div className="experience__item" key={item.id ?? idx}>
+                <div className="experience__item-header">
+                  <div className="experience__icon-wrapper">
+                    {item.icon && (
+                      <img
+                        src={item.icon}
+                        alt={item.iconAlt || ''}
+                        className="experience__icon"
+                      />
+                    )}
+                  </div>
+                  <div className="experience__item-info">
+                    <h4 className="experience__item-title">{t(item.position)}</h4>
+                    <p className="experience__item-subtitle">{item.company}</p>
+                  </div>
+                </div>
+                <div className="experience__item-info">
+                  <span className="experience__item-period">{item.duration}</span>
+                  <p className="experience__item-description">{t(item.description)}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
   );
-});
+};
 
 export default Experience;
