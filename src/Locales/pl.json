@@ -13,7 +13,10 @@
     "experience": "Doświadczenie"
   },
   "about": {
-    "description": "Jako wszechstronny Web Developer, łączę unikalne umiejętności i doświadczenia obejmujące projektowanie UI/UX, rozwój front-end z JS/React oraz zarządzanie bazami danych za pomocą SQL.\nMoje umiejętności obejmują Git, C/C++, OOP, Linux i wiele innych, co zapewnia wszechstronne rozwiązania dla różnych wyzwań w rozwoju stron internetowych."
+    "title": "O mnie",
+    "subtitle": "Moja podróż w rozwoju",
+    "text1": "Jestem frontend developerem z doświadczeniem w tworzeniu nowoczesnych aplikacji webowych.",
+    "text2": "Uwielbiam rozwiązywać złożone problemy i pracować w zespole."
   },
 "contact": {
   "title": "Kontakt",

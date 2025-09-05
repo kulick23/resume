@@ -1,5 +1,5 @@
 import './App.scss';
-import { Contact, Skills, Project, Header, Footer } from './Componets';
+import { Contact, About, Skills, Project, Header, Footer } from './Componets';
 import { Element } from 'react-scroll';
 import { useAOS } from './Hooks';
 import ExperienceEducation from './Componets/ExperienceEducation/ExperienceEducation';
@@ -11,6 +11,9 @@ function App() {
     <div className="App">
       <Element name="header" id="header">
         <Header data-aos="fade-down" />
+      </Element>
+      <Element name="about" id="about">
+        <About data-aos="fade-left" />
       </Element>
       <Element name="skills" id="skills">
         <Skills data-aos="fade-left" />

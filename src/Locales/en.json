@@ -13,7 +13,10 @@
     "experience": "Experience"
   },
   "about": {
-    "description": "As a multifaceted Web Developer, I bring a unique blend of skills and experiences that span across UI/UX design, front-end development with JS/React, and database management using SQL.\nMy proficiency extends to Git, C/C++, OOP, Linux, and more, ensuring versatile solutions for diverse web development challenges."
+    "title": "About Me",
+    "subtitle": "My Journey in Development",
+    "text1": "I am a frontend developer with experience in creating modern web applications.",
+    "text2": "I love solving complex problems and working in a team."
   },
 "contact": {
   "title": "Contact",

@@ -72,7 +72,7 @@
     top: -1vh;
     font-family: var(--font-code);
     font-size: 0.6em;
-    color: var(--text-graphite-dark);
+    color: var(--stars);
   }
 
   &__button {
@@ -87,7 +87,7 @@
     cursor: pointer;
     overflow: hidden;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    background: linear-gradient(135deg, var(--background-dark), var(--accent-primary));
+    background: var(--bavkground-space);
     font-size: 0.9rem;
     font-weight: 500;
     color: var(--stars);
