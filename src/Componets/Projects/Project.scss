@@ -12,18 +12,6 @@
     color: var(--stars);
     font-weight: 700;
     position: relative;
-    
-    &::after {
-      content: '';
-      position: absolute;
-      bottom: -0.5rem;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 4rem;
-      height: 3px;
-      background: linear-gradient(90deg, var(--accent-secondary), var(--accent-primary));
-      border-radius: 2px;
-    }
   }
 
   &__filters {
@@ -40,11 +28,16 @@
     border: 2px solid transparent;
     border-radius: var(--border-radius);
     color: var(--stars);
+    height: auto;
     cursor: pointer;
     transition: all 0.3s ease;
     font-family: var(--font-main);
     font-weight: 500;
     backdrop-filter: blur(10px);
+    box-sizing: border-box;
+    white-space: nowrap; // Добавлено: предотвращает перенос текста
+    width: auto; // Добавлено: позволяет кнопке растягиваться по тексту
+    min-width: 100px; // Добавлено: минимальная ширина для маленьких текстов
 
     &:hover {
       background: rgba(255, 255, 255, 0.2);
@@ -52,9 +45,10 @@
     }
 
     &--active {
-      background: linear-gradient(135deg, var(--accent-secondary), var(--accent-primary));
-      border-color: var(--stars);
+      border: 1px solid var(--stars);
       box-shadow: var(--shadow-medium);
+      background: rgba(255, 255, 255, 0.2);
+      transform: translateY(-2px);
     }
   }
 
@@ -90,7 +84,7 @@
       padding: 1rem 2rem;
       gap: 2rem;
     }
-    
+
     &__item {
       max-width: 100%;
     }
@@ -103,6 +97,7 @@
     &__filter-btn {
       padding: 0.5rem 1rem;
       font-size: 0.9rem;
+      min-width: 80px; // Уменьшена минимальная ширина для мобильных
     }
   }
 }

@@ -21,7 +21,6 @@
     margin-bottom: 2rem;
   }
 
-
   &__content {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -40,7 +39,7 @@
 
   &__column-header {
     margin-bottom: 2rem;
-    
+
     h3 {
       font-size: clamp(1.3rem, 2.5vw, 1.8rem);
       color: var(--stars);
@@ -53,7 +52,7 @@
   &__timeline {
     position: relative;
     padding-left: 2rem;
-    
+
     &::before {
       content: '';
       position: absolute;
@@ -117,8 +116,8 @@
   }
 
   &__icon {
-    width: 2rem;      // фиксированная ширина
-    height: 2rem;     // фиксированная высота
+    width: 2rem; // фиксированная ширина
+    height: 2rem; // фиксированная высота
     object-fit: contain; // или object-fit: cover;
     display: block;
   }
@@ -163,26 +162,26 @@
 
   @media (max-width: 480px) {
     padding: 2rem 1rem;
-    
+
     &__content {
       gap: 2rem;
     }
-    
+
     &__item {
       padding: 1rem;
     }
-    
+
     &__item-header {
       flex-direction: column;
       align-items: center;
       text-align: center;
       gap: 0.5rem;
     }
-    
+
     &__item-info {
       text-align: center;
     }
-    
+
     &__item-description {
       text-align: center;
     }

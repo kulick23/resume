@@ -13,7 +13,9 @@
 
   &__icon {
     height: 30px;
-    transition: transform 0.3s ease, filter 0.3s ease; // Добавлен filter в transition
+    transition:
+      transform 0.3s ease,
+      filter 0.3s ease; // Добавлен filter в transition
 
     &:hover {
       filter: invert(0.2);
@@ -31,21 +33,33 @@
   }
 
   &__button {
-    width: 50%;
-    font-family: var(--font-second);
-    border: 1px solid var(--text-graphite-light);
-    border-radius: 8px;
-    cursor: pointer;
-    background-color: var(--background-dark);
+    padding: 0.75rem 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid transparent;
+    border-radius: var(--border-radius);
     color: var(--stars);
-    font-size: 15px;
-    padding: 0.5em 1.2em;
-    transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+    height: auto;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: var(--font-main);
+    font-weight: 500;
+    backdrop-filter: blur(10px);
+    box-sizing: border-box;
+    white-space: nowrap;
+    width: auto;
+    min-width: 100px;
 
     &:hover {
-      background-color: var(--background-colory);
-      color: var(--background-dark);
-      box-shadow: 0 2px 8px var(--text-graphite-light-opacity);
+      background: rgba(255, 255, 255, 0.2);
+      transform: translateY(-2px);
+    }
+
+    // Для активного состояния (если нужно, можно добавить класс --active)
+    &--active {
+      border: 1px solid var(--stars);
+      box-shadow: var(--shadow-medium);
+      background: rgba(255, 255, 255, 0.2);
+      transform: translateY(-2px);
     }
   }
 }
@@ -94,7 +108,6 @@
   }
 }
 
-
 .blue-text {
   color: var(--accent-primary);
 }
@@ -137,6 +150,4 @@
       font-size: 16px;
     }
   }
-
-
 }

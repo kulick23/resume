@@ -10,64 +10,65 @@
     "contact": "Kontakt",
     "skills": "Umiejętności",
     "projects": "Projekty",
-    "experience": "Doświadczenie"
+    "experience": "Doświadczenie",
+    "about": "O mnie"
   },
   "about": {
-  "title": "O mnie",
-  "subtitle": "Frontend Developer z doświadczeniem w tworzeniu przyjaznych dla użytkownika i wydajnych aplikacji internetowych. Mój podstawowy stos technologiczny obejmuje React, TypeScript, Vite, RTK Query i SCSS, ale pewnie pracuję również z Node.js, bazami danych, usługami chmurowymi i preprocesorami.",
-  "text1": "Łączę silną wiedzę z zakresu frontendu ze solidnym zrozumieniem rozwoju backendu, co pozwala mi skutecznie przyczyniać się do całego cyklu rozwoju. Potrafię przekształcać projekty w czyste, responsywne interfejsy i efektywnie pracować z szeroką gamą bibliotek i narzędzi.",
-  "text2": "Skupiam się na jakości kodu, optymalizacji wydajności i doświadczeniu użytkownika. Zawsze chętnie uczę się nowych technologii i podejmuję ekscytujące projekty."
-},
-"contact": {
-  "title": "Kontakt",
-  "subtitle": "Połączmy się i dowiedzmy się, jak możemy stworzyć skuteczne rozwiązania cyfrowe razem",
-  "description": "W dowolny wygodny dla Ciebie sposób:",
-  "formText": "Lub wyślij mi wiadomość bezpośrednio tutaj:",
-  "name": "Twoje imię",
-  "namePlaceholder": "Ivan",
-  "email": "Twój email",
-  "emailPlaceholder": "ivan@example.com",
-  "message": "Twoja wiadomość",
-  "messagePlaceholder": "Napisz swoją wiadomość...",
-  "send": "Wyślij wiadomość"
-},
+    "title": "O mnie",
+    "subtitle": "Frontend Developer z doświadczeniem w tworzeniu przyjaznych dla użytkownika i wydajnych aplikacji internetowych. Mój podstawowy stos technologiczny obejmuje React, TypeScript, Vite, RTK Query i SCSS, ale pewnie pracuję również z Node.js, bazami danych, usługami chmurowymi i preprocesorami.",
+    "text1": "Łączę silną wiedzę z zakresu frontendu ze solidnym zrozumieniem rozwoju backendu, co pozwala mi skutecznie przyczyniać się do całego cyklu rozwoju. Potrafię przekształcać projekty w czyste, responsywne interfejsy i efektywnie pracować z szeroką gamą bibliotek i narzędzi.",
+    "text2": "Skupiam się na jakości kodu, optymalizacji wydajności i doświadczeniu użytkownika. Zawsze chętnie uczę się nowych technologii i podejmuję ekscytujące projekty."
+  },
+  "contact": {
+    "title": "Kontakt",
+    "subtitle": "Połączmy się i dowiedzmy się, jak możemy stworzyć skuteczne rozwiązania cyfrowe razem",
+    "description": "W dowolny wygodny dla Ciebie sposób:",
+    "formText": "Lub wyślij mi wiadomość bezpośrednio tutaj:",
+    "name": "Twoje imię",
+    "namePlaceholder": "Ivan",
+    "email": "Twój email",
+    "emailPlaceholder": "ivan@example.com",
+    "message": "Twoja wiadomość",
+    "messagePlaceholder": "Napisz swoją wiadomość...",
+    "send": "Wyślij wiadomość"
+  },
   "projects": {
     "title": "Moje Projekty"
   },
   "experience": {
-  "title": "Doświadczenie",
-  "workTitle": "Doświadczenie zawodowe",
-  "educationTitle": "Wykształcenie",
+    "title": "Doświadczenie",
+    "workTitle": "Doświadczenie zawodowe",
+    "educationTitle": "Wykształcenie",
 
-  "work": {
-    "3": {
-      "description": "Tworzenie landing page, rozwój frontendu, projektowanie, tworzenie stron, praca z API, studiowanie/pisanie dokumentacji, wdrażanie projektów, integracja klient-serwer",
-      "position": "Frontend Developer"
+    "work": {
+      "3": {
+        "description": "Tworzenie landing page, rozwój frontendu, projektowanie, tworzenie stron, praca z API, studiowanie/pisanie dokumentacji, wdrażanie projektów, integracja klient-serwer",
+        "position": "Frontend Developer"
+      },
+      "2": {
+        "description": "Kontakt z klientami, budowanie zespołu, rozwój frontendu",
+        "position": "Administrator / Programista"
+      },
+      "1": {
+        "description": "Laboratorium studenckie: prototypowanie stron, projektowanie baz danych, tworzenie stron",
+        "position": "Web Developer"
+      }
     },
-    "2": {
-      "description": "Kontakt z klientami, budowanie zespołu, rozwój frontendu",
-      "position": "Administrator / Programista"
-    },
-    "1": {
-      "description": "Laboratorium studenckie: prototypowanie stron, projektowanie baz danych, tworzenie stron",
-      "position": "Web Developer"
+    "education": {
+      "3": {
+        "description": "Tworzenie aplikacji webowych",
+        "position": "Wyższe wykształcenie, Licencjat"
+      },
+      "2": {
+        "description": "Tworzenie oprogramowania",
+        "position": "Kursy"
+      },
+      "1": {
+        "description": "Tworzenie oprogramowania i technologii w ochronie zdrowia",
+        "position": "Nieukończone wyższe wykształcenie"
+      }
     }
   },
-  "education": {
-    "3": {
-      "description": "Tworzenie aplikacji webowych",
-      "position": "Wyższe wykształcenie, Licencjat"
-    },
-    "2": {
-      "description": "Tworzenie oprogramowania",
-      "position": "Kursy"
-    },
-    "1": {
-      "description": "Tworzenie oprogramowania i technologii w ochronie zdrowia",
-      "position": "Nieukończone wyższe wykształcenie"
-    }
-  }
-},
   "skills": {
     "title": "Moje Umiejętności",
     "techskills": "Umiejętności Techniczne",

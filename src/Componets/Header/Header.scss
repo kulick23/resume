@@ -60,7 +60,7 @@
 
       &:hover {
         .header__favicons--img {
-          filter: invert(0.2); 
+          filter: invert(0.2);
         }
       }
     }
@@ -92,7 +92,9 @@
     background: rgba(10, 10, 10, 0.95);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--accent-secondary);
-    transition: top 0.3s ease, background 0.3s ease;
+    transition:
+      top 0.3s ease,
+      background 0.3s ease;
 
     &.hide {
       top: -100px;
@@ -132,7 +134,7 @@
     &-links {
       display: flex;
       align-items: center;
-      gap: 30px;
+      gap: 15px;
 
       @media (max-width: 768px) {
         display: none;
@@ -222,8 +224,6 @@
     }
   }
 }
-
-
 
 @media (max-width: 768px) {
   .header__card h1 {

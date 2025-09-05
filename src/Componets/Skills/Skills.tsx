@@ -5,10 +5,9 @@ import './Skills.scss';
 import { useTranslation } from 'react-i18next';
 
 const CATEGORY_COLORS: Record<string, string> = {
-  techSkills: '#ff7101',
-  softSkills: '#019b95',
-  Tools: '#34C759',
-  Languages: '#e94560',
+  techSkills: 'rgb(231,216,197)',
+  softSkills: '#a5907b',
+  Languages: '#a5907b',
 };
 
 export const Skills: React.FC = observer(() => {
@@ -27,10 +26,7 @@ export const Skills: React.FC = observer(() => {
               data-aos="fade-up"
               style={{ '--category-color': color } as React.CSSProperties}
             >
-              <h3
-                className="skills__category--title"
-                style={{ color }}
-              >
+              <h3 className="skills__category--title" style={{ color }}>
                 {t(`skills.${category.replace(' ', '').toLowerCase()}`)}
               </h3>
               <ul className="skills__category--list" data-aos="fade-left">

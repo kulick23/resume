@@ -10,7 +10,8 @@
     "contact": "Contact",
     "skills": "Skills",
     "projects": "Projects",
-    "experience": "Experience"
+    "experience": "Experience",
+    "about": "About"
   },
   "about": {
     "title": "About Me",
@@ -18,56 +19,56 @@
     "text1": "I combine strong frontend expertise with a solid understanding of backend development, enabling me to contribute effectively across the full development cycle. I know how to transform designs into clean, responsive interfaces and work efficiently with a wide range of libraries and tools.",
     "text2": "Focused on code quality, performance optimization, and user experience. Always eager to learn new technologies and take on exciting projects."
   },
-"contact": {
-  "title": "Contact",
-  "subtitle": "Let's connect and discover how we can create effective digital solutions together",
-  "description": "Any way convenient for you:",
-  "formText": "Or send me a message directly here:",
-  "name": "Your name",
-  "namePlaceholder": "Ivan",
-  "email": "Your email",
-  "emailPlaceholder": "ivan@example.com",
-  "message": "Your message",
-  "messagePlaceholder": "Write your message...",
-  "send": "Send message"
-},
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Let's connect and discover how we can create effective digital solutions together",
+    "description": "Any way convenient for you:",
+    "formText": "Or send me a message directly here:",
+    "name": "Your name",
+    "namePlaceholder": "Ivan",
+    "email": "Your email",
+    "emailPlaceholder": "ivan@example.com",
+    "message": "Your message",
+    "messagePlaceholder": "Write your message...",
+    "send": "Send message"
+  },
   "projects": {
     "title": "My Projects"
   },
- "experience": {
-  "title": "Experience",
-  "workTitle": "Work Experience",
-  "educationTitle": "Education",
+  "experience": {
+    "title": "Experience",
+    "workTitle": "Work Experience",
+    "educationTitle": "Education",
 
-  "work": {
-    "3": {
-      "description": "Landing page creation, frontend development, design, website layout, working with APIs, studying/writing documentation, project deployment, client-server integration",
-      "position": "Frontend Developer"
+    "work": {
+      "3": {
+        "description": "Landing page creation, frontend development, design, website layout, working with APIs, studying/writing documentation, project deployment, client-server integration",
+        "position": "Frontend Developer"
+      },
+      "2": {
+        "description": "Client communication, team building, frontend development",
+        "position": "Administrator / Programmer"
+      },
+      "1": {
+        "description": "Student lab: Website prototyping, database design, website layout",
+        "position": "Web Developer"
+      }
     },
-    "2": {
-      "description": "Client communication, team building, frontend development",
-      "position": "Administrator / Programmer"
-    },
-    "1": {
-      "description": "Student lab: Website prototyping, database design, website layout",
-      "position": "Web Developer"
+    "education": {
+      "3": {
+        "description": "Web application development",
+        "position": "Higher Education, Bachelor"
+      },
+      "2": {
+        "description": "Software development",
+        "position": "Courses"
+      },
+      "1": {
+        "description": "Software development and technologies in healthcare",
+        "position": "Incomplete Higher Education"
+      }
     }
   },
-  "education": {
-    "3": {
-      "description": "Web application development",
-      "position": "Higher Education, Bachelor"
-    },
-    "2": {
-      "description": "Software development",
-      "position": "Courses"
-    },
-    "1": {
-      "description": "Software development and technologies in healthcare",
-      "position": "Incomplete Higher Education"
-    }
-  }
-},
   "skills": {
     "title": "My Skills",
     "techskills": "Tech Skills",

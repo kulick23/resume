@@ -1,63 +1,63 @@
-import React, { useState, useEffect } from "react"
-import "./Header.scss"
-import { useTranslation } from "react-i18next"
-import { LANGUAGES, SOCIALS, STAR_IDS, CONTACTS } from "../../Constants"
-import { useLanguage } from "../../Hooks"
-import { Link } from "react-scroll"
+import React, { useState, useEffect } from 'react';
+import './Header.scss';
+import { useTranslation } from 'react-i18next';
+import { LANGUAGES, SOCIALS, CONTACTS } from '../../Constants';
+import { useLanguage } from '../../Hooks';
+import { Link } from 'react-scroll';
 
 export const Header: React.FC = () => {
-  const { t, i18n } = useTranslation() // Добавлено i18n
-  const changeLanguage = useLanguage()
-  const currentLang = i18n.language // Текущий язык
-  const [scrolled, setScrolled] = useState(false)
-  const [scrollDir, setScrollDir] = useState<"up" | "down">("up")
-  const [pastThreshold, setPastThreshold] = useState(false)
-  const [activeSection, setActiveSection] = useState<string>("header")
+  const { t, i18n } = useTranslation(); // Добавлено i18n
+  const changeLanguage = useLanguage();
+  const currentLang = i18n.language; // Текущий язык
+  const [scrolled, setScrolled] = useState(false);
+  const [scrollDir, setScrollDir] = useState<'up' | 'down'>('up');
+  const [pastThreshold, setPastThreshold] = useState(false);
+  const [activeSection, setActiveSection] = useState<string>('header');
 
   useEffect(() => {
-    let lastY = window.scrollY
+    let lastY = window.scrollY;
     const onScroll = () => {
-      const y = window.scrollY
-      setScrolled(y > 0)
+      const y = window.scrollY;
+      setScrolled(y > 0);
       if (y > 150) {
-        setPastThreshold(true)
-        setScrollDir(y > lastY ? "down" : "up")
+        setPastThreshold(true);
+        setScrollDir(y > lastY ? 'down' : 'up');
       } else {
-        setPastThreshold(false)
+        setPastThreshold(false);
       }
-      lastY = y
-    }
-    window.addEventListener("scroll", onScroll)
-    return () => window.removeEventListener("scroll", onScroll)
-  }, [])
+      lastY = y;
+    };
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   useEffect(() => {
-    const sectionIds = ["header", "skills", "projects", "experience", "footer", "contact"]
+    const sectionIds = ['header', 'about', 'skills', 'projects', 'experience', 'contact'];
     const handleIntersect = (entries: IntersectionObserverEntry[]) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          setActiveSection(entry.target.id)
+          setActiveSection(entry.target.id);
         }
-      })
-    }
+      });
+    };
 
     const observer = new IntersectionObserver(handleIntersect, {
       threshold: 0.5,
-    })
+    });
 
     sectionIds.forEach((id) => {
-      const el = document.getElementById(id)
-      if (el) observer.observe(el)
-    })
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
 
-    return () => observer.disconnect()
-  }, [])
+    return () => observer.disconnect();
+  }, []);
 
-  const isHidden = pastThreshold && scrollDir === "down"
+  const isHidden = pastThreshold && scrollDir === 'down';
 
   return (
     <>
-      <div className={`header__nav ${scrolled ? "scrolled" : ""} ${isHidden ? "hide" : "show"}`}>
+      <div className={`header__nav ${scrolled ? 'scrolled' : ''} ${isHidden ? 'hide' : 'show'}`}>
         <div className="header__nav-container">
           <div className="header__nav-logo">
             <h4>Kulinkovich Danila</h4>
@@ -69,45 +69,55 @@ export const Header: React.FC = () => {
               spy={true}
               smooth={true}
               duration={500}
-              className={`header__nav-link${activeSection === "header" ? " header__nav-link--active" : ""}`}
+              className={`header__nav-link${activeSection === 'header' ? ' header__nav-link--active' : ''}`}
             >
-              {t("nav.home")}
+              {t('nav.home')}
+            </Link>
+            <Link
+              to="about"
+              spy={true}
+              smooth={true}
+              duration={500}
+              className={`header__nav-link${activeSection === 'about' ? ' header__nav-link--active' : ''}`}
+            >
+              {t('nav.about')}
             </Link>
             <Link
               to="skills"
               spy={true}
               smooth={true}
               duration={500}
-              className={`header__nav-link${activeSection === "skills" ? " header__nav-link--active" : ""}`}
+              className={`header__nav-link${activeSection === 'skills' ? ' header__nav-link--active' : ''}`}
             >
-              {t("nav.skills")}
+              {t('nav.skills')}
             </Link>
+
             <Link
               to="projects"
               spy={true}
               smooth={true}
               duration={500}
-              className={`header__nav-link${activeSection === "projects" ? " header__nav-link--active" : ""}`}
+              className={`header__nav-link${activeSection === 'projects' ? ' header__nav-link--active' : ''}`}
             >
-              {t("nav.projects")}
+              {t('nav.projects')}
             </Link>
             <Link
               to="experience"
               spy={true}
               smooth={true}
               duration={500}
-              className={`header__nav-link${activeSection === "experience" ? " header__nav-link--active" : ""}`}
+              className={`header__nav-link${activeSection === 'experience' ? ' header__nav-link--active' : ''}`}
             >
-              {t("nav.experience")}
+              {t('nav.experience')}
             </Link>
-               <Link
+            <Link
               to="contact"
               spy={true}
               smooth={true}
               duration={500}
-              className={`header__nav-link${activeSection === "contact" ? " header__nav-link--active" : ""}`}
+              className={`header__nav-link${activeSection === 'contact' ? ' header__nav-link--active' : ''}`}
             >
-              {t("nav.contact")}
+              {t('nav.contact')}
             </Link>
           </div>
 
@@ -117,7 +127,7 @@ export const Header: React.FC = () => {
                 <React.Fragment key={lang.code}>
                   <button
                     onClick={() => changeLanguage(lang.code)}
-                    className={`header__nav-lang-btn${currentLang === lang.code ? " header__nav-lang-btn--active" : ""}`}
+                    className={`header__nav-lang-btn${currentLang === lang.code ? ' header__nav-lang-btn--active' : ''}`}
                   >
                     {lang.label}
                   </button>
@@ -130,18 +140,22 @@ export const Header: React.FC = () => {
       </div>
       <div className="header">
         <div className="header__card">
-          <p className="header__text">{t("header.greeting")}</p>
+          <p className="header__text">{t('header.greeting')}</p>
           <div className="header__web">
-            <h1 className="header__text">{t("header.web")}</h1>
+            <h1 className="header__text">{t('header.web')}</h1>
             <div className="header__favicons">
               {SOCIALS.map((social) => (
                 <a key={social.alt} href={social.href} target="_blank" rel="noopener noreferrer">
-                  <img className="header__favicons--img" src={social.img || "/placeholder.svg"} alt={social.alt} />
+                  <img
+                    className="header__favicons--img"
+                    src={social.img || '/placeholder.svg'}
+                    alt={social.alt}
+                  />
                 </a>
               ))}
             </div>
           </div>
-          <h1 className="header__text">{t("header.developer")}</h1>
+          <h1 className="header__text">{t('header.developer')}</h1>
           <div className="header__contact">
             {CONTACTS.map(({ href, label, props }, idx) => (
               <a key={idx} href={href} {...props}>
@@ -152,7 +166,7 @@ export const Header: React.FC = () => {
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

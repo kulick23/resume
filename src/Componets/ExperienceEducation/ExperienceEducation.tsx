@@ -1,6 +1,6 @@
-import React from "react";
-import "./ExperienceEducation.scss";
-import ExperienceStore from "../../Stores/experienceStore";
+import React from 'react';
+import './ExperienceEducation.scss';
+import ExperienceStore from '../../Stores/experienceStore';
 import { useTranslation } from 'react-i18next';
 
 export const ExperienceEducation: React.FC = () => {
@@ -35,10 +35,11 @@ export const ExperienceEducation: React.FC = () => {
                     <p className="experience-education__item-subtitle">{item.company}</p>
                   </div>
                 </div>
-   <div className="experience-education__item-info">
+                <div className="experience-education__item-info">
                   <span className="experience-education__item-period">{item.duration}</span>
                   <p className="experience-education__item-description">{t(item.description)}</p>
-                </div>              </div>
+                </div>{' '}
+              </div>
             ))}
           </div>
         </div>

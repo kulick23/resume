@@ -1,41 +1,62 @@
 .skills {
-  padding-left: 50px;
-  padding-right: 50px;
   min-height: 100vh;
 
   &__categories {
     margin-top: 5%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
+    display: grid; // Изменено: как в Services--main
+    grid-template-columns: 1fr 1fr 1fr; // Три колонки, как в Services
+    gap: 1.5rem; // Как в Services__container
     overflow: hidden;
   }
 
   &__category {
     position: relative;
-    background-color: var(--text-graphite-light-opacity);
-    border-radius: 8px;
-    box-shadow: 0 4px 8px var(--background-space-opacity);
-    padding-bottom: 15px;
-    width: 20%;
-    border: 1px solid rgba(255, 255, 255, 0.06);
-        overflow: hidden;
+    background: rgba(255, 255, 255, 0.05); // как в ExperienceEducation__item
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-light);
+    padding: 1.3rem; // Добавлено: как в Services__item
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px); // как в ExperienceEducation__item
+    transition:
+      background 0.3s ease,
+      box-shadow 0.3s ease,
+      transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    overflow: hidden;
 
-     &::after {
-        content: '';
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: -50px;
-        height: 50px;
-        border-radius: 100%;
-        box-shadow:
-          0 0 10px rgba(255, 255, 255, 0.1),
-          0 0 40px var(--category-color, #FF7111),
-          0 0 60px var(--category-color, #FF7111),
-          0 0 80px var(--category-color, #FF7111);
-      }
+    &:hover {
+      transform: translateY(-8px); // чуть больше приподнимается
+      box-shadow: var(--shadow-medium);
+      background: rgba(255, 255, 255, 0.08); // как в ExperienceEducation__item:hover
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -50px;
+      height: 50px;
+      border-radius: 100%;
+      transition:
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+
+      box-shadow:
+        0 0 10px rgba(255, 255, 255, 0.1),
+        0 0 40px var(--category-color, #ff7111),
+        0 0 60px var(--category-color, #ff7111),
+        0 0 80px var(--category-color, #ff7111);
+      background: transparent;
+    }
+
+    &:hover::after {
+      box-shadow:
+        0 0 20px rgba(255, 255, 255, 0.15),
+        0 0 60px var(--category-color, #ff7111),
+        0 0 90px var(--category-color, #ff7111),
+        0 0 120px var(--category-color, #ff7111);
+      background: rgba(255, 255, 255, 0.04);
+    }
 
     &--title {
       font-size: 3vh;
@@ -52,7 +73,7 @@
     }
 
     &--item {
-      font-size: 2.5vh;
+      font-size: 14px;
       padding: 5px 0;
       color: var(--stars);
       text-align: center;
@@ -61,12 +82,14 @@
 
   @media (max-width: 768px) {
     &__categories {
+      display: flex; // На мобильных как в Services
       flex-direction: column;
       align-items: center;
       margin-top: 5vh;
+      gap: 1.5rem; // Сохраняем gap
     }
     &__category {
-      min-width: 60%;
+      width: 60%; // Как в Services для phone
     }
   }
 }

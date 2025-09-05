@@ -1,10 +1,10 @@
 import './App.scss';
-import { Contact, About, Skills, Project, Header, Footer } from './Componets';
+import { Contact, About, Skills, Project, Header } from './Componets';
 import { Element } from 'react-scroll';
 import { useAOS } from './Hooks';
 import ExperienceEducation from './Componets/ExperienceEducation/ExperienceEducation';
 import { useState, useEffect, useRef } from 'react';
-import NaboImg from './Assets/PngImg/nabo.png';  // Импорт картинки
+import NaboImg from './Assets/PngImg/nabo.png'; // Импорт картинки
 
 function App() {
   useAOS();
@@ -22,9 +22,9 @@ function App() {
           document.body.offsetHeight,
           document.documentElement.clientHeight,
           document.documentElement.scrollHeight,
-          document.documentElement.offsetHeight
+          document.documentElement.offsetHeight,
         );
-        
+
         // Задаем высоту звездного фона достаточной для всей страницы
         starsRef.current.style.height = `${docHeight * 2}px`;
       }
@@ -48,7 +48,7 @@ function App() {
 
   const handleFlyUp = () => {
     setIsFlying(true);
-    const duration = 1000;  // Время скролла
+    const duration = 1000; // Время скролла
     const startScroll = window.pageYOffset;
     const startTime = performance.now();
     const element = document.querySelector('.scroll-to-top') as HTMLElement;
@@ -69,7 +69,7 @@ function App() {
           element.style.transition = 'transform 0.5s ease, opacity 0.5s ease';
           element.style.transform = 'translateY(-100vh)';
           element.style.opacity = '0';
-          
+
           // Возвращаем самолет в исходное состояние после анимации
           setTimeout(() => {
             setIsFlying(false);
@@ -92,7 +92,7 @@ function App() {
         <div id="stars2"></div>
         <div id="stars3"></div>
       </div>
-      
+
       <Element name="header" id="header">
         <Header data-aos="fade-down" />
       </Element>
@@ -117,30 +117,30 @@ function App() {
         <div className={`scroll-to-top ${isFlying ? 'fly-up' : ''}`} onClick={handleFlyUp}>
           <svg width="60" height="60" viewBox="0 0 60 60" className="scroll-svg">
             {/* Левая половина круга, повернутая для нижней точки */}
-            <circle 
-              cx="30" 
-              cy="30" 
-              r="28" 
-              stroke="#fff" 
-              strokeWidth="2" 
-              fill="none" 
-              strokeDasharray="88 176" 
-              strokeDashoffset="88" 
-              className="circle-left" 
-              transform="rotate(-90 30 30)" 
+            <circle
+              cx="30"
+              cy="30"
+              r="28"
+              stroke="#fff"
+              strokeWidth="2"
+              fill="none"
+              strokeDasharray="88 176"
+              strokeDashoffset="88"
+              className="circle-left"
+              transform="rotate(-90 30 30)"
             />
             {/* Правая половина круга, повернутая для нижней точки */}
-            <circle 
-              cx="30" 
-              cy="30" 
-              r="28" 
-              stroke="#fff" 
-              strokeWidth="2" 
-              fill="none" 
-              strokeDasharray="88 176" 
-              strokeDashoffset="88" 
-              className="circle-right" 
-              transform="rotate(90 30 30)" 
+            <circle
+              cx="30"
+              cy="30"
+              r="28"
+              stroke="#fff"
+              strokeWidth="2"
+              fill="none"
+              strokeDasharray="88 176"
+              strokeDashoffset="88"
+              className="circle-right"
+              transform="rotate(90 30 30)"
             />
           </svg>
           <img src={NaboImg} alt="Scroll to top" />

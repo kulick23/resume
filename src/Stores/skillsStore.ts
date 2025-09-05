@@ -2,15 +2,29 @@ import { makeAutoObservable } from 'mobx';
 
 class SkillsStore {
   skills = {
-    techSkills: ['HTML', 'CSS', 'JS/TS', 'React', 'SQL', 'C/C++', 'Python'],
+    techSkills: [
+      'HTML',
+      'CSS/SCSS/TAILWIND',
+      'JS/TS',
+      'React',
+      'SQL',
+      'Node',
+      'Vite',
+      'Redux/MobX',
+      'Rest API',
+      'Cloud',
+    ],
     softSkills: [
       'Teamwork',
       'Communication',
-      'Problem Solving',
       'Work with customers',
       'Development methodologies',
+      'Time management',
+      'Adaptability',
+      'Creativity',
+      'Critical thinking',
+      'Attention to detail',
     ],
-    Tools: ['Git', 'Microsoft Office', 'Photoshop', 'Figma', 'UML', 'Linux'],
     Languages: ['English', 'Russian', 'Polish', 'Belarusian'],
   };
 
