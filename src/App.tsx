@@ -3,9 +3,61 @@ import { Contact, About, Skills, Project, Header, Footer } from './Componets';
 import { Element } from 'react-scroll';
 import { useAOS } from './Hooks';
 import ExperienceEducation from './Componets/ExperienceEducation/ExperienceEducation';
+import { useState, useEffect } from 'react';
+import NaboImg from './Assets/PngImg/nabo.png';  // Импорт картинки
 
 function App() {
   useAOS();
+  const [showPopup, setShowPopup] = useState(false);
+  const [isFlying, setIsFlying] = useState(false);  // Новое состояние для анимации
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const isAtBottom = window.scrollY + window.innerHeight >= document.body.scrollHeight - 100;
+      setShowPopup(isAtBottom);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const handleFlyUp = () => {
+    setIsFlying(true);
+    const duration = 1000;  // Время скролла
+    const startScroll = window.pageYOffset;
+    const startTime = performance.now();
+    const element = document.querySelector('.scroll-to-top') as HTMLElement;
+
+    // Сначала только скролл без движения самолета
+    const animate = (currentTime: number) => {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const currentScroll = startScroll * (1 - progress);
+      window.scrollTo(0, currentScroll);
+
+      // Продолжаем анимацию скролла
+      if (progress < 1) {
+        requestAnimationFrame(animate);
+      } else {
+        // Когда скролл закончен, запускаем анимацию улетающего самолета
+        if (element) {
+          element.style.transition = 'transform 0.5s ease, opacity 0.5s ease';
+          element.style.transform = 'translateY(-100vh)';
+          element.style.opacity = '0';
+          
+          // Возвращаем самолет в исходное состояние после анимации
+          setTimeout(() => {
+            setIsFlying(false);
+            element.style.transform = '';
+            element.style.opacity = '';
+            element.style.transition = '';
+          }, 500);
+        }
+      }
+    };
+
+    requestAnimationFrame(animate);
+  };
 
   return (
     <div className="App">
@@ -24,12 +76,44 @@ function App() {
       <Element name="experience" id="experience">
         <ExperienceEducation data-aos="zoom-in" />
       </Element>
-      <Element name="footer" id="footer">
-        <Footer data-aos="zoom-out" />
-      </Element>
-            <Element name="contact" id="contact">
+      <Element name="contact" id="contact">
         <Contact data-aos="fade-right" />
       </Element>
+
+      {/* Поп-ап для скролла наверх */}
+      {showPopup && (
+        <div className={`scroll-to-top ${isFlying ? 'fly-up' : ''}`} onClick={handleFlyUp}>
+          <svg width="60" height="60" viewBox="0 0 60 60" className="scroll-svg">
+            {/* Левая половина круга, повернутая для нижней точки */}
+            <circle 
+              cx="30" 
+              cy="30" 
+              r="28" 
+              stroke="#fff" 
+              strokeWidth="2" 
+              fill="none" 
+              strokeDasharray="88 176" 
+              strokeDashoffset="88" 
+              className="circle-left" 
+              transform="rotate(-90 30 30)" 
+            />
+            {/* Правая половина круга, повернутая для нижней точки */}
+            <circle 
+              cx="30" 
+              cy="30" 
+              r="28" 
+              stroke="#fff" 
+              strokeWidth="2" 
+              fill="none" 
+              strokeDasharray="88 176" 
+              strokeDashoffset="88" 
+              className="circle-right" 
+              transform="rotate(90 30 30)" 
+            />
+          </svg>
+          <img src={NaboImg} alt="Scroll to top" />
+        </div>
+      )}
     </div>
   );
 }
