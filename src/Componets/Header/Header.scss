@@ -193,6 +193,26 @@
         color: var(--text-graphite-light);
         margin: 0 4px;
       }
+
+      &-btn {
+        &--active {
+          color: #fff !important;
+        }
+      }
+    }
+
+    &-link {
+      color: var(--text-graphite-light);
+      text-decoration: none;
+      font-family: var(--font-main);
+      font-size: 0.9rem;
+      padding: 8px 12px;
+      border-radius: var(--border-radius);
+      transition: color 0.3s ease;
+
+      &--active {
+        color: #fff !important;
+      }
     }
   }
 }

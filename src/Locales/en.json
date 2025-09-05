@@ -7,7 +7,7 @@
   },
   "nav": {
     "home": "Home",
-    "about": "About",
+    "contact": "Contact",
     "skills": "Skills",
     "projects": "Projects",
     "experience": "Experience"
@@ -15,20 +15,19 @@
   "about": {
     "description": "As a multifaceted Web Developer, I bring a unique blend of skills and experiences that span across UI/UX design, front-end development with JS/React, and database management using SQL.\nMy proficiency extends to Git, C/C++, OOP, Linux, and more, ensuring versatile solutions for diverse web development challenges."
   },
-  "contact": {
-    "title": "Contact",
-    "subtitle": "Get in touch with me",
-    "description": "Feel free to reach out using any convenient method:",
-    "name": "Your Name",
-    "namePlaceholder": "John",
-    "email": "Your Email",
-    "emailPlaceholder": "john@example.com",
-    "message": "Your Message",
-    "messagePlaceholder": "Write your message...",
-    "privacy": "I agree with the",
-    "privacyPolicy": "privacy policy",
-    "send": "Send Message"
-  },
+"contact": {
+  "title": "Contact",
+  "subtitle": "Let's connect and discover how we can create effective digital solutions together",
+  "description": "Any way convenient for you:",
+  "formText": "Or send me a message directly here:",
+  "name": "Your name",
+  "namePlaceholder": "Ivan",
+  "email": "Your email",
+  "emailPlaceholder": "ivan@example.com",
+  "message": "Your message",
+  "messagePlaceholder": "Write your message...",
+  "send": "Send message"
+},
   "projects": {
     "title": "My Projects"
   },

@@ -6,11 +6,13 @@ import { useLanguage } from "../../Hooks"
 import { Link } from "react-scroll"
 
 export const Header: React.FC = () => {
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation() // Добавлено i18n
   const changeLanguage = useLanguage()
+  const currentLang = i18n.language // Текущий язык
   const [scrolled, setScrolled] = useState(false)
   const [scrollDir, setScrollDir] = useState<"up" | "down">("up")
   const [pastThreshold, setPastThreshold] = useState(false)
+  const [activeSection, setActiveSection] = useState<string>("header")
 
   useEffect(() => {
     let lastY = window.scrollY
@@ -29,6 +31,28 @@ export const Header: React.FC = () => {
     return () => window.removeEventListener("scroll", onScroll)
   }, [])
 
+  useEffect(() => {
+    const sectionIds = ["header", "skills", "projects", "experience", "footer", "contact"]
+    const handleIntersect = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id)
+        }
+      })
+    }
+
+    const observer = new IntersectionObserver(handleIntersect, {
+      threshold: 0.5,
+    })
+
+    sectionIds.forEach((id) => {
+      const el = document.getElementById(id)
+      if (el) observer.observe(el)
+    })
+
+    return () => observer.disconnect()
+  }, [])
+
   const isHidden = pastThreshold && scrollDir === "down"
 
   return (
@@ -45,25 +69,16 @@ export const Header: React.FC = () => {
               spy={true}
               smooth={true}
               duration={500}
-              className="header__nav-link"
+              className={`header__nav-link${activeSection === "header" ? " header__nav-link--active" : ""}`}
             >
               {t("nav.home")}
-            </Link>
-            <Link
-              to="about"
-              spy={true}
-              smooth={true}
-              duration={500}
-              className="header__nav-link"
-            >
-              {t("nav.about")}
             </Link>
             <Link
               to="skills"
               spy={true}
               smooth={true}
               duration={500}
-              className="header__nav-link"
+              className={`header__nav-link${activeSection === "skills" ? " header__nav-link--active" : ""}`}
             >
               {t("nav.skills")}
             </Link>
@@ -72,7 +87,7 @@ export const Header: React.FC = () => {
               spy={true}
               smooth={true}
               duration={500}
-              className="header__nav-link"
+              className={`header__nav-link${activeSection === "projects" ? " header__nav-link--active" : ""}`}
             >
               {t("nav.projects")}
             </Link>
@@ -81,9 +96,18 @@ export const Header: React.FC = () => {
               spy={true}
               smooth={true}
               duration={500}
-              className="header__nav-link"
+              className={`header__nav-link${activeSection === "experience" ? " header__nav-link--active" : ""}`}
             >
               {t("nav.experience")}
+            </Link>
+               <Link
+              to="contact"
+              spy={true}
+              smooth={true}
+              duration={500}
+              className={`header__nav-link${activeSection === "contact" ? " header__nav-link--active" : ""}`}
+            >
+              {t("nav.contact")}
             </Link>
           </div>
 
@@ -91,7 +115,10 @@ export const Header: React.FC = () => {
             <div className="header__nav-lang">
               {LANGUAGES.map((lang, idx) => (
                 <React.Fragment key={lang.code}>
-                  <button onClick={() => changeLanguage(lang.code)} className="header__nav-lang-btn">
+                  <button
+                    onClick={() => changeLanguage(lang.code)}
+                    className={`header__nav-lang-btn${currentLang === lang.code ? " header__nav-lang-btn--active" : ""}`}
+                  >
                     {lang.label}
                   </button>
                   {idx < LANGUAGES.length - 1 && <span>|</span>}
@@ -103,7 +130,6 @@ export const Header: React.FC = () => {
       </div>
 
       <header className="header">
-
         {STAR_IDS.map((id) => (
           <div key={id} id={id}></div>
         ))}

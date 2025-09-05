@@ -7,7 +7,7 @@
   },
   "nav": {
     "home": "Strona główna",
-    "about": "O mnie",
+    "contact": "Kontakt",
     "skills": "Umiejętności",
     "projects": "Projekty",
     "experience": "Doświadczenie"
@@ -15,20 +15,19 @@
   "about": {
     "description": "Jako wszechstronny Web Developer, łączę unikalne umiejętności i doświadczenia obejmujące projektowanie UI/UX, rozwój front-end z JS/React oraz zarządzanie bazami danych za pomocą SQL.\nMoje umiejętności obejmują Git, C/C++, OOP, Linux i wiele innych, co zapewnia wszechstronne rozwiązania dla różnych wyzwań w rozwoju stron internetowych."
   },
-  "contact": {
-    "title": "Kontakt",
-    "subtitle": "Skontaktuj się ze mną",
-    "description": "Skontaktuj się ze mną w dowolny wygodny sposób:",
-    "name": "Twoje imię",
-    "namePlaceholder": "Jan",
-    "email": "Twój email",
-    "emailPlaceholder": "jan@example.com",
-    "message": "Twoja wiadomość",
-    "messagePlaceholder": "Napisz swoją wiadomość...",
-    "privacy": "Zgadzam się z",
-    "privacyPolicy": "polityką prywatności",
-    "send": "Wyślij wiadomość"
-  },
+"contact": {
+  "title": "Kontakt",
+  "subtitle": "Połączmy się i dowiedzmy się, jak możemy stworzyć skuteczne rozwiązania cyfrowe razem",
+  "description": "W dowolny wygodny dla Ciebie sposób:",
+  "formText": "Lub wyślij mi wiadomość bezpośrednio tutaj:",
+  "name": "Twoje imię",
+  "namePlaceholder": "Ivan",
+  "email": "Twój email",
+  "emailPlaceholder": "ivan@example.com",
+  "message": "Twoja wiadomość",
+  "messagePlaceholder": "Napisz swoją wiadomość...",
+  "send": "Wyślij wiadomość"
+},
   "projects": {
     "title": "Moje Projekty"
   },
