@@ -1,4 +1,5 @@
 import type React from 'react';
+import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import './NDAModal.scss';
 import type { BusinessProject } from '../../types';
@@ -11,6 +12,19 @@ interface NDAModalProps {
 
 export const NDAModal: React.FC<NDAModalProps> = ({ isOpen, onClose, project }) => {
   const { t } = useTranslation();
+
+  // Предотвращаем скролл фона при открытии модала
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isOpen]);
 
   if (!isOpen || !project) return null;
 

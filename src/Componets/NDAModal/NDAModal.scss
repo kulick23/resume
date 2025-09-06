@@ -13,7 +13,7 @@
   overflow: hidden; // Предотвращает скролл фона
 
   &__content {
-    background: var(--bavkground-space);
+    background: var(--background-space);
     border: 1px solid var(--accent-secondary);
     border-radius: var(--border-radius);
     max-width: 600px;
@@ -127,10 +127,12 @@
     }
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1045px) {
+    // Мобильная версия: центрируем поп-ап и предотвращаем скролл
     &__content {
       width: 95%;
-      margin: 20px;
+      max-height: 90vh;
+      margin: auto;
     }
 
     &__header,
@@ -141,9 +143,10 @@
     &__header h2 {
       font-size: 1.3rem;
     }
-      &__close {
-   right: 0;
-   top: 5px
-      }
+
+    &__close {
+      right: 10px;
+      top: 10px;
+    }
   }
 }

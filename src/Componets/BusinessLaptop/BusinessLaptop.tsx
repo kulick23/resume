@@ -5,7 +5,12 @@ import type { BusinessLaptopProps } from '../../types';
 
 export const BusinessLaptop: React.FC<BusinessLaptopProps> = ({ project, onNDAClick }) => {
   const handleNDAClick = () => {
-    onNDAClick(project);
+    if (onNDAClick) {
+      console.log('NDAClick triggered for project:', project);
+      onNDAClick(project);
+    } else {
+      console.error('onNDAClick is not defined');
+    }
   };
 
   return (

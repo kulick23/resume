@@ -1,20 +1,46 @@
 import './Styles/App.scss';
-import { Contact, About, Skills, Project, Header, Experience, ScrollToTop } from './Componets';
+import {
+  Contact,
+  About,
+  Skills,
+  Project,
+  Header,
+  Experience,
+  ScrollToTop,
+  NDAModal,
+} from './Componets';
 import { Element } from 'react-scroll';
 import { useAOS, useStars, useScrollToTop } from './Hooks';
 import { SECTIONS_DATA, SECTIONS_NAMES } from './Constants/sections';
+import { useState } from 'react';
+import type { BusinessProject } from './types';
 
 function App() {
   useAOS();
   const { starsRef, stars } = useStars();
   const { showPopup, isFlying, handleFlyUp } = useScrollToTop();
 
+  // Состояние для NDAModal
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedProject, setSelectedProject] = useState<BusinessProject | null>(null);
+
+  const handleNDAClick = (project: BusinessProject) => {
+    console.log('handleNDAClick called with:', project); // Добавлено
+    setSelectedProject(project);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setSelectedProject(null);
+  };
+
   // Объект с компонентами
   const components = {
     header: Header,
     about: About,
     skills: Skills,
-    projects: Project,
+    projects: () => <Project onNDAClick={handleNDAClick} />, // Передаем пропс
     experience: Experience,
     contact: Contact,
   };
@@ -40,6 +66,9 @@ function App() {
           <Component data-aos={SECTIONS_DATA[name as keyof typeof SECTIONS_DATA]?.aos} />
         </Element>
       ))}
+
+      {/* Глобальная NDAModal */}
+      <NDAModal isOpen={isModalOpen} onClose={handleCloseModal} project={selectedProject} />
 
       {/* Поп-ап для скролла наверх */}
       <ScrollToTop showPopup={showPopup} isFlying={isFlying} handleFlyUp={handleFlyUp} />
