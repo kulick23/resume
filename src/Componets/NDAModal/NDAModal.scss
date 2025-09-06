@@ -141,5 +141,9 @@
     &__header h2 {
       font-size: 1.3rem;
     }
+      &__close {
+   right: 0;
+   top: 5px
+      }
   }
 }
