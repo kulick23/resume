@@ -96,8 +96,7 @@ h2 {
 }
 
 h1 {
-  font-size: 5rem;
-  font-size: clamp(2.5rem, 4.2vw, 5rem);
+  font-size: 3rem;
 }
 
 h2 {
@@ -110,7 +109,11 @@ h3 {
   font-size: 1.5rem;
   font-weight: 500;
 }
-
+h4 {
+        color: var(--stars);
+        font-family: var(--font-web);
+        font-size: 1.2rem;
+      }
 p {
   font-family: var(--font-main);
   color: var(--text-graphite-light);
@@ -140,6 +143,8 @@ li {
 }
 small {
   font-size: 1rem;
+    color: var(--text-graphite-light);
+
 }
 a {
   color: var(--stars);

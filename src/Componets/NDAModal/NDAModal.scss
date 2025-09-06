@@ -1,0 +1,145 @@
+.nda-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+  overflow: hidden; // Предотвращает скролл фона
+
+  &__content {
+    background: var(--bavkground-space);
+    border: 1px solid var(--accent-secondary);
+    border-radius: var(--border-radius);
+    max-width: 600px;
+    width: 90%;
+    max-height: 80vh; // Ограничивает высоту
+    overflow-y: auto; // Добавляет скролл только внутри контента
+    position: relative;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    margin: auto; // Центрирует по вертикали и горизонтали
+  }
+
+  // Стили для скроллбара внутри модального окна
+  &__content::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  &__content::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+  }
+
+  &__content::-webkit-scrollbar-thumb {
+    background: var(--accent-secondary);
+    border-radius: 4px;
+  }
+
+  &__close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: var(--stars);
+    font-size: 2rem;
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: #ff6b6b;
+    }
+  }
+
+  &__header {
+    padding: 30px 30px 20px;
+    border-bottom: 1px solid var(--accent-secondary);
+
+    h2 {
+      color: var(--stars);
+      font-family: var(--font-second);
+      margin: 0 0 10px 0;
+      font-size: 1.5rem;
+    }
+  }
+
+  &__badge {
+    background: rgba(255, 107, 107, 0.2);
+    color: #ff6b6b;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    border: 1px solid #ff6b6b;
+  }
+
+  &__body {
+    padding: 30px;
+  }
+
+  &__description,
+  &__stack,
+  &__nda-info {
+    margin-bottom: 25px;
+
+    h3 {
+      color: var(--stars);
+      font-family: var(--font-main);
+      margin: 0 0 10px 0;
+      font-size: 1.1rem;
+    }
+
+    p {
+      color: var(--text-graphite-light);
+      line-height: 1.6;
+      margin: 0;
+    }
+  }
+
+  &__stack-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  &__stack-item {
+    background: var(--background-space-opacity);
+    color: var(--stars);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    border: 1px solid var(--accent-secondary);
+  }
+
+  &__nda-info {
+    background: rgba(255, 107, 107, 0.1);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    border: 1px solid rgba(255, 107, 107, 0.3);
+
+    h3 {
+      color: #ff6b6b;
+    }
+  }
+
+  @media (max-width: 768px) {
+    &__content {
+      width: 95%;
+      margin: 20px;
+    }
+
+    &__header,
+    &__body {
+      padding: 20px;
+    }
+
+    &__header h2 {
+      font-size: 1.3rem;
+    }
+  }
+}

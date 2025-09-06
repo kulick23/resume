@@ -7,7 +7,6 @@
     text-align: center;
     margin-top: 2rem;
     margin-bottom: 3rem;
-    font-size: clamp(2rem, 4vw, 3rem);
     color: var(--stars);
     font-weight: 700;
     position: relative;
@@ -17,7 +16,7 @@
     display: flex;
     justify-content: center;
     gap: 1rem;
-    margin-bottom: 3rem;
+    margin-bottom: 2.5rem;
     flex-wrap: wrap;
   }
 

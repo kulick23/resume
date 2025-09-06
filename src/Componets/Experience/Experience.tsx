@@ -10,13 +10,13 @@ export const Experience: React.FC = () => {
   return (
     <section className="experience">
       <div className="experience__header">
-        <h2 className="experience__title">{t('experience.title')}</h2>
+        <h1 className="experience__title">{t('experience.title')}</h1>
       </div>
 
       <div className="experience__content">
         <div className="experience__column">
           <div className="experience__column-header">
-            <h3>{t('experience.educationTitle')}</h3>
+            <h2>{t('experience.educationTitle')}</h2>
           </div>
           <div className="experience__timeline">
             {ExperienceStore.education.map((item, idx) => (
@@ -27,7 +27,7 @@ export const Experience: React.FC = () => {
 
         <div className="experience__column">
           <div className="experience__column-header">
-            <h3>{t('experience.workTitle')}</h3>
+            <h2>{t('experience.workTitle')}</h2>
           </div>
           <div className="experience__timeline">
             {ExperienceStore.experiences.map((item, idx) => (

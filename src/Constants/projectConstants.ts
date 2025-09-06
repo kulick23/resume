@@ -1,5 +1,4 @@
 export const FILTERS = [
-  { key: 'all', labelKey: 'projects.all' },
-  { key: 'commercial', labelKey: 'projects.commercial' },
   { key: 'pet', labelKey: 'projects.pet' },
+  { key: 'business', labelKey: 'projects.business' }
 ] as const;

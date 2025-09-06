@@ -12,7 +12,7 @@ export const About: React.FC = () => {
     <section className="about">
       <div className="about__container">
         <h1>{t('about.title')}</h1>
-        <h3>{t('about.subtitle')}</h3>
+        <p>{t('about.subtitle')}</p>
         <br />
         <small>{t('about.text1')}</small>
         <br />

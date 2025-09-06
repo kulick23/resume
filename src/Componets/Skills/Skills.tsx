@@ -7,7 +7,7 @@ import { useTranslation } from 'react-i18next';
 const CATEGORY_COLORS: Record<string, string> = {
   techSkills: 'rgb(231,216,197)',
   softSkills: '#a5907b',
-  Languages: '#a5907b',
+  language: '#a5907b',
 };
 
 export const Skills: React.FC = observer(() => {
@@ -32,7 +32,8 @@ export const Skills: React.FC = observer(() => {
               <ul className="skills__category--list" data-aos="fade-left">
                 {skills.map((skill) => (
                   <li key={skill} className="skills__category--item">
-                    {skill}
+                    {/* Используем t() для softSkills и language, иначе оставляем как есть */}
+                    {category === 'softSkills' || category === 'language' ? t(skill) : skill}
                   </li>
                 ))}
               </ul>

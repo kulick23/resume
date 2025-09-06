@@ -62,9 +62,8 @@
   }
 
   &__item-title {
-    font-size: clamp(1.1rem, 2vw, 1.3rem);
     color: var(--stars);
-    margin: 0 0 0.5rem 0;
+    margin: 0;
     font-weight: 600;
   }
 
@@ -76,7 +75,6 @@
   }
 
   &__item-period {
-    font-size: clamp(0.8rem, 1.6vw, 0.9rem);
     color: var(--text-graphite-light);
     font-weight: 400;
     background: rgba(255, 255, 255, 0.1);

@@ -19,10 +19,10 @@ export const Contact: React.FC = () => {
     <section className="contact">
       <img src={CONTACT_IMAGE} alt="photo" className="contact__image" />
       <div className="contact__form">
-        <h2 className="text-with-circle">{t('contact.title')}</h2>
-        <h3>{t('contact.subtitle')}</h3>
+        <h1 className="contact__title">{t('contact.title')}</h1>
+        <h3 className="contact__subtitle">{t('contact.subtitle')}</h3>
 
-        <p>{t('contact.description')}</p>
+        <p className="contact__description">{t('contact.description')}</p>
         <div className="contact__links">
           {SOCIAL_LINKS.map((link, index) => (
             <a key={index} href={link.href} target="_blank" rel="noopener noreferrer">
@@ -30,7 +30,7 @@ export const Contact: React.FC = () => {
             </a>
           ))}
         </div>
-        <p>{t('contact.formText')}</p>
+        <p className="contact__description">{t('contact.formText')}</p>
         <form className="form__container" onSubmit={handleSubmit}>
           <div className="form__line">
             {fields.slice(0, 2).map((field) => (

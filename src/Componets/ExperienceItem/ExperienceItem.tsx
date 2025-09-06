@@ -20,7 +20,7 @@ export const ExperienceItem: React.FC<ExperienceItemProps> = ({ item }) => {
         </div>
       </div>
       <div className="experience__item-info">
-        <span className="experience__item-period">{item.duration}</span>
+        <small className="experience__item-period">{item.duration}</small>
         <p className="experience__item-description">{t(item.description)}</p>
       </div>
     </div>

@@ -35,7 +35,7 @@
   "projects": {
     "title": "Moje Projekty",
     "all": "Wszystkie",
-    "commercial": "Komercyjne",
+    "business": "Komercyjne",
     "pet": "Projekty osobiste"
   },
   "experience": {
@@ -77,7 +77,24 @@
     "techskills": "Umiejętności Techniczne",
     "softskills": "Umiejętności Miękkie",
     "tools": "Narzędzia",
-    "languages": "Języki"
+    "language": "Języki",
+    "softSkills": {
+      "teamwork": "Praca zespołowa",
+      "communication": "Komunikacja",
+      "workWithCustomers": "Praca z klientami",
+      "developmentMethodologies": "Metodologie rozwoju",
+      "timeManagement": "Zarządzanie czasem",
+      "adaptability": "Adaptacyjność",
+      "creativity": "Kreatywność",
+      "criticalThinking": "Myślenie krytyczne",
+      "attentionToDetail": "Uwaga na szczegóły"
+    },
+    "languages": {
+      "english": "Angielski",
+      "russian": "Rosyjski",
+      "polish": "Polski",
+      "belarusian": "Białoruski"
+    }
   },
   "footer": {
     "clue": "na górę",
@@ -91,5 +108,37 @@
     "projects": "Projekty",
     "experience": "Doświadczenie",
     "footer": "Stopka"
+  },
+  "nda": {
+    "title": "NDA Protected",
+    "description": "Opis projektu:",
+    "stack": "Stos technologiczny:",
+    "reason": "Dlaczego projekt nie może być pokazany:"
+  },
+  "businessProjects": {
+    "gameItemsStore": {
+      "title": "Sklep z przedmiotami do gier",
+      "description": "Sklep online z przedmiotami do gier dla dużego klienta. Projekt obejmuje integrację systemów płatności i zarządzanie zapasami. Zawiera poufne informacje o klientach i transakcjach, chronione umową NDA."
+    },
+    "companyWebsite": {
+      "title": "Strona internetowa firmy",
+      "description": "Strona korporacyjna z panelem administracyjnym. Projekt obejmuje integrację CRM i analitykę. Zawiera poufne informacje o procesach biznesowych, chronione umową NDA."
+    },
+    "nftMarketplace": {
+      "title": "Rynek NFT",
+      "description": "Platforma do handlu NFT z integracją blockchain. Projekt obejmuje inteligentne kontrakty i zarządzanie kolekcjami. Zawiera poufne informacje o transakcjach i użytkownikach, chronione umową NDA."
+    },
+    "companyWebsite2": {
+      "title": "Strona internetowa firmy (druga)",
+      "description": "Druga strona korporacyjna skupiająca się na e-commerce. Projekt obejmuje integrację systemów płatności i zarządzanie zamówieniami. Zawiera poufne informacje o klientach i sprzedaży, chronione umową NDA."
+    },
+    "telegramMiniApp": {
+      "title": "Mini-aplikacja Telegram",
+      "description": "Mini-aplikacja dla Telegram z integracją API. Projekt obejmuje boty czatowe i zarządzanie danymi. Zawiera poufne informacje o użytkownikach i interakcjach, chronione umową NDA."
+    },
+    "performanceSystem": {
+      "title": "System wydajności",
+      "description": "System monitorowania wydajności pracowników. Projekt obejmuje analitykę i raporty. Zawiera poufne informacje o personelu i metrykach, chronione umową NDA."
+    }
   }
 }

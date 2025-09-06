@@ -15,17 +15,22 @@ class SkillsStore {
       'Cloud',
     ],
     softSkills: [
-      'Teamwork',
-      'Communication',
-      'Work with customers',
-      'Development methodologies',
-      'Time management',
-      'Adaptability',
-      'Creativity',
-      'Critical thinking',
-      'Attention to detail',
+      'skills.softSkills.teamwork',
+      'skills.softSkills.communication',
+      'skills.softSkills.workWithCustomers',
+      'skills.softSkills.developmentMethodologies',
+      'skills.softSkills.timeManagement',
+      'skills.softSkills.adaptability',
+      'skills.softSkills.creativity',
+      'skills.softSkills.criticalThinking',
+      'skills.softSkills.attentionToDetail',
     ],
-    Languages: ['English', 'Russian', 'Polish', 'Belarusian'],
+    language: [
+      'skills.languages.english',
+      'skills.languages.russian',
+      'skills.languages.polish',
+      'skills.languages.belarusian',
+    ],
   };
 
   constructor() {

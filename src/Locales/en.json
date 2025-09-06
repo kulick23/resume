@@ -35,7 +35,7 @@
   "projects": {
     "title": "My Projects",
     "all": "All",
-    "commercial": "Commercial",
+    "business": "Commercial",
     "pet": "Pet Projects"
   },
   "experience": {
@@ -77,7 +77,24 @@
     "techskills": "Tech Skills",
     "softskills": "Soft Skills",
     "tools": "Tools",
-    "languages": "Languages"
+    "language": "Languages",
+    "softSkills": {
+      "teamwork": "Teamwork",
+      "communication": "Communication",
+      "workWithCustomers": "Work with customers",
+      "developmentMethodologies": "Development methodologies",
+      "timeManagement": "Time management",
+      "adaptability": "Adaptability",
+      "creativity": "Creativity",
+      "criticalThinking": "Critical thinking",
+      "attentionToDetail": "Attention to detail"
+    },
+    "languages": {
+      "english": "English",
+      "russian": "Russian",
+      "polish": "Polish",
+      "belarusian": "Belarusian"
+    }
   },
   "footer": {
     "clue": "up",
@@ -91,5 +108,37 @@
     "projects": "Projects",
     "experience": "Experience",
     "footer": "Footer"
+  },
+  "nda": {
+    "title": "NDA Protected",
+    "description": "Project Description:",
+    "stack": "Technology Stack:",
+    "reason": "Why the project cannot be shown:"
+  },
+  "businessProjects": {
+    "gameItemsStore": {
+      "title": "Game Items Store",
+      "description": "Online store for game items for a large client. The project includes payment system integration and inventory management. Contains confidential information about customers and transactions, protected by NDA agreement."
+    },
+    "companyWebsite": {
+      "title": "Company Website",
+      "description": "Corporate website with admin panel. The project includes CRM integration and analytics. Contains confidential information about business processes, protected by NDA agreement."
+    },
+    "nftMarketplace": {
+      "title": "NFT Marketplace",
+      "description": "Platform for NFT trading with blockchain integration. The project includes smart contracts and collection management. Contains confidential information about transactions and users, protected by NDA agreement."
+    },
+    "companyWebsite2": {
+      "title": "Company Website (Second)",
+      "description": "Second corporate website focused on e-commerce. The project includes payment system integration and order management. Contains confidential information about customers and sales, protected by NDA agreement."
+    },
+    "telegramMiniApp": {
+      "title": "Telegram Mini-App",
+      "description": "Mini-app for Telegram with API integration. The project includes chat bots and data management. Contains confidential information about users and interactions, protected by NDA agreement."
+    },
+    "performanceSystem": {
+      "title": "Performance System",
+      "description": "Employee performance monitoring system. The project includes analytics and reports. Contains confidential information about personnel and metrics, protected by NDA agreement."
+    }
   }
 }
