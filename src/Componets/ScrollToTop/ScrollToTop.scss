@@ -1,7 +1,8 @@
 .scroll-to-top {
   position: fixed;
   top: 60px;
-  right: 50%;
+  left: 50%;
+  transform: translateX(-50%);
   width: 60px;
   height: 60px;
   border-radius: 50%;
@@ -50,5 +51,19 @@
 
   &.fly-up {
     animation: flyUp 1s ease-in-out forwards;
+  }
+}
+
+@media (max-width: 1045px) {
+  .scroll-to-top {
+    .circle-left,
+    .circle-right {
+      transition: none;
+    }
+
+    &:hover .circle-left,
+    &:hover .circle-right {
+      stroke-dashoffset: initial;
+    }
   }
 }

@@ -61,7 +61,7 @@ export const Project: React.FC<ProjectProps> = observer(({ onNDAClick }) => {
             key={project.title}
             className="project__item"
             data-aos="fade-up"
-            data-aos-delay={idx * 200}
+            data-aos-delay={idx * 100}
           >
             {project.category === 'business' || project.isNDA ? (
               <BusinessLaptop project={project} onNDAClick={() => handleNDAClick(project as BusinessProject)} />
