@@ -8,22 +8,30 @@ import { useTranslation } from 'react-i18next';
 import { FILTERS } from '../../Constants';
 import { useState } from 'react';
 import './Project.scss';
+import type { BusinessProject, Project as ProjectType } from '../../types'; // Alias Project to avoid conflict
 
-export const Project: React.FC = observer(() => {
+interface ProjectProps {
+  onNDAClick?: (project: BusinessProject) => void;
+}
+
+export const Project: React.FC<ProjectProps> = observer(({ onNDAClick }) => {
   const filteredProjects = projectsStore.filteredProjects;
   const selectedCategory = projectsStore.selectedCategory;
   const { t } = useTranslation();
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedProject, setSelectedProject] = useState<any>(null);
+  const [selectedProject, setSelectedProject] = useState<BusinessProject | null>(null);
 
   const handleFilterChange = (category: 'pet' | 'business') => {
     console.log('Filter changed to:', category);
     projectsStore.setSelectedCategory(category);
   };
 
-  const handleNDAClick = (project: any) => {
+  const handleNDAClick = (project: BusinessProject) => {
     setSelectedProject(project);
     setIsModalOpen(true);
+    if (onNDAClick) {
+      onNDAClick(project);
+    }
   };
 
   const handleCloseModal = () => {
@@ -56,7 +64,7 @@ export const Project: React.FC = observer(() => {
             data-aos-delay={idx * 200}
           >
             {project.category === 'business' || project.isNDA ? (
-              <BusinessLaptop project={project} onNDAClick={() => handleNDAClick(project)} />
+              <BusinessLaptop project={project} onNDAClick={() => handleNDAClick(project as BusinessProject)} />
             ) : (
               <Laptop project={project} />
             )}
