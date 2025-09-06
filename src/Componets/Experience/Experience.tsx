@@ -10,15 +10,15 @@ export const Experience: React.FC = () => {
   return (
     <section className="experience">
       <div className="experience__header">
-        <h1 className="experience__title">{t('experience.title')}</h1>
+        <h1 data-aos="fade-up">{t('experience.title')}</h1>
       </div>
 
       <div className="experience__content">
         <div className="experience__column">
           <div className="experience__column-header">
-            <h2>{t('experience.educationTitle')}</h2>
+            <h2 data-aos="fade-left">{t('experience.educationTitle')}</h2>
           </div>
-          <div className="experience__timeline">
+          <div className="experience__timeline" data-aos="fade-left">
             {ExperienceStore.education.map((item, idx) => (
               <ExperienceItem key={idx} item={item} />
             ))}
@@ -27,9 +27,9 @@ export const Experience: React.FC = () => {
 
         <div className="experience__column">
           <div className="experience__column-header">
-            <h2>{t('experience.workTitle')}</h2>
+            <h2 data-aos="fade-right">{t('experience.workTitle')}</h2>
           </div>
-          <div className="experience__timeline">
+          <div className="experience__timeline" data-aos="fade-right">
             {ExperienceStore.experiences.map((item, idx) => (
               <ExperienceItem key={item.id ?? idx} item={item} />
             ))}

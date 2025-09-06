@@ -21,8 +21,6 @@ export const SOCIALS = [
   },
 ];
 
-export const STAR_IDS = ['stars', 'stars2', 'stars3'];
-
 export const CONTACTS = [
   {
     href: 'mailto:danek200326@gmail.com',

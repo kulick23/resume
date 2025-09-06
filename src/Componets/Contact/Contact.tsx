@@ -17,21 +17,32 @@ export const Contact: React.FC = () => {
 
   return (
     <section className="contact">
-      <img src={CONTACT_IMAGE} alt="photo" className="contact__image" />
+      <img src={CONTACT_IMAGE} alt="photo" className="contact__image" data-aos="fade-left" />
       <div className="contact__form">
-        <h1 className="contact__title">{t('contact.title')}</h1>
-        <h3 className="contact__subtitle">{t('contact.subtitle')}</h3>
+        <h1 data-aos="fade-up">{t('contact.title')}</h1>
+        <h3 data-aos="fade-up" data-aos-delay="200">
+          {t('contact.subtitle')}
+        </h3>
 
-        <p className="contact__description">{t('contact.description')}</p>
-        <div className="contact__links">
+        <p data-aos="fade-up" data-aos-delay="400">
+          {t('contact.description')}
+        </p>
+        <div className="contact__links" data-aos="fade-up" data-aos-delay="600">
           {SOCIAL_LINKS.map((link, index) => (
             <a key={index} href={link.href} target="_blank" rel="noopener noreferrer">
               <img className="contact__icon" src={link.icon} alt={link.alt} />
             </a>
           ))}
         </div>
-        <p className="contact__description">{t('contact.formText')}</p>
-        <form className="form__container" onSubmit={handleSubmit}>
+        <p data-aos="fade-up" data-aos-delay="800">
+          {t('contact.formText')}
+        </p>
+        <form
+          className="form__container"
+          onSubmit={handleSubmit}
+          data-aos="fade-up"
+          data-aos-delay="1000"
+        >
           <div className="form__line">
             {fields.slice(0, 2).map((field) => (
               <div key={field.id} className="form__item">
@@ -41,7 +52,9 @@ export const Contact: React.FC = () => {
                   id={field.id}
                   name={field.name}
                   placeholder={field.placeholder}
-                  value={field.value}
+                  value={
+                    typeof field.value === 'boolean' ? (field.value ? 'true' : '') : field.value
+                  }
                   onChange={handleChange}
                   required
                 />
@@ -55,7 +68,7 @@ export const Contact: React.FC = () => {
                 id={field.id}
                 name={field.name}
                 placeholder={field.placeholder}
-                value={field.value}
+                value={typeof field.value === 'boolean' ? (field.value ? 'true' : '') : field.value}
                 onChange={handleChange}
                 required
               />

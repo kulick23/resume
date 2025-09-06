@@ -11,3 +11,4 @@ export * from './Skills/index';
 export * from './About/index';
 export * from './Experience/index';
 export * from './ExperienceItem/index';
+export { default as ScrollToTop } from './ScrollToTop/ScrollToTop';

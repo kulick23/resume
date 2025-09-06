@@ -10,3 +10,5 @@ export * from './useSortedExperiences';
 export * from './use3DEffect';
 export * from './useContactForm';
 export * from './useHeader';
+export * from './useStars';
+export * from './useScrollToTop';

@@ -47,9 +47,14 @@ export const Project: React.FC = observer(() => {
         ))}
       </div>
 
-      <div className="project__container" data-aos="fade-up">
-        {filteredProjects.map((project) => (
-          <div key={project.title} className="project__item">
+      <div className="project__container">
+        {filteredProjects.map((project, idx) => (
+          <div
+            key={project.title}
+            className="project__item"
+            data-aos="fade-up"
+            data-aos-delay={idx * 200}
+          >
             {project.category === 'business' || project.isNDA ? (
               <BusinessLaptop project={project} onNDAClick={() => handleNDAClick(project)} />
             ) : (

@@ -11,13 +11,19 @@ export const About: React.FC = () => {
   return (
     <section className="about">
       <div className="about__container">
-        <h1>{t('about.title')}</h1>
-        <p>{t('about.subtitle')}</p>
+        <h1 data-aos="fade-up">{t('about.title')}</h1>
+        <p data-aos="fade-up" data-aos-delay="200">
+          {t('about.subtitle')}
+        </p>
         <br />
-        <small>{t('about.text1')}</small>
+        <small data-aos="fade-up" data-aos-delay="400">
+          {t('about.text1')}
+        </small>
         <br />
         <br />
-        <small>{t('about.text2')}</small>
+        <small data-aos="fade-up" data-aos-delay="600">
+          {t('about.text2')}
+        </small>
       </div>
       <img
         src={ABOUT_IMAGE}

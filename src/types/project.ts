@@ -10,7 +10,7 @@ export interface Project {
 
 export interface BusinessProject {
   title: string;
-  description: string;
+  ndaDescription: string;
   stack: string[];
   category: 'business';
   isNDA: boolean;
