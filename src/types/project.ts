@@ -5,16 +5,15 @@ export interface Project {
   stack: string[];
   link: string;
   repoLink: string;
-  category: 'commercial' | 'pet';
+  category: 'pet' | 'business';
+  isNDA?: boolean;
+  ndaDescription?: string;
 }
 
-export interface BusinessProject {
-  title: string;
-  ndaDescription: string;
-  stack: string[];
+export interface BusinessProject extends Project {
   category: 'business';
-  isNDA: boolean;
-  ndaReason?: string;
+  isNDA?: boolean;
+  ndaDescription?: string;
 }
 
 export interface LaptopProps {

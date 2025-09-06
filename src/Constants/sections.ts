@@ -9,10 +9,10 @@ export const SECTIONS_DATA = {
 };
 
 // Для обратной совместимости
-export const SECTIONS = Object.keys(SECTIONS_DATA);
-export const NAV_LINKS_KEYS = SECTIONS.map((name) => ({
+export const SECTIONS_NAMES = Object.keys(SECTIONS_DATA) as (keyof typeof SECTIONS_DATA)[];
+export const SECTIONS = SECTIONS_NAMES;
+export const NAV_LINKS_KEYS = SECTIONS_NAMES.map((name) => ({
   to: name,
   key: SECTIONS_DATA[name].navKey,
 }));
-export const SECTIONS_CONFIG = SECTIONS.map((name) => ({ name, aos: SECTIONS_DATA[name].aos }));
-export const SECTIONS_NAMES = Object.keys(SECTIONS_DATA);
+export const SECTIONS_CONFIG = SECTIONS_NAMES.map((name) => ({ name, aos: SECTIONS_DATA[name].aos }));
