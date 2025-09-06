@@ -1,49 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 import './Contact.scss';
-import emailjs from '@emailjs/browser';
 import { CONTACT_IMAGE, SOCIAL_LINKS, FIELD_CONFIGS } from '../../Constants';
+import { useContactForm } from '../../Hooks/useContactForm';
 
 export const Contact: React.FC = () => {
   const { t } = useTranslation();
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
-  });
-  const [isLoading, setIsLoading] = useState(false);
-  const [status, setStatus] = useState<'success' | 'error' | null>(null);
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsLoading(true);
-    setStatus(null);
-
-    try {
-      await emailjs.send(
-        'service_7qzl5cq', // Замените на ваш Service ID из EmailJS
-        'template_fp6p7nm', // Замените на ваш Template ID из EmailJS
-        {
-          from_name: formData.name,
-          from_email: formData.email,
-          message: formData.message,
-        },
-        'a5A-M4e76FCivSK_k', // Замените на ваш Public Key из EmailJS
-      );
-      setStatus('success');
-      setFormData({ name: '', email: '', message: '' });
-    } catch (error) {
-      console.error('EmailJS error:', error);
-      setStatus('error');
-    } finally {
-      setIsLoading(false);
-    }
-  };
+  const { formData, isLoading, status, handleChange, handleSubmit } = useContactForm();
 
   const fields = FIELD_CONFIGS.map((config) => ({
     ...config,

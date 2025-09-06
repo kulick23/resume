@@ -1,33 +1,51 @@
 import { useState } from 'react';
-
-interface FormData {
-  name: string;
-  email: string;
-  message: string;
-  privacy: boolean;
-}
+import emailjs from '@emailjs/browser';
 
 export const useContactForm = () => {
-  const [formData, setFormData] = useState<FormData>({
+  const [formData, setFormData] = useState({
     name: '',
     email: '',
     message: '',
-    privacy: false,
   });
+  const [isLoading, setIsLoading] = useState(false);
+  const [status, setStatus] = useState<'success' | 'error' | null>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value, type } = e.target;
-    setFormData({
-      ...formData,
-      [name]: type === 'checkbox' ? (e.target as HTMLInputElement).checked : value,
-    });
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    // Добавьте логику отправки формы (например, через API)
+    setIsLoading(true);
+    setStatus(null);
+
+    try {
+      await emailjs.send(
+        'service_7qzl5cq',
+        'template_fp6p7nm',
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+        },
+        'a5A-M4e76FCivSK_k',
+      );
+      setStatus('success');
+      setFormData({ name: '', email: '', message: '' });
+    } catch (error) {
+      console.error('EmailJS error:', error);
+      setStatus('error');
+    } finally {
+      setIsLoading(false);
+    }
   };
 
-  return { formData, handleChange, handleSubmit };
+  return {
+    formData,
+    isLoading,
+    status,
+    handleChange,
+    handleSubmit,
+  };
 };
