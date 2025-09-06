@@ -1,56 +1,56 @@
-"use client"
+'use client';
 
-import { useState, useEffect } from "react"
+import { useState, useEffect } from 'react';
 
 export const useHeader = () => {
-  const [scrolled, setScrolled] = useState(false)
-  const [scrollDir, setScrollDir] = useState<"up" | "down">("up")
-  const [pastThreshold, setPastThreshold] = useState(false)
-  const [activeSection, setActiveSection] = useState<string>("header")
+  const [scrolled, setScrolled] = useState(false);
+  const [scrollDir, setScrollDir] = useState<'up' | 'down'>('up');
+  const [pastThreshold, setPastThreshold] = useState(false);
+  const [activeSection, setActiveSection] = useState<string>('header');
 
   useEffect(() => {
-    let lastY = window.scrollY
+    let lastY = window.scrollY;
     const onScroll = () => {
-      const y = window.scrollY
-      setScrolled(y > 0)
+      const y = window.scrollY;
+      setScrolled(y > 0);
       if (y > 150) {
-        setPastThreshold(true)
-        setScrollDir(y > lastY ? "down" : "up")
+        setPastThreshold(true);
+        setScrollDir(y > lastY ? 'down' : 'up');
       } else {
-        setPastThreshold(false)
+        setPastThreshold(false);
       }
-      lastY = y
-    }
-    window.addEventListener("scroll", onScroll)
-    return () => window.removeEventListener("scroll", onScroll)
-  }, [])
+      lastY = y;
+    };
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   useEffect(() => {
-    const sectionIds = ["header", "about", "skills", "projects", "experience", "contact"]
+    const sectionIds = ['header', 'about', 'skills', 'projects', 'experience', 'contact'];
     const handleIntersect = (entries: IntersectionObserverEntry[]) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          setActiveSection(entry.target.id)
+          setActiveSection(entry.target.id);
         }
-      })
-    }
+      });
+    };
 
     const observer = new IntersectionObserver(handleIntersect, {
       threshold: 0.2,
-      rootMargin: "-10% 0px -10% 0px",
-    })
+      rootMargin: '-10% 0px -10% 0px',
+    });
 
     sectionIds.forEach((id) => {
-      const el = document.getElementById(id)
+      const el = document.getElementById(id);
       if (el) {
-        observer.observe(el)
+        observer.observe(el);
       }
-    })
+    });
 
-    return () => observer.disconnect()
-  }, [])
+    return () => observer.disconnect();
+  }, []);
 
-  const isHidden = pastThreshold && scrollDir === "down"
+  const isHidden = pastThreshold && scrollDir === 'down';
 
-  return { scrolled, isHidden, activeSection }
-}
+  return { scrolled, isHidden, activeSection };
+};

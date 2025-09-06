@@ -1,24 +1,24 @@
-import type React from "react"
-import { useTranslation } from "react-i18next"
-import "./NDAModal.scss"
-import type { BusinessProject } from "../../types"
+import type React from 'react';
+import { useTranslation } from 'react-i18next';
+import './NDAModal.scss';
+import type { BusinessProject } from '../../types';
 
 interface NDAModalProps {
-  isOpen: boolean
-  onClose: () => void
-  project: BusinessProject | null
+  isOpen: boolean;
+  onClose: () => void;
+  project: BusinessProject | null;
 }
 
 export const NDAModal: React.FC<NDAModalProps> = ({ isOpen, onClose, project }) => {
-  const { t } = useTranslation()
+  const { t } = useTranslation();
 
-  if (!isOpen || !project) return null
+  if (!isOpen || !project) return null;
 
   const handleBackdropClick = (e: React.MouseEvent) => {
     if (e.target === e.currentTarget) {
-      onClose()
+      onClose();
     }
-  }
+  };
 
   return (
     <div className="nda-modal" onClick={handleBackdropClick}>
@@ -29,12 +29,12 @@ export const NDAModal: React.FC<NDAModalProps> = ({ isOpen, onClose, project }) 
 
         <div className="nda-modal__header">
           <h2>{t(project.title)}</h2>
-          <span className="nda-modal__badge">{t("nda.title")}</span>
+          <span className="nda-modal__badge">{t('nda.title')}</span>
         </div>
 
         <div className="nda-modal__body">
           <div className="nda-modal__stack">
-            <h3>{t("nda.stack")}</h3>
+            <h3>{t('nda.stack')}</h3>
             <div className="nda-modal__stack-list">
               {project.stack.map((tech, index) => (
                 <span key={index} className="nda-modal__stack-item">
@@ -50,7 +50,7 @@ export const NDAModal: React.FC<NDAModalProps> = ({ isOpen, onClose, project }) 
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default NDAModal
+export default NDAModal;

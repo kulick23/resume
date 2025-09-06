@@ -1,4 +1,4 @@
-import './App.scss';
+import './Styles/App.scss';
 import { Contact, About, Skills, Project, Header, Experience } from './Componets';
 import { Element } from 'react-scroll';
 import { useAOS } from './Hooks';

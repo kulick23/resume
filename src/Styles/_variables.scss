@@ -1,0 +1,27 @@
+:root {
+  --background-space: #0a0a0a;
+  --background-space-opacity: rgba(10, 10, 10, 0.1);
+  --background-second-space: #090a0f;
+  --stars: #ffffff;
+  --background-dark: #1a1a2e;
+  --background-colory: #16213e;
+  --accent-primary: #0f3460;
+  --accent-secondary: #e94560;
+  --text-graphite-light: #a0a0a0;
+  --text-graphite-light-opacity: rgba(255, 255, 255, 0.01);
+  --text-graphite-dark: #2d2d2d;
+  --font-code: 'CodeFont', 'Fira Code', monospace;
+  --font-web: 'TitleFont', 'Inter', sans-serif;
+  --font-second: 'SecondFont', 'Inter', sans-serif;
+  --font-main: 'MainFont', 'Inter', sans-serif;
+  --button-width-big: 7rem;
+  --button-height-big: 3rem;
+  --button-width-medium: 5rem;
+  --button-height-medium: 2.5rem;
+  --button-width-small: 6rem;
+  --button-height-small: 2.8rem;
+  --border-radius: 0.5rem;
+  --shadow-light: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --shadow-medium: 0 4px 16px rgba(0, 0, 0, 0.15);
+  --shadow-heavy: 0 8px 32px rgba(0, 0, 0, 0.2);
+}

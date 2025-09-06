@@ -6,7 +6,9 @@
   gap: 10%;
   padding-top: 4rem;
 
-  &__title, &__description, &__subtitle {
+  &__title,
+  &__description,
+  &__subtitle {
     margin: 0;
   }
   &__image {
@@ -37,10 +39,10 @@
   &__links {
     display: flex;
     gap: 20px;
-a{
-  display: flex;
-  align-items: center;
-}
+    a {
+      display: flex;
+      align-items: center;
+    }
   }
 
   &__button {

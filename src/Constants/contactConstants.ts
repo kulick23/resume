@@ -11,9 +11,13 @@ export const ICONS = {
 };
 
 export const SOCIAL_LINKS = [
-  { href: 'https://www.facebook.com/', icon: ICONS.telegram, alt: 'Facebook' },
-  { href: 'https://telegram.org/', icon: ICONS.linkedin, alt: 'Telegram' },
-  { href: 'https://www.instagram.com/', icon: ICONS.mail, alt: 'Instagram' },
+  { href: 'https://t.me/chik_chiv', icon: ICONS.telegram, alt: 'Telegram' },
+  {
+    href: 'https://www.linkedin.com/in/danila-kulinkovich/',
+    icon: ICONS.linkedin,
+    alt: 'LinkedIn',
+  },
+  { href: 'mailto:danek200326@gmail.com', icon: ICONS.mail, alt: 'Mail' },
 ];
 
 export const FIELD_CONFIGS = [

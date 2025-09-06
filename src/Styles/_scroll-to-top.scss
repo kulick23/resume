@@ -1,0 +1,54 @@
+.scroll-to-top {
+  position: fixed;
+  top: 60px;
+  right: 50%;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1000;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+
+  .scroll-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+
+  .circle-left {
+    transition: stroke-dashoffset 0.5s ease;
+  }
+
+  .circle-right {
+    transition: stroke-dashoffset 0.5s ease;
+  }
+
+  &:hover .circle-left {
+    stroke-dashoffset: 0;
+  }
+
+  &:hover .circle-right {
+    stroke-dashoffset: 0;
+  }
+
+  img {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+    display: block;
+    position: relative;
+    z-index: 1;
+    animation: wobble 1s infinite;
+  }
+
+  &.fly-up {
+    animation: flyUp 1s ease-in-out forwards;
+  }
+}

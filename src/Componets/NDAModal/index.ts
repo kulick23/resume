@@ -1,2 +1,2 @@
-export { default } from "./NDAModal"
-export { NDAModal } from "./NDAModal"
+export { default } from './NDAModal';
+export { NDAModal } from './NDAModal';

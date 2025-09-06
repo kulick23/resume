@@ -1,0 +1,15 @@
+@media (max-width: 1024px) {
+  button {
+    height: var(--button-height-medium);
+    width: var(--button-width-medium);
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  button {
+    height: var(--button-height-small);
+    width: var(--button-width-small);
+    font-size: 0.85rem;
+  }
+}

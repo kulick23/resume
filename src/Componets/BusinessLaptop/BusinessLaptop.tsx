@@ -1,12 +1,12 @@
-import type React from "react"
-import "./BusinessLaptop.scss"
-import { LAPTOP_IMG } from "../../Constants"
-import type { BusinessLaptopProps } from "../../types"
+import type React from 'react';
+import './BusinessLaptop.scss';
+import { LAPTOP_IMG } from '../../Constants';
+import type { BusinessLaptopProps } from '../../types';
 
 export const BusinessLaptop: React.FC<BusinessLaptopProps> = ({ project, onNDAClick }) => {
   const handleNDAClick = () => {
-    onNDAClick(project)
-  }
+    onNDAClick(project);
+  };
 
   return (
     <div className="business-laptop">
@@ -19,14 +19,18 @@ export const BusinessLaptop: React.FC<BusinessLaptopProps> = ({ project, onNDACl
             </div>
           </div>
         </div>
-        <img src={LAPTOP_IMG || "/placeholder.svg"} alt="Laptop" className="business-laptop--image" />
-        <div className="business-laptop__stack">[{project.stack.join(", ")}]</div>
+        <img
+          src={LAPTOP_IMG || '/placeholder.svg'}
+          alt="Laptop"
+          className="business-laptop--image"
+        />
+        <div className="business-laptop__stack">[{project.stack.join(', ')}]</div>
       </div>
       <div className="business-laptop__info-btn" onClick={handleNDAClick}>
         <span>?</span>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default BusinessLaptop
+export default BusinessLaptop;
