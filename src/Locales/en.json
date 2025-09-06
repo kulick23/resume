@@ -30,7 +30,10 @@
     "emailPlaceholder": "ivan@example.com",
     "message": "Your message",
     "messagePlaceholder": "Write your message...",
-    "send": "Send message"
+    "send": "Send message",
+    "sending": "Sending...",
+    "success": "Message sent!",
+    "error": "Sending error. Try again later."
   },
   "projects": {
     "title": "My Projects",

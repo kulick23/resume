@@ -12,6 +12,7 @@
     "indexes": "barrelsby -d src/Componets src/Constants src/Hooks src/Locales src/Stores src/types -l all -s flat --delete"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "aos": "^2.3.4",
     "framer-motion": "^11.1.4",
     "i18next": "^23.4.6",

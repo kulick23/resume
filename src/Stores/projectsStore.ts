@@ -128,7 +128,7 @@ class ProjectsStore {
       title: 'businessProjects.gameItemsStore.title',
       link: '',
       repoLink: '',
-      stack: ['React', 'TypeScript', 'Vite', 'SCSS', 'MobX', 'Mail JS'],
+      stack: ['React', 'TypeScript', 'Vite', 'SCSS', 'MobX', 'Email JS'],
       projectImg: '',
       category: 'business',
       isNDA: true,
