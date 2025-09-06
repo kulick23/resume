@@ -21,6 +21,6 @@ export interface LaptopProps {
 }
 
 export interface BusinessLaptopProps {
-  project: BusinessProject;
+  project: Project; 
   onNDAClick: (project: BusinessProject) => void;
 }

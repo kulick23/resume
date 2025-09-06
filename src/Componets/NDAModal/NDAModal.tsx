@@ -58,9 +58,11 @@ export const NDAModal: React.FC<NDAModalProps> = ({ isOpen, onClose, project }) 
             </div>
           </div>
 
-          <div className="nda-modal__nda-info">
-            <small>{t(project.ndaDescription)}</small>
-          </div>
+          {project.ndaDescription && (
+            <div className="nda-modal__nda-info">
+              <small>{t(project.ndaDescription)}</small>
+            </div>
+          )}
         </div>
       </div>
     </div>
