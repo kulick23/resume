@@ -93,6 +93,24 @@
     background: rgba(255, 255, 255, 0.05);
     color: var(--stars);
     border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+
+    &:hover {
+      box-shadow: var(--shadow-medium);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    &:disabled {
+      box-shadow: var(--shadow-medium);
+      background: rgba(255, 255, 255, 0.08);
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    // Убираем focus поведение
+    &:focus {
+      outline: none;
+    }
   }
 
   textarea {
