@@ -10,11 +10,11 @@
 
 @keyframes flyUp {
   0% {
-    transform: translateY(0);
+    transform: translateX(-50%) translateY(0); // Preserve horizontal centering
     opacity: 1;
   }
   100% {
-    transform: translateY(-100vh);
+    transform: translateX(-50%) translateY(-100vh); // Preserve horizontal centering
     opacity: 0;
   }
 }

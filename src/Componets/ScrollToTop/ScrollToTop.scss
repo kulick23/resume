@@ -13,6 +13,8 @@
   align-items: center;
   justify-content: center;
   padding: 5px;
+  outline: none; // Убираем обводку при фокусе
+  -webkit-tap-highlight-color: transparent; // Убираем обводку при нажатии на мобильных
 
   .scroll-svg {
     position: absolute;
@@ -51,8 +53,10 @@
 
   &.fly-up {
     animation: flyUp 1s ease-in-out forwards;
+    will-change: transform; // Оптимизация для плавности
   }
 }
+
 
 @media (max-width: 1045px) {
   .scroll-to-top {
