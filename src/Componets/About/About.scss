@@ -34,14 +34,22 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1045px) {
   .about {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    gap: 1.5rem;
 
-    img {
-      margin-top: 5rem;
+    &__container {
+      width: 100%;
+      padding: 0 1rem;
+    }
+
+    &__image-3d {
+      width: 60%;
+      margin: 2rem auto 0;
+      align-self: center;
     }
   }
 }

@@ -124,3 +124,35 @@ a::after {
 a:hover::after {
   width: 100%;
 }
+
+@media (max-width: 1045px) {
+  .App {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  h3 {
+    font-size: 1rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+  small {
+    font-size: 0.8rem;
+  }
+
+  button {
+    height: var(--button-height-medium);
+    width: var(--button-width-medium);
+    font-size: 0.8rem;
+  }
+}

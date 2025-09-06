@@ -56,6 +56,24 @@ export const Header: React.FC = () => {
                 {link.label}
               </Link>
             ))}
+
+            {/* Добавлено: языки внутри мобильного меню */}
+            <div className="header__nav-lang header__nav-lang--mobile">
+              {LANGUAGES.map((lang, idx) => (
+                <React.Fragment key={lang.code}>
+                  <button
+                    onClick={() => {
+                      changeLanguage(lang.code);
+                      handleLinkClick();
+                    }}
+                    className={`header__nav-lang-btn${currentLang === lang.code ? ' header__nav-lang-btn--active' : ''}`}
+                  >
+                    {lang.label}
+                  </button>
+                  {idx < LANGUAGES.length - 1 && <span>|</span>}
+                </React.Fragment>
+              ))}
+            </div>
           </div>
 
           <div className="header__nav-widgets">

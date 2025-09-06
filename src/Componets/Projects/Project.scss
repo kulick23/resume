@@ -59,6 +59,9 @@
     padding: 2rem 5rem;
     margin-bottom: 2rem;
     row-gap: 100px;
+    @media (max-width: 1045px) {
+      padding: 0;
+    }
   }
 
   &__item {
