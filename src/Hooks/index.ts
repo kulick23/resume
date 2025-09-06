@@ -12,3 +12,4 @@ export * from './useContactForm';
 export * from './useHeader';
 export * from './useStars';
 export * from './useScrollToTop';
+export * from './useNDAModal';

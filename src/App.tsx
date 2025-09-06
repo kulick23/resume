@@ -10,30 +10,14 @@ import {
   NDAModal,
 } from './Componets';
 import { Element } from 'react-scroll';
-import { useAOS, useStars, useScrollToTop } from './Hooks';
+import { useAOS, useStars, useScrollToTop, useNDAModal } from './Hooks';
 import { SECTIONS_DATA, SECTIONS_NAMES } from './Constants/sections';
-import { useState } from 'react';
-import type { BusinessProject } from './types';
 
 function App() {
   useAOS();
   const { starsRef, stars } = useStars();
   const { showPopup, isFlying, handleFlyUp } = useScrollToTop();
-
-  // Состояние для NDAModal
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedProject, setSelectedProject] = useState<BusinessProject | null>(null);
-
-  const handleNDAClick = (project: BusinessProject) => {
-    console.log('handleNDAClick called with:', project); // Добавлено
-    setSelectedProject(project);
-    setIsModalOpen(true);
-  };
-
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
-    setSelectedProject(null);
-  };
+  const { isModalOpen, selectedProject, handleNDAClick, handleCloseModal } = useNDAModal();
 
   // Объект с компонентами
   const components = {
