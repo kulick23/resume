@@ -125,20 +125,20 @@ class ProjectsStore {
 
   businessProjects: Project[] = [
      createBusinessProject({
-      title: 'businessProjects.telegramMiniApp.title',
+      title: 'CyberX Menu',
       link: 'https://cyber-x-seven.vercel.app/menu',
       repoLink: '',
-      stack: ['React', 'TS', 'Vite', 'Firebase', 'RTQ', 'Vercel', 'i118'],
+      stack: ['React', 'TS', 'Vite', 'Firebase', 'RTQ', 'Vercel', 'i18'],
       projectImg: cyberXDesktopImg,
       mobileImg: cyberXMobileImg,
       isNDA: false,
       ndaDescription: 'businessProjects.telegramMiniApp.description',
     }),
       createBusinessProject({
-      title: 'businessProjects.companyWebsite2.title',
+      title: 'Betera Document Platform',
       link: '',
       repoLink: '',
-      stack: ['React', 'TypeScript', 'Vite', 'Scss', 'Redux', 'RTK Query'],
+      stack: ['React', 'TS', 'Vite', 'React Router', 'MUI', 'RTK Query', 'i18', 'Zustand', 'SCSS', 'PDF.js', 'Docker'],
       projectImg: beteraDesktopImg,
       isNDA: true,
       ndaDescription: 'businessProjects.companyWebsite2.description',
