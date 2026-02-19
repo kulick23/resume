@@ -131,17 +131,26 @@ class ProjectsStore {
   ];
 
   businessProjects: Project[] = [
-    createBusinessProject({
-      title: 'businessProjects.gameItemsStore.title',
+     createBusinessProject({
+      title: 'businessProjects.telegramMiniApp.title',
       link: '',
       repoLink: '',
-      stack: ['React', 'TypeScript', 'Vite', 'SCSS', 'MobX', 'Email JS'],
-      projectImg: rentalSkinDesktopImg,
-      mobileImg: rentalSkinMobileImg,
-      isNDA: true,
-      ndaDescription: 'businessProjects.gameItemsStore.description',
+      stack: ['React', 'TS', 'Vite', 'Firebase', 'RTQ', 'Vercel', 'i118'],
+      projectImg: cyberXDesktopImg,
+      mobileImg: cyberXMobileImg,
+      isNDA: false,
+      ndaDescription: 'businessProjects.telegramMiniApp.description',
     }),
-    createBusinessProject({
+      createBusinessProject({
+      title: 'businessProjects.companyWebsite2.title',
+      link: '',
+      repoLink: '',
+      stack: ['React', 'TypeScript', 'Vite', 'Scss', 'Redux', 'RTK Query'],
+      projectImg: beteraDesktopImg,
+      isNDA: true,
+      ndaDescription: 'businessProjects.companyWebsite2.description',
+    }),
+     createBusinessProject({
       title: 'businessProjects.companyWebsite.title',
       link: '',
       repoLink: '',
@@ -151,6 +160,17 @@ class ProjectsStore {
       isNDA: true,
       ndaDescription: 'businessProjects.companyWebsite.description',
     }),
+     createBusinessProject({
+      title: 'businessProjects.designSystem.title',
+      link: '',
+      repoLink: '',
+      stack: ['React', 'TypeScript', 'Vite', 'SCSS', 'Redux', 'RTK Query'],
+      projectImg: xeraDesktopImg,
+      mobileImg: xeraMobileImg,
+      isNDA: true,
+      ndaDescription: 'businessProjects.designSystem.description',
+    }),
+   
     createBusinessProject({
       title: 'businessProjects.nftMarketplace.title',
       link: '',
@@ -161,25 +181,8 @@ class ProjectsStore {
       isNDA: true,
       ndaDescription: 'businessProjects.nftMarketplace.description',
     }),
-    createBusinessProject({
-      title: 'businessProjects.companyWebsite2.title',
-      link: '',
-      repoLink: '',
-      stack: ['React', 'TypeScript', 'Vite', 'Scss', 'Redux', 'RTK Query'],
-      projectImg: beteraDesktopImg,
-      isNDA: true,
-      ndaDescription: 'businessProjects.companyWebsite2.description',
-    }),
-    createBusinessProject({
-      title: 'businessProjects.telegramMiniApp.title',
-      link: '',
-      repoLink: '',
-      stack: ['React', 'TypeScript', 'Vite', 'Scss', 'Redux', 'RTK Query', 'Telegram API'],
-      projectImg: cyberXDesktopImg,
-      mobileImg: cyberXMobileImg,
-      isNDA: true,
-      ndaDescription: 'businessProjects.telegramMiniApp.description',
-    }),
+  
+   
     createBusinessProject({
       title: 'businessProjects.performanceSystem.title',
       link: '',
@@ -190,16 +193,17 @@ class ProjectsStore {
       isNDA: true,
       ndaDescription: 'businessProjects.performanceSystem.description',
     }),
-    createBusinessProject({
-      title: 'businessProjects.designSystem.title',
+        createBusinessProject({
+      title: 'businessProjects.gameItemsStore.title',
       link: '',
       repoLink: '',
-      stack: ['React', 'TypeScript', 'Vite', 'SCSS', 'Redux', 'RTK Query'],
-      projectImg: xeraDesktopImg,
-      mobileImg: xeraMobileImg,
+      stack: ['React', 'TypeScript', 'Vite', 'SCSS', 'MobX', 'Email JS'],
+      projectImg: rentalSkinDesktopImg,
+      mobileImg: rentalSkinMobileImg,
       isNDA: true,
-      ndaDescription: 'businessProjects.designSystem.description',
+      ndaDescription: 'businessProjects.gameItemsStore.description',
     }),
+   
   ];
 
   selectedCategory: 'pet' | 'business' = 'pet';
