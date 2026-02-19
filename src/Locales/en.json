@@ -38,8 +38,8 @@
   "projects": {
     "title": "My Projects",
     "all": "All",
-    "business": "Commercial",
-    "pet": "Pet Projects",
+    "business": "Business",
+    "pet": "Pet",
     "infoBadge": "Project Info"
   },
   "experience": {

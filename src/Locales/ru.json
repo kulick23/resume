@@ -38,8 +38,8 @@
   "projects": {
     "title": "Мои Проекты",
     "all": "Все",
-    "business": "Коммерческие",
-    "pet": "Пет-проекты",
+    "business": "Бизнес",
+    "pet": "Пет",
     "infoBadge": "Инфо о проекте"
   },
   "experience": {
