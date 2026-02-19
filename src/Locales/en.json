@@ -136,7 +136,7 @@
       "description": "Music product landing with animated sections, sliders, and clean component architecture."
     },
     "nike": {
-      "description": "Product slider concept with dynamic content switching and polished transitions."
+      "description": "Nike Product Slider is an interactive web component that showcases a modern product slider inspired by premium brand design. The project demonstrates a strong understanding of building visually engaging user interfaces with smooth animations and responsive behavior.\n\nImplemented functionality:\n- full-screen slider using CSS viewport-relative units (100vw / 100vh);\n- smooth transitions between slides with autoplay support;\n- manual navigation via left/right arrow controls;\n- layered typography effects (filled + outlined text) for visual depth;\n- animated shadows and floating effects for product images;\n- interactive rating system (stars) with fill logic up to the selected position;\n- functional BUY NOW button with a dynamic cart counter;\n- adaptive layout for all device sizes with dedicated breakpoints.\n\nKey technical solutions:\n- responsiveness: CSS Grid and Flexbox are used to create a flexible layout that adapts to any screen size;\n- performance: Vite provides fast builds and optimized asset loading;\n- UX: smooth CSS transitions and animations deliver natural interactions without lag;\n- state management: JavaScript logic controls current slide, counters, and animation states.\n\nDeployment:\n project is configured for automatic deployment to GitHub Pages via npm scripts."
     },
     "energo": {
       "description": "Corporate landing page focused on services, structure, and conversion-oriented blocks."

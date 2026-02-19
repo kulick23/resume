@@ -28,6 +28,48 @@ export const NDAModal: React.FC<NDAModalProps> = ({ isOpen, onClose, project }) 
 
   if (!isOpen || !project) return null;
   const descriptionKey = project.ndaDescription || project.description;
+  const descriptionText = descriptionKey ? t(descriptionKey) : '';
+
+  const renderDescription = (text: string) => {
+    const sections = text
+      .split('\n\n')
+      .map((section) => section.trim())
+      .filter(Boolean);
+
+    return sections.map((section, sectionIndex) => {
+      const lines = section
+        .split('\n')
+        .map((line) => line.trim())
+        .filter(Boolean);
+
+      if (lines.length === 0) return null;
+
+      const headingLine = lines[0].endsWith(':') ? lines[0] : null;
+      const contentLines = headingLine ? lines.slice(1) : lines;
+      const bulletLines = contentLines.filter((line) => line.startsWith('- '));
+      const plainLines = contentLines.filter((line) => !line.startsWith('- '));
+
+      return (
+        <div className="nda-modal__desc-section" key={`${sectionIndex}-${headingLine || 'section'}`}>
+          {headingLine && <h4 className="nda-modal__desc-title">{headingLine}</h4>}
+
+          {plainLines.map((line, lineIndex) => (
+            <p className="nda-modal__desc-text" key={`${sectionIndex}-p-${lineIndex}`}>
+              {line}
+            </p>
+          ))}
+
+          {bulletLines.length > 0 && (
+            <ul className="nda-modal__desc-list">
+              {bulletLines.map((line, lineIndex) => (
+                <li key={`${sectionIndex}-li-${lineIndex}`}>{line.replace(/^- /, '')}</li>
+              ))}
+            </ul>
+          )}
+        </div>
+      );
+    });
+  };
 
   const handleBackdropClick = (e: React.MouseEvent) => {
     if (e.target === e.currentTarget) {
@@ -63,7 +105,7 @@ export const NDAModal: React.FC<NDAModalProps> = ({ isOpen, onClose, project }) 
 
           {descriptionKey && (
             <div className="nda-modal__nda-info">
-              <small>{t(descriptionKey)}</small>
+              <div className="nda-modal__desc">{renderDescription(descriptionText)}</div>
             </div>
           )}
         </div>

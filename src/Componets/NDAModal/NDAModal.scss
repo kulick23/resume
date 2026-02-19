@@ -127,6 +127,45 @@
     }
   }
 
+  &__desc {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    color: var(--text-graphite-light);
+  }
+
+  &__desc-section {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__desc-title {
+    margin: 0;
+    font-size: 0.98rem;
+    color: var(--stars);
+    font-weight: 600;
+  }
+
+  &__desc-text {
+    margin: 0;
+    line-height: 1.55;
+    font-size: 0.93rem;
+  }
+
+  &__desc-list {
+    margin: 0;
+    padding-left: 1.1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    li {
+      line-height: 1.55;
+      font-size: 0.93rem;
+    }
+  }
+
   @media (max-width: 1045px) {
     // Мобильная версия: центрируем поп-ап и предотвращаем скролл
     &__content {
