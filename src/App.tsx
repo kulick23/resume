@@ -13,27 +13,19 @@ import { Element } from 'react-scroll';
 import { useAOS, useStars, useScrollToTop, useNDAModal } from './Hooks';
 import { SECTIONS_DATA, SECTIONS_NAMES } from './Constants/sections';
 
+const staticComponents = {
+  header: Header,
+  about: About,
+  skills: Skills,
+  experience: Experience,
+  contact: Contact,
+} as const;
+
 function App() {
   useAOS();
   const { starsRef, stars } = useStars();
   const { showPopup, isFlying, handleFlyUp } = useScrollToTop();
   const { isModalOpen, selectedProject, handleNDAClick, handleCloseModal } = useNDAModal();
-
-  // Объект с компонентами
-  const components = {
-    header: Header,
-    about: About,
-    skills: Skills,
-    projects: () => <Project onNDAClick={handleNDAClick} />, // Передаем пропс
-    experience: Experience,
-    contact: Contact,
-  };
-
-  // Массив секций с компонентами, взятый из sections.ts
-  const sections = SECTIONS_NAMES.map((name) => ({
-    name,
-    component: components[name as keyof typeof components],
-  }));
 
   return (
     <div className="App">
@@ -44,12 +36,24 @@ function App() {
         ))}
       </div>
 
-      {/* Рендер секций без дублирования */}
-      {sections.map(({ name, component: Component }) => (
-        <Element name={name} id={name} key={name}>
-          <Component data-aos={SECTIONS_DATA[name as keyof typeof SECTIONS_DATA]?.aos} />
-        </Element>
-      ))}
+      {SECTIONS_NAMES.map((name) => {
+        if (name === 'projects') {
+          return (
+            <Element name={name} id={name} key={name}>
+              <Project onNDAClick={handleNDAClick} />
+            </Element>
+          );
+        }
+
+        const Component = staticComponents[name as keyof typeof staticComponents];
+        if (!Component) return null;
+
+        return (
+          <Element name={name} id={name} key={name}>
+            <Component data-aos={SECTIONS_DATA[name as keyof typeof SECTIONS_DATA]?.aos} />
+          </Element>
+        );
+      })}
 
       {/* Глобальная NDAModal */}
       <NDAModal isOpen={isModalOpen} onClose={handleCloseModal} project={selectedProject} />
