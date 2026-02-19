@@ -140,11 +140,11 @@ class ProjectsStore {
       repoLink: '',
       stack: ['React', 'TS', 'Vite', 'React Router', 'MUI', 'RTK Query', 'i18', 'Zustand', 'SCSS', 'PDF.js', 'Docker'],
       projectImg: beteraDesktopImg,
-      isNDA: true,
+      isNDA: false,
       ndaDescription: 'businessProjects.companyWebsite2.description',
     }),
      createBusinessProject({
-      title: 'businessProjects.companyWebsite.title',
+      title: 'Prime Network',
       link: '',
       repoLink: '',
       stack: ['React', 'TypeScript', 'Vite', 'SCSS', 'Redux', 'RTK Query'],
