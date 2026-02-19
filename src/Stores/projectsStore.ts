@@ -53,7 +53,13 @@ class ProjectsStore {
       title: 'CyberX',
       repoLink: 'https://github.com/kulick23/menu-tg',
       link: 'https://cyber-x-seven.vercel.app/menu',
-      stack: ['React', 'TS', 'Vite', 'Firebase', 'Rtq', 'Vercel', 'i118'],
+      stack: ['React', 'TS', 'Vite', 'Firebase', 'RTQ', 'Vercel', 'i118'],
+    }),
+         createPetProject({
+      title: 'Vinyl Store',
+      repoLink: 'https://github.com/SDC-Team-Projects/IBM-team-project',
+      link: 'https://ibm-team-project-wwrs.vercel.app/',
+      stack: ['React', 'React Router', 'SCSS', 'RTQ', 'Vite', 'Postgres','Vercel/Railway'],
     }),
     createPetProject({
       title: 'Pet',
