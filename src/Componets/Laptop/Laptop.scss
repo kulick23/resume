@@ -13,16 +13,16 @@
   }
 
   &--image {
-    width: 100%;
+    width: 400px;
     aspect-ratio: 13 / 9;
     z-index: 1;
   }
 
   &__screen {
     position: absolute;
-    top: 0.6vh;
-    left: 9%;
-    width: 81.5%;
+    top: 10px;
+    left: 40px;
+    width: 316px;
     aspect-ratio: 13 / 9;
     overflow: hidden;
     display: flex;
