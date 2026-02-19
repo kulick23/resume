@@ -8,12 +8,12 @@ const storePath = path.resolve('src/Stores/projectsStore.ts');
 const profiles = {
   desktop: {
     contextOptions: {
-      viewport: { width: 1440, height: 900 },
+      viewport: { width: 1300, height: 900 },
       deviceScaleFactor: 1,
       isMobile: false,
       hasTouch: false,
     },
-    screenshotOptions: { clip: { x: 0, y: 0, width: 1440, height: 900 } },
+    screenshotOptions: { clip: { x: 0, y: 0, width: 1300, height: 900 } },
   },
   mobile: {
     contextOptions: {

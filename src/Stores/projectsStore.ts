@@ -1,4 +1,10 @@
 import { makeAutoObservable } from 'mobx';
+import beteraDesktopImg from '../Assets/Screenshot/betera-desktop.png';
+import cyberXDesktopImg from '../Assets/Screenshot/cyberX-desktop.png';
+import pavepoDesktopImg from '../Assets/Screenshot/pavepo-desktop.png';
+import pixelVigorDesktopImg from '../Assets/Screenshot/PixelVigor-desktop.png';
+import primeNetDesktopImg from '../Assets/Screenshot/primeNet-desctop.png';
+import rentalSkinDesktopImg from '../Assets/Screenshot/rentalSkin-desktop.png';
 
 interface Project {
   title: string;
@@ -116,7 +122,7 @@ class ProjectsStore {
       link: '',
       repoLink: '',
       stack: ['React', 'TypeScript', 'Vite', 'SCSS', 'MobX', 'Email JS'],
-      projectImg: '',
+      projectImg: rentalSkinDesktopImg,
       category: 'business',
       isNDA: true,
       ndaDescription: 'businessProjects.gameItemsStore.description',
@@ -126,7 +132,7 @@ class ProjectsStore {
       link: '',
       repoLink: '',
       stack: ['React', 'TypeScript', 'Vite', 'SCSS', 'Redux', 'RTK Query'],
-      projectImg: '',
+      projectImg: primeNetDesktopImg,
       category: 'business',
       isNDA: true,
       ndaDescription: 'businessProjects.companyWebsite.description',
@@ -136,7 +142,7 @@ class ProjectsStore {
       link: '',
       repoLink: '',
       stack: ['React', 'TypeScript', 'Vite', 'Scss', 'Redux', 'RTK Query'],
-      projectImg: '',
+      projectImg: pixelVigorDesktopImg,
       category: 'business',
       isNDA: true,
       ndaDescription: 'businessProjects.nftMarketplace.description',
@@ -146,7 +152,7 @@ class ProjectsStore {
       link: '',
       repoLink: '',
       stack: ['React', 'TypeScript', 'Vite', 'Scss', 'Redux', 'RTK Query'],
-      projectImg: '',
+      projectImg: beteraDesktopImg,
       category: 'business',
       isNDA: true,
       ndaDescription: 'businessProjects.companyWebsite2.description',
@@ -156,7 +162,7 @@ class ProjectsStore {
       link: '',
       repoLink: '',
       stack: ['React', 'TypeScript', 'Vite', 'Scss', 'Redux', 'RTK Query', 'Telegram API'],
-      projectImg: '',
+      projectImg: cyberXDesktopImg,
       category: 'business',
       isNDA: true,
       ndaDescription: 'businessProjects.telegramMiniApp.description',
@@ -166,7 +172,7 @@ class ProjectsStore {
       link: '',
       repoLink: '',
       stack: ['React', 'TypeScript', 'Vite', 'Scss', 'Redux', 'RTK Query'],
-      projectImg: '',
+      projectImg: pavepoDesktopImg,
       category: 'business',
       isNDA: true,
       ndaDescription: 'businessProjects.performanceSystem.description',

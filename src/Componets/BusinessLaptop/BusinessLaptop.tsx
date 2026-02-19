@@ -17,12 +17,20 @@ export const BusinessLaptop: React.FC<BusinessLaptopProps> = ({ project, onNDACl
     <div className="business-laptop">
       <div className="business-laptop__box">
         <div className="business-laptop__screen">
-          <div className="business-laptop__nda-overlay">
-            <div className="business-laptop__nda-content">
-              <h3>NDA</h3>
-              <p>Confidential Project</p>
+          {project.projectImg ? (
+            <img
+              src={project.projectImg}
+              alt={project.title}
+              className="business-laptop__preview"
+            />
+          ) : (
+            <div className="business-laptop__nda-overlay">
+              <div className="business-laptop__nda-content">
+                <h3>NDA</h3>
+                <p>Confidential Project</p>
+              </div>
             </div>
-          </div>
+          )}
         </div>
         <img
           src={LAPTOP_IMG || '/placeholder.svg'}
