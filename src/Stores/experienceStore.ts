@@ -53,15 +53,15 @@ class WorkExperienceStore {
       icon: StepIcon,
       iconAlt: 'Step',
     },
-    {
-      id: 1,
-      company: 'International Sakharov Environmental University',
-      position: 'experience.education.1.position',
-      duration: '08.2021 - 08.2022',
-      description: 'experience.education.1.description',
-      icon: IseiIcon,
-      iconAlt: 'Isei',
-    },
+    // {
+    //   id: 1,
+    //   company: 'International Sakharov Environmental University',
+    //   position: 'experience.education.1.position',
+    //   duration: '08.2021 - 08.2022',
+    //   description: 'experience.education.1.description',
+    //   icon: IseiIcon,
+    //   iconAlt: 'Isei',
+    // },
   ];
   constructor() {
     makeAutoObservable(this);

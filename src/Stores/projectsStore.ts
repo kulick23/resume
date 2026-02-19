@@ -32,7 +32,7 @@ class ProjectsStore {
     {
       title: 'Food market',
       repoLink: 'https://github.com/kulick23/food',
-      link: 'https://kulick23.github.io/food/',
+      link: 'https://london-grill.vercel.app/',
       stack: ['React', 'TS', 'Redux', 'Firebase'],
       projectImg: foodImg,
       category: 'pet',
