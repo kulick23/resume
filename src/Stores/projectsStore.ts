@@ -126,7 +126,7 @@ class ProjectsStore {
   businessProjects: Project[] = [
      createBusinessProject({
       title: 'businessProjects.telegramMiniApp.title',
-      link: '',
+      link: 'https://cyber-x-seven.vercel.app/menu',
       repoLink: '',
       stack: ['React', 'TS', 'Vite', 'Firebase', 'RTQ', 'Vercel', 'i118'],
       projectImg: cyberXDesktopImg,
