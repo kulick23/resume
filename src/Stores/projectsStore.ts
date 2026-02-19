@@ -177,10 +177,10 @@ class ProjectsStore {
   
    
     createBusinessProject({
-      title: 'businessProjects.performanceSystem.title',
+      title: 'Pavepo IT Company Corporate Website',
       link: '',
       repoLink: '',
-      stack: ['React', 'TypeScript', 'Vite', 'Scss', 'Redux', 'RTK Query'],
+      stack: ['React', 'TS', 'Vite', 'SCSS', 'MobX', 'i18', 'Axios', 'EmailJS', 'AOS', 'Swiper', 'Rollup'],
       projectImg: pavepoDesktopImg,
       mobileImg: pavepoMobileImg,
       isNDA: true,
