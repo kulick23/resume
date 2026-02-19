@@ -20,6 +20,8 @@ export interface BusinessProject extends Project {
 export interface LaptopProps {
   project: Project;
   onInfoClick?: (project: Project) => void;
+  showCodeButton?: boolean;
+  enableProjectLink?: boolean;
 }
 
 export interface BusinessLaptopProps {

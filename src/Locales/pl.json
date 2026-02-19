@@ -46,33 +46,32 @@
     "title": "Doświadczenie",
     "workTitle": "Doświadczenie zawodowe",
     "educationTitle": "Wykształcenie",
-
     "work": {
-      "3": {
-        "description": "Tworzenie landing page, rozwój frontendu, projektowanie, tworzenie stron, praca z API, studiowanie/pisanie dokumentacji, wdrażanie projektów, integracja klient-serwer",
-        "position": "Frontend Developer"
+      "1": {
+        "description": "Laboratorium studenckie: prototypowanie stron, projektowanie baz danych, tworzenie stron",
+        "position": "Web Developer"
       },
       "2": {
         "description": "Kontakt z klientami, budowanie zespołu, rozwój frontendu",
         "position": "Administrator / Programista"
       },
-      "1": {
-        "description": "Laboratorium studenckie: prototypowanie stron, projektowanie baz danych, tworzenie stron",
-        "position": "Web Developer"
+      "3": {
+        "description": "Tworzenie landing page, rozwój frontendu, projektowanie, tworzenie stron, praca z API, studiowanie/pisanie dokumentacji, wdrażanie projektów, integracja klient-serwer",
+        "position": "Frontend Developer"
       }
     },
     "education": {
-      "3": {
-        "description": "Tworzenie aplikacji webowych",
-        "position": "Wyższe wykształcenie, Licencjat"
+      "1": {
+        "description": "Tworzenie oprogramowania i technologii w ochronie zdrowia",
+        "position": "Nieukończone wyższe wykształcenie"
       },
       "2": {
         "description": "Tworzenie oprogramowania",
         "position": "Kursy"
       },
-      "1": {
-        "description": "Tworzenie oprogramowania i technologii w ochronie zdrowia",
-        "position": "Nieukończone wyższe wykształcenie"
+      "3": {
+        "description": "Tworzenie aplikacji webowych",
+        "position": "Wyższe wykształcenie, Licencjat"
       }
     }
   },
@@ -172,6 +171,10 @@
     "performanceSystem": {
       "title": "System wydajności",
       "description": "System monitorowania wydajności pracowników. Projekt obejmuje analitykę i raporty. Zawiera poufne informacje o personelu i metrykach, chronione umową NDA."
+    },
+    "designSystem": {
+      "title": "Design System i platforma UI",
+      "description": "Wewnętrzny design system i platforma UI dla zespołu produktowego. Projekt obejmuje bibliotekę komponentów, tokeny designu oraz standardy interfejsu. Zawiera poufne materiały firmy i jest chroniony umową NDA."
     }
   }
 }

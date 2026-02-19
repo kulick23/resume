@@ -1,10 +1,17 @@
 import { makeAutoObservable } from 'mobx';
 import beteraDesktopImg from '../Assets/Screenshot/betera-desktop.png';
 import cyberXDesktopImg from '../Assets/Screenshot/cyberX-desktop.png';
+import cyberXMobileImg from '../Assets/Screenshot/cyberX-mobile.png';
 import pavepoDesktopImg from '../Assets/Screenshot/pavepo-desktop.png';
+import pavepoMobileImg from '../Assets/Screenshot/pavepo-mobile.png';
 import pixelVigorDesktopImg from '../Assets/Screenshot/PixelVigor-desktop.png';
-import primeNetDesktopImg from '../Assets/Screenshot/primeNet-desctop.png';
+import pixelVigorMobileImg from '../Assets/Screenshot/PixelVigor-mobile.png';
+import primeNetDesktopImg from '../Assets/Screenshot/primeNet-desktop.png';
+import primeNetMobileImg from '../Assets/Screenshot/primeNet-mobile.png';
 import rentalSkinDesktopImg from '../Assets/Screenshot/rentalSkin-desktop.png';
+import rentalSkinMobileImg from '../Assets/Screenshot/rentalSkin-mobile.png';
+import xeraDesktopImg from '../Assets/Screenshot/xera-desktop.png';
+import xeraMobileImg from '../Assets/Screenshot/xera-mobile.png';
 
 interface Project {
   title: string;
@@ -46,6 +53,13 @@ const createPetProject = (project: Omit<Project, 'projectImg' | 'mobileImg' | 'c
   projectImg: getPreviewPath(project.link, 'desktop'),
   mobileImg: getPreviewPath(project.link, 'mobile'),
   category: 'pet',
+});
+
+const createBusinessProject = (
+  project: Omit<Project, 'category'> & { mobileImg?: string }
+): Project => ({
+  ...project,
+  category: 'business',
 });
 
 class ProjectsStore {
@@ -117,66 +131,75 @@ class ProjectsStore {
   ];
 
   businessProjects: Project[] = [
-    {
+    createBusinessProject({
       title: 'businessProjects.gameItemsStore.title',
       link: '',
       repoLink: '',
       stack: ['React', 'TypeScript', 'Vite', 'SCSS', 'MobX', 'Email JS'],
       projectImg: rentalSkinDesktopImg,
-      category: 'business',
+      mobileImg: rentalSkinMobileImg,
       isNDA: true,
       ndaDescription: 'businessProjects.gameItemsStore.description',
-    },
-    {
+    }),
+    createBusinessProject({
       title: 'businessProjects.companyWebsite.title',
       link: '',
       repoLink: '',
       stack: ['React', 'TypeScript', 'Vite', 'SCSS', 'Redux', 'RTK Query'],
       projectImg: primeNetDesktopImg,
-      category: 'business',
+      mobileImg: primeNetMobileImg,
       isNDA: true,
       ndaDescription: 'businessProjects.companyWebsite.description',
-    },
-    {
+    }),
+    createBusinessProject({
       title: 'businessProjects.nftMarketplace.title',
       link: '',
       repoLink: '',
       stack: ['React', 'TypeScript', 'Vite', 'Scss', 'Redux', 'RTK Query'],
       projectImg: pixelVigorDesktopImg,
-      category: 'business',
+      mobileImg: pixelVigorMobileImg,
       isNDA: true,
       ndaDescription: 'businessProjects.nftMarketplace.description',
-    },
-    {
+    }),
+    createBusinessProject({
       title: 'businessProjects.companyWebsite2.title',
       link: '',
       repoLink: '',
       stack: ['React', 'TypeScript', 'Vite', 'Scss', 'Redux', 'RTK Query'],
       projectImg: beteraDesktopImg,
-      category: 'business',
       isNDA: true,
       ndaDescription: 'businessProjects.companyWebsite2.description',
-    },
-    {
+    }),
+    createBusinessProject({
       title: 'businessProjects.telegramMiniApp.title',
       link: '',
       repoLink: '',
       stack: ['React', 'TypeScript', 'Vite', 'Scss', 'Redux', 'RTK Query', 'Telegram API'],
       projectImg: cyberXDesktopImg,
-      category: 'business',
+      mobileImg: cyberXMobileImg,
       isNDA: true,
       ndaDescription: 'businessProjects.telegramMiniApp.description',
-    },
-    {
+    }),
+    createBusinessProject({
       title: 'businessProjects.performanceSystem.title',
       link: '',
       repoLink: '',
       stack: ['React', 'TypeScript', 'Vite', 'Scss', 'Redux', 'RTK Query'],
       projectImg: pavepoDesktopImg,
-      category: 'business',
+      mobileImg: pavepoMobileImg,
       isNDA: true,
       ndaDescription: 'businessProjects.performanceSystem.description',
-    },
+    }),
+    createBusinessProject({
+      title: 'businessProjects.designSystem.title',
+      link: '',
+      repoLink: '',
+      stack: ['React', 'TypeScript', 'Vite', 'SCSS', 'Redux', 'RTK Query'],
+      projectImg: xeraDesktopImg,
+      mobileImg: xeraMobileImg,
+      isNDA: true,
+      ndaDescription: 'businessProjects.designSystem.description',
+    }),
   ];
 
   selectedCategory: 'pet' | 'business' = 'pet';

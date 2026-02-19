@@ -3,12 +3,26 @@ import './Laptop.scss';
 import { LAPTOP_IMG, PHONE_IMG } from '../../Constants';
 import { LaptopProps } from '../../types';
 
-export const Laptop: React.FC<LaptopProps> = ({ project, onInfoClick }) => {
-  const handleOpen = (url: string) => window.open(url, '_blank');
+export const Laptop: React.FC<LaptopProps> = ({
+  project,
+  onInfoClick,
+  showCodeButton = true,
+  enableProjectLink = true,
+}) => {
+  const hasPreviewLink = enableProjectLink && Boolean(project.link);
+  const hasRepoLink = showCodeButton && Boolean(project.repoLink);
+
+  const handleOpen = (url: string) => {
+    if (!url) return;
+    window.open(url, '_blank');
+  };
 
   return (
     <div className="laptop">
-      <div onClick={() => handleOpen(project.link)} className="laptop__box">
+      <div
+        onClick={hasPreviewLink ? () => handleOpen(project.link) : undefined}
+        className={`laptop__box ${hasPreviewLink ? '' : 'laptop__box--no-link'}`}
+      >
         <img src={LAPTOP_IMG} alt="Laptop" className="laptop--image" />
         <div className="laptop__screen">
           <img src={project.projectImg} alt={project.title} className="laptop--preview" />
@@ -36,7 +50,7 @@ export const Laptop: React.FC<LaptopProps> = ({ project, onInfoClick }) => {
           <span>?</span>
         </div>
       )}
-      <button className="laptop__button" onClick={() => handleOpen(project.repoLink)} />
+      {hasRepoLink && <button className="laptop__button" onClick={() => handleOpen(project.repoLink)} />}
     </div>
   );
 };

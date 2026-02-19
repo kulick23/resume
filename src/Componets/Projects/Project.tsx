@@ -2,7 +2,6 @@ import type React from 'react';
 import { observer } from 'mobx-react-lite';
 import projectsStore from '../../Stores/projectsStore';
 import Laptop from '../Laptop';
-import BusinessLaptop from '../BusinessLaptop';
 import { useTranslation } from 'react-i18next';
 import { FILTERS } from '../../Constants';
 import './Project.scss';
@@ -52,11 +51,12 @@ export const Project: React.FC<ProjectProps> = observer(({ onNDAClick }) => {
             data-aos="fade-up"
             data-aos-delay={idx * 100}
           >
-            {project.category === 'business' || project.isNDA ? (
-              <BusinessLaptop project={project} onNDAClick={handleProjectInfoClick} />
-            ) : (
-              <Laptop project={project} onInfoClick={handleProjectInfoClick} />
-            )}
+            <Laptop
+              project={project}
+              onInfoClick={handleProjectInfoClick}
+              showCodeButton={project.category !== 'business'}
+              enableProjectLink={project.category !== 'business' || Boolean(project.link)}
+            />
           </div>
         ))}
       </div>

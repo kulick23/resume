@@ -3,13 +3,21 @@
 
   &__box {
     position: relative;
-        cursor: pointer;
+    cursor: pointer;
     transition:
       transform 0.3s ease,
       box-shadow 0.3s ease;
 
     &:hover {
       transform: scale(1.05);
+    }
+
+    &--no-link {
+      cursor: default;
+    }
+
+    &--no-link:hover {
+      transform: none;
     }
   }
 
