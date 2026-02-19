@@ -3,7 +3,7 @@ import './Laptop.scss';
 import { LAPTOP_IMG, PHONE_IMG } from '../../Constants';
 import { LaptopProps } from '../../types';
 
-export const Laptop: React.FC<LaptopProps> = ({ project }) => {
+export const Laptop: React.FC<LaptopProps> = ({ project, onInfoClick }) => {
   const handleOpen = (url: string) => window.open(url, '_blank');
 
   return (
@@ -27,6 +27,11 @@ export const Laptop: React.FC<LaptopProps> = ({ project }) => {
         )}
         <div className="laptop__stack">[{project.stack.join(', ')}]</div>
       </div>
+      {onInfoClick && (
+        <div className="laptop__info-btn" onClick={() => onInfoClick(project)}>
+          <span>?</span>
+        </div>
+      )}
       <button className="laptop__button" onClick={() => handleOpen(project.repoLink)} />
     </div>
   );

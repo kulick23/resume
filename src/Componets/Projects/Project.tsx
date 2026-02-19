@@ -3,40 +3,29 @@ import { observer } from 'mobx-react-lite';
 import projectsStore from '../../Stores/projectsStore';
 import Laptop from '../Laptop';
 import BusinessLaptop from '../BusinessLaptop';
-import NDAModal from '../NDAModal';
 import { useTranslation } from 'react-i18next';
 import { FILTERS } from '../../Constants';
-import { useState } from 'react';
 import './Project.scss';
-import type { BusinessProject, Project as ProjectType } from '../../types'; // Alias Project to avoid conflict
+import type { Project as ProjectType } from '../../types';
 
 interface ProjectProps {
-  onNDAClick?: (project: BusinessProject) => void;
+  onNDAClick?: (project: ProjectType) => void;
 }
 
 export const Project: React.FC<ProjectProps> = observer(({ onNDAClick }) => {
   const filteredProjects = projectsStore.filteredProjects;
   const selectedCategory = projectsStore.selectedCategory;
   const { t } = useTranslation();
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedProject, setSelectedProject] = useState<BusinessProject | null>(null);
 
   const handleFilterChange = (category: 'pet' | 'business') => {
     console.log('Filter changed to:', category);
     projectsStore.setSelectedCategory(category);
   };
 
-  const handleNDAClick = (project: BusinessProject) => {
-    setSelectedProject(project);
-    setIsModalOpen(true);
+  const handleProjectInfoClick = (project: ProjectType) => {
     if (onNDAClick) {
       onNDAClick(project);
     }
-  };
-
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
-    setSelectedProject(null);
   };
 
   return (
@@ -64,15 +53,13 @@ export const Project: React.FC<ProjectProps> = observer(({ onNDAClick }) => {
             data-aos-delay={idx * 100}
           >
             {project.category === 'business' || project.isNDA ? (
-              <BusinessLaptop project={project} onNDAClick={() => handleNDAClick(project as BusinessProject)} />
+              <BusinessLaptop project={project} onNDAClick={handleProjectInfoClick} />
             ) : (
-              <Laptop project={project} />
+              <Laptop project={project} onInfoClick={handleProjectInfoClick} />
             )}
           </div>
         ))}
       </div>
-
-      <NDAModal isOpen={isModalOpen} onClose={handleCloseModal} project={selectedProject} />
     </div>
   );
 });

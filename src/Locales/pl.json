@@ -39,7 +39,8 @@
     "title": "Moje Projekty",
     "all": "Wszystkie",
     "business": "Komercyjne",
-    "pet": "Projekty osobiste"
+    "pet": "Projekty osobiste",
+    "infoBadge": "Informacje o projekcie"
   },
   "experience": {
     "title": "Doświadczenie",
@@ -117,6 +118,35 @@
     "description": "Opis projektu:",
     "stack": "Stos technologiczny:",
     "reason": "Dlaczego projekt nie może być pokazany:"
+  },
+  "petProjects": {
+    "londonGrill": {
+      "description": "Strona restauracji z menu, płynną nawigacją i responsywnym układem."
+    },
+    "cyberX": {
+      "description": "Mini-aplikacja Telegram z interaktywnym menu, integracją API i obsługą wielu języków."
+    },
+    "vinylStore": {
+      "description": "Marketplace płyt winylowych z katalogiem, filtrami, koszykiem i integracją backendu."
+    },
+    "pet": {
+      "description": "Tematyczny storefront z nowoczesnym UI, sliderami i responsywną strukturą stron."
+    },
+    "beats": {
+      "description": "Landing produktu muzycznego z animacjami, sliderami i czystą architekturą komponentów."
+    },
+    "nike": {
+      "description": "Koncept slidera produktowego z dynamiczną podmianą treści i płynnymi przejściami."
+    },
+    "energo": {
+      "description": "Landing korporacyjny skupiony na usługach, strukturze i blokach konwersyjnych."
+    },
+    "indonesia": {
+      "description": "Landing podróżniczy z wizualnym storytellingiem i responsywnymi sekcjami."
+    },
+    "building": {
+      "description": "Landing firmy budowlanej z naciskiem na usługi i klasyczny układ marketingowy."
+    }
   },
   "businessProjects": {
     "gameItemsStore": {

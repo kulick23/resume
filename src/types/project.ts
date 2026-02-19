@@ -2,6 +2,7 @@ export interface Project {
   title: string;
   projectImg: string;
   mobileImg?: string;
+  description?: string;
   stack: string[];
   link: string;
   repoLink: string;
@@ -18,6 +19,7 @@ export interface BusinessProject extends Project {
 
 export interface LaptopProps {
   project: Project;
+  onInfoClick?: (project: Project) => void;
 }
 
 export interface BusinessLaptopProps {

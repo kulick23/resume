@@ -39,7 +39,8 @@
     "title": "My Projects",
     "all": "All",
     "business": "Commercial",
-    "pet": "Pet Projects"
+    "pet": "Pet Projects",
+    "infoBadge": "Project Info"
   },
   "experience": {
     "title": "Experience",
@@ -117,6 +118,35 @@
     "description": "Project Description:",
     "stack": "Technology Stack:",
     "reason": "Why the project cannot be shown:"
+  },
+  "petProjects": {
+    "londonGrill": {
+      "description": "Restaurant website with menu, smooth navigation, and responsive layout."
+    },
+    "cyberX": {
+      "description": "Telegram mini-app with interactive menu, API integration, and multi-language support."
+    },
+    "vinylStore": {
+      "description": "Vinyl marketplace with product catalog, filters, cart flow, and backend integration."
+    },
+    "pet": {
+      "description": "Pet-themed storefront with modern UI, sliders, and adaptive page structure."
+    },
+    "beats": {
+      "description": "Music product landing with animated sections, sliders, and clean component architecture."
+    },
+    "nike": {
+      "description": "Product slider concept with dynamic content switching and polished transitions."
+    },
+    "energo": {
+      "description": "Corporate landing page focused on services, structure, and conversion-oriented blocks."
+    },
+    "indonesia": {
+      "description": "Travel-style landing page with visual storytelling and responsive sections."
+    },
+    "building": {
+      "description": "Construction company landing with service highlights and classic marketing layout."
+    }
   },
   "businessProjects": {
     "gameItemsStore": {

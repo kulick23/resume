@@ -1,11 +1,11 @@
 import { useState } from 'react';
-import type { BusinessProject } from '../types';
+import type { Project } from '../types';
 
 export const useNDAModal = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedProject, setSelectedProject] = useState<BusinessProject | null>(null);
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
-  const handleNDAClick = (project: BusinessProject) => {
+  const handleNDAClick = (project: Project) => {
     console.log('handleNDAClick called with:', project);
     setSelectedProject(project);
     setIsModalOpen(true);

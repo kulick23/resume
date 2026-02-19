@@ -2,12 +2,12 @@ import type React from 'react';
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import './NDAModal.scss';
-import type { BusinessProject } from '../../types';
+import type { Project } from '../../types';
 
 interface NDAModalProps {
   isOpen: boolean;
   onClose: () => void;
-  project: BusinessProject | null;
+  project: Project | null;
 }
 
 export const NDAModal: React.FC<NDAModalProps> = ({ isOpen, onClose, project }) => {
@@ -27,6 +27,7 @@ export const NDAModal: React.FC<NDAModalProps> = ({ isOpen, onClose, project }) 
   }, [isOpen]);
 
   if (!isOpen || !project) return null;
+  const descriptionKey = project.ndaDescription || project.description;
 
   const handleBackdropClick = (e: React.MouseEvent) => {
     if (e.target === e.currentTarget) {
@@ -43,7 +44,9 @@ export const NDAModal: React.FC<NDAModalProps> = ({ isOpen, onClose, project }) 
 
         <div className="nda-modal__header">
           <h2>{t(project.title)}</h2>
-          <span className="nda-modal__badge">{t('nda.title')}</span>
+          <span className="nda-modal__badge">
+            {project.isNDA ? t('nda.title') : t('projects.infoBadge')}
+          </span>
         </div>
 
         <div className="nda-modal__body">
@@ -58,9 +61,9 @@ export const NDAModal: React.FC<NDAModalProps> = ({ isOpen, onClose, project }) 
             </div>
           </div>
 
-          {project.ndaDescription && (
+          {descriptionKey && (
             <div className="nda-modal__nda-info">
-              <small>{t(project.ndaDescription)}</small>
+              <small>{t(descriptionKey)}</small>
             </div>
           )}
         </div>
