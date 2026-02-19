@@ -187,10 +187,10 @@ class ProjectsStore {
       ndaDescription: 'businessProjects.performanceSystem.description',
     }),
         createBusinessProject({
-      title: 'businessProjects.gameItemsStore.title',
+      title: 'RentalSkins',
       link: '',
       repoLink: '',
-      stack: ['React', 'TypeScript', 'Vite', 'SCSS', 'MobX', 'Email JS'],
+      stack: ['React', 'TS', 'Vite', 'SCSS', 'MobX', 'EmailJS', 'i18', 'Swiper'],
       projectImg: rentalSkinDesktopImg,
       mobileImg: rentalSkinMobileImg,
       isNDA: true,
