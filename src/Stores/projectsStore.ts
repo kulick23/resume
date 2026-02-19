@@ -48,7 +48,9 @@ const getPreviewPath = (link: string, size: PreviewSize = 'desktop'): string => 
   return `/previews/${linkToPreviewKey(link)}-${size}.jpg`;
 };
 
-const createPetProject = (project: Omit<Project, 'projectImg' | 'mobileImg' | 'category'>): Project => ({
+const createPetProject = (
+  project: Omit<Project, 'projectImg' | 'mobileImg' | 'category'>,
+): Project => ({
   ...project,
   projectImg: getPreviewPath(project.link, 'desktop'),
   mobileImg: getPreviewPath(project.link, 'mobile'),
@@ -56,7 +58,7 @@ const createPetProject = (project: Omit<Project, 'projectImg' | 'mobileImg' | 'c
 });
 
 const createBusinessProject = (
-  project: Omit<Project, 'category'> & { mobileImg?: string }
+  project: Omit<Project, 'category'> & { mobileImg?: string },
 ): Project => ({
   ...project,
   category: 'business',
@@ -71,12 +73,12 @@ class ProjectsStore {
       link: 'https://london-grill.vercel.app/',
       stack: ['React', 'React Router', 'CSS', 'MobX', 'Vite', 'Firebase', 'Vercel'],
     }),
-         createPetProject({
+    createPetProject({
       title: 'Vinyl Store',
       description: 'petProjects.vinylStore.description',
       repoLink: 'https://github.com/SDC-Team-Projects/IBM-team-project',
       link: 'https://ibm-team-project-wwrs.vercel.app/',
-      stack: ['React', 'React Router', 'SCSS', 'RTQ', 'Vite', 'Postgres','Vercel/Railway'],
+      stack: ['React', 'React Router', 'SCSS', 'RTQ', 'Vite', 'Postgres', 'Vercel/Railway'],
     }),
     createPetProject({
       title: 'Pet',
@@ -92,7 +94,7 @@ class ProjectsStore {
       link: 'https://beats-ashen.vercel.app/',
       stack: ['React', 'TS', 'CSS', 'Vite', 'Swiper', 'Vercel'],
     }),
-       createPetProject({
+    createPetProject({
       title: 'Nike',
       description: 'petProjects.nike.description',
       repoLink: 'https://github.com/kulick23/slider_nike',
@@ -106,7 +108,7 @@ class ProjectsStore {
       link: 'https://kulick23.github.io/EnergyConstruction/',
       stack: ['HTML', 'CSS', 'JS', 'jQuery', 'Owl Carousel', 'gh-pages'],
     }),
- 
+
     createPetProject({
       title: 'Indonesia',
       description: 'petProjects.indonesia.description',
@@ -114,7 +116,7 @@ class ProjectsStore {
       link: 'https://kulick23.github.io/Indonesia/',
       stack: ['HTML', 'CSS', 'gh-pages'],
     }),
-        createPetProject({
+    createPetProject({
       title: 'Building',
       description: 'petProjects.building.description',
       repoLink: 'https://github.com/kulick23/building',
@@ -124,7 +126,7 @@ class ProjectsStore {
   ];
 
   businessProjects: Project[] = [
-     createBusinessProject({
+    createBusinessProject({
       title: 'CyberX Menu',
       link: 'https://cyber-x-seven.vercel.app/menu',
       repoLink: '',
@@ -134,59 +136,111 @@ class ProjectsStore {
       isNDA: false,
       ndaDescription: 'businessProjects.telegramMiniApp.description',
     }),
-      createBusinessProject({
+    createBusinessProject({
       title: 'Betera Document Platform',
       link: '',
       repoLink: '',
-      stack: ['React', 'TS', 'Vite', 'React Router', 'MUI', 'RTK Query', 'i18', 'Zustand', 'SCSS', 'PDF.js', 'Docker'],
+      stack: [
+        'React',
+        'TS',
+        'Vite',
+        'React Router',
+        'MUI',
+        'RTK Query',
+        'i18',
+        'Zustand',
+        'SCSS',
+        'PDF.js',
+        'Docker',
+      ],
       projectImg: beteraDesktopImg,
       isNDA: false,
       ndaDescription: 'businessProjects.companyWebsite2.description',
     }),
-     createBusinessProject({
+    createBusinessProject({
       title: 'Prime Network',
       link: '',
       repoLink: '',
-      stack: ['React', 'TS', 'Vite', 'SCSS', 'Telegram Mini Apps SDK', 'RTK Query', 'DnD Kit', 'date-fns', 'QRCode'],
+      stack: [
+        'React',
+        'TS',
+        'Vite',
+        'SCSS',
+        'Telegram Mini Apps SDK',
+        'RTK Query',
+        'DnD Kit',
+        'date-fns',
+        'QRCode',
+      ],
       projectImg: primeNetDesktopImg,
       mobileImg: primeNetMobileImg,
       isNDA: true,
       ndaDescription: 'businessProjects.companyWebsite.description',
     }),
-     createBusinessProject({
+    createBusinessProject({
       title: 'TheXera NFT Art Platform',
       link: '',
       repoLink: '',
-      stack: ['React', 'TS', 'Vite', 'SCSS', 'Lottie React', 'React Anchor Link', 'React Scroll', 'Smooth Scrollbar + Simplebar'],
+      stack: [
+        'React',
+        'TS',
+        'Vite',
+        'SCSS',
+        'Lottie React',
+        'React Anchor Link',
+        'React Scroll',
+        'Smooth Scrollbar + Simplebar',
+      ],
       projectImg: xeraDesktopImg,
       mobileImg: xeraMobileImg,
       isNDA: true,
       ndaDescription: 'businessProjects.designSystem.description',
     }),
-   
+
     createBusinessProject({
       title: 'PixelVigor Corporate Website',
       link: '',
       repoLink: '',
-      stack: ['React', 'TS', 'Vite', 'SCSS', 'MobX', 'Swiper', 'React Fast Marquee', 'React Dropzone', 'Rollup'],
+      stack: [
+        'React',
+        'TS',
+        'Vite',
+        'SCSS',
+        'MobX',
+        'Swiper',
+        'React Fast Marquee',
+        'React Dropzone',
+        'Rollup',
+      ],
       projectImg: pixelVigorDesktopImg,
       mobileImg: pixelVigorMobileImg,
       isNDA: true,
       ndaDescription: 'businessProjects.nftMarketplace.description',
     }),
-  
-   
+
     createBusinessProject({
       title: 'Pavepo IT Company Corporate Website',
       link: '',
       repoLink: '',
-      stack: ['React', 'TS', 'Vite', 'SCSS', 'MobX', 'i18', 'Axios', 'EmailJS', 'AOS', 'Swiper', 'Rollup'],
+      stack: [
+        'React',
+        'TS',
+        'Vite',
+        'SCSS',
+        'MobX',
+        'i18',
+        'Axios',
+        'EmailJS',
+        'AOS',
+        'Swiper',
+        'Rollup',
+      ],
       projectImg: pavepoDesktopImg,
       mobileImg: pavepoMobileImg,
       isNDA: true,
       ndaDescription: 'businessProjects.performanceSystem.description',
     }),
-        createBusinessProject({
+    createBusinessProject({
       title: 'RentalSkins',
       link: '',
       repoLink: '',
@@ -196,7 +250,6 @@ class ProjectsStore {
       isNDA: true,
       ndaDescription: 'businessProjects.gameItemsStore.description',
     }),
-   
   ];
 
   selectedCategory: 'pet' | 'business' = 'pet';

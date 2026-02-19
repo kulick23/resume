@@ -50,7 +50,9 @@ export const Laptop: React.FC<LaptopProps> = ({
           <span>?</span>
         </div>
       )}
-      {hasRepoLink && <button className="laptop__button" onClick={() => handleOpen(project.repoLink)} />}
+      {hasRepoLink && (
+        <button className="laptop__button" onClick={() => handleOpen(project.repoLink)} />
+      )}
     </div>
   );
 };

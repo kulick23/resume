@@ -13,13 +13,13 @@
   }
 
   &--image {
- width: 400px;
+    width: 400px;
     aspect-ratio: 13 / 9;
     z-index: 1;
   }
 
   &__screen {
-  position: absolute;
+    position: absolute;
     top: 10px;
     left: 40px;
     width: 316px;

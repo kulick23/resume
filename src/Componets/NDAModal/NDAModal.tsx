@@ -50,7 +50,10 @@ export const NDAModal: React.FC<NDAModalProps> = ({ isOpen, onClose, project }) 
       const plainLines = contentLines.filter((line) => !line.startsWith('- '));
 
       return (
-        <div className="nda-modal__desc-section" key={`${sectionIndex}-${headingLine || 'section'}`}>
+        <div
+          className="nda-modal__desc-section"
+          key={`${sectionIndex}-${headingLine || 'section'}`}
+        >
           {headingLine && <h4 className="nda-modal__desc-title">{headingLine}</h4>}
 
           {plainLines.map((line, lineIndex) => (
