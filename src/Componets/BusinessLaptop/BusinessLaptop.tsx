@@ -29,7 +29,11 @@ export const BusinessLaptop: React.FC<BusinessLaptopProps> = ({ project, onNDACl
           alt="Laptop"
           className="business-laptop--image"
         />
-        <div className="business-laptop__stack">[{project.stack.join(', ')}]</div>
+        <div className="business-laptop__stack">
+          <span>[</span>
+          <span className="business-laptop__stack-text">{project.stack.join(', ')}</span>
+          <span>]</span>
+        </div>
       </div>
       <div className="business-laptop__info-btn" onClick={handleNDAClick}>
         <span>?</span>

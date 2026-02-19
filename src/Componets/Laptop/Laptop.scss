@@ -78,9 +78,25 @@
   &__stack {
     position: relative;
     top: -1vh;
+    max-width: 360px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 8px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    gap: 2px;
     font-family: var(--font-code);
     font-size: 0.6em;
     color: var(--stars);
+  }
+
+  &__stack-text {
+    flex: 1 1 auto;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   &__button {

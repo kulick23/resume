@@ -25,7 +25,11 @@ export const Laptop: React.FC<LaptopProps> = ({ project, onInfoClick }) => {
             </div>
           </div>
         )}
-        <div className="laptop__stack">[{project.stack.join(', ')}]</div>
+        <div className="laptop__stack">
+          <span>[</span>
+          <span className="laptop__stack-text">{project.stack.join(', ')}</span>
+          <span>]</span>
+        </div>
       </div>
       {onInfoClick && (
         <div className="laptop__info-btn" onClick={() => onInfoClick(project)}>
