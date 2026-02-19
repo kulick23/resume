@@ -7,6 +7,7 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "preview": "vite preview",
+    "generate:previews": "node scripts/generate-project-previews.mjs",
     "deploy": "gh-pages -d dist",
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,scss,css,json,md}\"",
     "indexes": "barrelsby -d src/Componets src/Constants src/Hooks src/Locales src/Stores src/types -l all -s flat --delete"
@@ -43,6 +44,7 @@
     "eslint-plugin-react-refresh": "^0.4.20",
     "gh-pages": "^5.0.0",
     "globals": "^16.3.0",
+    "playwright": "^1.58.2",
     "prettier": "^3.6.2",
     "typescript": "~5.4.5",
     "typescript-eslint": "^8.39.1"

@@ -20,7 +20,7 @@ export const Laptop: React.FC<LaptopProps> = ({ project }) => {
               <img
                 src={project.mobileImg}
                 alt={`${project.title} mobile`}
-                className="laptop--preview"
+                className="laptop--preview laptop--preview-mobile"
               />
             </div>
           </div>
