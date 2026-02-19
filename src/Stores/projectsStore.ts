@@ -71,13 +71,6 @@ class ProjectsStore {
       link: 'https://london-grill.vercel.app/',
       stack: ['React', 'React Router', 'CSS', 'MobX', 'Vite', 'Firebase', 'Vercel'],
     }),
-    createPetProject({
-      title: 'CyberX',
-      description: 'petProjects.cyberX.description',
-      repoLink: 'https://github.com/kulick23/menu-tg',
-      link: 'https://cyber-x-seven.vercel.app/menu',
-      stack: ['React', 'TS', 'Vite', 'Firebase', 'RTQ', 'Vercel', 'i118'],
-    }),
          createPetProject({
       title: 'Vinyl Store',
       description: 'petProjects.vinylStore.description',
