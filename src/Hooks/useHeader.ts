@@ -24,7 +24,7 @@ export const useHeader = () => {
   }, []);
 
   useEffect(() => {
-    const sectionIds = ['header', 'about', 'skills', 'projects', 'experience', 'contact'];
+    const sectionIds = ['header', 'about', 'skills', 'experience', 'projects', 'contact'];
     const handleIntersect = (entries: IntersectionObserverEntry[]) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {

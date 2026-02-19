@@ -3,8 +3,8 @@ export const SECTIONS_DATA = {
   header: { aos: 'fade-down', navKey: 'nav.home' },
   about: { aos: 'fade-left', navKey: 'nav.about' },
   skills: { aos: 'fade-left', navKey: 'nav.skills' },
-  projects: { aos: 'fade-up', navKey: 'nav.projects' },
   experience: { aos: 'zoom-in', navKey: 'nav.experience' },
+  projects: { aos: 'fade-up', navKey: 'nav.projects' },
   contact: { aos: 'fade-right', navKey: 'nav.contact' },
 };
 
