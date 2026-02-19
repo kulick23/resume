@@ -58,6 +58,10 @@
       "3": {
         "description": "Tworzenie landing page, rozwój frontendu, projektowanie, tworzenie stron, praca z API, studiowanie/pisanie dokumentacji, wdrażanie projektów, integracja klient-serwer",
         "position": "Frontend Developer"
+      },
+      "4": {
+        "position": "Intern IT Camp",
+        "description": "Rozwój korporacyjnego portalu do zarządzania pracownikami i dokumentami"
       }
     },
     "education": {

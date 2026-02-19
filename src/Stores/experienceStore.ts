@@ -1,19 +1,29 @@
 import { makeAutoObservable } from 'mobx';
 import CyberIcon from '../Assets/Icons/cyber.png';
 import EsdeIcon from '../Assets/Icons/esde.png';
-import IseiIcon from '../Assets/Icons/isei.png';
+import BeteraIcon from '../Assets/Icons/betera.png';
+// import IseiIcon from '../Assets/Icons/isei.png';
 import PavepoIcon from '../Assets/Icons/pavepo.png';
 import StepIcon from '../Assets/Icons/step.png';
 class WorkExperienceStore {
   experiences = [
     {
-      id: 3,
+      id: 4,
       company: 'PAVEPO',
       position: 'experience.work.3.position',
       duration: '02.2025 - 01.2026',
       description: 'experience.work.3.description',
       icon: PavepoIcon,
       iconAlt: 'Pavepo',
+    },
+    {
+      id: 3,
+      company: 'Betera',
+      position: 'experience.work.4.position',
+      duration: '10.2025 - 11.2025',
+      description: 'experience.work.4.description',
+      icon: BeteraIcon,
+      iconAlt: 'Betera',
     },
     {
       id: 2,

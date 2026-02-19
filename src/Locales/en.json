@@ -58,6 +58,10 @@
       "3": {
         "description": "Landing page creation, frontend development, design, website layout, working with APIs, studying/writing documentation, project deployment, client-server integration",
         "position": "Frontend Developer"
+      },
+      "4": {
+        "position": "Intern IT Camp",
+        "description": "Development of a corporate portal for employee and document management"
       }
     },
     "education": {
