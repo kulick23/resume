@@ -94,13 +94,14 @@
       "adaptability": "Адаптивность",
       "creativity": "Креативность",
       "criticalThinking": "Критическое мышление",
-      "attentionToDetail": "Внимание к деталям"
+      "attentionToDetail": "Внимание к деталям",
+      "promptEngineering": "Промпт-инжиниринг"
     },
     "languages": {
-      "english": "Английский",
-      "russian": "Русский",
-      "polish": "Польский",
-      "belarusian": "Белорусский"
+      "english": "Английский — Intermediate",
+      "russian": "Русский — носитель",
+      "polish": "Польский — Pre-intermediate",
+      "belarusian": "Белорусский — носитель"
     }
   },
   "footer": {

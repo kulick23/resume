@@ -94,13 +94,14 @@
       "adaptability": "Adaptacyjność",
       "creativity": "Kreatywność",
       "criticalThinking": "Myślenie krytyczne",
-      "attentionToDetail": "Uwaga na szczegóły"
+      "attentionToDetail": "Uwaga na szczegóły",
+      "promptEngineering": "Inzynieria promptow"
     },
     "languages": {
-      "english": "Angielski",
-      "russian": "Rosyjski",
-      "polish": "Polski",
-      "belarusian": "Białoruski"
+      "english": "Angielski — Intermediate",
+      "russian": "Rosyjski — Native speaker",
+      "polish": "Polski — Pre-intermediate",
+      "belarusian": "Bialoruski — Native speaker"
     }
   },
   "footer": {
