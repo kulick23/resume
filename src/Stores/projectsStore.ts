@@ -165,10 +165,10 @@ class ProjectsStore {
     }),
    
     createBusinessProject({
-      title: 'businessProjects.nftMarketplace.title',
+      title: 'PixelVigor Corporate Website',
       link: '',
       repoLink: '',
-      stack: ['React', 'TypeScript', 'Vite', 'Scss', 'Redux', 'RTK Query'],
+      stack: ['React', 'TS', 'Vite', 'SCSS', 'MobX', 'Swiper', 'React Fast Marquee', 'React Dropzone', 'Rollup'],
       projectImg: pixelVigorDesktopImg,
       mobileImg: pixelVigorMobileImg,
       isNDA: true,
