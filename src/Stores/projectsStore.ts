@@ -240,7 +240,7 @@ class ProjectsStore {
     }),
   ];
 
-  selectedCategory: ProjectCategory = 'pet';
+  selectedCategory: ProjectCategory = 'business';
 
   constructor() {
     makeAutoObservable(this);

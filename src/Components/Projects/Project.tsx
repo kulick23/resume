@@ -22,7 +22,10 @@ export const Project: React.FC<ProjectProps> = observer(({ onNDAClick }) => {
 
   return (
     <section className="project" data-aos="fade-up">
-      <h1 className="project__title">{t('projects.title')}</h1>
+      <div className="project__header">
+        <p>{t('projects.subtitle')}</p>
+        <h1 className="project__title">{t('projects.title')}</h1>
+      </div>
 
       <div className="project__filters" role="group" aria-label={t('projects.title')}>
         {FILTERS.map((filter) => (

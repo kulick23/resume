@@ -1,13 +1,19 @@
 :root {
-  --background-space: #0a0a0a;
-  --background-space-opacity: rgba(10, 10, 10, 0.1);
-  --background-second-space: #090a0f;
+  --background-space: #100c0b;
+  --background-space-opacity: rgba(255, 255, 255, 0.08);
+  --background-second-space: #100c0b;
+  --surface-main: #1b1b1b;
+  --surface-muted: #282828;
+  --surface-soft: #333333;
+  --surface-glass: rgba(16, 12, 11, 0.82);
   --stars: #ffffff;
-  --background-dark: #1a1a2e;
-  --background-colory: #16213e;
-  --accent-primary: #0f3460;
-  --accent-secondary: #e94560;
-  --text-graphite-light: #a0a0a0;
+  --background-dark: #1b1b1b;
+  --background-colory: #282828;
+  --accent-primary: #2f80ed;
+  --accent-secondary: #ff2f44;
+  --accent-green: #4f9843;
+  --accent-warm: #e7d8c5;
+  --text-graphite-light: #bdbdbd;
   --text-graphite-light-opacity: rgba(255, 255, 255, 0.01);
   --text-graphite-dark: #2d2d2d;
   --font-code: 'CodeFont', 'Fira Code', monospace;
@@ -20,8 +26,10 @@
   --button-height-medium: 2.5rem;
   --button-width-small: 6rem;
   --button-height-small: 2.8rem;
-  --border-radius: 0.5rem;
-  --shadow-light: 0 2px 8px rgba(0, 0, 0, 0.1);
-  --shadow-medium: 0 4px 16px rgba(0, 0, 0, 0.15);
-  --shadow-heavy: 0 8px 32px rgba(0, 0, 0, 0.2);
+  --border-radius: 1.625rem;
+  --border-radius-small: 0.75rem;
+  --page-gap: 1.25rem;
+  --shadow-light: 0 12px 30px rgba(0, 0, 0, 0.18);
+  --shadow-medium: 0 20px 50px rgba(0, 0, 0, 0.28);
+  --shadow-heavy: 0 30px 90px rgba(0, 0, 0, 0.4);
 }

@@ -3,46 +3,62 @@ import { observer } from 'mobx-react-lite';
 import { skillsStore } from '../../Stores';
 import './Skills.scss';
 import { useTranslation } from 'react-i18next';
+import FrontendIcon from '../../Assets/Icons/skill-frontend.svg';
+import SapIcon from '../../Assets/Icons/skill-sap.svg';
+import LanguageIcon from '../../Assets/Icons/skill-language.svg';
 
-const CATEGORY_COLORS: Record<string, string> = {
-  techSkills: 'rgb(231,216,197)',
-  softSkills: '#a5907b',
-  language: '#a5907b',
+const CATEGORY_META: Record<string, { color: string; icon: string }> = {
+  frontend: { color: '#55b84a', icon: FrontendIcon },
+  sapBackend: { color: '#2f80ed', icon: SapIcon },
+  language: { color: '#e7d8c5', icon: LanguageIcon },
 };
 
-const FALLBACK_COLOR = '#FF7111';
-
-// Categories whose entries are translation keys rather than plain labels.
-const TRANSLATED_CATEGORIES = new Set(['softSkills', 'language']);
+const TRANSLATED_CATEGORIES = new Set(['language']);
 
 export const Skills: React.FC = observer(() => {
   const { t } = useTranslation();
+  const entries = Object.entries(skillsStore.skills);
 
   return (
     <section className="skills">
-      <h1 data-aos="fade-up">{t('skills.title')}</h1>
-      <div className="skills__categories">
-        {Object.entries(skillsStore.skills).map(([category, skills]) => {
-          const color = CATEGORY_COLORS[category] ?? FALLBACK_COLOR;
+      <div className="skills__header" data-aos="fade-up">
+        <h1>{t('skills.title')}</h1>
+        <p>{t('skills.subtitle')}</p>
+      </div>
+
+      <div className="skills__top-grid" data-aos="fade-up" data-aos-delay="120">
+        {entries.map(([category, skills]) => (
+          <div className="skills__top-item" key={category}>
+            <ul>
+              {skills.slice(0, 8).map((skill) => (
+                <li key={skill}>{TRANSLATED_CATEGORIES.has(category) ? t(skill) : skill}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+
+      <div className="skills__cards">
+        {entries.map(([category], index) => {
+          const meta = CATEGORY_META[category] ?? CATEGORY_META.frontend;
 
           return (
-            <div
+            <article
               key={category}
-              className="skills__category"
+              className="skills__card"
               data-aos="fade-up"
-              style={{ '--category-color': color } as React.CSSProperties}
+              data-aos-delay={index * 80}
+              style={
+                {
+                  '--skill-color': meta.color,
+                  '--skill-icon': `url(${meta.icon})`,
+                } as React.CSSProperties
+              }
             >
-              <h3 className="skills__category--title" style={{ color }}>
-                {t(`skills.${category.toLowerCase()}`)}
-              </h3>
-              <ul className="skills__category--list" data-aos="fade-left">
-                {skills.map((skill) => (
-                  <li key={skill} className="skills__category--item">
-                    {TRANSLATED_CATEGORIES.has(category) ? t(skill) : skill}
-                  </li>
-                ))}
-              </ul>
-            </div>
+              <span className="skills__card-number">{String(index + 1).padStart(2, '0')}</span>
+              <span className="skills__card-icon" aria-hidden="true" />
+              <h3>{t(`skills.${category.toLowerCase()}`)}</h3>
+            </article>
           );
         })}
       </div>

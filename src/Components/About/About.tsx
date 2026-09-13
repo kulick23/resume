@@ -1,43 +1,56 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import './About.scss';
-import { use3DEffect } from '../../Hooks';
-import { ABOUT_IMAGE, MAX_ROTATE } from '../../Constants';
+import AboutEnterpriseImage from '../../Assets/Img/about-enterprise-sap.png';
+
+const METRIC_KEYS = ['experience', 'commercial', 'stack', 'availability'] as const;
 
 export const About: React.FC = () => {
   const { t } = useTranslation();
-  const { imgRef, handleMouseMove, handleMouseLeave } = use3DEffect(MAX_ROTATE);
 
   return (
     <section className="about">
-      <div className="about__container">
-        <h1 data-aos="fade-up">{t('about.title')}</h1>
-        <p data-aos="fade-up" data-aos-delay="200">
+      <div className="about__content">
+        <p className="about__eyebrow" data-aos="fade-up">
+          {t('about.eyebrow')}
+        </p>
+        <h1 data-aos="fade-up" data-aos-delay="100">
+          {t('about.title')}
+        </h1>
+        <p className="about__lead" data-aos="fade-up" data-aos-delay="200">
           {t('about.subtitle')}
         </p>
-        <br />
-        <small data-aos="fade-up" data-aos-delay="400">
-          {t('about.text1')}
-        </small>
-        <br />
-        <br />
-        <small data-aos="fade-up" data-aos-delay="600">
-          {t('about.text2')}
-        </small>
+        <div className="about__text" data-aos="fade-up" data-aos-delay="300">
+          <p>{t('about.text1')}</p>
+          <p>{t('about.text2')}</p>
+        </div>
+        <div className="about__metrics" aria-label={t('about.metricsLabel')}>
+          {METRIC_KEYS.map((key, index) => (
+            <div
+              className="about__metric"
+              key={key}
+              data-aos="fade-up"
+              data-aos-delay={350 + index * 70}
+            >
+              <strong>{t(`about.metrics.${key}.value`)}</strong>
+              <span>{t(`about.metrics.${key}.label`)}</span>
+            </div>
+          ))}
+        </div>
       </div>
-      <img
-        src={ABOUT_IMAGE}
-        alt={t('about.imageAlt')}
-        ref={imgRef}
-        className="about__image-3d"
-        width={875}
-        height={1094}
-        loading="lazy"
-        decoding="async"
-        onMouseMove={handleMouseMove}
-        onMouseLeave={handleMouseLeave}
-        draggable={false}
-      />
+
+      <aside className="about__media" data-aos="fade-left" data-aos-delay="250">
+        <img
+          src={AboutEnterpriseImage}
+          alt={t('about.imageAlt')}
+          className="about__image"
+          width={1152}
+          height={1392}
+          loading="lazy"
+          decoding="async"
+          draggable={false}
+        />
+      </aside>
     </section>
   );
 };

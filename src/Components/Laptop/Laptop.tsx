@@ -1,7 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import './Laptop.scss';
-import { LAPTOP_IMG, PHONE_IMG } from '../../Constants';
 import type { LaptopProps } from '../../types';
 
 export const Laptop: React.FC<LaptopProps> = ({
@@ -20,7 +19,7 @@ export const Laptop: React.FC<LaptopProps> = ({
   };
 
   return (
-    <div className="laptop">
+    <article className="laptop">
       <div
         role={hasPreviewLink ? 'link' : undefined}
         tabIndex={hasPreviewLink ? 0 : undefined}
@@ -36,62 +35,55 @@ export const Laptop: React.FC<LaptopProps> = ({
               }
             : undefined
         }
-        className={`laptop__box ${hasPreviewLink ? '' : 'laptop__box--no-link'}`}
+        className={`laptop__preview ${hasPreviewLink ? '' : 'laptop__preview--no-link'}`}
       >
-        <img src={LAPTOP_IMG} alt="" className="laptop--image" decoding="async" loading="lazy" />
-        <div className="laptop__screen">
+        <img
+          src={project.projectImg}
+          alt={project.title}
+          className="laptop__image"
+          loading="lazy"
+          decoding="async"
+        />
+        {project.mobileImg && (
           <img
-            src={project.projectImg}
-            alt={project.title}
-            className="laptop--preview"
+            src={project.mobileImg}
+            alt={`${project.title} — mobile`}
+            className="laptop__mobile-image"
             loading="lazy"
             decoding="async"
           />
-        </div>
-        {project.mobileImg && (
-          <div className="laptop__phone">
-            <img
-              src={PHONE_IMG}
-              alt=""
-              className="laptop__phone--image"
-              loading="lazy"
-              decoding="async"
-            />
-            <div className="laptop__phone--screen">
-              <img
-                src={project.mobileImg}
-                alt={`${project.title} — mobile`}
-                className="laptop--preview laptop--preview-mobile"
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
-          </div>
         )}
-        <div className="laptop__stack">
-          <span aria-hidden="true">[</span>
-          <span className="laptop__stack-text">{project.stack.join(', ')}</span>
-          <span aria-hidden="true">]</span>
+      </div>
+
+      <div className="laptop__content">
+        <div className="laptop__meta">
+          <span>{project.category === 'business' ? t('projects.business') : t('projects.pet')}</span>
+          {project.isNDA && <span>{t('projects.nda')}</span>}
+        </div>
+        <h3>{project.title}</h3>
+        <div className="laptop__stack" aria-label="Stack">
+          {project.stack.slice(0, 8).map((item) => (
+            <span key={item}>{item}</span>
+          ))}
+        </div>
+        <div className="laptop__actions">
+          {onInfoClick && (
+            <button type="button" className="laptop__info-btn" onClick={() => onInfoClick(project)}>
+              {t('projects.infoBadge')}
+            </button>
+          )}
+          {hasRepoLink && (
+            <button type="button" className="laptop__button" onClick={() => openInNewTab(project.repoLink)}>
+              {t('projects.code')}
+            </button>
+          )}
+          {hasPreviewLink && (
+            <button type="button" className="laptop__button" onClick={() => openInNewTab(project.link)}>
+              {t('projects.openSite')}
+            </button>
+          )}
         </div>
       </div>
-      {onInfoClick && (
-        <button
-          type="button"
-          className="laptop__info-btn"
-          onClick={() => onInfoClick(project)}
-          aria-label={`${project.title} — ${t('projects.infoBadge')}`}
-        >
-          <span aria-hidden="true">?</span>
-        </button>
-      )}
-      {hasRepoLink && (
-        <button
-          type="button"
-          className="laptop__button"
-          onClick={() => openInNewTab(project.repoLink)}
-          aria-label={`${project.title} — ${t('projects.openRepo')}`}
-        />
-      )}
-    </div>
+    </article>
   );
 };

@@ -85,6 +85,7 @@ export const Header: React.FC = () => {
                 spy={true}
                 smooth={true}
                 duration={500}
+                offset={-120}
                 href={`#${link.to}`}
                 className={`header__nav-link${
                   activeSection === link.to ? ' header__nav-link--active' : ''

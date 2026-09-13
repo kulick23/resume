@@ -1,8 +1,10 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import './Contact.scss';
-import { CONTACT_IMAGE, SOCIAL_LINKS, FIELD_CONFIGS } from '../../Constants';
+import { SOCIAL_LINKS, FIELD_CONFIGS } from '../../Constants';
 import { useContactForm } from '../../Hooks';
+
+const CONTACT_POINT_KEYS = ['role', 'location', 'format'] as const;
 
 export const Contact: React.FC = () => {
   const { t } = useTranslation();
@@ -20,26 +22,20 @@ export const Contact: React.FC = () => {
 
   return (
     <section className="contact">
-      <img
-        src={CONTACT_IMAGE}
-        alt=""
-        className="contact__image"
-        width={900}
-        height={1350}
-        loading="lazy"
-        decoding="async"
-        data-aos="fade-left"
-      />
-      <div className="contact__form">
-        <h1 data-aos="fade-up">{t('contact.title')}</h1>
-        <h3 data-aos="fade-up" data-aos-delay="200">
-          {t('contact.subtitle')}
-        </h3>
-
-        <p data-aos="fade-up" data-aos-delay="400">
-          {t('contact.description')}
-        </p>
-        <div className="contact__links" data-aos="fade-up" data-aos-delay="600">
+      <div className="contact__aside" data-aos="fade-right">
+        <p className="contact__eyebrow">{t('contact.eyebrow')}</p>
+        <h1>{t('contact.title')}</h1>
+        <h3>{t('contact.subtitle')}</h3>
+        <div className="contact__points">
+          {CONTACT_POINT_KEYS.map((key) => (
+            <div className="contact__point" key={key}>
+              <strong>{t(`contact.points.${key}.value`)}</strong>
+              <span>{t(`contact.points.${key}.label`)}</span>
+            </div>
+          ))}
+        </div>
+        <p>{t('contact.description')}</p>
+        <div className="contact__links">
           {SOCIAL_LINKS.map((link) => (
             <a
               key={link.alt}
@@ -52,15 +48,11 @@ export const Contact: React.FC = () => {
             </a>
           ))}
         </div>
-        <p data-aos="fade-up" data-aos-delay="800">
-          {t('contact.formText')}
-        </p>
-        <form
-          className="form__container"
-          onSubmit={handleSubmit}
-          data-aos="fade-up"
-          data-aos-delay="1000"
-        >
+      </div>
+
+      <div className="contact__form" data-aos="fade-left">
+        <p>{t('contact.formText')}</p>
+        <form className="form__container" onSubmit={handleSubmit}>
           <div className="form__line">
             {[nameField, emailField].map((field) => (
               <div key={field.id} className="form__item">

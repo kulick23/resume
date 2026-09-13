@@ -16,17 +16,41 @@
     "scrollToTop": "Наверх"
   },
   "about": {
-    "title": "Обо мне",
-    "subtitle": "Frontend-разработчик с опытом создания удобных и высокопроизводительных веб-приложений. Мой основной стек включает React, TypeScript, Vite, RTK Query и SCSS, но я также уверенно работаю с Node.js, базами данных, облачными сервисами и препроцессорами.",
-    "text1": "Я сочетаю глубокие знания фронтенда с пониманием бэкенд-разработки, что позволяет мне эффективно участвовать во всех этапах разработки. Я умею преобразовывать дизайн в чистые, адаптивные интерфейсы и эффективно работаю с широким спектром библиотек и инструментов.",
-    "text2": "Ориентирован на качество кода, оптимизацию производительности и пользовательский опыт. Всегда стремлюсь изучать новые технологии и браться за интересные проекты.",
-    "imageAlt": "Фотография Данилы Кулинковича"
+    "title": "Создаю enterprise web-приложения с сильным фронтендом и пониманием SAP-экосистемы.",
+    "subtitle": "Frontend & SAP CAP Developer. Основной фокус — React, TypeScript, SAP CAP, Cloud Foundry и аккуратная реализация интерфейсов для корпоративных продуктов.",
+    "text1": "Я полностью закрываю frontend-часть: от адаптивной верстки и UI-логики до интеграции API, состояний, форм, i18n, деплоя и поддержки проекта. В коммерческих проектах работал с корпоративными сайтами, порталами, Telegram Mini Apps, документными платформами и интерфейсами для игровых/цифровых сервисов.",
+    "text2": "Сейчас развиваюсь в SAP-направлении: SAP CAP, SAP BTP и Cloud Foundry. Поэтому могу быть полезен на ролях, где нужен разработчик между modern frontend и enterprise backend-интеграциями.",
+    "imageAlt": "Портрет Данилы Кулинковича",
+    "eyebrow": "Frontend + SAP CAP / Cloud Foundry",
+    "metricsLabel": "Ключевые показатели",
+    "metrics": {
+      "experience": {
+        "value": "3+ года",
+        "label": "практики во frontend-разработке"
+      },
+      "commercial": {
+        "value": "25+ проектов",
+        "label": "коммерческих, учебных и pet-релизов"
+      },
+      "stack": {
+        "value": "React + SAP",
+        "label": "frontend, CAP, BTP, Cloud Foundry"
+      },
+      "availability": {
+        "value": "EU & CIS",
+        "label": "remote / hybrid / on-site формат"
+      }
+    },
+    "photoNote": {
+      "title": "Фото для этого блока",
+      "text": "Лучше вертикальный портрет 4:5 или 3:4, спокойный фон, по пояс/до груди, без аватар-обводки LinkedIn."
+    }
   },
   "contact": {
-    "title": "Связаться",
-    "subtitle": "Давайте свяжемся и узнаем, как мы можем создать эффективные цифровые решения вместе",
-    "description": "Любым удобным для вас способом:",
-    "formText": "Или отправьте мне сообщение напрямую здесь:",
+    "title": "Готов обсудить frontend или SAP CAP роль.",
+    "subtitle": "Открыт к Europe & CIS: remote, hybrid или on-site. Быстро включаюсь в продуктовые и корпоративные команды.",
+    "description": "Напишите напрямую:",
+    "formText": "Или оставьте короткое сообщение — отвечу с резюме, портфолио и деталями по опыту.",
     "name": "Ваше имя",
     "namePlaceholder": "Иван",
     "email": "Ваша почта",
@@ -36,37 +60,59 @@
     "send": "Отправить сообщение",
     "sending": "Отправка...",
     "success": "Сообщение отправлено!",
-    "error": "Ошибка отправки. Попробуйте позже."
+    "error": "Ошибка отправки. Попробуйте позже.",
+    "eyebrow": "Start a conversation",
+    "points": {
+      "role": {
+        "value": "Frontend / SAP CAP",
+        "label": "React, TypeScript, SAP CAP"
+      },
+      "location": {
+        "value": "Europe & CIS",
+        "label": "remote, hybrid, on-site"
+      },
+      "format": {
+        "value": "Fast onboarding",
+        "label": "commercial UI + API integrations"
+      }
+    }
   },
   "projects": {
-    "title": "Мои Проекты",
+    "title": "Ключевые проекты",
     "all": "Все",
-    "business": "Бизнес",
-    "pet": "Пет",
+    "business": "Коммерческие",
+    "pet": "Pet / учебные",
     "infoBadge": "Инфо о проекте",
     "openSite": "открыть сайт",
-    "openRepo": "открыть репозиторий"
+    "openRepo": "открыть репозиторий",
+    "subtitle": "Сначала показываю коммерческие и enterprise-похожие работы: corporate websites, portals, Telegram Mini Apps и UI-платформы.",
+    "nda": "NDA",
+    "code": "Code"
   },
   "experience": {
-    "title": "Опыт",
+    "title": "Опыт и образование",
     "workTitle": "Опыт работы",
     "educationTitle": "Образование",
     "work": {
       "1": {
-        "description": "Студенческая лаборатория: Разработка макетов сайтов, Проектирование баз данных, Верстка сайтов",
-        "position": "Веб-разработчик"
+        "position": "Student Lab",
+        "description": "Bachelor program / Student Lab: web-приложения, UI-макеты, базы данных, Azure/Linux basics, тестирование и командная разработка. Закрепил software engineering foundation через учебные и pet-проекты."
       },
       "2": {
-        "description": "Работа с клиентами, Тимбилдинг, Разработка фронтенда",
-        "position": "Администратор / Программист"
+        "position": "Frontend Developer",
+        "description": "Разработка web-приложений в gaming и digital services среде. Делал React + TypeScript SPA, меню/каталог, cart logic, Firebase auth, protected routes, i18n, theme switching и адаптивный UI."
       },
       "3": {
-        "description": "Создание лендингов, Разработка фронтенда, Разработка дизайна, Верстка сайтов, Работа с АПИ, Изучение/Составления документаций, Деплой проектов, Реализация клиент-серверного взаимодействия",
-        "position": "Фронтенд-разработчик"
+        "position": "Frontend Developer",
+        "description": "Полностью отвечал за frontend-часть коммерческих проектов: Prime Network, TheXera, PixelVigor, Pavepo corporate website и другие NDA/internal продукты. React, TypeScript, SCSS, API-интеграции, формы, анимации, state management и production delivery."
       },
       "4": {
         "position": "Intern IT Camp",
-        "description": "Разработка корпоративного портала для управления сотрудниками и документами"
+        "description": "Frontend Developer в командном проекте Betera IT Camp: корпоративный document management portal с auth, user profiles, categories, PDF viewing, forms, validation, i18n и API-интеграциями."
+      },
+      "5": {
+        "position": "SAP Developer",
+        "description": "SAP Developer: enterprise applications на SAP BTP, SAP CAP и Cloud Foundry. Работаю с CDS models, SAP HANA Cloud concepts, OData/REST services, business logic, SAP Fiori/SAPUI5 и role-based access."
       }
     },
     "education": {
@@ -75,17 +121,19 @@
         "position": "Неоконченное высшее образование"
       },
       "2": {
-        "description": "Разработка программного обеспечения",
-        "position": "Курсы"
+        "description": "4 года практического обучения: frontend, JavaScript, базы данных, Linux/Ubuntu, тестирование, основы backend, командные проекты и разработка приложений.",
+        "position": "Software Development Program"
       },
       "3": {
-        "description": "Работа веб приложений",
-        "position": "Высшее образование, Бакалавр"
+        "description": "Web applications, enterprise development, software engineering, databases, cloud fundamentals, testing, blockchain basics, Azure/Linux practice and Student Lab projects.",
+        "position": "Bachelor — Software Engineering"
       }
-    }
+    },
+    "subtitle": "3+ года коммерческой разработки",
+    "educationPill": "Степень бакалавра"
   },
   "skills": {
-    "title": "Мои Навыки",
+    "title": "Стек и рабочий фокус",
     "techskills": "Технические Навыки",
     "softskills": "Софт Навыки",
     "tools": "Инструменты",
@@ -103,10 +151,20 @@
       "promptEngineering": "Промпт-инжиниринг"
     },
     "languages": {
-      "english": "Английский — Intermediate",
+      "english": "Английский — Upper-Intermediate",
       "russian": "Русский — носитель",
-      "polish": "Польский — Pre-intermediate",
+      "polish": "Польский — Intermediate",
       "belarusian": "Белорусский — носитель"
+    },
+    "eyebrow": "How I deliver work",
+    "subtitle": "Три зоны, которые важны для роли: production frontend, SAP/backend foundation и языки для международной работы.",
+    "frontend": "Frontend",
+    "sapbackend": "SAP",
+    "delivery": "Delivery & collaboration",
+    "descriptions": {
+      "frontend": "React, TypeScript, SCSS, state-management и адаптивные UI для production-интерфейсов.",
+      "sapBackend": "SAP CAP, BTP, Cloud Foundry и backend foundation для enterprise-интеграций.",
+      "language": "Языки для работы в международной команде и коммуникации с HR/клиентами."
     }
   },
   "footer": {

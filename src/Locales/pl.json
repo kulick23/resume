@@ -16,17 +16,41 @@
     "scrollToTop": "Do góry"
   },
   "about": {
-    "title": "O mnie",
-    "subtitle": "Frontend Developer z doświadczeniem w tworzeniu przyjaznych dla użytkownika i wydajnych aplikacji internetowych. Mój podstawowy stos technologiczny obejmuje React, TypeScript, Vite, RTK Query i SCSS, ale pewnie pracuję również z Node.js, bazami danych, usługami chmurowymi i preprocesorami.",
-    "text1": "Łączę silną wiedzę z zakresu frontendu ze solidnym zrozumieniem rozwoju backendu, co pozwala mi skutecznie przyczyniać się do całego cyklu rozwoju. Potrafię przekształcać projekty w czyste, responsywne interfejsy i efektywnie pracować z szeroką gamą bibliotek i narzędzi.",
-    "text2": "Skupiam się na jakości kodu, optymalizacji wydajności i doświadczeniu użytkownika. Zawsze chętnie uczę się nowych technologii i podejmuję ekscytujące projekty.",
-    "imageAlt": "Zdjęcie Danily Kulinkovicha"
+    "title": "Tworzę aplikacje webowe enterprise z mocnym frontendem i znajomością ekosystemu SAP.",
+    "subtitle": "Frontend & SAP CAP Developer: React, TypeScript, SAP CAP, Cloud Foundry i czysta implementacja produktów korporacyjnych.",
+    "text1": "Mogę prowadzić część frontendową end-to-end: responsywny UI, state management, formularze, integracje API, i18n, deployment i wsparcie projektu. Mam doświadczenie z corporate websites, portalami, Telegram Mini Apps, platformami dokumentowymi i interfejsami dla usług cyfrowych/gamingowych.",
+    "text2": "Rozwijam się także w kierunku SAP: SAP CAP, SAP BTP i Cloud Foundry. Dzięki temu pasuję do ról łączących modern frontend z integracjami enterprise backend.",
+    "imageAlt": "Portret Danily Kulinkovicha",
+    "eyebrow": "Frontend + SAP CAP / Cloud Foundry",
+    "metricsLabel": "Kluczowe metryki",
+    "metrics": {
+      "experience": {
+        "value": "3+ lata",
+        "label": "praktyki frontendowej"
+      },
+      "commercial": {
+        "value": "25+ projektów",
+        "label": "komercyjnych, szkoleniowych i pet"
+      },
+      "stack": {
+        "value": "React + SAP",
+        "label": "frontend, CAP, BTP, Cloud Foundry"
+      },
+      "availability": {
+        "value": "EU & CIS",
+        "label": "remote / hybrid / on-site"
+      }
+    },
+    "photoNote": {
+      "title": "Zdjęcie do tego bloku",
+      "text": "Najlepiej pionowy portret 4:5 lub 3:4, spokojne tło, kadr do klatki/piersi, bez obwódki LinkedIn."
+    }
   },
   "contact": {
-    "title": "Kontakt",
-    "subtitle": "Połączmy się i dowiedzmy się, jak możemy stworzyć skuteczne rozwiązania cyfrowe razem",
-    "description": "W dowolny wygodny dla Ciebie sposób:",
-    "formText": "Lub wyślij mi wiadomość bezpośrednio tutaj:",
+    "title": "Otwarty na role Frontend lub SAP CAP.",
+    "subtitle": "Europe & CIS: remote, hybrid lub on-site. Szybko wchodzę w zespoły produktowe i enterprise.",
+    "description": "Napisz bezpośrednio:",
+    "formText": "Albo zostaw krótką wiadomość — odpowiem z CV, portfolio i szczegółami doświadczenia.",
     "name": "Twoje imię",
     "namePlaceholder": "Ivan",
     "email": "Twój email",
@@ -36,37 +60,59 @@
     "send": "Wyślij wiadomość",
     "sending": "Wysyłanie...",
     "success": "Wiadomość wysłana!",
-    "error": "Błąd wysyłania. Spróbuj ponownie później."
+    "error": "Błąd wysyłania. Spróbuj ponownie później.",
+    "eyebrow": "Start a conversation",
+    "points": {
+      "role": {
+        "value": "Frontend / SAP CAP",
+        "label": "React, TypeScript, SAP CAP"
+      },
+      "location": {
+        "value": "Europe & CIS",
+        "label": "remote, hybrid, on-site"
+      },
+      "format": {
+        "value": "Fast onboarding",
+        "label": "commercial UI + API integrations"
+      }
+    }
   },
   "projects": {
-    "title": "Moje Projekty",
+    "title": "Selected projects",
     "all": "Wszystkie",
     "business": "Biznes",
     "pet": "Projekty osobiste",
     "infoBadge": "Informacje o projekcie",
     "openSite": "otwórz stronę",
-    "openRepo": "otwórz repozytorium"
+    "openRepo": "otwórz repozytorium",
+    "subtitle": "Najpierw projekty komercyjne i enterprise-like: corporate websites, portals, Telegram Mini Apps i UI platforms.",
+    "nda": "NDA",
+    "code": "Code"
   },
   "experience": {
-    "title": "Doświadczenie",
+    "title": "Doświadczenie i edukacja",
     "workTitle": "Doświadczenie zawodowe",
-    "educationTitle": "Wykształcenie",
+    "educationTitle": "Edukacja",
     "work": {
       "1": {
-        "description": "Laboratorium studenckie: prototypowanie stron, projektowanie baz danych, tworzenie stron",
-        "position": "Web Developer"
+        "position": "Student Lab",
+        "description": "Bachelor program / Student Lab: aplikacje webowe, prototypy UI, bazy danych, Azure/Linux basics, testowanie i praca zespołowa. Podstawa software engineering przez projekty akademickie i pet."
       },
       "2": {
-        "description": "Kontakt z klientami, budowanie zespołu, rozwój frontendu",
-        "position": "Administrator / Programista"
+        "position": "Frontend Developer",
+        "description": "Frontend w środowisku gaming i digital services. React + TypeScript SPA: menu/catalog, cart logic, Firebase auth, protected routes, i18n, theme switching i responsywny UI."
       },
       "3": {
-        "description": "Tworzenie landing page, rozwój frontendu, projektowanie, tworzenie stron, praca z API, studiowanie/pisanie dokumentacji, wdrażanie projektów, integracja klient-serwer",
-        "position": "Frontend Developer"
+        "position": "Frontend Developer",
+        "description": "Odpowiadałem za frontend w projektach komercyjnych: Prime Network, TheXera, PixelVigor, Pavepo corporate website oraz innych NDA/internal produktach. React, TypeScript, SCSS, API integrations, forms, animations, state management i production delivery."
       },
       "4": {
         "position": "Intern IT Camp",
-        "description": "Rozwój korporacyjnego portalu do zarządzania pracownikami i dokumentami"
+        "description": "Frontend Developer w projekcie zespołowym Betera IT Camp: corporate document management portal z auth, user profiles, categories, PDF viewing, forms, validation, i18n i API integrations."
+      },
+      "5": {
+        "position": "SAP Developer",
+        "description": "SAP Developer: enterprise applications na SAP BTP, SAP CAP i Cloud Foundry. Praca z CDS models, SAP HANA Cloud concepts, OData/REST services, business logic, SAP Fiori/SAPUI5 i role-based access."
       }
     },
     "education": {
@@ -75,17 +121,19 @@
         "position": "Nieukończone wyższe wykształcenie"
       },
       "2": {
-        "description": "Tworzenie oprogramowania",
-        "position": "Kursy"
+        "description": "4 lata praktycznej nauki: frontend, JavaScript, bazy danych, Linux/Ubuntu, testing, backend basics, projekty zespołowe i tworzenie aplikacji.",
+        "position": "Software Development Program"
       },
       "3": {
-        "description": "Tworzenie aplikacji webowych",
-        "position": "Wyższe wykształcenie, Licencjat"
+        "description": "Web applications, enterprise development, software engineering, databases, cloud fundamentals, testing, blockchain basics, Azure/Linux practice and Student Lab projects.",
+        "position": "Bachelor — Software Engineering"
       }
-    }
+    },
+    "subtitle": "3+ lata komercyjnego developmentu",
+    "educationPill": "Stopień licencjata"
   },
   "skills": {
-    "title": "Moje Umiejętności",
+    "title": "Stack i fokus pracy",
     "techskills": "Umiejętności Techniczne",
     "softskills": "Umiejętności Miękkie",
     "tools": "Narzędzia",
@@ -103,10 +151,20 @@
       "promptEngineering": "Inzynieria promptow"
     },
     "languages": {
-      "english": "Angielski — Intermediate",
+      "english": "Angielski — Upper-Intermediate",
       "russian": "Rosyjski — Native speaker",
-      "polish": "Polski — Pre-intermediate",
+      "polish": "Polski — Intermediate",
       "belarusian": "Bialoruski — Native speaker"
+    },
+    "eyebrow": "How I deliver work",
+    "subtitle": "Trzy obszary ważne dla roli: production frontend, SAP/backend foundation i języki do pracy międzynarodowej.",
+    "frontend": "Frontend",
+    "sapbackend": "SAP",
+    "delivery": "Delivery & collaboration",
+    "descriptions": {
+      "frontend": "React, TypeScript, SCSS, state management i responsywny UI dla production interfaces.",
+      "sapBackend": "SAP CAP, BTP, Cloud Foundry i backend foundation dla enterprise integrations.",
+      "language": "Języki do pracy w międzynarodowym zespole i komunikacji z HR/klientami."
     }
   },
   "footer": {

@@ -1,74 +1,110 @@
 .project {
+  position: relative;
+  overflow: hidden;
   width: 100%;
-  margin: 0 auto;
-  padding-top: 4rem;
+  max-width: 100%;
+  margin: var(--page-gap) auto 0;
+  padding: clamp(2rem, 4.5vw, 4rem);
+  border-radius: var(--border-radius);
+  background:
+    radial-gradient(circle at 78% 0%, rgba(79, 152, 67, 0.16), transparent 34%),
+    #202020;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: var(--shadow-medium);
+
+  &__header {
+    max-width: 860px;
+    margin-bottom: 1.4rem;
+    text-align: left;
+
+    p {
+      margin: 0 0 1rem;
+      color: #d2d2d2;
+      line-height: 1.55;
+    }
+  }
 
   &__title {
-    text-align: center;
-    margin-top: 2rem;
-    margin-bottom: 3rem;
-    color: var(--stars);
+    margin: 0;
+    color: #fff;
     font-weight: 700;
-    position: relative;
+    font-size: clamp(2rem, 4.5vw, 4.4rem);
+    line-height: 0.98;
+    letter-spacing: -0.055em;
+    text-align: left;
   }
 
   &__filters {
     display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-bottom: 2.5rem;
+    justify-content: flex-start;
+    gap: 0.6rem;
+    margin-bottom: clamp(1.5rem, 3vw, 2.2rem);
     flex-wrap: wrap;
   }
 
   &__filter-btn {
-    padding: 0.75rem 1.5rem;
-    background: rgba(255, 255, 255, 0.1);
-    border: 2px solid transparent;
-    border-radius: var(--border-radius);
-    color: var(--stars);
+    min-width: auto;
+    width: auto;
     height: auto;
+    padding: 0.8rem 1.1rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 999px;
+    color: #d2d2d2;
+    background: #343434;
     cursor: pointer;
     transition: all 0.3s ease;
     font-family: var(--font-main);
-    font-weight: 500;
-    backdrop-filter: blur(10px);
-    box-sizing: border-box;
-    white-space: nowrap; // Добавлено: предотвращает перенос текста
-    width: auto; // Добавлено: позволяет кнопке растягиваться по тексту
-    min-width: 100px; // Добавлено: минимальная ширина для маленьких текстов
+    font-weight: 600;
+    white-space: nowrap;
+    box-shadow: none;
 
     &:hover {
-      background: rgba(255, 255, 255, 0.2);
+      color: #100c0b;
+      background: #fff;
       transform: translateY(-2px);
     }
 
     &--active {
-      border: 1px solid var(--stars);
-      box-shadow: var(--shadow-medium);
-      background: rgba(255, 255, 255, 0.2);
-      transform: translateY(-2px);
+      color: #fff;
+      border-color: rgba(47, 128, 237, 0.55);
+      background: linear-gradient(135deg, rgba(47, 128, 237, 0.9), rgba(47, 128, 237, 0.38));
     }
   }
 
   &__container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-    gap: 2rem;
-    justify-items: center;
-    align-items: center;
-    padding: 2rem 5rem;
-    margin-bottom: 2rem;
-    row-gap: 100px;
-    @media (max-width: 1045px) {
-      padding: 0;
-    }
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 34rem), 1fr));
+    gap: clamp(1rem, 2vw, 1.4rem);
+    justify-items: stretch;
+    align-items: stretch;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
   }
 
   &__item {
-    display: flex;
-    justify-content: center;
-    box-sizing: border-box;
     width: 100%;
-    max-width: 25rem;
+    min-width: 0;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 1180px) {
+  .project {
+    &__container {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .project {
+    padding: 2rem 1rem;
+
+    &__container {
+      grid-template-columns: 1fr;
+    }
   }
 }

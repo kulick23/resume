@@ -2,27 +2,29 @@ import { makeAutoObservable } from 'mobx';
 
 class SkillsStore {
   skills = {
-    techSkills: [
-      'UX/UI',
-      'JS/TS',
+    frontend: [
       'React',
+      'TypeScript',
+      'JavaScript',
       'Vite',
+      'SCSS',
       'Redux Toolkit',
-      'Node',
-      'SQL',
-      'Railway/Vercel',
+      'RTK Query',
+      'MobX',
+      'MUI',
+      'Responsive UI',
     ],
-    softSkills: [
-      'skills.softSkills.teamwork',
-      'skills.softSkills.communication',
-      'skills.softSkills.workWithCustomers',
-      'skills.softSkills.developmentMethodologies',
-      'skills.softSkills.timeManagement',
-      'skills.softSkills.adaptability',
-      'skills.softSkills.creativity',
-      'skills.softSkills.criticalThinking',
-      'skills.softSkills.attentionToDetail',
-      'skills.softSkills.promptEngineering',
+    sapBackend: [
+      'SAP CAP',
+      'SAP BTP',
+      'Cloud Foundry',
+      'Node.js',
+      'REST API',
+      'SQL',
+      'SAP HANA',
+      'CDS',
+      'Railway',
+      'Vercel',
     ],
     language: [
       'skills.languages.english',

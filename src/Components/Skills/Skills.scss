@@ -1,93 +1,162 @@
 .skills {
-  padding-top: 4rem;
+  position: relative;
+  overflow: hidden;
+  margin-top: var(--page-gap);
+  padding: clamp(2rem, 4.5vw, 4rem);
+  border-radius: var(--border-radius);
+  background: var(--surface-main);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: var(--shadow-medium);
 
-  &__categories {
-    margin-top: 5%;
-    display: grid; // Изменено: как в Services--main
-    grid-template-columns: 1fr 1fr 1fr; // Три колонки, как в Services
-    gap: 1.5rem; // Как в Services__container
-    overflow: hidden;
+  &__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-bottom: clamp(2.5rem, 6vw, 5rem);
+    text-align: left;
+
+    h1 {
+      margin: 0;
+      color: #fff;
+      font-size: clamp(2.2rem, 4vw, 4rem);
+      line-height: 1;
+      letter-spacing: -0.045em;
+      font-family: var(--font-main);
+      font-weight: 400;
+    }
+
+    p {
+      max-width: 580px;
+      margin: 0;
+      color: var(--text-graphite-light);
+      line-height: 1.55;
+      font-size: clamp(1rem, 1.5vw, 1.25rem);
+    }
   }
 
-  &__category {
-    position: relative;
-    background: rgba(255, 255, 255, 0.05); // как в ExperienceEducation__item
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow-light);
-    padding: 1.3rem; // Добавлено: как в Services__item
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px); // как в ExperienceEducation__item
-    transition:
-      background 0.3s ease,
-      box-shadow 0.3s ease,
-      transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    overflow: hidden;
+  &__top-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.6rem;
+    margin-bottom: 1.8rem;
+  }
 
-    &:hover {
-      transform: translateY(-8px); // чуть больше приподнимается
-      box-shadow: var(--shadow-medium);
-      background: rgba(255, 255, 255, 0.08); // как в ExperienceEducation__item:hover
+  &__top-item {
+    text-align: left;
+
+    p {
+      margin: 0 0 1rem;
+      color: var(--text-graphite-light);
+      font-size: clamp(1rem, 1.45vw, 1.28rem);
+      line-height: 1.45;
     }
 
-    &::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: -50px;
-      height: 50px;
-      border-radius: 100%;
-      transition:
-        box-shadow 0.3s ease,
-        background 0.3s ease;
-
-      box-shadow:
-        0 0 10px rgba(255, 255, 255, 0.1),
-        0 0 40px var(--category-color, #ff7111),
-        0 0 60px var(--category-color, #ff7111),
-        0 0 80px var(--category-color, #ff7111);
-      background: transparent;
-    }
-
-    &:hover::after {
-      box-shadow:
-        0 0 20px rgba(255, 255, 255, 0.15),
-        0 0 60px var(--category-color, #ff7111),
-        0 0 90px var(--category-color, #ff7111),
-        0 0 120px var(--category-color, #ff7111);
-      background: rgba(255, 255, 255, 0.04);
-    }
-
-    &--title {
-      font-weight: bold;
-      color: var(--background-colory);
-      margin-bottom: 10px;
-      text-align: center;
-    }
-
-    &--list {
-      list-style-type: none;
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+      justify-content: flex-start;
+      list-style: none;
       padding: 0;
       margin: 0;
     }
 
-    &--item {
-      padding: 5px 0;
-      color: var(--stars);
-      text-align: center;
+    li {
+      padding: 0.58rem 0.82rem;
+      border-radius: 999px;
+      color: #f1f1f1;
+      background: rgba(16, 12, 11, 0.62);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      font-size: clamp(0.88rem, 0.9vw, 1rem);
+      line-height: 1;
     }
   }
 
-  @media (max-width: 1045px) {
-    &__categories {
-      display: flex; // На мобильных как в Services
-      flex-direction: column;
-      align-items: center;
-      margin-top: 5vh;
-      gap: 1.5rem; // Сохраняем gap
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.6rem;
+  }
+
+  &__card {
+    position: relative;
+    overflow: hidden;
+    min-height: 340px;
+    padding: 1.55rem;
+    border-radius: 1.9rem;
+    background: var(--surface-muted);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+
+    h3 {
+      position: absolute;
+      left: 1.55rem;
+      right: 1.55rem;
+      bottom: 1.45rem;
+      z-index: 2;
+      margin: 0;
+      color: #fff;
+      font-family: var(--font-main);
+      font-weight: 400;
+      font-size: clamp(1.7rem, 2.6vw, 2.6rem);
+      line-height: 1;
+      letter-spacing: -0.045em;
+      text-align: left;
     }
-    &__category {
-      width: 60%; // Как в Services для phone
+  }
+
+  &__card-number {
+    position: absolute;
+    top: 1.45rem;
+    left: 1.55rem;
+    z-index: 2;
+    color: #fff;
+    font-size: clamp(2rem, 4vw, 3.4rem);
+    line-height: 1;
+    letter-spacing: -0.04em;
+  }
+
+  &__card-icon {
+    position: absolute;
+    right: -28%;
+    bottom: -26%;
+    z-index: 1;
+    width: 92%;
+    aspect-ratio: 1;
+    background: var(--skill-color);
+    opacity: 0.92;
+    mask: var(--skill-icon) center / contain no-repeat;
+    -webkit-mask: var(--skill-icon) center / contain no-repeat;
+    filter: drop-shadow(0 0 34px color-mix(in srgb, var(--skill-color) 28%, transparent));
+  }
+}
+
+@media (max-width: 1180px) {
+  .skills {
+    &__top-grid,
+    &__cards {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .skills {
+    padding: 2rem 1rem;
+
+    &__header {
+      flex-direction: column;
+    }
+
+    &__top-grid,
+    &__cards {
+      grid-template-columns: 1fr;
+    }
+
+    &__card-icon {
+      right: -24%;
+      bottom: -24%;
+      width: 86%;
     }
   }
 }

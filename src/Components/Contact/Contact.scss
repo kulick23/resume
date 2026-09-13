@@ -1,78 +1,194 @@
 .contact {
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
   overflow: hidden;
   text-align: left;
-  justify-content: center;
-  gap: 10%;
-  padding-top: 4rem;
+  align-items: stretch;
+  gap: var(--page-gap);
+  margin-top: var(--page-gap);
+  padding: clamp(1rem, 2vw, 1.25rem);
+  border-radius: var(--border-radius);
+  background:
+    radial-gradient(circle at 0% 100%, rgba(47, 128, 237, 0.16), transparent 36%),
+    radial-gradient(circle at 100% 0%, rgba(255, 47, 68, 0.1), transparent 34%),
+    #202020;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: var(--shadow-medium);
 
   h1,
   h3,
   p {
     margin: 0;
   }
-  &__image {
-    width: 30%;
-    align-self: center;
-    justify-self: center;
-    padding-left: 40px;
+
+  &__aside,
+  &__form {
+    border-radius: calc(var(--border-radius) - 0.45rem);
+    background: #343434;
+    border: 1px solid rgba(255, 255, 255, 0.1);
   }
 
-  &__icon {
-    height: 30px;
-    transition:
-      transform 0.3s ease,
-      filter 0.3s ease; // Добавлен filter в transition
+  &__aside {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1.2rem;
+    min-height: 560px;
+    padding: clamp(1.4rem, 4vw, 3.2rem);
+    background:
+      radial-gradient(circle at 18% 18%, rgba(47, 128, 237, 0.2), transparent 34%),
+      radial-gradient(circle at 85% 85%, rgba(255, 47, 68, 0.14), transparent 38%),
+      #343434;
 
-    &:hover {
-      filter: invert(0.2);
+    &::after {
+      content: '';
+      position: absolute;
+      right: -120px;
+      bottom: -120px;
+      width: 340px;
+      height: 340px;
+      border-radius: 50%;
+      background: rgba(47, 128, 237, 0.16);
+      filter: blur(4px);
+      pointer-events: none;
     }
   }
 
   &__form {
-    padding: 7px 40px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     gap: 1rem;
+    min-width: 0;
+    padding: clamp(1.25rem, 4vw, 3.2rem);
+  }
+
+  &__eyebrow {
+    width: fit-content;
+    padding: 0.5rem 0.8rem;
+    border-radius: 999px;
+    color: var(--accent-warm);
+    background: rgba(16, 12, 11, 0.62);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 0.86rem;
+  }
+
+  h1 {
+    max-width: 760px;
+    color: #fff;
+    font-size: clamp(2.05rem, 4.8vw, 5rem);
+    line-height: 0.96;
+    letter-spacing: -0.06em;
+  }
+
+  h3 {
+    max-width: 720px;
+    color: var(--accent-warm);
+    font-size: clamp(1rem, 1.6vw, 1.35rem);
+    line-height: 1.3;
+    letter-spacing: -0.02em;
+  }
+
+  p {
+    color: #d2d2d2;
+    line-height: 1.55;
+  }
+
+  &__points {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.75rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  &__point {
+    padding: 0.9rem;
+    border-radius: 1rem;
+    background: rgba(16, 12, 11, 0.62);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    strong,
+    span {
+      display: block;
+    }
+
+    strong {
+      color: #fff;
+      font-size: 1rem;
+      line-height: 1.2;
+    }
+
+    span {
+      margin-top: 0.35rem;
+      color: #c7c7c7;
+      font-size: 0.82rem;
+      line-height: 1.35;
+    }
   }
 
   &__links {
     display: flex;
-    gap: 20px;
+    gap: 0.7rem;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+
     a {
       display: flex;
       align-items: center;
+      justify-content: center;
+      width: 3.1rem;
+      height: 3.1rem;
+      border-radius: 50%;
+      background: rgba(16, 12, 11, 0.62);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      transition: all 0.25s ease;
+
+      &:hover {
+        background: #fff;
+        transform: translateY(-2px);
+      }
     }
   }
 
+  &__icon {
+    height: 28px;
+    transition: filter 0.3s ease;
+  }
+
+  &__links a:hover &__icon {
+    filter: invert(0.2);
+  }
+
   &__button {
-    padding: 0.75rem 1.5rem;
-    background: rgba(255, 255, 255, 0.1);
-    border: 2px solid transparent;
-    border-radius: var(--border-radius);
-    color: var(--stars);
+    width: fit-content;
+    min-width: 150px;
     height: auto;
+    padding: 0.9rem 1.35rem;
+    border: 1px solid rgba(47, 128, 237, 0.45);
+    border-radius: 999px;
+    color: #fff;
+    background: linear-gradient(135deg, rgba(47, 128, 237, 0.9), rgba(47, 128, 237, 0.34));
     cursor: pointer;
     transition: all 0.3s ease;
     font-family: var(--font-main);
-    font-weight: 500;
-    backdrop-filter: blur(10px);
-    box-sizing: border-box;
+    font-weight: 700;
     white-space: nowrap;
-    width: auto;
-    min-width: 100px;
+    box-shadow: 0 16px 36px rgba(47, 128, 237, 0.18);
 
     &:hover {
-      background: rgba(255, 255, 255, 0.2);
+      color: #100c0b;
+      background: #fff;
       transform: translateY(-2px);
     }
 
-    // Для активного состояния (если нужно, можно добавить класс --active)
-    &--active {
-      border: 1px solid var(--stars);
-      box-shadow: var(--shadow-medium);
-      background: rgba(255, 255, 255, 0.2);
-      transform: translateY(-2px);
+    &:disabled {
+      opacity: 0.55;
+      cursor: not-allowed;
+      transform: none;
     }
   }
 }
@@ -80,62 +196,63 @@
 .form__container {
   display: flex;
   flex-direction: column;
-  max-width: 800px;
-  padding-right: 40px;
+  max-width: 780px;
+  padding-right: 0;
 
   input,
   textarea {
     width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border-radius: var(--border-radius);
+    padding: 0.95rem 1rem;
+    margin-bottom: 1rem;
+    border-radius: 1rem;
     font-size: 16px;
-    background: rgba(255, 255, 255, 0.05);
-    color: var(--stars);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(16, 12, 11, 0.62);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.08);
     transition: all 0.3s ease;
+    box-sizing: border-box;
 
     &:hover {
-      box-shadow: var(--shadow-medium);
-      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.16);
     }
 
     &:disabled {
-      box-shadow: var(--shadow-medium);
-      background: rgba(255, 255, 255, 0.08);
       opacity: 0.6;
       cursor: not-allowed;
     }
 
     &:focus-visible {
-      outline: 2px solid var(--accent-secondary);
+      outline: 2px solid var(--accent-primary);
       outline-offset: 2px;
     }
   }
 
   textarea {
-    resize: none;
-    height: 100px;
+    resize: vertical;
+    min-height: 120px;
   }
 }
 
 .form__line {
   display: flex;
-  gap: 50px;
+  gap: 1rem;
   width: 100%;
 
   .form__item {
-    flex: 1; // Добавлено: input'ы теперь растягиваются равномерно
+    flex: 1;
   }
 }
 
 .form__item {
   label {
+    display: inline-block;
     position: relative;
-    top: 10px;
-    left: 20px;
-    color: var(--stars);
-    padding: 0 5px;
+    top: 0;
+    left: 0;
+    margin: 0 0 0.45rem 0.2rem;
+    color: var(--accent-warm);
+    padding: 0;
+    font-size: 0.92rem;
   }
 }
 
@@ -158,16 +275,19 @@
 
 @media (max-width: 1045px) {
   .contact {
-    display: flex;
-    flex-direction: column;
+    grid-template-columns: 1fr;
 
-    &__image {
-      display: none;
+    &__aside {
+      min-height: auto;
     }
 
-    &__form {
-      flex: 1;
-      padding: 20px 0;
+    &__form,
+    &__aside {
+      padding: 2rem 1rem;
+    }
+
+    &__points {
+      grid-template-columns: 1fr;
     }
 
     &__button {
@@ -177,18 +297,5 @@
 
   .form__line {
     display: block;
-  }
-
-  .form__container {
-    max-width: 100%;
-    padding: 0;
-    input,
-    textarea {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 15px;
-      font-size: 16px;
-      box-sizing: border-box;
-    }
   }
 }

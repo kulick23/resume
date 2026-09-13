@@ -1,10 +1,10 @@
 .scroll-to-top {
   position: fixed;
-  top: 60px;
+  top: 5.25rem;
   left: 50%;
   transform: translateX(-50%);
-  width: 60px;
-  height: 60px;
+  width: 54px;
+  height: 54px;
   border-radius: 50%;
   cursor: pointer;
   z-index: 1000;
@@ -13,37 +13,33 @@
   align-items: center;
   justify-content: center;
   padding: 5px;
-  outline: none; // Убираем обводку при фокусе
-  -webkit-tap-highlight-color: transparent; // Убираем обводку при нажатии на мобильных
+  outline: none;
+  background: rgba(16, 12, 11, 0.62);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  -webkit-tap-highlight-color: transparent;
 
   .scroll-svg {
     position: absolute;
-    top: 0;
-    left: 0;
+    inset: 0;
     width: 100%;
     height: 100%;
     pointer-events: none;
   }
 
-  .circle-left {
-    transition: stroke-dashoffset 0.5s ease;
-  }
-
+  .circle-left,
   .circle-right {
     transition: stroke-dashoffset 0.5s ease;
   }
 
-  &:hover .circle-left {
-    stroke-dashoffset: 0;
-  }
-
+  &:hover .circle-left,
   &:hover .circle-right {
     stroke-dashoffset: 0;
   }
 
   img {
-    width: 80%;
-    height: 80%;
+    width: 78%;
+    height: 78%;
     object-fit: contain;
     display: block;
     position: relative;
@@ -53,12 +49,16 @@
 
   &.fly-up {
     animation: flyUp 1s ease-in-out forwards;
-    will-change: transform; // Оптимизация для плавности
+    will-change: transform;
   }
 }
 
 @media (max-width: 1045px) {
   .scroll-to-top {
+    top: 4.8rem;
+    width: 48px;
+    height: 48px;
+
     .circle-left,
     .circle-right {
       transition: none;
