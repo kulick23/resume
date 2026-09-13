@@ -1,4 +1,9 @@
 .scroll-to-top {
+  // Reset the global <button> skin — this control is icon-only.
+  appearance: none;
+  background: none;
+  border: 0;
+  box-shadow: none;
   position: fixed;
   top: 60px;
   right: 50%;

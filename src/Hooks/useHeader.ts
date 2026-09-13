@@ -1,54 +1,65 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { SECTIONS_NAMES } from '../Constants/sections';
+
+const HIDE_THRESHOLD = 150;
 
 export const useHeader = () => {
   const [scrolled, setScrolled] = useState(false);
-  const [scrollDir, setScrollDir] = useState<'up' | 'down'>('up');
-  const [pastThreshold, setPastThreshold] = useState(false);
-  const [activeSection, setActiveSection] = useState<string>('header');
+  const [isHidden, setIsHidden] = useState(false);
+  const [activeSection, setActiveSection] = useState<string>(SECTIONS_NAMES[0]);
 
   useEffect(() => {
     let lastY = window.scrollY;
-    const onScroll = () => {
+    let ticking = false;
+
+    const update = () => {
+      ticking = false;
       const y = window.scrollY;
       setScrolled(y > 0);
-      if (y > 150) {
-        setPastThreshold(true);
-        setScrollDir(y > lastY ? 'down' : 'up');
-      } else {
-        setPastThreshold(false);
-      }
+      setIsHidden(y > HIDE_THRESHOLD && y > lastY);
       lastY = y;
     };
-    window.addEventListener('scroll', onScroll);
+
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(update);
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
   useEffect(() => {
-    const sectionIds = ['header', 'about', 'skills', 'experience', 'projects', 'contact'];
-    const handleIntersect = (entries: IntersectionObserverEntry[]) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setActiveSection(entry.target.id);
-        }
-      });
-    };
+    // Keep the most visible section highlighted instead of "whichever entry
+    // fired last", which used to flicker when two sections overlapped.
+    const ratios = new Map<string, number>();
 
-    const observer = new IntersectionObserver(handleIntersect, {
-      threshold: 0.2,
-      rootMargin: '-10% 0px -10% 0px',
-    });
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => ratios.set(entry.target.id, entry.intersectionRatio));
 
-    sectionIds.forEach((id) => {
-      const el = document.getElementById(id);
-      if (el) {
-        observer.observe(el);
-      }
+        let bestId = '';
+        let bestRatio = 0;
+        ratios.forEach((ratio, id) => {
+          if (ratio > bestRatio) {
+            bestRatio = ratio;
+            bestId = id;
+          }
+        });
+
+        if (bestId) setActiveSection(bestId);
+      },
+      { threshold: [0, 0.2, 0.5, 0.8, 1], rootMargin: '-10% 0px -10% 0px' },
+    );
+
+    SECTIONS_NAMES.forEach((id) => {
+      const element = document.getElementById(id);
+      if (element) observer.observe(element);
     });
 
     return () => observer.disconnect();
   }, []);
-
-  const isHidden = pastThreshold && scrollDir === 'down';
 
   return { scrolled, isHidden, activeSection };
 };

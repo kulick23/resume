@@ -1,20 +1,15 @@
-import { useEffect } from 'react';
-import { useTranslation } from 'react-i18next';
+import { useCallback } from 'react';
+import { loadLanguage } from '../i18n';
+import { LANGUAGE_STORAGE_KEY, type LanguageCode } from '../Constants/languages';
 
 export function useLanguage() {
-  const { i18n } = useTranslation();
-
-  const changeLanguage = (lng: string) => {
-    i18n.changeLanguage(lng);
-    localStorage.setItem('language', lng);
-  };
-
-  useEffect(() => {
-    const savedLanguage = localStorage.getItem('language');
-    if (savedLanguage) {
-      i18n.changeLanguage(savedLanguage);
+  return useCallback((language: LanguageCode) => {
+    try {
+      localStorage.setItem(LANGUAGE_STORAGE_KEY, language);
+    } catch {
+      // Persisting the choice is a nice-to-have, never a reason to fail.
     }
-  }, [i18n]);
 
-  return changeLanguage;
+    void loadLanguage(language);
+  }, []);
 }

@@ -1,12 +1,13 @@
 import { makeAutoObservable } from 'mobx';
-import CyberIcon from '../Assets/Icons/cyber.png';
-import EsdeIcon from '../Assets/Icons/esde.png';
-import BeteraIcon from '../Assets/Icons/betera.png';
-// import IseiIcon from '../Assets/Icons/isei.png';
-import PavepoIcon from '../Assets/Icons/pavepo.png';
-import StepIcon from '../Assets/Icons/step.png';
+import type { ExperienceEntry } from '../types';
+import CyberIcon from '../Assets/Icons/cyber.webp';
+import EsdeIcon from '../Assets/Icons/esde.webp';
+import BeteraIcon from '../Assets/Icons/betera.webp';
+import PavepoIcon from '../Assets/Icons/pavepo.webp';
+import StepIcon from '../Assets/Icons/step.webp';
+
 class WorkExperienceStore {
-  experiences = [
+  experiences: ExperienceEntry[] = [
     {
       id: 4,
       company: 'PAVEPO',
@@ -44,7 +45,7 @@ class WorkExperienceStore {
       iconAlt: 'Esde',
     },
   ];
-  education = [
+  education: ExperienceEntry[] = [
     {
       id: 3,
       company: 'EHU / EPAM School of Digital Engineering',
@@ -63,16 +64,8 @@ class WorkExperienceStore {
       icon: StepIcon,
       iconAlt: 'Step',
     },
-    // {
-    //   id: 1,
-    //   company: 'International Sakharov Environmental University',
-    //   position: 'experience.education.1.position',
-    //   duration: '08.2021 - 08.2022',
-    //   description: 'experience.education.1.description',
-    //   icon: IseiIcon,
-    //   iconAlt: 'Isei',
-    // },
   ];
+
   constructor() {
     makeAutoObservable(this);
   }

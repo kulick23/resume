@@ -6,7 +6,6 @@ export const useNDAModal = () => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   const handleNDAClick = useCallback((project: Project) => {
-    console.log('handleNDAClick called with:', project);
     setSelectedProject(project);
     setIsModalOpen(true);
   }, []);

@@ -1,3 +1,5 @@
+export type ProjectCategory = 'pet' | 'business';
+
 export interface Project {
   title: string;
   projectImg: string;
@@ -6,13 +8,7 @@ export interface Project {
   stack: string[];
   link: string;
   repoLink: string;
-  category: 'pet' | 'business';
-  isNDA?: boolean;
-  ndaDescription?: string;
-}
-
-export interface BusinessProject extends Project {
-  category: 'business';
+  category: ProjectCategory;
   isNDA?: boolean;
   ndaDescription?: string;
 }
@@ -22,9 +18,4 @@ export interface LaptopProps {
   onInfoClick?: (project: Project) => void;
   showCodeButton?: boolean;
   enableProjectLink?: boolean;
-}
-
-export interface BusinessLaptopProps {
-  project: Project;
-  onNDAClick: (project: Project) => void; // Изменено на Project
 }

@@ -1,25 +1,16 @@
 import './Styles/App.scss';
-import {
-  Contact,
-  About,
-  Skills,
-  Project,
-  Header,
-  Experience,
-  ScrollToTop,
-  NDAModal,
-} from './Componets';
 import { Element } from 'react-scroll';
-import { useAOS, useStars, useScrollToTop, useNDAModal } from './Hooks';
-import { SECTIONS_DATA, SECTIONS_NAMES } from './Constants/sections';
-
-const staticComponents = {
-  header: Header,
-  about: About,
-  skills: Skills,
-  experience: Experience,
-  contact: Contact,
-} as const;
+import {
+  About,
+  Contact,
+  Experience,
+  Header,
+  NDAModal,
+  Project,
+  ScrollToTop,
+  Skills,
+} from './Components';
+import { useAOS, useNDAModal, useScrollToTop, useStars } from './Hooks';
 
 function App() {
   useAOS();
@@ -29,36 +20,38 @@ function App() {
 
   return (
     <div className="App">
-      {/* Фон со звездами для всего сайта */}
-      <div className="stars-container" ref={starsRef}>
+      <div className="stars-container" ref={starsRef} aria-hidden="true">
         {stars.map((id) => (
-          <div key={id} id={id}></div>
+          <div key={id} id={id} />
         ))}
       </div>
 
-      {SECTIONS_NAMES.map((name) => {
-        if (name === 'projects') {
-          return (
-            <Element name={name} id={name} key={name}>
-              <Project onNDAClick={handleNDAClick} />
-            </Element>
-          );
-        }
+      <Element name="header" id="header">
+        <Header />
+      </Element>
 
-        const Component = staticComponents[name as keyof typeof staticComponents];
-        if (!Component) return null;
+      <Element name="about" id="about">
+        <About />
+      </Element>
 
-        return (
-          <Element name={name} id={name} key={name}>
-            <Component data-aos={SECTIONS_DATA[name as keyof typeof SECTIONS_DATA]?.aos} />
-          </Element>
-        );
-      })}
+      <Element name="skills" id="skills">
+        <Skills />
+      </Element>
 
-      {/* Глобальная NDAModal */}
+      <Element name="experience" id="experience">
+        <Experience />
+      </Element>
+
+      <Element name="projects" id="projects">
+        <Project onNDAClick={handleNDAClick} />
+      </Element>
+
+      <Element name="contact" id="contact">
+        <Contact />
+      </Element>
+
       <NDAModal isOpen={isModalOpen} onClose={handleCloseModal} project={selectedProject} />
 
-      {/* Поп-ап для скролла наверх */}
       <ScrollToTop showPopup={showPopup} isFlying={isFlying} handleFlyUp={handleFlyUp} />
     </div>
   );

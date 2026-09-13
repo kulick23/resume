@@ -1,6 +1,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { chromium, devices } from 'playwright';
+import sharp from 'sharp';
 
 const outputDir = path.resolve('public/previews');
 const storePath = path.resolve('src/Stores/projectsStore.ts');
@@ -13,25 +14,29 @@ const profiles = {
       isMobile: false,
       hasTouch: false,
     },
-    screenshotOptions: { clip: { x: 0, y: 0, width: 1300, height: 900 } },
+    clip: { x: 0, y: 0, width: 1300, height: 900 },
+    // The laptop mockup renders the preview at ~320 CSS px, so 900px covers 2x screens.
+    outputWidth: 900,
   },
   mobile: {
     contextOptions: {
       ...devices['iPhone 13 Pro'],
       viewport: { width: 390, height: 844 },
     },
-    screenshotOptions: { clip: { x: 0, y: 0, width: 390, height: 844 } },
+    clip: { x: 0, y: 0, width: 390, height: 844 },
+    outputWidth: 450,
   },
 };
+
+const WEBP_QUALITY = 78;
 
 const linkToPreviewKey = (link) => {
   try {
     const url = new URL(link);
     const host = url.hostname.replace(/^www\./, '');
     const pathname = url.pathname.replace(/\/+$/, '');
-    const rawKey = `${host}${pathname}`;
 
-    return rawKey
+    return `${host}${pathname}`
       .toLowerCase()
       .replace(/[^a-z0-9]+/g, '-')
       .replace(/^-+|-+$/g, '');
@@ -47,10 +52,6 @@ const getProjectLinksFromStore = async () => {
     .filter((link) => /^https?:\/\//.test(link));
 
   return [...new Set(links)].map((link) => ({ key: linkToPreviewKey(link), url: link }));
-};
-
-const ensureDir = async () => {
-  await fs.mkdir(outputDir, { recursive: true });
 };
 
 const waitForStablePage = async (page) => {
@@ -71,18 +72,19 @@ const takeScreenshotsForProject = async (browser, project) => {
       await page.goto(project.url, { waitUntil: 'domcontentloaded', timeout: 30000 });
       await waitForStablePage(page);
 
-      const filePath = path.join(outputDir, `${project.key}-${size}.jpg`);
-      await page.screenshot({
-        path: filePath,
-        type: 'jpeg',
-        quality: 80,
-        ...profile.screenshotOptions,
-      });
+      const buffer = await page.screenshot({ type: 'png', clip: profile.clip });
+      const filePath = path.join(outputDir, `${project.key}-${size}.webp`);
+
+      await sharp(buffer)
+        .resize({ width: profile.outputWidth, withoutEnlargement: true })
+        .webp({ quality: WEBP_QUALITY, effort: 6 })
+        .toFile(filePath);
 
       console.log(`Saved: ${filePath}`);
     } catch (error) {
       console.error(`Failed: ${project.key} (${size}) -> ${project.url}`);
       console.error(error instanceof Error ? error.message : String(error));
+      process.exitCode = 1;
     } finally {
       await context.close();
     }
@@ -90,7 +92,7 @@ const takeScreenshotsForProject = async (browser, project) => {
 };
 
 const main = async () => {
-  await ensureDir();
+  await fs.mkdir(outputDir, { recursive: true });
 
   const projects = await getProjectLinksFromStore();
   if (projects.length === 0) {

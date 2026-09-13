@@ -1,30 +1,18 @@
 import { makeAutoObservable } from 'mobx';
-import beteraDesktopImg from '../Assets/Screenshot/betera-desktop.png';
-import cyberXDesktopImg from '../Assets/Screenshot/cyberX-desktop.png';
-import cyberXMobileImg from '../Assets/Screenshot/cyberX-mobile.png';
-import pavepoDesktopImg from '../Assets/Screenshot/pavepo-desktop.png';
-import pavepoMobileImg from '../Assets/Screenshot/pavepo-mobile.png';
-import pixelVigorDesktopImg from '../Assets/Screenshot/PixelVigor-desktop.png';
-import pixelVigorMobileImg from '../Assets/Screenshot/PixelVigor-mobile.png';
-import primeNetDesktopImg from '../Assets/Screenshot/primeNet-desktop.png';
-import primeNetMobileImg from '../Assets/Screenshot/primeNet-mobile.png';
-import rentalSkinDesktopImg from '../Assets/Screenshot/rentalSkin-desktop.png';
-import rentalSkinMobileImg from '../Assets/Screenshot/rentalSkin-mobile.png';
-import xeraDesktopImg from '../Assets/Screenshot/xera-desktop.png';
-import xeraMobileImg from '../Assets/Screenshot/xera-mobile.png';
-
-interface Project {
-  title: string;
-  link: string;
-  repoLink: string;
-  stack: string[];
-  projectImg: string;
-  mobileImg?: string;
-  description?: string;
-  category: 'pet' | 'business';
-  isNDA?: boolean;
-  ndaDescription?: string;
-}
+import type { Project, ProjectCategory } from '../types';
+import beteraDesktopImg from '../Assets/Screenshot/betera-desktop.webp';
+import cyberXDesktopImg from '../Assets/Screenshot/cyberX-desktop.webp';
+import cyberXMobileImg from '../Assets/Screenshot/cyberX-mobile.webp';
+import pavepoDesktopImg from '../Assets/Screenshot/pavepo-desktop.webp';
+import pavepoMobileImg from '../Assets/Screenshot/pavepo-mobile.webp';
+import pixelVigorDesktopImg from '../Assets/Screenshot/PixelVigor-desktop.webp';
+import pixelVigorMobileImg from '../Assets/Screenshot/PixelVigor-mobile.webp';
+import primeNetDesktopImg from '../Assets/Screenshot/primeNet-desktop.webp';
+import primeNetMobileImg from '../Assets/Screenshot/primeNet-mobile.webp';
+import rentalSkinDesktopImg from '../Assets/Screenshot/rentalSkin-desktop.webp';
+import rentalSkinMobileImg from '../Assets/Screenshot/rentalSkin-mobile.webp';
+import xeraDesktopImg from '../Assets/Screenshot/xera-desktop.webp';
+import xeraMobileImg from '../Assets/Screenshot/xera-mobile.webp';
 
 type PreviewSize = 'desktop' | 'mobile';
 
@@ -44,9 +32,9 @@ const linkToPreviewKey = (link: string): string => {
   }
 };
 
-const getPreviewPath = (link: string, size: PreviewSize = 'desktop'): string => {
-  return `/previews/${linkToPreviewKey(link)}-${size}.jpg`;
-};
+// Previews live in /public, so they need the deployment base prefix.
+const getPreviewPath = (link: string, size: PreviewSize = 'desktop'): string =>
+  `${import.meta.env.BASE_URL}previews/${linkToPreviewKey(link)}-${size}.webp`;
 
 const createPetProject = (
   project: Omit<Project, 'projectImg' | 'mobileImg' | 'category'>,
@@ -252,32 +240,22 @@ class ProjectsStore {
     }),
   ];
 
-  selectedCategory: 'pet' | 'business' = 'pet';
+  selectedCategory: ProjectCategory = 'pet';
 
   constructor() {
     makeAutoObservable(this);
   }
 
-  get filteredProjects() {
-    if (this.selectedCategory === 'pet') {
-      return this.petProjects;
-    }
-    if (this.selectedCategory === 'business') {
-      return this.businessProjects;
-    }
-    return this.petProjects;
+  get filteredProjects(): Project[] {
+    return this.selectedCategory === 'business' ? this.businessProjects : this.petProjects;
   }
 
-  setSelectedCategory(category: 'pet' | 'business') {
+  setSelectedCategory(category: ProjectCategory) {
     this.selectedCategory = category;
   }
 
-  get petProjects() {
+  get petProjects(): Project[] {
     return this.projects.filter((project) => project.category === 'pet');
-  }
-
-  get businessProjectsList() {
-    return this.businessProjects;
   }
 }
 

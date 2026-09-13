@@ -19,7 +19,7 @@ export const useStars = () => {
     };
 
     createExtraStars();
-    window.addEventListener('resize', createExtraStars);
+    window.addEventListener('resize', createExtraStars, { passive: true });
     return () => window.removeEventListener('resize', createExtraStars);
   }, []);
 

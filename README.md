@@ -1,69 +1,74 @@
-# React + TypeScript + Vite
+# Resume — Danila Kulinkovich
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal portfolio / resume site: intro, about, skills, experience, projects and a contact form.
+Built with React 18, TypeScript, Vite 7, SCSS, MobX and i18next (EN / RU / PL).
 
-Currently, two official plugins are available:
+Live: https://kulick23.github.io/resume/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Getting started
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Scripts
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+| Script                      | What it does                                                    |
+| --------------------------- | --------------------------------------------------------------- |
+| `npm run dev`               | Vite dev server with HMR                                        |
+| `npm run build`             | Type-checks (`tsc -b`) and builds into `dist/`                  |
+| `npm run preview`           | Serves the production build locally                             |
+| `npm run lint`              | ESLint over the whole repo                                      |
+| `npm run typecheck`         | Full TypeScript check without emitting                          |
+| `npm run format`            | Prettier write                                                  |
+| `npm run format:check`      | Prettier check (CI friendly)                                    |
+| `npm run generate:previews` | Re-shoots pet-project screenshots into `public/previews` (WebP) |
+| `npm run deploy`            | Builds and publishes `dist/` to the `gh-pages` branch           |
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Deployment
+
+The site lives at `https://kulick23.github.io/resume/`, so `vite.config.ts` sets
+`base: '/resume/'`. Every asset URL and everything read out of `public/` must go through
+that base — in code use `import.meta.env.BASE_URL` instead of a leading `/`.
+
+```bash
+npm run deploy
 ```
+
+## Project structure
+
+```
+src/
+  Assets/       fonts (woff2), icons, screenshots (webp), CV
+  Components/   UI components, each with its own .scss and barrel file
+  Constants/    static data: nav sections, socials, form fields, EmailJS config
+  Hooks/        AOS init, header state, language, contact form, stars, 3D effect
+  Locales/      en.json / ru.json / pl.json
+  Stores/       MobX stores (projects, experience, skills)
+  Styles/       global SCSS: variables, fonts, base, animations, stars
+  types/        shared types and ambient declarations
+```
+
+## Internationalisation
+
+English ships inside the main bundle; Russian and Polish are code-split and fetched the
+first time they are selected (`src/i18n.ts`). The chosen language is stored in
+`localStorage` and, on a first visit, guessed from `navigator.language`.
+
+## Contact form
+
+Sending goes through EmailJS. The browser keys are public by design and have safe
+defaults in `src/Constants/emailjs.ts`; they can be overridden per environment:
+
+```
+VITE_EMAILJS_SERVICE_ID=...
+VITE_EMAILJS_TEMPLATE_ID=...
+VITE_EMAILJS_PUBLIC_KEY=...
+```
+
+## Assets
+
+Images are committed as WebP and fonts as WOFF2 — keep it that way when adding new ones.
+Project screenshots are generated by `npm run generate:previews` (Playwright + sharp),
+which writes 900px-wide desktop and 450px-wide mobile WebP files.

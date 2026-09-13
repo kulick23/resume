@@ -1,51 +1,53 @@
-import { useState } from 'react';
-import emailjs from '@emailjs/browser';
+import { useCallback, useState } from 'react';
+import { EMAILJS_CONFIG } from '../Constants/emailjs';
+
+const EMPTY_FORM = { name: '', email: '', message: '' };
 
 export const useContactForm = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
-  });
+  const [formData, setFormData] = useState(EMPTY_FORM);
   const [isLoading, setIsLoading] = useState(false);
   const [status, setStatus] = useState<'success' | 'error' | null>(null);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
+  const handleChange = useCallback(
+    (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      const { name, value } = event.target;
+      setFormData((prev) => ({ ...prev, [name]: value }));
+    },
+    [],
+  );
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsLoading(true);
-    setStatus(null);
+  const handleSubmit = useCallback(
+    async (event: React.FormEvent) => {
+      event.preventDefault();
+      setIsLoading(true);
+      setStatus(null);
 
-    try {
-      await emailjs.send(
-        'service_7qzl5cq',
-        'template_fp6p7nm',
-        {
-          from_name: formData.name,
-          from_email: formData.email,
-          message: formData.message,
-        },
-        'a5A-M4e76FCivSK_k',
-      );
-      setStatus('success');
-      setFormData({ name: '', email: '', message: '' });
-    } catch (error) {
-      console.error('EmailJS error:', error);
-      setStatus('error');
-    } finally {
-      setIsLoading(false);
-    }
-  };
+      try {
+        // Loaded on demand: the SDK is only needed once someone actually sends.
+        const { default: emailjs } = await import('@emailjs/browser');
 
-  return {
-    formData,
-    isLoading,
-    status,
-    handleChange,
-    handleSubmit,
-  };
+        await emailjs.send(
+          EMAILJS_CONFIG.serviceId,
+          EMAILJS_CONFIG.templateId,
+          {
+            from_name: formData.name,
+            from_email: formData.email,
+            message: formData.message,
+          },
+          EMAILJS_CONFIG.publicKey,
+        );
+
+        setStatus('success');
+        setFormData(EMPTY_FORM);
+      } catch (error) {
+        console.error('EmailJS error:', error);
+        setStatus('error');
+      } finally {
+        setIsLoading(false);
+      }
+    },
+    [formData],
+  );
+
+  return { formData, isLoading, status, handleChange, handleSubmit };
 };

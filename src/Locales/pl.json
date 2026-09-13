@@ -11,13 +11,16 @@
     "skills": "Umiejętności",
     "projects": "Projekty",
     "experience": "Doświadczenie",
-    "about": "O mnie"
+    "about": "O mnie",
+    "toggleMenu": "Otwórz menu",
+    "scrollToTop": "Do góry"
   },
   "about": {
     "title": "O mnie",
     "subtitle": "Frontend Developer z doświadczeniem w tworzeniu przyjaznych dla użytkownika i wydajnych aplikacji internetowych. Mój podstawowy stos technologiczny obejmuje React, TypeScript, Vite, RTK Query i SCSS, ale pewnie pracuję również z Node.js, bazami danych, usługami chmurowymi i preprocesorami.",
     "text1": "Łączę silną wiedzę z zakresu frontendu ze solidnym zrozumieniem rozwoju backendu, co pozwala mi skutecznie przyczyniać się do całego cyklu rozwoju. Potrafię przekształcać projekty w czyste, responsywne interfejsy i efektywnie pracować z szeroką gamą bibliotek i narzędzi.",
-    "text2": "Skupiam się na jakości kodu, optymalizacji wydajności i doświadczeniu użytkownika. Zawsze chętnie uczę się nowych technologii i podejmuję ekscytujące projekty."
+    "text2": "Skupiam się na jakości kodu, optymalizacji wydajności i doświadczeniu użytkownika. Zawsze chętnie uczę się nowych technologii i podejmuję ekscytujące projekty.",
+    "imageAlt": "Zdjęcie Danily Kulinkovicha"
   },
   "contact": {
     "title": "Kontakt",
@@ -40,7 +43,9 @@
     "all": "Wszystkie",
     "business": "Biznes",
     "pet": "Projekty osobiste",
-    "infoBadge": "Informacje o projekcie"
+    "infoBadge": "Informacje o projekcie",
+    "openSite": "otwórz stronę",
+    "openRepo": "otwórz repozytorium"
   },
   "experience": {
     "title": "Doświadczenie",
@@ -121,7 +126,8 @@
     "title": "NDA Protected",
     "description": "Opis projektu:",
     "stack": "Stos technologiczny:",
-    "reason": "Dlaczego projekt nie może być pokazany:"
+    "reason": "Dlaczego projekt nie może być pokazany:",
+    "close": "Zamknij"
   },
   "petProjects": {
     "londonGrill": {
