@@ -87,7 +87,11 @@
     "openRepo": "otwórz repozytorium",
     "subtitle": "Najpierw projekty komercyjne i enterprise-like: corporate websites, portals, Telegram Mini Apps i UI platforms.",
     "nda": "NDA",
-    "code": "Code"
+    "code": "Kod",
+    "caseStudy": "Project case",
+    "overview": "O projekcie i moim wkładzie",
+    "technologies": "technologii",
+    "ndaNotice": "Projekt jest prezentowany w dozwolonym zakresie; szczegóły produktu i zamknięta logika biznesowa są chronione przez NDA."
   },
   "experience": {
     "title": "Doświadczenie i edukacja",

@@ -75,42 +75,6 @@ class ProjectsStore {
       link: 'https://pet-ten-sigma.vercel.app/',
       stack: ['React', 'TS', 'SCSS', 'Vite', 'Swiper', 'Vercel'],
     }),
-    createPetProject({
-      title: 'Beats',
-      description: 'petProjects.beats.description',
-      repoLink: 'https://github.com/kulick23/beats',
-      link: 'https://beats-ashen.vercel.app/',
-      stack: ['React', 'TS', 'CSS', 'Vite', 'Swiper', 'Vercel'],
-    }),
-    createPetProject({
-      title: 'Nike',
-      description: 'petProjects.nike.description',
-      repoLink: 'https://github.com/kulick23/slider_nike',
-      link: 'https://kulick23.github.io/slider_nike/',
-      stack: ['HTML', 'CSS', 'JS', 'Vite', 'gh-pages'],
-    }),
-    createPetProject({
-      title: 'Energo',
-      description: 'petProjects.energo.description',
-      repoLink: 'https://github.com/kulick23/EnergyConstruction',
-      link: 'https://kulick23.github.io/EnergyConstruction/',
-      stack: ['HTML', 'CSS', 'JS', 'jQuery', 'Owl Carousel', 'gh-pages'],
-    }),
-
-    createPetProject({
-      title: 'Indonesia',
-      description: 'petProjects.indonesia.description',
-      repoLink: 'https://github.com/kulick23/Indonesia',
-      link: 'https://kulick23.github.io/Indonesia/',
-      stack: ['HTML', 'CSS', 'gh-pages'],
-    }),
-    createPetProject({
-      title: 'Building',
-      description: 'petProjects.building.description',
-      repoLink: 'https://github.com/kulick23/building',
-      link: 'https://kulick23.github.io/building/',
-      stack: ['HTML', 'CSS', 'gh-pages'],
-    }),
   ];
 
   businessProjects: Project[] = [

@@ -68,18 +68,43 @@ export const Laptop: React.FC<LaptopProps> = ({
         </div>
         <div className="laptop__actions">
           {onInfoClick && (
-            <button type="button" className="laptop__info-btn" onClick={() => onInfoClick(project)}>
-              {t('projects.infoBadge')}
+            <button
+              type="button"
+              className="laptop__action laptop__action--info"
+              onClick={() => onInfoClick(project)}
+            >
+              <span className="laptop__action-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <circle cx="12" cy="12" r="9" />
+                  <path d="M12 10.8v5.2M12 8h.01" />
+                </svg>
+              </span>
+              <span>{t('projects.infoBadge')}</span>
+              <span className="laptop__action-arrow" aria-hidden="true">↗</span>
             </button>
           )}
           {hasRepoLink && (
-            <button type="button" className="laptop__button" onClick={() => openInNewTab(project.repoLink)}>
-              {t('projects.code')}
+            <button
+              type="button"
+              className="laptop__action laptop__action--secondary"
+              onClick={() => openInNewTab(project.repoLink)}
+            >
+              <span className="laptop__action-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="m8.5 8-4 4 4 4M15.5 8l4 4-4 4M13.5 5l-3 14" />
+                </svg>
+              </span>
+              <span>{t('projects.code')}</span>
             </button>
           )}
           {hasPreviewLink && (
-            <button type="button" className="laptop__button" onClick={() => openInNewTab(project.link)}>
-              {t('projects.openSite')}
+            <button
+              type="button"
+              className="laptop__action laptop__action--primary"
+              onClick={() => openInNewTab(project.link)}
+            >
+              <span>{t('projects.openSite')}</span>
+              <span className="laptop__action-arrow" aria-hidden="true">↗</span>
             </button>
           )}
         </div>

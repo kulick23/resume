@@ -87,7 +87,11 @@
     "openRepo": "открыть репозиторий",
     "subtitle": "Сначала показываю коммерческие и enterprise-похожие работы: corporate websites, portals, Telegram Mini Apps и UI-платформы.",
     "nda": "NDA",
-    "code": "Code"
+    "code": "Код",
+    "caseStudy": "Project case",
+    "overview": "О проекте и моём вкладе",
+    "technologies": "технологий",
+    "ndaNotice": "Проект показан в допустимом объёме: детали продукта и закрытая бизнес-логика защищены NDA."
   },
   "experience": {
     "title": "Опыт и образование",

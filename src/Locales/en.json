@@ -87,7 +87,11 @@
     "openRepo": "open the repository",
     "subtitle": "Commercial and enterprise-like work first: corporate websites, portals, Telegram Mini Apps and UI platforms.",
     "nda": "NDA",
-    "code": "Code"
+    "code": "Code",
+    "caseStudy": "Project case",
+    "overview": "Project overview and my contribution",
+    "technologies": "technologies",
+    "ndaNotice": "The project is shown within the permitted scope; product details and private business logic remain protected by NDA."
   },
   "experience": {
     "title": "Experience & education",
