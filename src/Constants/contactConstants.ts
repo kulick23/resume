@@ -6,7 +6,7 @@ import mail from '../Assets/Icons/mail.svg';
 export const CONTACT_IMAGE = lars;
 
 export const SOCIAL_LINKS = [
-  { href: 'https://t.me/chik_chiv', icon: telegram, alt: 'Telegram' },
+  { href: 'https://t.me/kulick03', icon: telegram, alt: 'Telegram' },
   {
     href: 'https://www.linkedin.com/in/danila-kulinkovich/',
     icon: linkedin,

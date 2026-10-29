@@ -10,7 +10,7 @@ export const SOCIALS = [
     alt: 'Github',
   },
   {
-    href: 'https://t.me/chik_chiv',
+    href: 'https://t.me/kulick03',
     img: Telegram,
     alt: 'Telegram',
   },

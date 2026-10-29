@@ -138,7 +138,9 @@ export const NDAModal: React.FC<NDAModalProps> = ({ isOpen, onClose, project }) 
               ? t('projects.featured')
               : project.isNDA
                 ? t('nda.title')
-                : t('projects.business')}
+                : project.category === 'business'
+                  ? t('projects.business')
+                  : t('projects.pet')}
           </span>
         </div>
 
