@@ -10,22 +10,15 @@ import {
   ScrollToTop,
   Skills,
 } from './Components';
-import { useAOS, useNDAModal, useScrollToTop, useStars } from './Hooks';
+import { useAOS, useNDAModal, useScrollToTop } from './Hooks';
 
 function App() {
   useAOS();
-  const { starsRef, stars } = useStars();
   const { showPopup, isFlying, handleFlyUp } = useScrollToTop();
   const { isModalOpen, selectedProject, handleNDAClick, handleCloseModal } = useNDAModal();
 
   return (
     <div className="App">
-      <div className="stars-container" ref={starsRef} aria-hidden="true">
-        {stars.map((id) => (
-          <div key={id} id={id} />
-        ))}
-      </div>
-
       <Element name="header" id="header">
         <Header />
       </Element>

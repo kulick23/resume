@@ -5,4 +5,3 @@ export * from './useHeader';
 export * from './useLanguage';
 export * from './useNDAModal';
 export * from './useScrollToTop';
-export * from './useStars';

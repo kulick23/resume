@@ -56,7 +56,7 @@ export const Header: React.FC = () => {
       <header className={`header__nav ${scrolled ? 'scrolled' : ''} ${isHidden ? 'hide' : 'show'}`}>
         <div className="header__nav-container">
           <div className="header__nav-logo">
-            <h4>Kulinkovich Danila</h4>
+            <span>Danila Kulinkovich</span>
           </div>
 
           <button
@@ -110,35 +110,45 @@ export const Header: React.FC = () => {
 
       <div className="header">
         <div className="header__card">
-          <p className="header__text">{t('header.greeting')}</p>
-          <div className="header__web">
-            <h1 className="header__text">{t('header.web')}</h1>
-            <div className="header__favicons">
-              {SOCIALS.map((social) => (
-                <a
-                  key={social.alt}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={social.alt}
-                >
-                  <img
-                    className="header__favicons--img"
-                    src={social.img}
-                    alt={social.alt}
-                    decoding="async"
-                  />
-                </a>
-              ))}
+          <h1 className="header__title" aria-label={`${t('header.web')} ${t('header.developer')}`}>
+            <span className="header__title-copy header__title-copy--top">
+              <span>{t('header.web')}</span>
+              <span>{t('header.developer')}</span>
+            </span>
+            <span className="header__title-copy header__title-copy--bottom" aria-hidden="true">
+              <span>{t('header.web')}</span>
+              <span>{t('header.developer')}</span>
+            </span>
+          </h1>
+          <div className="header__footer">
+            <p>{t('header.subtitle')}</p>
+            <div className="header__actions">
+              <div className="header__favicons">
+                {SOCIALS.map((social) => (
+                  <a
+                    key={social.alt}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={social.alt}
+                  >
+                    <img
+                      className="header__favicons--img"
+                      src={social.img}
+                      alt=""
+                      decoding="async"
+                    />
+                  </a>
+                ))}
+              </div>
+              <div className="header__contact">
+                {CONTACTS.map(({ href, label, props }) => (
+                  <a key={href} href={href} {...props}>
+                    {label}
+                  </a>
+                ))}
+              </div>
             </div>
-          </div>
-          <h1 className="header__text">{t('header.developer')}</h1>
-          <div className="header__contact">
-            {CONTACTS.map(({ href, label, props }) => (
-              <a key={href} href={href} {...props}>
-                {label}
-              </a>
-            ))}
           </div>
         </div>
       </div>

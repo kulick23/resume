@@ -1,8 +1,8 @@
 {
   "header": {
-    "greeting": "ПРИВЕТ, меня зовут Данила Кулинкович",
-    "web": "ВЕБ",
-    "developer": "РАЗРАБОТЧИК",
+    "web": "FRONTEND &",
+    "developer": "SAP DEVELOPER",
+    "subtitle": "React и TypeScript для сильного интерфейса. SAP CAP и Cloud Foundry для enterprise-логики.",
     "email": "danek200326@gmail.com"
   },
   "nav": {
@@ -16,11 +16,11 @@
     "scrollToTop": "Наверх"
   },
   "about": {
-    "title": "Создаю enterprise web-приложения с сильным фронтендом и пониманием SAP-экосистемы.",
+    "title": "Frontend для enterprise-продуктов",
     "subtitle": "Frontend & SAP CAP Developer. Основной фокус — React, TypeScript, SAP CAP, Cloud Foundry и аккуратная реализация интерфейсов для корпоративных продуктов.",
     "text1": "Я полностью закрываю frontend-часть: от адаптивной верстки и UI-логики до интеграции API, состояний, форм, i18n, деплоя и поддержки проекта. В коммерческих проектах работал с корпоративными сайтами, порталами, Telegram Mini Apps, документными платформами и интерфейсами для игровых/цифровых сервисов.",
     "text2": "Сейчас развиваюсь в SAP-направлении: SAP CAP, SAP BTP и Cloud Foundry. Поэтому могу быть полезен на ролях, где нужен разработчик между modern frontend и enterprise backend-интеграциями.",
-    "imageAlt": "Портрет Данилы Кулинковича",
+    "imageAlt": "Профессиональный портрет",
     "eyebrow": "Frontend + SAP CAP / Cloud Foundry",
     "metricsLabel": "Ключевые показатели",
     "metrics": {

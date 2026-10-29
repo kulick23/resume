@@ -1,8 +1,8 @@
 {
   "header": {
-    "greeting": "CZEŚĆ, nazywam się Danila Kulinkovich",
-    "web": "WEB",
-    "developer": "DEWELOPER",
+    "web": "FRONTEND &",
+    "developer": "SAP DEVELOPER",
+    "subtitle": "React i TypeScript dla mocnego interfejsu. SAP CAP i Cloud Foundry dla logiki enterprise.",
     "email": "danek200326@gmail.com"
   },
   "nav": {
@@ -16,11 +16,11 @@
     "scrollToTop": "Do góry"
   },
   "about": {
-    "title": "Tworzę aplikacje webowe enterprise z mocnym frontendem i znajomością ekosystemu SAP.",
+    "title": "Frontend dla produktów enterprise",
     "subtitle": "Frontend & SAP CAP Developer: React, TypeScript, SAP CAP, Cloud Foundry i czysta implementacja produktów korporacyjnych.",
     "text1": "Mogę prowadzić część frontendową end-to-end: responsywny UI, state management, formularze, integracje API, i18n, deployment i wsparcie projektu. Mam doświadczenie z corporate websites, portalami, Telegram Mini Apps, platformami dokumentowymi i interfejsami dla usług cyfrowych/gamingowych.",
     "text2": "Rozwijam się także w kierunku SAP: SAP CAP, SAP BTP i Cloud Foundry. Dzięki temu pasuję do ról łączących modern frontend z integracjami enterprise backend.",
-    "imageAlt": "Portret Danily Kulinkovicha",
+    "imageAlt": "Profesjonalny portret",
     "eyebrow": "Frontend + SAP CAP / Cloud Foundry",
     "metricsLabel": "Kluczowe metryki",
     "metrics": {
