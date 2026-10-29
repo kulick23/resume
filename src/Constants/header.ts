@@ -1,7 +1,6 @@
 import LinkedIn from '../Assets/Icons/linkedin.svg';
 import Github from '../Assets/Icons/github.svg';
 import Telegram from '../Assets/Icons/telegram.svg';
-import CV from '../Assets/CV/cv.pdf';
 
 export const SOCIALS = [
   {
@@ -28,8 +27,8 @@ export const CONTACTS = [
     props: {},
   },
   {
-    href: CV,
+    href: `${import.meta.env.BASE_URL}?view=cv`,
     label: 'CV ⤓',
-    props: { download: true },
+    props: { target: '_blank', rel: 'noopener noreferrer' },
   },
 ];

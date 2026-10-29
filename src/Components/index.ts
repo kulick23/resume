@@ -6,5 +6,6 @@ export { Header } from './Header';
 export { Laptop } from './Laptop';
 export { NDAModal } from './NDAModal';
 export { Project } from './Projects';
+export { ResumePage } from './ResumePage';
 export { ScrollToTop } from './ScrollToTop';
 export { Skills } from './Skills';

@@ -41,8 +41,8 @@ export const About: React.FC = () => {
           src={AboutPortrait}
           alt={t('about.imageAlt')}
           className="about__image"
-          width={875}
-          height={1094}
+          width={1024}
+          height={1536}
           loading="lazy"
           decoding="async"
           draggable={false}
