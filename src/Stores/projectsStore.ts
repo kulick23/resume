@@ -4,6 +4,7 @@ import beteraDesktopImg from '../Assets/Screenshot/betera-desktop.webp';
 import cyberXDesktopImg from '../Assets/Screenshot/cyberX-desktop.webp';
 import koryagaDesktopImg from '../Assets/Screenshot/koryaga-desktop.webp';
 import lavandaDesktopImg from '../Assets/Screenshot/lavanda-desktop.webp';
+import monopolyCoverImg from '../Assets/Screenshot/monopoly-cover.webp';
 import monopolyGameImg from '../Assets/Screenshot/monopoly-game.webp';
 import monopolyHomeImg from '../Assets/Screenshot/monopoly-home.webp';
 import monopolyLobbyImg from '../Assets/Screenshot/monopoly-lobby.webp';
@@ -159,8 +160,9 @@ class ProjectsStore {
         'Product Analytics',
         'Admin Panel',
       ],
-      projectImg: monopolyHomeImg,
+      projectImg: monopolyCoverImg,
       gallery: [
+        monopolyCoverImg,
         monopolyHomeImg,
         monopolyLobbyImg,
         monopolyShopImg,

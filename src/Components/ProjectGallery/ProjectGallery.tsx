@@ -15,11 +15,33 @@ export const ProjectGallery: React.FC<ProjectGalleryProps> = ({
 }) => {
   const { t } = useTranslation();
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
   const hasMultipleImages = images.length > 1;
 
   useEffect(() => {
     setActiveIndex(0);
   }, [images]);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const updatePreference = () => setPrefersReducedMotion(mediaQuery.matches);
+
+    updatePreference();
+    mediaQuery.addEventListener('change', updatePreference);
+
+    return () => mediaQuery.removeEventListener('change', updatePreference);
+  }, []);
+
+  useEffect(() => {
+    if (!hasMultipleImages || isPaused || prefersReducedMotion) return;
+
+    const timeoutId = window.setTimeout(() => {
+      setActiveIndex((current) => (current + 1) % images.length);
+    }, 5000);
+
+    return () => window.clearTimeout(timeoutId);
+  }, [activeIndex, hasMultipleImages, images.length, isPaused, prefersReducedMotion]);
 
   if (images.length === 0) return null;
 
@@ -32,7 +54,17 @@ export const ProjectGallery: React.FC<ProjectGalleryProps> = ({
   };
 
   return (
-    <div className={`project-gallery ${className}`.trim()}>
+    <div
+      className={`project-gallery ${className}`.trim()}
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+      onFocusCapture={() => setIsPaused(true)}
+      onBlurCapture={(event) => {
+        if (!event.currentTarget.contains(event.relatedTarget as Node | null)) {
+          setIsPaused(false);
+        }
+      }}
+    >
       <div className="project-gallery__viewport">
         <img
           src={images[activeIndex]}
