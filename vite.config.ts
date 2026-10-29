@@ -1,11 +1,11 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
-// The site is published to https://kulick23.github.io/resume/, so every asset
-// URL has to be prefixed with the repository name.
+// Relative asset URLs work both at a domain root (Vercel) and when the site is
+// published inside a subdirectory (GitHub Pages at /resume/).
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/resume/',
+  base: './',
   plugins: [react()],
   build: {
     target: 'es2020',
