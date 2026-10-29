@@ -2,19 +2,20 @@ import { makeAutoObservable } from 'mobx';
 import type { Project, ProjectCategory } from '../types';
 import beteraDesktopImg from '../Assets/Screenshot/betera-desktop.webp';
 import cyberXDesktopImg from '../Assets/Screenshot/cyberX-desktop.webp';
-import cyberXMobileImg from '../Assets/Screenshot/cyberX-mobile.webp';
+import koryagaDesktopImg from '../Assets/Screenshot/koryaga-desktop.webp';
+import lavandaDesktopImg from '../Assets/Screenshot/lavanda-desktop.webp';
+import monopolyGameImg from '../Assets/Screenshot/monopoly-game.webp';
+import monopolyHomeImg from '../Assets/Screenshot/monopoly-home.webp';
+import monopolyLobbyImg from '../Assets/Screenshot/monopoly-lobby.webp';
+import monopolyProfileImg from '../Assets/Screenshot/monopoly-profile.webp';
+import monopolyShopImg from '../Assets/Screenshot/monopoly-shop.webp';
 import pavepoDesktopImg from '../Assets/Screenshot/pavepo-desktop.webp';
-import pavepoMobileImg from '../Assets/Screenshot/pavepo-mobile.webp';
+import playerCrmDesktopImg from '../Assets/Screenshot/player-crm-desktop.webp';
+import playerOrdersDesktopImg from '../Assets/Screenshot/player-orders-desktop.webp';
 import pixelVigorDesktopImg from '../Assets/Screenshot/PixelVigor-desktop.webp';
-import pixelVigorMobileImg from '../Assets/Screenshot/PixelVigor-mobile.webp';
 import primeNetDesktopImg from '../Assets/Screenshot/primeNet-desktop.webp';
-import primeNetMobileImg from '../Assets/Screenshot/primeNet-mobile.webp';
 import rentalSkinDesktopImg from '../Assets/Screenshot/rentalSkin-desktop.webp';
-import rentalSkinMobileImg from '../Assets/Screenshot/rentalSkin-mobile.webp';
 import xeraDesktopImg from '../Assets/Screenshot/xera-desktop.webp';
-import xeraMobileImg from '../Assets/Screenshot/xera-mobile.webp';
-
-type PreviewSize = 'desktop' | 'mobile';
 
 const linkToPreviewKey = (link: string): string => {
   try {
@@ -33,21 +34,19 @@ const linkToPreviewKey = (link: string): string => {
 };
 
 // Previews live in /public, so they need the deployment base prefix.
-const getPreviewPath = (link: string, size: PreviewSize = 'desktop'): string =>
-  `${import.meta.env.BASE_URL}previews/${linkToPreviewKey(link)}-${size}.webp`;
+const getPreviewPath = (link: string): string =>
+  `${import.meta.env.BASE_URL}previews/${linkToPreviewKey(link)}-desktop.webp`;
 
-const createPetProject = (
-  project: Omit<Project, 'projectImg' | 'mobileImg' | 'category'>,
-): Project => ({
+const createPetProject = ({
+  projectImg,
+  ...project
+}: Omit<Project, 'projectImg' | 'category'> & { projectImg?: string }): Project => ({
   ...project,
-  projectImg: getPreviewPath(project.link, 'desktop'),
-  mobileImg: getPreviewPath(project.link, 'mobile'),
+  projectImg: projectImg ?? getPreviewPath(project.link),
   category: 'pet',
 });
 
-const createBusinessProject = (
-  project: Omit<Project, 'category'> & { mobileImg?: string },
-): Project => ({
+const createBusinessProject = (project: Omit<Project, 'category'>): Project => ({
   ...project,
   category: 'business',
 });
@@ -55,11 +54,70 @@ const createBusinessProject = (
 class ProjectsStore {
   projects: Project[] = [
     createPetProject({
+      title: 'Player Orders',
+      description: 'petProjects.playerOrders.description',
+      repoLink: 'https://github.com/kulick23/player-orders',
+      link: '',
+      stack: [
+        'SAP CAP',
+        'TypeScript',
+        'SAPUI5',
+        'OData V4',
+        'SAP HANA Cloud',
+        'XSUAA',
+        'SAP BTP',
+        'Integration Tests',
+      ],
+      projectImg: playerOrdersDesktopImg,
+    }),
+    createPetProject({
+      title: 'Player CRM',
+      description: 'petProjects.playerCrm.description',
+      repoLink: 'https://github.com/kulick23/player-crm',
+      link: '',
+      stack: [
+        'SAP CAP',
+        'SAP CDS',
+        'SAP Fiori Elements',
+        'SAPUI5',
+        'OData V4',
+        'SAP HANA',
+        'CAP Draft',
+        'OPA5',
+      ],
+      projectImg: playerCrmDesktopImg,
+    }),
+    createPetProject({
+      title: 'Pulse',
+      description: 'petProjects.pulse.description',
+      repoLink: 'https://github.com/kulick23/Pulse',
+      link: 'https://pulse-five-smoky-95.vercel.app/',
+      stack: [
+        'React 19',
+        'TypeScript',
+        'Redux Toolkit',
+        'MobX',
+        'React Router',
+        'i18next',
+        'Vitest',
+        'SCSS',
+      ],
+    }),
+    createPetProject({
       title: 'London Grill',
       description: 'petProjects.londonGrill.description',
       repoLink: 'https://github.com/kulick23/food',
       link: 'https://london-grill.vercel.app/',
-      stack: ['React', 'React Router', 'CSS', 'MobX', 'Vite', 'Firebase', 'Vercel'],
+      stack: [
+        'React 19',
+        'JavaScript',
+        'React Router',
+        'MobX',
+        'Firebase Auth',
+        'Firestore',
+        'CSS Modules',
+        'Vite',
+      ],
     }),
     createPetProject({
       title: 'Vinyl Store',
@@ -69,22 +127,93 @@ class ProjectsStore {
       stack: ['React', 'React Router', 'SCSS', 'RTQ', 'Vite', 'Postgres', 'Vercel/Railway'],
     }),
     createPetProject({
-      title: 'Pet',
+      title: 'Betera Green',
       description: 'petProjects.pet.description',
       repoLink: 'https://github.com/kulick23/pet',
       link: 'https://pet-ten-sigma.vercel.app/',
-      stack: ['React', 'TS', 'SCSS', 'Vite', 'Swiper', 'Vercel'],
+      stack: [
+        'React 19',
+        'TypeScript',
+        'React Router',
+        'SCSS',
+        'Vitest',
+        'LocalStorage',
+        'Vite',
+        'i18n',
+      ],
     }),
   ];
 
   businessProjects: Project[] = [
+    createBusinessProject({
+      title: 'Monopoly — Telegram Game',
+      link: 'https://t.me/MonopolyTgBot/play?startapp=ref_u_qxXIDUmR',
+      repoLink: '',
+      stack: [
+        'Telegram Mini App',
+        'React',
+        'TypeScript',
+        'Responsive UI',
+        'Real-time Multiplayer',
+        'Telegram Stars',
+        'Product Analytics',
+        'Admin Panel',
+      ],
+      projectImg: monopolyHomeImg,
+      gallery: [
+        monopolyHomeImg,
+        monopolyLobbyImg,
+        monopolyShopImg,
+        monopolyProfileImg,
+        monopolyGameImg,
+      ],
+      featured: true,
+      role: 'businessProjects.monopoly.role',
+      isNDA: false,
+      ndaDescription: 'businessProjects.monopoly.description',
+    }),
+    createBusinessProject({
+      title: 'Lavanda E-commerce & CMS',
+      link: 'https://lavandabel.by/',
+      repoLink: '',
+      stack: [
+        'Next.js 16',
+        'React 19',
+        'TypeScript',
+        'Supabase',
+        'Supabase Auth',
+        'Supabase Storage',
+        'Tailwind CSS',
+        'Telegram Bot API',
+      ],
+      projectImg: lavandaDesktopImg,
+      isNDA: false,
+      ndaDescription: 'businessProjects.lavanda.description',
+    }),
+    createBusinessProject({
+      title: 'KORYAGA Florist E-commerce',
+      link: 'https://koryaga.vercel.app/',
+      repoLink: '',
+      stack: [
+        'React 19',
+        'TypeScript',
+        'Redux Toolkit',
+        'Tailwind CSS',
+        'Radix UI',
+        'EmailJS',
+        'Vite',
+        'JSON Catalog',
+      ],
+      projectImg: koryagaDesktopImg,
+      isNDA: false,
+      ndaDescription: 'businessProjects.koryaga.description',
+    }),
     createBusinessProject({
       title: 'CyberX Menu',
       link: 'https://cyber-x-seven.vercel.app/menu',
       repoLink: '',
       stack: ['React', 'TS', 'Vite', 'Firebase', 'RTQ', 'Vercel', 'i18'],
       projectImg: cyberXDesktopImg,
-      mobileImg: cyberXMobileImg,
       isNDA: false,
       ndaDescription: 'businessProjects.telegramMiniApp.description',
     }),
@@ -125,7 +254,6 @@ class ProjectsStore {
         'QRCode',
       ],
       projectImg: primeNetDesktopImg,
-      mobileImg: primeNetMobileImg,
       isNDA: true,
       ndaDescription: 'businessProjects.companyWebsite.description',
     }),
@@ -144,7 +272,6 @@ class ProjectsStore {
         'Smooth Scrollbar + Simplebar',
       ],
       projectImg: xeraDesktopImg,
-      mobileImg: xeraMobileImg,
       isNDA: true,
       ndaDescription: 'businessProjects.designSystem.description',
     }),
@@ -165,7 +292,6 @@ class ProjectsStore {
         'Rollup',
       ],
       projectImg: pixelVigorDesktopImg,
-      mobileImg: pixelVigorMobileImg,
       isNDA: true,
       ndaDescription: 'businessProjects.nftMarketplace.description',
     }),
@@ -188,7 +314,6 @@ class ProjectsStore {
         'Rollup',
       ],
       projectImg: pavepoDesktopImg,
-      mobileImg: pavepoMobileImg,
       isNDA: true,
       ndaDescription: 'businessProjects.performanceSystem.description',
     }),
@@ -198,7 +323,6 @@ class ProjectsStore {
       repoLink: '',
       stack: ['React', 'TS', 'Vite', 'SCSS', 'MobX', 'EmailJS', 'i18', 'Swiper'],
       projectImg: rentalSkinDesktopImg,
-      mobileImg: rentalSkinMobileImg,
       isNDA: true,
       ndaDescription: 'businessProjects.gameItemsStore.description',
     }),

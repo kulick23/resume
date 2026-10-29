@@ -10,26 +10,27 @@
 
   &__content {
     position: relative;
+    display: grid;
+    grid-template-rows: auto minmax(0, 1fr);
     width: min(70rem, 100%);
+    height: min(88vh, 54rem);
     max-height: min(88vh, 54rem);
-    overflow-y: auto;
+    overflow: hidden;
     border: 1px solid rgba(255, 255, 255, 0.13);
     background: #1d1d1d;
-    scrollbar-color: #505050 transparent;
-    scrollbar-width: thin;
   }
 
   &__close {
     appearance: none;
-    position: sticky;
+    position: absolute;
     z-index: 3;
     top: 1rem;
-    float: right;
+    right: 1rem;
     display: grid;
     place-items: center;
     width: 2.75rem;
     height: 2.75rem;
-    margin: 1rem 1rem -3.75rem 0;
+    margin: 0;
     padding: 0;
     border: 1px solid rgba(255, 255, 255, 0.16);
     background: #1d1d1d;
@@ -37,7 +38,10 @@
     cursor: pointer;
     font-size: 1.65rem;
     line-height: 1;
-    transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+    transition:
+      transform 0.2s ease,
+      background 0.2s ease,
+      color 0.2s ease;
 
     &:hover {
       transform: rotate(4deg);
@@ -98,12 +102,13 @@
     display: grid;
     grid-template-columns: minmax(0, 1.05fr) minmax(19rem, 0.95fr);
     gap: clamp(1.25rem, 3vw, 2.5rem);
+    min-height: 0;
+    overflow: hidden;
     padding: clamp(1.25rem, 3vw, 2rem);
   }
 
   &__visual {
-    position: sticky;
-    top: 1rem;
+    position: relative;
     align-self: start;
     overflow: hidden;
     min-width: 0;
@@ -116,6 +121,10 @@
       aspect-ratio: 16 / 10;
       object-fit: cover;
       object-position: top center;
+    }
+
+    .project-gallery__dots {
+      padding: 0.8rem 1rem 0;
     }
   }
 
@@ -131,6 +140,12 @@
 
   &__body {
     min-width: 0;
+    min-height: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding-right: clamp(0.25rem, 1vw, 0.75rem);
+    scrollbar-color: #505050 transparent;
+    scrollbar-width: thin;
   }
 
   &__overview,
@@ -250,7 +265,13 @@
     padding: 0.5rem;
 
     &__content {
+      display: block;
+      height: auto;
       max-height: 94vh;
+      overflow-y: auto;
+      overscroll-behavior: contain;
+      scrollbar-color: #505050 transparent;
+      scrollbar-width: thin;
     }
 
     &__header {
@@ -265,12 +286,18 @@
 
     &__layout {
       grid-template-columns: minmax(0, 1fr);
+      overflow: visible;
       padding: 0.9rem;
     }
 
     &__visual {
       position: relative;
       top: auto;
+    }
+
+    &__body {
+      overflow: visible;
+      padding-right: 0;
     }
   }
 }

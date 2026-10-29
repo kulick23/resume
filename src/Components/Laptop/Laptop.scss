@@ -16,6 +16,12 @@
     &--no-link {
       cursor: default;
     }
+
+    &--gallery {
+      overflow: visible;
+      aspect-ratio: auto;
+      background: transparent;
+    }
   }
 
   &__image {
@@ -31,17 +37,6 @@
     transform: scale(1.025);
   }
 
-  &__mobile-image {
-    position: absolute;
-    right: 1rem;
-    bottom: 1rem;
-    width: min(22%, 7rem);
-    aspect-ratio: 9 / 16;
-    object-fit: cover;
-    object-position: top center;
-    border: 0.35rem solid #111;
-  }
-
   &__content {
     display: flex;
     flex-direction: column;
@@ -51,6 +46,7 @@
 
   &__meta {
     display: flex;
+    flex-wrap: wrap;
     gap: 0.75rem;
     margin-bottom: 1.25rem;
     color: #555;
@@ -64,6 +60,21 @@
     line-height: 0.9;
     letter-spacing: -0.055em;
     overflow-wrap: anywhere;
+  }
+
+  &__featured-label {
+    color: var(--accent-primary);
+    font-weight: 750;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  &__role {
+    max-width: 33rem;
+    margin: 1.25rem 0 0;
+    color: #4a4a4a;
+    font-size: clamp(0.95rem, 1.4vw, 1.15rem);
+    line-height: 1.55;
   }
 
   &__stack {
@@ -138,6 +149,47 @@
   &__action-arrow {
     margin-left: 0.4rem;
   }
+
+  &--featured {
+    grid-template-columns: minmax(0, 1.45fr) minmax(18rem, 0.55fr);
+    gap: clamp(2rem, 4vw, 4rem);
+    padding: clamp(1rem, 2.8vw, 2.5rem);
+    border-top: 0.22rem solid var(--accent-primary);
+    background: #111418;
+
+    .laptop__preview {
+      min-width: 0;
+    }
+
+    .project-gallery__viewport {
+      border: 1px solid rgba(255, 255, 255, 0.11);
+    }
+
+    .laptop__meta {
+      color: #8e97a2;
+    }
+
+    h3 {
+      max-width: 12ch;
+      color: #fff;
+      font-size: clamp(2.7rem, 4.3vw, 4.8rem);
+      overflow-wrap: normal;
+      word-break: normal;
+    }
+
+    .laptop__role {
+      color: #b9c0c8;
+    }
+
+    .laptop__stack span {
+      color: #cbd0d6;
+    }
+
+    .laptop__action--secondary {
+      background: #252a30;
+      color: #fff;
+    }
+  }
 }
 
 @media (max-width: 900px) {
@@ -146,6 +198,10 @@
 
     &__content {
       max-width: 40rem;
+    }
+
+    &--featured {
+      grid-template-columns: 1fr;
     }
   }
 }

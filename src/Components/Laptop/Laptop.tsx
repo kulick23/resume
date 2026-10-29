@@ -2,6 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import './Laptop.scss';
 import type { LaptopProps } from '../../types';
+import { ProjectGallery } from '../ProjectGallery';
 
 export const Laptop: React.FC<LaptopProps> = ({
   project,
@@ -12,6 +13,9 @@ export const Laptop: React.FC<LaptopProps> = ({
   const { t } = useTranslation();
   const hasPreviewLink = enableProjectLink && Boolean(project.link);
   const hasRepoLink = showCodeButton && Boolean(project.repoLink);
+  const galleryImages = project.gallery?.length ? project.gallery : [project.projectImg];
+  const hasGallery = galleryImages.length > 1;
+  const hasClickablePreview = hasPreviewLink && !hasGallery;
 
   const openInNewTab = (url: string) => {
     if (!url) return;
@@ -19,14 +23,16 @@ export const Laptop: React.FC<LaptopProps> = ({
   };
 
   return (
-    <article className="laptop">
+    <article className={`laptop ${project.featured ? 'laptop--featured' : ''}`}>
       <div
-        role={hasPreviewLink ? 'link' : undefined}
-        tabIndex={hasPreviewLink ? 0 : undefined}
-        aria-label={hasPreviewLink ? `${project.title} — ${t('projects.openSite')}` : undefined}
-        onClick={hasPreviewLink ? () => openInNewTab(project.link) : undefined}
+        role={hasClickablePreview ? 'link' : undefined}
+        tabIndex={hasClickablePreview ? 0 : undefined}
+        aria-label={
+          hasClickablePreview ? `${project.title} — ${t('projects.openSite')}` : undefined
+        }
+        onClick={hasClickablePreview ? () => openInNewTab(project.link) : undefined}
         onKeyDown={
-          hasPreviewLink
+          hasClickablePreview
             ? (event) => {
                 if (event.key === 'Enter' || event.key === ' ') {
                   event.preventDefault();
@@ -35,20 +41,17 @@ export const Laptop: React.FC<LaptopProps> = ({
               }
             : undefined
         }
-        className={`laptop__preview ${hasPreviewLink ? '' : 'laptop__preview--no-link'}`}
+        className={`laptop__preview ${hasClickablePreview ? '' : 'laptop__preview--no-link'} ${
+          hasGallery ? 'laptop__preview--gallery' : ''
+        }`}
       >
-        <img
-          src={project.projectImg}
-          alt={project.title}
-          className="laptop__image"
-          loading="lazy"
-          decoding="async"
-        />
-        {project.mobileImg && (
+        {hasGallery ? (
+          <ProjectGallery images={galleryImages} title={project.title} />
+        ) : (
           <img
-            src={project.mobileImg}
-            alt={`${project.title} — mobile`}
-            className="laptop__mobile-image"
+            src={project.projectImg}
+            alt={project.title}
+            className="laptop__image"
             loading="lazy"
             decoding="async"
           />
@@ -57,10 +60,16 @@ export const Laptop: React.FC<LaptopProps> = ({
 
       <div className="laptop__content">
         <div className="laptop__meta">
-          <span>{project.category === 'business' ? t('projects.business') : t('projects.pet')}</span>
+          {project.featured && (
+            <span className="laptop__featured-label">{t('projects.featured')}</span>
+          )}
+          <span>
+            {project.category === 'business' ? t('projects.business') : t('projects.pet')}
+          </span>
           {project.isNDA && <span>{t('projects.nda')}</span>}
         </div>
         <h3>{project.title}</h3>
+        {project.role && <p className="laptop__role">{t(project.role)}</p>}
         <div className="laptop__stack" aria-label="Stack">
           {project.stack.slice(0, 8).map((item) => (
             <span key={item}>{item}</span>
@@ -80,7 +89,9 @@ export const Laptop: React.FC<LaptopProps> = ({
                 </svg>
               </span>
               <span>{t('projects.infoBadge')}</span>
-              <span className="laptop__action-arrow" aria-hidden="true">↗</span>
+              <span className="laptop__action-arrow" aria-hidden="true">
+                ↗
+              </span>
             </button>
           )}
           {hasRepoLink && (
@@ -104,7 +115,9 @@ export const Laptop: React.FC<LaptopProps> = ({
               onClick={() => openInNewTab(project.link)}
             >
               <span>{t('projects.openSite')}</span>
-              <span className="laptop__action-arrow" aria-hidden="true">↗</span>
+              <span className="laptop__action-arrow" aria-hidden="true">
+                ↗
+              </span>
             </button>
           )}
         </div>

@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import './NDAModal.scss';
 import type { Project } from '../../types';
+import { ProjectGallery } from '../ProjectGallery';
 
 interface NDAModalProps {
   isOpen: boolean;
@@ -101,6 +102,7 @@ export const NDAModal: React.FC<NDAModalProps> = ({ isOpen, onClose, project }) 
 
   const descriptionKey = project.ndaDescription ?? project.description;
   const descriptionText = descriptionKey ? t(descriptionKey) : '';
+  const galleryImages = project.gallery?.length ? project.gallery : [project.projectImg];
 
   const handleBackdropClick = (event: React.MouseEvent) => {
     if (event.target === event.currentTarget) onClose();
@@ -132,16 +134,28 @@ export const NDAModal: React.FC<NDAModalProps> = ({ isOpen, onClose, project }) 
             <h2 id="nda-modal-title">{t(project.title)}</h2>
           </div>
           <span className={`nda-modal__badge ${project.isNDA ? 'nda-modal__badge--nda' : ''}`}>
-            {project.isNDA ? t('nda.title') : t('projects.business')}
+            {project.featured
+              ? t('projects.featured')
+              : project.isNDA
+                ? t('nda.title')
+                : t('projects.business')}
           </span>
         </div>
 
         <div className="nda-modal__layout">
           <div className="nda-modal__visual">
-            <img src={project.projectImg} alt="" />
+            <ProjectGallery
+              images={galleryImages}
+              title={project.title}
+              className="project-gallery--modal"
+            />
             <div className="nda-modal__visual-caption">
-              <span>{project.category === 'business' ? t('projects.business') : t('projects.pet')}</span>
-              <span>{project.stack.length} {t('projects.technologies')}</span>
+              <span>
+                {project.category === 'business' ? t('projects.business') : t('projects.pet')}
+              </span>
+              <span>
+                {project.stack.length} {t('projects.technologies')}
+              </span>
             </div>
           </div>
 

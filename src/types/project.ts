@@ -3,7 +3,9 @@ export type ProjectCategory = 'pet' | 'business';
 export interface Project {
   title: string;
   projectImg: string;
-  mobileImg?: string;
+  gallery?: string[];
+  featured?: boolean;
+  role?: string;
   description?: string;
   stack: string[];
   link: string;

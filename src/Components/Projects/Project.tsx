@@ -47,7 +47,7 @@ export const Project: React.FC<ProjectProps> = observer(({ onNDAClick }) => {
         {filteredProjects.map((project, idx) => (
           <div
             key={project.title}
-            className="project__item"
+            className={`project__item ${project.featured ? 'project__item--featured' : ''}`}
             data-aos="fade-up"
             data-aos-delay={idx * 100}
           >
